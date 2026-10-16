@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" role="img" aria-labelledby="title desc">
+<title id="title">arXiv monthly submissions</title>
+<desc id="desc">Shadow 06 figure F3. Exact plotted values are encoded on marks.</desc>
+<rect width="1200" height="750" fill="#161819"/>
+<text x="52" y="36" fill="#E8B547" font-family="JetBrains Mono,monospace" font-size="12" font-weight="600" text-anchor="start" >SHADOW 06  /  FIGURE 3</text>
+<text x="52" y="78" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="29" font-weight="600" text-anchor="start" >arXiv monthly submissions</text>
+<line x1="52" y1="98" x2="1148" y2="98" stroke="#2A2D2F" stroke-width="1" />
+<text x="52" y="141" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="12" font-weight="400" text-anchor="start" >SEPTEMBER SUBMISSIONS</text>
+<line x1="100" y1="480" x2="950" y2="480" stroke="#2A2D2F" stroke-width="0.8" />
+<text x="89" y="484" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="12" font-weight="400" text-anchor="end" >0k</text>
+<line x1="100" y1="410" x2="950" y2="410" stroke="#2A2D2F" stroke-width="0.8" stroke-dasharray="3 5" />
+<text x="89" y="414" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="12" font-weight="400" text-anchor="end" >10k</text>
+<line x1="100" y1="340" x2="950" y2="340" stroke="#2A2D2F" stroke-width="0.8" stroke-dasharray="3 5" />
+<text x="89" y="344" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="12" font-weight="400" text-anchor="end" >20k</text>
+<line x1="100" y1="270" x2="950" y2="270" stroke="#2A2D2F" stroke-width="0.8" stroke-dasharray="3 5" />
+<text x="89" y="274" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="12" font-weight="400" text-anchor="end" >30k</text>
+<line x1="100" y1="200" x2="950" y2="200" stroke="#2A2D2F" stroke-width="0.8" stroke-dasharray="3 5" />
+<text x="89" y="204" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="12" font-weight="400" text-anchor="end" >40k</text>
+<rect x="167" y="410.917" width="136" height="69.083" fill="#6E8499" data-row="0" data-field="submissions" data-value="9869" data-base="480" data-top="165" data-max="45000"/>
+<text x="235" y="397.917" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="22" font-weight="600" text-anchor="middle" >9,869</text>
+<text x="235" y="509" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="13" font-weight="400" text-anchor="middle" >SEP 2016</text>
+<rect x="447" y="336.017" width="136" height="143.983" fill="#6E8499" data-row="1" data-field="submissions" data-value="20569" data-base="480" data-top="165" data-max="45000"/>
+<text x="515" y="323.017" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="22" font-weight="600" text-anchor="middle" >20,569</text>
+<text x="515" y="509" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="13" font-weight="400" text-anchor="middle" >SEP 2024</text>
+<rect x="727" y="197.459" width="136" height="282.541" fill="#E8B547" data-row="2" data-field="submissions" data-value="40363" data-base="480" data-top="165" data-max="45000"/>
+<text x="795" y="184.459" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="22" font-weight="600" text-anchor="middle" >40,363</text>
+<text x="795" y="509" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="13" font-weight="400" text-anchor="middle" >SEP 2026</text>
+<text x="996" y="248" fill="#E8B547" font-family="Inter,Arial,sans-serif" font-size="19" font-weight="600" text-anchor="start" >≈9,000</text>
+<text x="996" y="272" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >support tickets</text>
+<text x="52" y="551" fill="#9C907A" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >cs.AI submissions: more than 6× in 2024–2026; other categories roughly doubled.</text>
+<text x="52" y="602" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >Submissions doubled in two years. From 1 October 2026 each submitter may send two papers a month — rejected ones count.</text>
+<text x="52" y="653" fill="#9C907A" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="400" text-anchor="start" >arXiv attributes a disproportionate share of moderator time to a relatively small proportion of authors.</text>
+<line x1="52" y1="676" x2="1148" y2="676" stroke="#2A2D2F" stroke-width="1" />
+<text x="52" y="704" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >SOURCE  Kat Boboris / arXiv blog · Fair Moderation, Equitable Access, and AI: arXiv’s Updated Rate Limit Policy · 1 Oct 2026 · F01–F03, F05, Z11.</text>
+</svg>

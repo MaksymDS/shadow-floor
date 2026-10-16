@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="735" viewBox="0 0 1200 735" role="img" aria-labelledby="title desc">
+<title id="title">UK undergraduates and AI, 2024–2026</title>
+<desc id="desc">Shadow 06 figure F10. Exact plotted values are encoded on marks.</desc>
+<rect width="1200" height="735" fill="#161819"/>
+<text x="52" y="36" fill="#E8B547" font-family="JetBrains Mono,monospace" font-size="12" font-weight="600" text-anchor="start" >SHADOW 06  /  FIGURE 10</text>
+<text x="52" y="78" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="29" font-weight="600" text-anchor="start" >UK undergraduates and AI, 2024–2026</text>
+<line x1="52" y1="98" x2="1148" y2="98" stroke="#2A2D2F" stroke-width="1" />
+<text x="52" y="142" fill="#E8B547" font-family="JetBrains Mono,monospace" font-size="12" font-weight="600" text-anchor="start" >ANY AI USE</text>
+<text x="52" y="210" fill="#EDE0C8" font-family="JetBrains Mono,monospace" font-size="15" font-weight="600" text-anchor="start" >2024</text>
+<rect x="121" y="190" width="141.9" height="24" fill="#6E8499" data-row="0" data-field="any_ai_use_pct" data-value="66" data-x="121" data-scale="2.15"/>
+<text x="391" y="210" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="end" >66%</text>
+<text x="52" y="315" fill="#EDE0C8" font-family="JetBrains Mono,monospace" font-size="15" font-weight="600" text-anchor="start" >2025</text>
+<rect x="121" y="295" width="197.8" height="24" fill="#6E8499" data-row="1" data-field="any_ai_use_pct" data-value="92" data-x="121" data-scale="2.15"/>
+<text x="391" y="315" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="end" >92%</text>
+<text x="52" y="420" fill="#EDE0C8" font-family="JetBrains Mono,monospace" font-size="15" font-weight="600" text-anchor="start" >2026</text>
+<rect x="121" y="400" width="204.25" height="24" fill="#E8B547" data-row="2" data-field="any_ai_use_pct" data-value="95" data-x="121" data-scale="2.15"/>
+<text x="391" y="420" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="end" >95%</text>
+<text x="432" y="142" fill="#E8B547" font-family="JetBrains Mono,monospace" font-size="12" font-weight="600" text-anchor="start" >GENAI FOR ASSESSED WORK</text>
+<line x1="411" y1="134" x2="411" y2="500" stroke="#2A2D2F" stroke-width="1" />
+<text x="432" y="210" fill="#EDE0C8" font-family="JetBrains Mono,monospace" font-size="15" font-weight="600" text-anchor="start" >2024</text>
+<text x="501" y="206" fill="#9C907A" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="400" text-anchor="start" >just over half</text>
+<text x="501" y="224" fill="#9C907A" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="400" text-anchor="start" >(no exact figure)</text>
+<text x="432" y="315" fill="#EDE0C8" font-family="JetBrains Mono,monospace" font-size="15" font-weight="600" text-anchor="start" >2025</text>
+<rect x="501" y="295" width="191.35" height="24" fill="#6E8499" data-row="1" data-field="genai_for_assessed_work_pct" data-value="89" data-x="501" data-scale="2.15"/>
+<text x="771" y="315" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="end" >89%</text>
+<text x="432" y="420" fill="#EDE0C8" font-family="JetBrains Mono,monospace" font-size="15" font-weight="600" text-anchor="start" >2026</text>
+<rect x="501" y="400" width="202.1" height="24" fill="#E8B547" data-row="2" data-field="genai_for_assessed_work_pct" data-value="94" data-x="501" data-scale="2.15"/>
+<text x="771" y="420" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="end" >94%</text>
+<text x="812" y="142" fill="#E8B547" font-family="JetBrains Mono,monospace" font-size="12" font-weight="600" text-anchor="start" >AI TEXT INSERTED DIRECTLY</text>
+<line x1="791" y1="134" x2="791" y2="500" stroke="#2A2D2F" stroke-width="1" />
+<text x="812" y="210" fill="#EDE0C8" font-family="JetBrains Mono,monospace" font-size="15" font-weight="600" text-anchor="start" >2024</text>
+<rect x="881" y="190" width="6.45" height="24" fill="#6E8499" data-row="0" data-field="ai_text_inserted_directly_pct" data-value="3" data-x="881" data-scale="2.15"/>
+<text x="1151" y="210" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="end" >3%</text>
+<text x="812" y="315" fill="#EDE0C8" font-family="JetBrains Mono,monospace" font-size="15" font-weight="600" text-anchor="start" >2025</text>
+<rect x="881" y="295" width="17.2" height="24" fill="#6E8499" data-row="1" data-field="ai_text_inserted_directly_pct" data-value="8" data-x="881" data-scale="2.15"/>
+<text x="1151" y="315" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="end" >8%</text>
+<text x="812" y="420" fill="#EDE0C8" font-family="JetBrains Mono,monospace" font-size="15" font-weight="600" text-anchor="start" >2026</text>
+<rect x="881" y="400" width="25.8" height="24" fill="#E8B547" data-row="2" data-field="ai_text_inserted_directly_pct" data-value="12" data-x="881" data-scale="2.15"/>
+<text x="1151" y="420" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="end" >12%</text>
+<text x="52" y="538" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >Use is near-universal; direct insertion of AI text into assessed work is a minority practice — 12% in 2026.</text>
+<line x1="52" y1="645" x2="1148" y2="645" stroke="#2A2D2F" stroke-width="1" />
+<text x="52" y="673" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >SOURCE  HEPI/Kortext · Student Generative AI Survey 2026 · 2026 · E04–E05.</text>
+</svg>
