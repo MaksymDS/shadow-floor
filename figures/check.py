@@ -31,14 +31,68 @@ FIGURES = {
 }
 SPECIFIED_TEXT = {
     "F1": ["Pew's detector flags pages written or substantially edited with AI, and misclassifies individual pages in both directions. Points are six-month averages; Pew reports a higher false-positive rate on pre-AI pages.",
-           "Nov 2022", "Before late 2022, every domain sat near 1%. By January 2026, almost one in ten .com pages showed signs of AI authorship — ten times the rate on .edu and .gov."],
-    "F2": ["Fully AI-generated tracks passed half of Deezer's daily uploads in June 2026, yet accounted for 1–3% of streams; Deezer reports that up to 85% of their streams were fraudulent."],
+           "Nov 2022"],
     "F9": ["Unrestricted access raised practice scores by 48% and was followed by exam scores 17% below the control group once access was removed. For a tutor designed not to hand out answers, the authors report the loss was largely mitigated.",
-           "A separate randomised study (BJET, 2025; 117 students) found the strongest essays in the AI-assisted group and did not detect a statistically significant difference in knowledge gain or transfer.",
            "Bastani et al., PNAS 122(26), 2025; Fan et al., BJET 56(2), 2025."],
     "F11": ["About 1.5 million registered 'agents' and about 17,000 human owners, according to the Wiz investigation. Registrations do not measure activity or autonomy; the platform had no mechanism to verify whether an 'agent' was AI.",
             "Database state before the first fix, 31 Jan 2026; Wiz, published 2 Feb 2026. Registrations and owner records — not activity."],
 }
+PACK04_LABELS = {
+    "F1": {"caption": "**Caption (replace):**", "source": "**Source line must state:**"},
+    "F2": {"caption": "**Caption (replace):**"},
+    "F3": {"caption": "**Caption (replace):**", "callout": "**Callout (replace):**"},
+    "F8": {"title": "**Title (replace):**"},
+    "F9": {"companion": "**Companion line (replace):**", "axis_label": "**Axis/label note:**"},
+}
+
+
+def pack04_spec_text():
+    """Read the quoted target strings from the supplied specification itself."""
+    specification = (ROOT / "shadow06-figures-spec-v0.4.md").read_text(encoding="utf-8")
+    expected = {}
+    for figure_id, labels in PACK04_LABELS.items():
+        section = re.search(rf"^## {figure_id} —[^\n]*\n(.*?)(?=^## |\Z)", specification,
+                            re.MULTILINE | re.DOTALL)
+        assert section, f"Pack 04 section missing for {figure_id}"
+        expected[figure_id] = {}
+        for role, label in labels.items():
+            lines = [line for line in section.group(1).splitlines() if line.startswith(label)]
+            assert len(lines) == 1, f"Pack 04 field missing for {figure_id} {role}"
+            quoted = re.findall(r'"([^"]+)"', lines[0])
+            assert len(quoted) == 1, f"Pack 04 target ambiguous for {figure_id} {role}"
+            expected[figure_id][role] = quoted[0]
+    return expected
+
+
+def pack04_output_text(figure_id, role, path):
+    root = ET.parse(path).getroot()
+    if role == "title":
+        title = root.find("{http://www.w3.org/2000/svg}title")
+        visible = [el.text for el in root if el.tag.rsplit("}", 1)[-1] == "text"
+                   and el.attrib.get("x") == "52" and el.attrib.get("y") == "78"]
+        assert title is not None and len(visible) == 1 and title.text == visible[0]
+        return title.text or ""
+    groups = [el for el in root.iter() if el.attrib.get("data-pack04-role") == role]
+    assert len(groups) == 1, f"{path}: expected one {role} text group"
+    rendered = " ".join(el.text or "" for el in groups[0]
+                        if el.tag.rsplit("}", 1)[-1] == "text")
+    if role == "source":
+        assert rendered.startswith("SOURCE  ") and " · " in rendered
+        return rendered.rsplit(" · ", 1)[-1]
+    return rendered
+
+
+def check_pack04_text(figure_id, fields):
+    for role, expected in fields.items():
+        for suffix in (".svg", ".dark.svg"):
+            path = OUT / f"{figure_id}{suffix}"
+            actual = pack04_output_text(figure_id, role, path)
+            assert actual == expected, f"{path}: {role}: {actual!r} != {expected!r}"
+        pdf_text = normal(PdfReader(OUT / f"{figure_id}.pdf").pages[0].extract_text())
+        assert expected in pdf_text, f"{figure_id}.pdf: missing Pack 04 {role} text"
+        if figure_id == "F8" and role == "title":
+            table = unescape((OUT / "F8.table.html").read_text(encoding="utf-8"))
+            assert f"<h1>{expected}</h1>" in table and f"<caption>{expected}</caption>" in table
 
 
 def csv_rows(filename):
@@ -318,6 +372,7 @@ def pdf_ok(figure_id, data):
 def main():
     assert not any((OUT / f"F5{suffix}").exists() for suffix in
                    (".svg", ".dark.svg", ".pdf", ".py", ".table.html"))
+    pack04 = pack04_spec_text()
     lines = [
         "# Shadow 06 figure check",
         "",
@@ -340,6 +395,8 @@ def main():
             table = inspect_table_html(OUT / f"{figure_id}.table.html", figure_id, data, expected)
             assert table == light
         pdf_ok(figure_id, data)
+        if figure_id in pack04:
+            check_pack04_text(figure_id, pack04[figure_id])
         values = []
         for i, field in sorted(light):
             row_label = (data[i].get("actor") or data[i].get("field") or data[i].get("jurisdiction") or
@@ -351,10 +408,28 @@ def main():
         lines.append(f"| {figure_id} | `{filename}` | {'<br>'.join(values)} | {result} |")
     lines += [
         "",
+        "## Pack 04 text audit",
+        "",
+        "Each changed field below was read back from the light and dark SVG and compared character for "
+        "character with the quoted text in `shadow06-figures-spec-v0.4.md`, after joining wrapped lines "
+        "with spaces. Extractable PDF text was also checked after line reflow; F8's standalone "
+        "HTML heading and table caption were checked too.",
+        "",
+        "| Figure | Field | Exact specification text | Output check |",
+        "|:--|:--|:--|:--|",
+    ]
+    for figure_id, fields in pack04.items():
+        for role, expected in fields.items():
+            result = "Exact in both SVGs and PDF"
+            if figure_id == "F8":
+                result += "; HTML heading and caption"
+            lines.append(f"| {figure_id} | {role.replace('_', ' ')} | {expected} | {result} |")
+    lines += [
+        "",
         "## Strict readings and source discrepancies",
         "",
         "- F2: the spec asks for `>50%` daily uploads in June 2026, but the frozen CSV records `50`. The bar and direct label use `50%`; the exact supplied caption retains its wording. The caption's `up to 85%` fraud claim is specified prose, not a plotted value in the CSV.",
-        "- F1/F2: the exact v0.3 annotation and captions replace the prior text. F1's detector caveat remains from v0.2.",
+        "- F1/F2: Pack 04 replaces both captions and adds the exact six-month-average sentence to F1's source line. F1's detector caveat remains from v0.2.",
         "- F5: withdrawn in Pack 03. Its SVGs, PDF, script and prior CSV are absent from this release; the relevant provider evaluation now appears only in F6.",
         "- F4: the Newby row comes from the replacement CSV. Its source line uses supplied ledger IDs because the pack does not provide a full original-document citation.",
         "- F6: rebuilt from `F6_providers.csv` with alphabetic provider columns, the grey rows column and both exact footnotes. All provider cells retain the CSV's wording and identical styling; the specified source line is used.",
@@ -363,7 +438,7 @@ def main():
         "- F8: the CSV's reported figures are tabulated as vendor reports. The v0.2 caption is reproduced verbatim even though the general P-A wording rule calls for ‘X reports…’ captions; no range is inferred.",
         "- F10: the 2024 assessed-work cell is blank. No bar is drawn and the specified qualitative note appears. The student quote and 49/16/35 split are omitted together because those percentages are absent from the frozen CSV.",
         "- F11: `88 : 1` is the rounded ratio of the two CSV counts (1,500,000 / 17,000 ≈ 88.24), not an independent observation. The exact Pack 03 date/definition note appears below the numbers.",
-        "- F3/F8/F10: unchanged by Pack 03 and not regenerated.",
+        "- F3/F8: unchanged by Pack 03, then revised in Pack 04 (F3 caption and callout; F8 title only). F10 remains unchanged by both packs.",
         "",
     ]
     (OUT / "CHECK.md").write_text("\n".join(lines), encoding="utf-8")

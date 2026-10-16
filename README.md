@@ -2,9 +2,9 @@
 
 <h1 align="center">Noise Floor</h1>
 
-<p align="center"><strong>Shadow 06 · Figure set v0.3</strong><br>Foresight Future Institute</p>
+<p align="center"><strong>Shadow 06 · Figure set v0.4</strong><br>Foresight Future Institute</p>
 
-<p align="center"><a href="https://github.com/MaksymDS/shadow-floor-landing">Landing preview</a> · <a href="figures/CHECK.md">Figure checks</a> · <a href="shadow06-figures-spec-v0.3.md">Current specification</a></p>
+<p align="center"><a href="https://github.com/MaksymDS/shadow-floor-landing">Landing preview</a> · <a href="figures/CHECK.md">Figure checks</a> · <a href="shadow06-figures-spec-v0.4.md">Current specification</a></p>
 
 ---
 
@@ -20,7 +20,7 @@ This repository contains the data, source code, and export files for ten figures
 | F4 | Counting, screening, judging | [SVG](figures/F4.svg) · [dark](figures/F4.dark.svg) · [PDF](figures/F4.pdf) · [table](figures/F4.table.html) |
 | F6 | Providers, one table | [SVG](figures/F6.svg) · [dark](figures/F6.dark.svg) · [PDF](figures/F6.pdf) · [table](figures/F6.table.html) |
 | F7 | Who must mark what | [SVG](figures/F7.svg) · [dark](figures/F7.dark.svg) · [PDF](figures/F7.pdf) · [table](figures/F7.table.html) |
-| F8 | Why ad-fraud figures do not add up | [SVG](figures/F8.svg) · [dark](figures/F8.dark.svg) · [PDF](figures/F8.pdf) · [table](figures/F8.table.html) |
+| F8 | Different samples, periods and units | [SVG](figures/F8.svg) · [dark](figures/F8.dark.svg) · [PDF](figures/F8.pdf) · [table](figures/F8.table.html) |
 | F9 | Practice versus exam | [SVG](figures/F9.svg) · [dark](figures/F9.dark.svg) · [PDF](figures/F9.pdf) |
 | F10 | UK undergraduates and AI, 2024–2026 | [SVG](figures/F10.svg) · [dark](figures/F10.dark.svg) · [PDF](figures/F10.pdf) |
 | F11 | 88 to 1 | [SVG](figures/F11.svg) · [dark](figures/F11.dark.svg) · [PDF](figures/F11.pdf) |
@@ -45,7 +45,7 @@ The plotted values come from the supplied, frozen CSV snapshots. The scripts do 
 
 ## Specification and provenance
 
-Read [v0.2](shadow06-figures-spec-v0.2.md) together with the [v0.3 changes](shadow06-figures-spec-v0.3.md). The latter is the current figure specification. F4 and F7 still need complete primary-source citation metadata in parts of their supplied CSVs; the present source lines identify the supplied records and ledger IDs where available. See the [check notes](figures/CHECK.md) before quoting those tables.
+Read [v0.2](shadow06-figures-spec-v0.2.md), then the [v0.3](shadow06-figures-spec-v0.3.md) and [v0.4](shadow06-figures-spec-v0.4.md) changes. Pack 04 changes wording only; the CSVs are unchanged. F4 and F7 still need complete primary-source citation metadata in parts of their supplied CSVs; the present source lines identify the supplied records and ledger IDs where available. See the [check notes](figures/CHECK.md) before quoting those tables.
 
 The palette and typography follow the published [Shadow 04 landing](https://github.com/MaksymDS/shadow-crack-landing) design system (commit `2a3e144d76c3ffb66c44e1d6196df81a06087c9d`). The light and dark SVGs use that system's figure styling. Inter and JetBrains Mono are bundled for offline rendering, with provenance and licences in [`figures/fonts/`](figures/fonts/README.md).
 

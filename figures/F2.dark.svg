@@ -36,8 +36,10 @@
 <circle cx="1005" cy="495" r="8" fill="#E8B547" data-row="2" data-field="ai_tracks_per_day" data-value="90000" data-x="1005" data-y="495"/>
 <text x="1005" y="475" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="24" font-weight="600" text-anchor="middle" >90,000</text>
 <text x="1005" y="523" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="12" font-weight="400" text-anchor="middle" >JUN 2026</text>
-<text x="52" y="587" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >Fully AI-generated tracks passed half of Deezer&#x27;s daily uploads in June 2026, yet accounted for 1–3% of streams; Deezer reports</text>
-<text x="52" y="609" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >that up to 85% of their streams were fraudulent.</text>
+<g data-pack04-role="caption">
+<text x="52" y="587" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >Deezer reports that fully AI-generated tracks exceeded half of daily uploads at a June 2026 peak, and accounted for 1–3% of</text>
+<text x="52" y="609" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >streams; it classified up to 85% of those streams in 2025 as fraudulent. Upload share and stream share are different measures.</text>
+</g>
 <line x1="52" y1="676" x2="1148" y2="676" stroke="#2A2D2F" stroke-width="1" />
 <text x="52" y="704" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >SOURCE  Deezer newsroom · Deezer: AI-generated tracks now represent 44% of all new uploaded music (20 Apr 2026); Deezer: AI music has surpassed 50% of new</text>
 <text x="52" y="721" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >music uploads for the first time (21 Jul 2026) · A26–A28 · vendor data.</text>

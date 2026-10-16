@@ -166,9 +166,13 @@ def f1(dark):
     f.text(52, 575, "CAVEAT", 11, f.accent, MONO, 600)
     caveat = "Pew's detector flags pages written or substantially edited with AI, and misclassifies individual pages in both directions. Points are six-month averages; Pew reports a higher false-positive rate on pre-AI pages."
     f.wrapped(52, 601, caveat, 139, 13, 21)
-    caption = "Before late 2022, every domain sat near 1%. By January 2026, almost one in ten .com pages showed signs of AI authorship — ten times the rate on .edu and .gov."
+    caption = "Six-month averages for four domains. Rates were similar at the start of the period; in the period labelled January 2026, .com reached 9.35%, against about 1% on .edu and .gov."
+    f.add('<g data-pack04-role="caption">')
     f.wrapped(52, 682, caption, 125, 15, 22)
-    f.source(761, 'Pew Research Center · "How Much of the Internet Is Written With AI?" · 20 Aug 2026 · A01–A06 · points are six-month averages.')
+    f.add('</g>')
+    f.add('<g data-pack04-role="source">')
+    f.source(761, 'Pew Research Center · "How Much of the Internet Is Written With AI?" · 20 Aug 2026 · A01–A06 · Plotted points are six-month averages (Pew).')
+    f.add('</g>')
     return f
 
 
@@ -204,7 +208,9 @@ def f2(dark):
                  mark_attrs(i, "ai_tracks_per_day", row["ai_tracks_per_day"], x=dot_x[i], y=495))
         f.text(dot_x[i], 475, f'{int(row["ai_tracks_per_day"]):,}', 24, f.ink, SANS, 600, "middle")
         f.text(dot_x[i], 523, label, 12, f.quiet, MONO, anchor="middle")
-    f.wrapped(52, 587, "Fully AI-generated tracks passed half of Deezer's daily uploads in June 2026, yet accounted for 1–3% of streams; Deezer reports that up to 85% of their streams were fraudulent.", 130, 15, 22)
+    f.add('<g data-pack04-role="caption">')
+    f.wrapped(52, 587, "Deezer reports that fully AI-generated tracks exceeded half of daily uploads at a June 2026 peak, and accounted for 1–3% of streams; it classified up to 85% of those streams in 2025 as fraudulent. Upload share and stream share are different measures.", 130, 15, 22)
+    f.add('</g>')
     f.source(704, "Deezer newsroom · Deezer: AI-generated tracks now represent 44% of all new uploaded music (20 Apr 2026); Deezer: AI music has surpassed 50% of new music uploads for the first time (21 Jul 2026) · A26–A28 · vendor data.")
     return f
 
@@ -226,10 +232,16 @@ def f3(dark):
                mark_attrs(i, "submissions", row["submissions"], base=base, top=top, max=45000))
         f.text(cx, yy - 13, f"{value:,}", 22, f.ink, SANS, 600, "middle")
         f.text(cx, base + 29, "SEP " + row["month"][:4], 13, f.quiet, MONO, anchor="middle")
-    f.text(996, 248, "≈9,000", 19, f.accent, SANS, 600)
-    f.text(996, 272, "support tickets", 13, f.ink)
+    f.add('<g data-pack04-role="callout">')
+    f.text(978, 244, "Nearly 9,000", 17, f.accent, SANS, 600)
+    f.text(978, 267, "support tickets", 13, f.ink)
+    f.text(978, 288, "(Sep 2026, staff", 11, f.quiet)
+    f.text(978, 306, "and moderators).", 11, f.quiet)
+    f.add('</g>')
     f.wrapped(52, 551, "cs.AI submissions: more than 6× in 2024–2026; other categories roughly doubled.", 145, 13, 20, f.quiet)
-    f.wrapped(52, 602, "Submissions doubled in two years. From 1 October 2026 each submitter may send two papers a month — rejected ones count.", 130, 15, 22)
+    f.add('<g data-pack04-role="caption">')
+    f.wrapped(52, 602, "Roughly twice as many submissions in September 2026 as in September 2024. From 1 October 2026 each submitter may send two new papers a month; rejected ones count.", 130, 15, 22)
+    f.add('</g>')
     f.wrapped(52, 653, "arXiv attributes a disproportionate share of moderator time to a relatively small proportion of authors.", 145, 12, 18, f.quiet)
     f.source(704, "Kat Boboris / arXiv blog · Fair Moderation, Equitable Access, and AI: arXiv’s Updated Rate Limit Policy · 1 Oct 2026 · F01–F03, F05, Z11.")
     return f
@@ -238,6 +250,9 @@ def f3(dark):
 def f9(dark):
     data = rows("F9_learning_study.csv")
     f = Figure("F9", "Practice versus exam", 810, dark)
+    f.add('<g data-pack04-role="axis_label">')
+    f.text(100, 145, "relative difference vs comparison group (%)", 11, f.quiet, MONO)
+    f.add('</g>')
     base, top, low = 430, 178, -20
     scale = (base - top) / (140 - low)
     y = lambda v: base - (v - low) * scale
@@ -269,7 +284,9 @@ def f9(dark):
     f.text(355, 523, "PRACTICE", 16, f.ink, SANS, 600, "middle")
     f.text(827, 523, "EXAM WITHOUT ASSISTANT", 16, f.ink, SANS, 600, "middle")
     f.wrapped(52, 568, "Unrestricted access raised practice scores by 48% and was followed by exam scores 17% below the control group once access was removed. For a tutor designed not to hand out answers, the authors report the loss was largely mitigated.", 130, 15, 22)
-    f.wrapped(52, 655, "A separate randomised study (BJET, 2025; 117 students) found the strongest essays in the AI-assisted group and did not detect a statistically significant difference in knowledge gain or transfer.", 145, 12, 18, f.quiet)
+    f.add('<g data-pack04-role="companion">')
+    f.wrapped(52, 655, "A separate randomised study (BJET, 2025; 117 students): the AI-assisted group showed the greatest improvement in essay scores during revision; the study did not detect significant between-group differences in knowledge gain or transfer.", 145, 12, 18, f.quiet)
+    f.add('</g>')
     f.source(759, "Bastani et al., PNAS 122(26), 2025; Fan et al., BJET 56(2), 2025.")
     return f
 
@@ -371,7 +388,7 @@ TABLES = {
         "source": "Supplied Pack 03 · F7_obligations.csv · ledger IDs at right.",
     },
     "F8": {
-        "title": "Why ad-fraud figures do not add up", "csv": "F8_vendor_methods.csv",
+        "title": "Different samples, periods and units", "csv": "F8_vendor_methods.csv",
         "columns": [
             ("Vendor", 185, ("vendor", "tier", "rows")),
             ("Reported figure", 184, ("reported_figure",)),

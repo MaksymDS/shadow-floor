@@ -5,6 +5,9 @@
 <text x="52" y="36" fill="#8B2D2D" font-family="JetBrains Mono,monospace" font-size="12" font-weight="600" text-anchor="start" >SHADOW 06  /  FIGURE 9</text>
 <text x="52" y="78" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="29" font-weight="600" text-anchor="start" >Practice versus exam</text>
 <line x1="52" y1="98" x2="1148" y2="98" stroke="#9C907A" stroke-width="1" />
+<g data-pack04-role="axis_label">
+<text x="100" y="145" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >relative difference vs comparison group (%)</text>
+</g>
 <line x1="100" y1="430" x2="1090" y2="430" stroke="#9C907A" stroke-width="0.8" stroke-dasharray="3 5" />
 <text x="90" y="434" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="12" font-weight="400" text-anchor="end" >-20%</text>
 <line x1="100" y1="398.5" x2="1090" y2="398.5" stroke="#161819" stroke-width="1.4" />
@@ -31,8 +34,10 @@
 <text x="827" y="523" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="16" font-weight="600" text-anchor="middle" >EXAM WITHOUT ASSISTANT</text>
 <text x="52" y="568" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >Unrestricted access raised practice scores by 48% and was followed by exam scores 17% below the control group once access was</text>
 <text x="52" y="590" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >removed. For a tutor designed not to hand out answers, the authors report the loss was largely mitigated.</text>
-<text x="52" y="655" fill="#2A2D2F" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="400" text-anchor="start" >A separate randomised study (BJET, 2025; 117 students) found the strongest essays in the AI-assisted group and did not detect a statistically</text>
-<text x="52" y="673" fill="#2A2D2F" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="400" text-anchor="start" >significant difference in knowledge gain or transfer.</text>
+<g data-pack04-role="companion">
+<text x="52" y="655" fill="#2A2D2F" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="400" text-anchor="start" >A separate randomised study (BJET, 2025; 117 students): the AI-assisted group showed the greatest improvement in essay scores during revision;</text>
+<text x="52" y="673" fill="#2A2D2F" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="400" text-anchor="start" >the study did not detect significant between-group differences in knowledge gain or transfer.</text>
+</g>
 <line x1="52" y1="731" x2="1148" y2="731" stroke="#9C907A" stroke-width="1" />
 <text x="52" y="759" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >SOURCE  Bastani et al., PNAS 122(26), 2025; Fan et al., BJET 56(2), 2025.</text>
 </svg>
