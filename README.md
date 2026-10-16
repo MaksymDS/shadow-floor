@@ -1,32 +1,52 @@
-# Shadow 06 — Noise Floor, figure specification v0.3
+![Noise Floor — Shadow 06](assets/noise-floor-social.png)
 
-This repository contains the frozen Figure Specification v0.2 and its v0.3 delta. Ten figures are active. Pack 03 withdraws F5, rebuilds F6 and F7, revises F1, F2, F4, F9 and F11, and leaves F3, F8 and F10 unchanged. The five CSVs supplied in Pack 03 replace their earlier versions; unchanged CSVs remain from Pack 02.
+<h1 align="center">Noise Floor</h1>
 
-## Build offline
+<p align="center"><strong>Shadow 06 · Figure set v0.3</strong><br>Foresight Future Institute</p>
 
-Requires Python 3, `reportlab` and `pypdf` (`pip install -r requirements.txt`). The generating scripts make no network requests. From the repository root:
+<p align="center"><a href="https://github.com/MaksymDS/shadow-floor-landing">Landing preview</a> · <a href="figures/CHECK.md">Figure checks</a> · <a href="shadow06-figures-spec-v0.3.md">Current specification</a></p>
+
+---
+
+This repository contains the data, source code, and export files for ten figures in *Noise Floor*. The accompanying [HTML landing](https://github.com/MaksymDS/shadow-floor-landing) is a working visual preview; the manuscript and report download are still being assembled. The planned public address is **noise.foresightflow.org**.
+
+## Figures
+
+| ID | Subject | Exports |
+|:--|:--|:--|
+| F1 | Signs of AI authorship by web domain | [SVG](figures/F1.svg) · [dark](figures/F1.dark.svg) · [PDF](figures/F1.pdf) |
+| F2 | Music uploads and streams | [SVG](figures/F2.svg) · [dark](figures/F2.dark.svg) · [PDF](figures/F2.pdf) |
+| F3 | arXiv monthly submissions | [SVG](figures/F3.svg) · [dark](figures/F3.dark.svg) · [PDF](figures/F3.pdf) |
+| F4 | Counting, screening, judging | [SVG](figures/F4.svg) · [dark](figures/F4.dark.svg) · [PDF](figures/F4.pdf) · [table](figures/F4.table.html) |
+| F6 | Providers, one table | [SVG](figures/F6.svg) · [dark](figures/F6.dark.svg) · [PDF](figures/F6.pdf) · [table](figures/F6.table.html) |
+| F7 | Who must mark what | [SVG](figures/F7.svg) · [dark](figures/F7.dark.svg) · [PDF](figures/F7.pdf) · [table](figures/F7.table.html) |
+| F8 | Why ad-fraud figures do not add up | [SVG](figures/F8.svg) · [dark](figures/F8.dark.svg) · [PDF](figures/F8.pdf) · [table](figures/F8.table.html) |
+| F9 | Practice versus exam | [SVG](figures/F9.svg) · [dark](figures/F9.dark.svg) · [PDF](figures/F9.pdf) |
+| F10 | UK undergraduates and AI, 2024–2026 | [SVG](figures/F10.svg) · [dark](figures/F10.dark.svg) · [PDF](figures/F10.pdf) |
+| F11 | 88 to 1 | [SVG](figures/F11.svg) · [dark](figures/F11.dark.svg) · [PDF](figures/F11.pdf) |
+
+F5 was withdrawn in specification v0.3. Its material was incorporated into F6; there is no F5 export in this release.
+
+## Reproduce the figures
+
+Python 3 and the two packages in [`requirements.txt`](requirements.txt) are required. Generation and checks run offline from the repository root:
 
 ```sh
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install -r requirements.txt
 python3 figures/render.py
 python3 figures/check.py
 ```
 
-Each active `figures/F#.py` regenerates one figure. Every active figure has a light SVG, a dark SVG and a vector PDF. F4, F6, F7 and F8 also have standalone accessible HTML tables (`figures/F#.table.html`). `figures/CHECK.md` lists every plotted or tabulated value read back from the generated SVG and compared with the CSV, along with source discrepancies; table values are also checked in HTML. The PDF generator draws from the same SVG primitives using the bundled Shadow fonts.
+Each [`figures/F#.py`](figures) reads its matching CSV from [`shadow06-figdata/`](shadow06-figdata) and produces a light SVG, a dark SVG, and a vector PDF. F4, F6, F7, and F8 also produce standalone HTML tables. [`figures/CHECK.md`](figures/CHECK.md) records the values read back from the generated output, along with the source gaps and stricter interpretations used in the charts.
 
-The light rendition uses only the Shadow 04 colour tokens. The dark rendition matches the published Shadow 04 landing palette. For use on a landing, embed the SVG inline or load the bundled fonts on the page so the text uses Inter and JetBrains Mono.
+The plotted values come from the supplied, frozen CSV snapshots. The scripts do not fetch or augment data, interpolate missing values, or make external requests. A successful build confirms that the exports match those CSVs; it is not independent verification of every underlying source claim.
 
-## Design source
+## Specification and provenance
 
-Palette and typography come from `MaksymDS/shadow-crack-landing` (Shadow 04), commit `2a3e144d76c3ffb66c44e1d6196df81a06087c9d`, `README.md` and `index.html`. Shadow 05 (`MaksymDS/shadow-mandate-landing`) uses the same tokens and figure kit. The font binaries in `figures/fonts/` are included for offline PDF rendering; their licences and provenance are documented there.
+Read [v0.2](shadow06-figures-spec-v0.2.md) together with the [v0.3 changes](shadow06-figures-spec-v0.3.md). The latter is the current figure specification. F4 and F7 still need complete primary-source citation metadata in parts of their supplied CSVs; the present source lines identify the supplied records and ledger IDs where available. See the [check notes](figures/CHECK.md) before quoting those tables.
 
-## Source metadata checked separately
+The palette and typography follow the published [Shadow 04 landing](https://github.com/MaksymDS/shadow-crack-landing) design system (commit `2a3e144d76c3ffb66c44e1d6196df81a06087c9d`). The light and dark SVGs use that system's figure styling. Inter and JetBrains Mono are bundled for offline rendering, with provenance and licences in [`figures/fonts/`](figures/fonts/README.md).
 
-No values from these pages were used to draw the charts. They were used only to complete the source lines:
-
-- [Pew Research Center, “How Much of the Internet Is Written With AI?” (20 Aug 2026)](https://www.pewresearch.org/data-labs/2026/08/20/how-much-of-the-internet-is-written-with-ai/)
-- [Deezer, “AI-generated tracks now represent 44% of all new uploaded music” (20 Apr 2026)](https://newsroom-deezer.com/2026/04/ai-generated-tracks-represent-44-of-new-uploaded-music/)
-- [Deezer, “AI music has surpassed 50% of new music uploads for the first time” (21 Jul 2026)](https://newsroom-deezer.com/2026/07/ai-music-exceeds-50-percent-daily-uploads-deezer/)
-- [arXiv, “Fair Moderation, Equitable Access, and AI: arXiv’s Updated Rate Limit Policy” (1 Oct 2026)](https://blog.arxiv.org/2026/10/01/updated-rate-limit-policy/)
-- [Bastani et al., “Generative AI without guardrails can harm learning: Evidence from high school mathematics” (PNAS 2025)](https://pubmed.ncbi.nlm.nih.gov/40560616/)
-
-The F4 and F7 CSVs do not contain enough outlet, original document and date information for complete primary-source lines. Their source lines identify the supplied CSV and show ledger IDs where present. F6 uses the exact source line specified in v0.3. See `figures/CHECK.md` for strict readings and remaining source gaps.
+The [landing repository](https://github.com/MaksymDS/shadow-floor-landing) contains the HTML preview and copies of the web-ready figure SVGs and tables. This repository remains the source for data, scripts, PDF exports, and checks.
