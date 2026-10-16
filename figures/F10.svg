@@ -18,8 +18,7 @@
 <text x="432" y="142" fill="#8B2D2D" font-family="JetBrains Mono,monospace" font-size="12" font-weight="600" text-anchor="start" >GENAI FOR ASSESSED WORK</text>
 <line x1="411" y1="134" x2="411" y2="500" stroke="#9C907A" stroke-width="1" />
 <text x="432" y="210" fill="#161819" font-family="JetBrains Mono,monospace" font-size="15" font-weight="600" text-anchor="start" >2024</text>
-<text x="501" y="206" fill="#2A2D2F" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="400" text-anchor="start" >just over half</text>
-<text x="501" y="224" fill="#2A2D2F" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="400" text-anchor="start" >(no exact figure)</text>
+<text x="501" y="210" fill="#2A2D2F" font-family="Inter,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start" >—</text>
 <text x="432" y="315" fill="#161819" font-family="JetBrains Mono,monospace" font-size="15" font-weight="600" text-anchor="start" >2025</text>
 <rect x="501" y="295" width="191.35" height="24" fill="#6E8499" data-row="1" data-field="genai_for_assessed_work_pct" data-value="89" data-x="501" data-scale="2.15"/>
 <text x="771" y="315" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="end" >89%</text>

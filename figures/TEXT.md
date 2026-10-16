@@ -8,6 +8,7 @@ These reader-facing strings are checked against the generated SVGs and extractab
 
 ## F2 — music
 **Caption:** "Deezer reports that fully AI-generated tracks exceeded half of daily uploads at a June 2026 peak, and accounted for 1–3% of streams; it classified up to 85% of those streams in 2025 as fraudulent. Upload share and stream share are different measures."
+**Source:** "Deezer newsroom, April 2026 and 21 July 2026."
 
 ## F3 — arXiv
 **Caption:** "Roughly twice as many submissions in September 2026 as in September 2024. From 1 October 2026 each submitter may send two new papers a month; rejected ones count."

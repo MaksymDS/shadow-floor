@@ -104,7 +104,6 @@
 <text x="1136" y="351" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >applies</text>
 </g>
 <g data-row="1" data-field="clearance" data-value="cleared">
-<text x="1136" y="376" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >cleared</text>
 </g>
 <line x1="1276" y1="331" x2="1276" y2="492" stroke="#9C907A" stroke-width="0.6" />
 <g data-row="1" data-field="effective_date" data-value="2 Aug 2026; legacy systems 2 Dec 2026">
@@ -153,7 +152,6 @@
 <text x="1136" y="512" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >in force</text>
 </g>
 <g data-row="2" data-field="clearance" data-value="cleared">
-<text x="1136" y="537" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >cleared</text>
 </g>
 <line x1="1276" y1="492" x2="1276" y2="615" stroke="#9C907A" stroke-width="0.6" />
 <g data-row="2" data-field="effective_date" data-value="20 Feb 2026">
@@ -250,7 +248,8 @@
 </g>
 <line x1="1428" y1="722" x2="1428" y2="829" stroke="#9C907A" stroke-width="0.6" />
 <g data-row="4" data-field="source" data-value="publication.pravo.gov.ru">
-<text x="1438" y="742" fill="#161819" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >publication.pravo.gov.ru</text>
+<text x="1438" y="742" fill="#161819" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >publication.prav</text>
+<text x="1438" y="758" fill="#161819" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >o.gov.ru</text>
 </g>
 </g>
 <line x1="52" y1="829" x2="1548" y2="829" stroke="#9C907A" stroke-width="0.8" />
@@ -288,7 +287,6 @@
 <text x="1136" y="868" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >period announced</text>
 </g>
 <g data-row="5" data-field="clearance" data-value="cleared">
-<text x="1136" y="893" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >cleared</text>
 </g>
 <line x1="1276" y1="829" x2="1276" y2="917" stroke="#9C907A" stroke-width="0.6" />
 <g data-row="5" data-field="effective_date" data-value="22 Jan 2026">
@@ -338,7 +336,6 @@
 <text x="1136" y="937" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >operative</text>
 </g>
 <g data-row="6" data-field="clearance" data-value="cleared">
-<text x="1136" y="962" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >cleared</text>
 </g>
 <line x1="1276" y1="917" x2="1276" y2="1021" stroke="#9C907A" stroke-width="0.6" />
 <g data-row="6" data-field="effective_date" data-value="2 Aug 2026; platforms 1 Jan 2027; devices 2028">
@@ -391,7 +388,6 @@
 <text x="1136" y="1041" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >in force</text>
 </g>
 <g data-row="7" data-field="clearance" data-value="cleared">
-<text x="1136" y="1066" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >cleared</text>
 </g>
 <line x1="1276" y1="1021" x2="1276" y2="1125" stroke="#9C907A" stroke-width="0.6" />
 <g data-row="7" data-field="effective_date" data-value="1 Mar 2026">
@@ -578,7 +574,6 @@
 <text x="1136" y="1487" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >in force</text>
 </g>
 <g data-row="11" data-field="clearance" data-value="cleared">
-<text x="1136" y="1512" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >cleared</text>
 </g>
 <line x1="1276" y1="1467" x2="1276" y2="1552" stroke="#9C907A" stroke-width="0.6" />
 <g data-row="11" data-field="effective_date" data-value="election period">
@@ -626,7 +621,6 @@
 <text x="1136" y="1612" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >in force</text>
 </g>
 <g data-row="12" data-field="clearance" data-value="cleared">
-<text x="1136" y="1637" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >cleared</text>
 </g>
 <line x1="1276" y1="1592" x2="1276" y2="1677" stroke="#9C907A" stroke-width="0.6" />
 <g data-row="12" data-field="effective_date" data-value="—">
@@ -719,7 +713,6 @@
 <text x="1136" y="1823" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >2025</text>
 </g>
 <g data-row="14" data-field="clearance" data-value="cleared">
-<text x="1136" y="1848" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >cleared</text>
 </g>
 <line x1="1276" y1="1784" x2="1276" y2="1872" stroke="#9C907A" stroke-width="0.6" />
 <g data-row="14" data-field="effective_date" data-value="—">
@@ -765,7 +758,6 @@
 <text x="1136" y="1932" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >voluntary</text>
 </g>
 <g data-row="15" data-field="clearance" data-value="cleared">
-<text x="1136" y="1957" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >cleared</text>
 </g>
 <line x1="1276" y1="1912" x2="1276" y2="1981" stroke="#9C907A" stroke-width="0.6" />
 <g data-row="15" data-field="effective_date" data-value="Nov 2025">
@@ -902,7 +894,6 @@
 <text x="1136" y="2193" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >recommendation</text>
 </g>
 <g data-row="18" data-field="clearance" data-value="cleared">
-<text x="1136" y="2218" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >cleared</text>
 </g>
 <line x1="1276" y1="2173" x2="1276" y2="2242" stroke="#9C907A" stroke-width="0.6" />
 <g data-row="18" data-field="effective_date" data-value="Jun 2025">
@@ -946,7 +937,6 @@
 <text x="1136" y="2281" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >guidance</text>
 </g>
 <g data-row="19" data-field="clearance" data-value="cleared">
-<text x="1136" y="2306" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >cleared</text>
 </g>
 <line x1="1276" y1="2242" x2="1276" y2="2330" stroke="#9C907A" stroke-width="0.6" />
 <g data-row="19" data-field="effective_date" data-value="—">
@@ -990,7 +980,6 @@
 <text x="1136" y="2350" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >guidance</text>
 </g>
 <g data-row="20" data-field="clearance" data-value="cleared">
-<text x="1136" y="2375" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >cleared</text>
 </g>
 <line x1="1276" y1="2330" x2="1276" y2="2399" stroke="#9C907A" stroke-width="0.6" />
 <g data-row="20" data-field="effective_date" data-value="—">
@@ -1124,7 +1113,6 @@
 <text x="1136" y="2668" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >(self-stated)</text>
 </g>
 <g data-row="23" data-field="clearance" data-value="cleared">
-<text x="1136" y="2693" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >cleared</text>
 </g>
 <line x1="1276" y1="2610" x2="1276" y2="2717" stroke="#9C907A" stroke-width="0.6" />
 <g data-row="23" data-field="effective_date" data-value="—">
@@ -1215,7 +1203,6 @@
 <text x="1136" y="2844" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >guidance</text>
 </g>
 <g data-row="25" data-field="clearance" data-value="cleared">
-<text x="1136" y="2869" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >cleared</text>
 </g>
 <line x1="1276" y1="2824" x2="1276" y2="2909" stroke="#9C907A" stroke-width="0.6" />
 <g data-row="25" data-field="effective_date" data-value="—">
@@ -1229,8 +1216,8 @@
 </g>
 <line x1="52" y1="2909" x2="1548" y2="2909" stroke="#9C907A" stroke-width="0.8" />
 <text x="52" y="2940" fill="#8B2D2D" font-family="JetBrains Mono,monospace" font-size="10" font-weight="600" text-anchor="start" >CAPTION</text>
-<text x="52" y="2964" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >Instruments we located and verified, as of 16 October 2026. A comparison of specified obligations, not a ranking of countries&#x27;</text>
-<text x="52" y="2986" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >overall AI regulation. Grey rows: official texts located but not cleared for detailed description.</text>
+<text x="52" y="2964" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >Instruments we located and verified. A comparison of specified obligations, not a ranking of countries&#x27; overall AI regulation.</text>
+<text x="52" y="2986" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >Grey rows: official texts located but not cleared for detailed description.</text>
 <text x="52" y="3015" fill="#8B2D2D" font-family="JetBrains Mono,monospace" font-size="10" font-weight="600" text-anchor="start" >NOTE</text>
 <text x="52" y="3039" fill="#2A2D2F" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >United Kingdom: a January 2026 House of Commons Library briefing stated that no UK legislation requires AI-generated content to be labelled.</text>
 <line x1="52" y1="3084" x2="1548" y2="3084" stroke="#9C907A" stroke-width="1" />

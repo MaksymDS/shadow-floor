@@ -119,8 +119,8 @@
 <line x1="895" y1="483.78" x2="922" y2="506" stroke="#161819" stroke-width="1" />
 <text x="930" y="510" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="16" font-weight="600" text-anchor="start" >.gov 0.76%</text>
 <text x="52" y="575" fill="#8B2D2D" font-family="JetBrains Mono,monospace" font-size="11" font-weight="600" text-anchor="start" >CAVEAT</text>
-<text x="52" y="601" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >Pew&#x27;s detector flags pages written or substantially edited with AI, and misclassifies individual pages in both directions. Points are</text>
-<text x="52" y="622" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >six-month averages; Pew reports a higher false-positive rate on pre-AI pages.</text>
+<text x="52" y="601" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >Pew&#x27;s detector flags pages written or substantially edited with AI, and misclassifies individual pages in both directions. Pew reports a</text>
+<text x="52" y="622" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >higher false-positive rate on pre-AI pages.</text>
 <g data-text-role="caption">
 <text x="52" y="682" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >Six-month averages for four domains. Rates were similar at the start of the period; in the period labelled January 2026, .com</text>
 <text x="52" y="704" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >reached 9.35%, against about 1% on .edu and .gov.</text>

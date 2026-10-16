@@ -148,7 +148,7 @@
 </g>
 <line x1="52" y1="827" x2="1148" y2="827" stroke="#9C907A" stroke-width="0.8" />
 <text x="52" y="858" fill="#8B2D2D" font-family="JetBrains Mono,monospace" font-size="10" font-weight="600" text-anchor="start" >FOOTNOTE 1</text>
-<text x="52" y="882" fill="#2A2D2F" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >Each provider&#x27;s column was verified by a reviewer independent of that provider; see Method.</text>
+<text x="52" y="882" fill="#2A2D2F" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >Each provider&#x27;s column had an independent reviewer; see Method.</text>
 <text x="52" y="914" fill="#8B2D2D" font-family="JetBrains Mono,monospace" font-size="10" font-weight="600" text-anchor="start" >FOOTNOTE 2</text>
 <text x="52" y="938" fill="#2A2D2F" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >Figures come from different implementations, corpora and operating points. No ranking is implied.</text>
 <line x1="52" y1="983" x2="1148" y2="983" stroke="#9C907A" stroke-width="1" />

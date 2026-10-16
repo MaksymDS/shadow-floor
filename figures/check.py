@@ -11,7 +11,7 @@ import re
 import xml.etree.ElementTree as ET
 
 from pypdf import PdfReader
-from render import TABLES, TOKENS, source_lines, use_category
+from render import TABLES, TOKENS, cell_lines, cell_style, display_cell, source_lines, use_category
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "figures"
@@ -29,7 +29,7 @@ FIGURES = {
     "F10": "F10_hepi.csv",
 }
 SPECIFIED_TEXT = {
-    "F1": ["Pew's detector flags pages written or substantially edited with AI, and misclassifies individual pages in both directions. Points are six-month averages; Pew reports a higher false-positive rate on pre-AI pages.",
+    "F1": ["Pew's detector flags pages written or substantially edited with AI, and misclassifies individual pages in both directions. Pew reports a higher false-positive rate on pre-AI pages.",
            "Nov 2022"],
     "F9": ["Unrestricted access raised practice scores by 48% and was followed by exam scores 17% below the control group once access was removed. For a tutor designed not to hand out answers, the authors report the loss was largely mitigated."],
     "F5": ["About 1.5 million registered 'agents' and about 17,000 human owners, according to the Wiz investigation. Registrations do not measure activity or autonomy; the platform had no mechanism to verify whether an 'agent' was AI.",
@@ -37,7 +37,7 @@ SPECIFIED_TEXT = {
 }
 SPEC_TEXT_LABELS = {
     "F1": {"caption": "**Caption:**", "source": "**Source:**"},
-    "F2": {"caption": "**Caption:**"},
+    "F2": {"caption": "**Caption:**", "source": "**Source:**"},
     "F3": {"caption": "**Caption:**", "callout": "**Callout:**", "source": "**Source:**"},
     "F5": {"title": "**Title:**", "source": "**Source:**"},
     "F8": {"title": "**Title:**"},
@@ -214,6 +214,12 @@ def inspect_svg(path, figure_id, data, expected):
         assert data[1]["exam_vs_control_pct"] == ""
         assert not any(el.attrib.get("data-row") == "1" and el.attrib.get("data-field") == "exam_vs_control_pct"
                        for el in root.iter())
+    if figure_id == "F10":
+        assert data[0]["genai_for_assessed_work_pct"] == ""
+        visible_text = [el.text or "" for el in root.iter()
+                        if el.tag.rsplit("}", 1)[-1] == "text"]
+        assert visible_text.count("—") == 1
+        assert not any("just over half" in text or "no exact figure" in text for text in visible_text)
     if figure_id in SPECIFIED_TEXT:
         whole = normal(" ".join(el.text or "" for el in root.iter()
                                 if el.tag.rsplit("}", 1)[-1] == "text"))
@@ -236,9 +242,18 @@ def inspect_table_svg(path, figure_id, data, expected):
         key = (int(a["data-row"]), a["data-field"])
         assert key in expected and key not in seen, f"{path}: unexpected or repeated cell {key}"
         source = data[key[0]][key[1]]
+        visible = display_cell(figure_id, key[1], source)
         rendered = normal(" ".join(child.text or "" for child in group))
         assert a["data-value"] == source, f"{path}: encoded mismatch {key}"
-        assert rendered == normal(source), f"{path}: visible mismatch {key}: {rendered!r} != {source!r}"
+        if figure_id == "F7" and key[1] == "source":
+            _, width, fields = next(column for column in TABLES[figure_id]["columns"]
+                                    if key[1] in column[2])
+            size, family, _ = cell_style(figure_id, key[1], fields[0] == key[1])
+            expected_lines = cell_lines(visible, width, size, family, True)
+            assert [child.text for child in group] == expected_lines, f"{path}: source wrapping mismatch {key}"
+            rendered = source
+        else:
+            assert rendered == normal(visible), f"{path}: visible mismatch {key}: {rendered!r} != {visible!r}"
         seen[key] = rendered
     assert set(seen) == expected, f"{path}: missing cells {sorted(expected - set(seen))}"
     spec = TABLES[figure_id]
@@ -337,7 +352,8 @@ def inspect_table_html(path, figure_id, data, expected):
     assert set(reader.cells) == expected
     for key in expected:
         source = data[key[0]][key[1]]
-        assert reader.cells[key] == (source, normal(source)), f"{path}: HTML cell mismatch {key}"
+        visible = display_cell(figure_id, key[1], source)
+        assert reader.cells[key] == (source, normal(visible)), f"{path}: HTML cell mismatch {key}"
     if figure_id == "F6":
         for note in TABLES["F6"]["notes"]:
             assert note in unescape(path.read_text(encoding="utf-8"))
@@ -381,7 +397,6 @@ def pdf_ok(figure_id, data):
 
 def main():
     spec_text = specified_text()
-    spec_text["F2"]["source"] = "; ".join(row["source"] for row in csv_rows(FIGURES["F2"]))
     lines = [
         "# Noise Floor — figure verification",
         "",
@@ -417,7 +432,7 @@ def main():
                          data[i].get("vendor") or data[i].get("crawl_date") or data[i].get("period") or
                          data[i].get("month") or data[i].get("year") or data[i].get("condition") or
                          data[i].get("arm") or data[i].get("metric"))
-            values.append(f"- `{row_label}` · `{field}`: {light[(i, field)]}")
+            values.append(f"- `{row_label}` · `{field}`: {light[(i, field)]}".rstrip())
         html_result = "Pass" if figure_id in TABLES else "—"
         lines.append(f"| {figure_id} | [`{filename}`](../shadow06-figdata/{filename}) | "
                      f"{len(data)} | {len(light)} | Pass / pass | {html_result} |")
@@ -435,7 +450,7 @@ def main():
         "## Figure text audit",
         "",
         "Each specified field below was read back from the light and dark SVG and compared character for "
-        "character with `figures/TEXT.md` or, for the F2 source, the CSV, after joining wrapped lines "
+        "character with `figures/TEXT.md` after joining wrapped lines "
         "with spaces. Extractable PDF text was also checked after line reflow; F8's standalone "
         "HTML heading and table caption were checked too.",
         "",
@@ -457,10 +472,10 @@ def main():
         "- F4: all eight institutional rows and five use tones follow the CSV. Its caption does not claim a measured trend.",
         "- F5: the figure shows registrations and owners without calculating an agent-per-owner ratio. The source date and registration caveat remain visible.",
         "- F6: provider columns follow alphabetical order. Every cell retains the CSV wording; the source block is checked against all three rows of `F6_sources.csv`. The footnotes caution against ranking providers.",
-        "- F7: all 26 CSV rows remain grouped in supplied order. Rows marked `located, not cleared` retain neutral shading. The United Kingdom briefing appears as a note, outside the table; Nigeria remains excluded. The caption reports the 16 October source check without claiming a later evidence freeze.",
+        "- F7: all 26 CSV rows remain grouped in supplied order. Rows marked `located, not cleared` retain neutral shading. Plain `cleared` labels are suppressed while qualified clearance labels remain visible. Long source values wrap inside the column. The United Kingdom briefing appears as a note, outside the table; Nigeria remains excluded.",
         "- F8: reported figures are presented as vendor reports from different periods, samples and units; no combined range is inferred.",
         "- F9: the Tutor with safeguards exam cell is blank in the CSV. No mark or bar is drawn; its exact `exam_label` appears at the zero line. The companion text avoids treating a non-significant difference as equality.",
-        "- F10: the 2024 assessed-work cell is blank. No bar is drawn and the specified qualitative note appears. The CSV does not contain a 49/16/35 split, so those values are not plotted.",
+        "- F10: the 2024 assessed-work cell is blank. A muted dash marks the missing value and no bar is drawn. The CSV does not contain a 49/16/35 split, so those values are not plotted.",
         "",
         "## CSV readback",
         "",

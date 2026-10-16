@@ -12,7 +12,7 @@ caption{text-align:left;padding:16px 18px;background:#121415;color:#E8B547;font:
 th,td{padding:13px 12px;text-align:left;vertical-align:top;border-bottom:1px solid #2A2D2F;border-right:1px solid #2A2D2F}th:last-child,td:last-child{border-right:0}
 thead th{color:#9C907A;font:11px/1.4 Mono,monospace;text-transform:uppercase}tbody th{font-weight:600}tbody tr.unverified{background:#2A2D2F}
 tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,monospace;letter-spacing:.08em}
-.cell-value{display:block}.cell-value+.cell-value{margin-top:5px;color:#9C907A;font-size:12px}.use-measure{border-left:4px solid #6E8499}.use-screen{border-left:4px solid #9C907A}.use-guidance{border-left:4px solid #7B8588}.use-discontinued{border-left:4px solid #2A2D2F}.use-reviewed{border-left:4px solid #EDE0C8}
+.cell-value{display:block;overflow-wrap:anywhere}.cell-value+.cell-value{margin-top:5px;color:#9C907A;font-size:12px}.use-measure{border-left:4px solid #6E8499}.use-screen{border-left:4px solid #9C907A}.use-guidance{border-left:4px solid #7B8588}.use-discontinued{border-left:4px solid #2A2D2F}.use-reviewed{border-left:4px solid #EDE0C8}
 .caption-copy{font-size:18px}.note{color:#9C907A}.source{margin-top:28px;color:#9C907A} :focus-visible{outline:1px solid #E8B547;outline-offset:3px}
 .scroll-hint{display:none;color:#9C907A;font:12px/1.5 Mono,monospace}@media(max-width:700px){.scroll-hint{display:block}}
 </style></head><body><main>
@@ -82,7 +82,7 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 </td>
 <td>
 <span class="cell-value" data-row="1" data-field="status" data-value="applies">applies</span>
-<span class="cell-value" data-row="1" data-field="clearance" data-value="cleared">cleared</span>
+<span class="cell-value" data-row="1" data-field="clearance" data-value="cleared"></span>
 </td>
 <td>
 <span class="cell-value" data-row="1" data-field="effective_date" data-value="2 Aug 2026; legacy systems 2 Dec 2026">2 Aug 2026; legacy systems 2 Dec 2026</span>
@@ -112,7 +112,7 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 </td>
 <td>
 <span class="cell-value" data-row="2" data-field="status" data-value="in force">in force</span>
-<span class="cell-value" data-row="2" data-field="clearance" data-value="cleared">cleared</span>
+<span class="cell-value" data-row="2" data-field="clearance" data-value="cleared"></span>
 </td>
 <td>
 <span class="cell-value" data-row="2" data-field="effective_date" data-value="20 Feb 2026">20 Feb 2026</span>
@@ -202,7 +202,7 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 </td>
 <td>
 <span class="cell-value" data-row="5" data-field="status" data-value="commenced; grace period announced">commenced; grace period announced</span>
-<span class="cell-value" data-row="5" data-field="clearance" data-value="cleared">cleared</span>
+<span class="cell-value" data-row="5" data-field="clearance" data-value="cleared"></span>
 </td>
 <td>
 <span class="cell-value" data-row="5" data-field="effective_date" data-value="22 Jan 2026">22 Jan 2026</span>
@@ -232,7 +232,7 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 </td>
 <td>
 <span class="cell-value" data-row="6" data-field="status" data-value="operative">operative</span>
-<span class="cell-value" data-row="6" data-field="clearance" data-value="cleared">cleared</span>
+<span class="cell-value" data-row="6" data-field="clearance" data-value="cleared"></span>
 </td>
 <td>
 <span class="cell-value" data-row="6" data-field="effective_date" data-value="2 Aug 2026; platforms 1 Jan 2027; devices 2028">2 Aug 2026; platforms 1 Jan 2027; devices 2028</span>
@@ -262,7 +262,7 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 </td>
 <td>
 <span class="cell-value" data-row="7" data-field="status" data-value="in force">in force</span>
-<span class="cell-value" data-row="7" data-field="clearance" data-value="cleared">cleared</span>
+<span class="cell-value" data-row="7" data-field="clearance" data-value="cleared"></span>
 </td>
 <td>
 <span class="cell-value" data-row="7" data-field="effective_date" data-value="1 Mar 2026">1 Mar 2026</span>
@@ -384,7 +384,7 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 </td>
 <td>
 <span class="cell-value" data-row="11" data-field="status" data-value="in force">in force</span>
-<span class="cell-value" data-row="11" data-field="clearance" data-value="cleared">cleared</span>
+<span class="cell-value" data-row="11" data-field="clearance" data-value="cleared"></span>
 </td>
 <td>
 <span class="cell-value" data-row="11" data-field="effective_date" data-value="election period">election period</span>
@@ -416,7 +416,7 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 </td>
 <td>
 <span class="cell-value" data-row="12" data-field="status" data-value="in force">in force</span>
-<span class="cell-value" data-row="12" data-field="clearance" data-value="cleared">cleared</span>
+<span class="cell-value" data-row="12" data-field="clearance" data-value="cleared"></span>
 </td>
 <td>
 <span class="cell-value" data-row="12" data-field="effective_date" data-value="—">—</span>
@@ -476,7 +476,7 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 </td>
 <td>
 <span class="cell-value" data-row="14" data-field="status" data-value="announced Sep 2025">announced Sep 2025</span>
-<span class="cell-value" data-row="14" data-field="clearance" data-value="cleared">cleared</span>
+<span class="cell-value" data-row="14" data-field="clearance" data-value="cleared"></span>
 </td>
 <td>
 <span class="cell-value" data-row="14" data-field="effective_date" data-value="—">—</span>
@@ -508,7 +508,7 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 </td>
 <td>
 <span class="cell-value" data-row="15" data-field="status" data-value="voluntary">voluntary</span>
-<span class="cell-value" data-row="15" data-field="clearance" data-value="cleared">cleared</span>
+<span class="cell-value" data-row="15" data-field="clearance" data-value="cleared"></span>
 </td>
 <td>
 <span class="cell-value" data-row="15" data-field="effective_date" data-value="Nov 2025">Nov 2025</span>
@@ -598,7 +598,7 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 </td>
 <td>
 <span class="cell-value" data-row="18" data-field="status" data-value="recommendation">recommendation</span>
-<span class="cell-value" data-row="18" data-field="clearance" data-value="cleared">cleared</span>
+<span class="cell-value" data-row="18" data-field="clearance" data-value="cleared"></span>
 </td>
 <td>
 <span class="cell-value" data-row="18" data-field="effective_date" data-value="Jun 2025">Jun 2025</span>
@@ -628,7 +628,7 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 </td>
 <td>
 <span class="cell-value" data-row="19" data-field="status" data-value="sectoral guidance">sectoral guidance</span>
-<span class="cell-value" data-row="19" data-field="clearance" data-value="cleared">cleared</span>
+<span class="cell-value" data-row="19" data-field="clearance" data-value="cleared"></span>
 </td>
 <td>
 <span class="cell-value" data-row="19" data-field="effective_date" data-value="—">—</span>
@@ -658,7 +658,7 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 </td>
 <td>
 <span class="cell-value" data-row="20" data-field="status" data-value="guidance">guidance</span>
-<span class="cell-value" data-row="20" data-field="clearance" data-value="cleared">cleared</span>
+<span class="cell-value" data-row="20" data-field="clearance" data-value="cleared"></span>
 </td>
 <td>
 <span class="cell-value" data-row="20" data-field="effective_date" data-value="—">—</span>
@@ -748,7 +748,7 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 </td>
 <td>
 <span class="cell-value" data-row="23" data-field="status" data-value="voluntary, non-binding (self-stated)">voluntary, non-binding (self-stated)</span>
-<span class="cell-value" data-row="23" data-field="clearance" data-value="cleared">cleared</span>
+<span class="cell-value" data-row="23" data-field="clearance" data-value="cleared"></span>
 </td>
 <td>
 <span class="cell-value" data-row="23" data-field="effective_date" data-value="—">—</span>
@@ -808,7 +808,7 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 </td>
 <td>
 <span class="cell-value" data-row="25" data-field="status" data-value="guidance">guidance</span>
-<span class="cell-value" data-row="25" data-field="clearance" data-value="cleared">cleared</span>
+<span class="cell-value" data-row="25" data-field="clearance" data-value="cleared"></span>
 </td>
 <td>
 <span class="cell-value" data-row="25" data-field="effective_date" data-value="—">—</span>
@@ -818,7 +818,7 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 </td>
 </tr>
 </tbody></table></div>
-<p class="caption-copy">Instruments we located and verified, as of 16 October 2026. A comparison of specified obligations, not a ranking of countries&#x27; overall AI regulation. Grey rows: official texts located but not cleared for detailed description.</p>
+<p class="caption-copy">Instruments we located and verified. A comparison of specified obligations, not a ranking of countries&#x27; overall AI regulation. Grey rows: official texts located but not cleared for detailed description.</p>
 <p class="note"><span class="note-label">Note</span><br>United Kingdom: a January 2026 House of Commons Library briefing stated that no UK legislation requires AI-generated content to be labelled.</p>
 <p class="source">SOURCE · Official instruments and issuer publications named in the Source column.</p>
 </main></body></html>

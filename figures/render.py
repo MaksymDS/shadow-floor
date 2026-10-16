@@ -164,7 +164,7 @@ def f1(dark):
         f.line(right + 5, pts[-1][1], 922, ly - 4, color, 1)
         f.text(930, ly, f"{label} {data[-1][field]}%", 16, color, SANS, 600)
     f.text(52, 575, "CAVEAT", 11, f.accent, MONO, 600)
-    caveat = "Pew's detector flags pages written or substantially edited with AI, and misclassifies individual pages in both directions. Points are six-month averages; Pew reports a higher false-positive rate on pre-AI pages."
+    caveat = "Pew's detector flags pages written or substantially edited with AI, and misclassifies individual pages in both directions. Pew reports a higher false-positive rate on pre-AI pages."
     f.wrapped(52, 601, caveat, 139, 13, 21)
     caption = "Six-month averages for four domains. Rates were similar at the start of the period; in the period labelled January 2026, .com reached 9.35%, against about 1% on .edu and .gov."
     f.add('<g data-text-role="caption">')
@@ -214,7 +214,7 @@ def f2(dark):
     f.wrapped(52, 587, "Deezer reports that fully AI-generated tracks exceeded half of daily uploads at a June 2026 peak, and accounted for 1–3% of streams; it classified up to 85% of those streams in 2025 as fraudulent. Upload share and stream share are different measures.", 130, 15, 22)
     f.add('</g>')
     f.add('<g data-text-role="source">')
-    f.source(704, "; ".join(row["source"] for row in data))
+    f.source(704, "Deezer newsroom, April 2026 and 21 July 2026.")
     f.add('</g>')
     return f
 
@@ -322,8 +322,7 @@ def f10(dark):
                        mark_attrs(row_i, field, value, x=x0 + 69, scale=2.15))
                 f.text(x0 + 339, yy, f"{value}%", 18, f.ink, SANS, 600, "end")
             else:
-                f.text(x0 + 69, yy - 4, "just over half", 12, f.quiet, SANS)
-                f.text(x0 + 69, yy + 14, "(no exact figure)", 11, f.quiet, SANS)
+                f.text(x0 + 69, yy, "—", 16, f.quiet, SANS)
     f.wrapped(52, 538, "Use is near-universal; direct insertion of AI text into assessed work is a minority practice — 12% in 2026.", 133, 15, 22)
     f.add('<g data-text-role="source">')
     f.source(673, "HEPI, Student Generative AI Survey 2026 (survey of 1,054 full-time UK undergraduates, December 2025).")
@@ -372,7 +371,7 @@ TABLES = {
         "caption": "",
         "note": "",
         "notes": [
-            "Each provider's column was verified by a reviewer independent of that provider; see Method.",
+            "Each provider's column had an independent reviewer; see Method.",
             "Figures come from different implementations, corpora and operating points. No ranking is implied.",
         ],
         "source": "",
@@ -390,7 +389,7 @@ TABLES = {
             ("Effective date", 152, ("effective_date",)),
             ("Source", 120, ("source",)),
         ],
-        "caption": "Instruments we located and verified, as of 16 October 2026. A comparison of specified obligations, not a ranking of countries' overall AI regulation. Grey rows: official texts located but not cleared for detailed description.",
+        "caption": "Instruments we located and verified. A comparison of specified obligations, not a ranking of countries' overall AI regulation. Grey rows: official texts located but not cleared for detailed description.",
         "note": "",
         "notes": ["United Kingdom: a January 2026 House of Commons Library briefing stated that no UK legislation requires AI-generated content to be labelled."],
         "source": "Official instruments and issuer publications named in the Source column.",
@@ -404,7 +403,7 @@ TABLES = {
             ("Sample", 180, ("sample",)), ("Extrapolation", 202, ("extrapolation",)),
             ("Source", 130, ("source",)),
         ],
-        "caption": "Vendors measure different things — clicks, impressions, requests, schemes — over different periods and samples. The figures are not a range for one quantity.",
+        "caption": "Vendors measure different things (clicks, impressions, schemes, traffic shares) over different periods and samples. The figures are not a range for one quantity.",
         "note": "",
         "source": "Vendor publications named in the Source column; figures are vendor-reported.",
     },
@@ -435,10 +434,18 @@ def use_category(value: str) -> str:
             "sanction reviewed": "reviewed"}[value]
 
 
-def cell_lines(value: str, width: int, size: int, family: str) -> list[str]:
+def display_cell(figure_id: str, field: str, value: str) -> str:
+    if figure_id == "F7" and field == "clearance" and value == "cleared":
+        return ""
+    return value
+
+
+def cell_lines(value: str, width: int, size: int, family: str,
+               break_long_words: bool = False) -> list[str]:
     average = 0.62 if family == MONO else 0.56
     chars = max(8, int((width - 20) / (size * average)))
-    return textwrap.wrap(value, width=chars, break_long_words=False, break_on_hyphens=False) or [""]
+    return textwrap.wrap(value, width=chars, break_long_words=break_long_words,
+                         break_on_hyphens=False) or [""]
 
 
 def row_height(figure_id: str, row: dict[str, str], columns) -> int:
@@ -447,7 +454,9 @@ def row_height(figure_id: str, row: dict[str, str], columns) -> int:
         used = 19
         for n, field in enumerate(fields):
             size, family, _ = cell_style(figure_id, field, n == 0)
-            used += len(cell_lines(row[field], width, size, family)) * (19 if size >= 13 else 16) + 6
+            value = display_cell(figure_id, field, row[field])
+            used += len(cell_lines(value, width, size, family,
+                                   figure_id == "F7" and field == "source")) * (19 if size >= 13 else 16) + 6
         heights.append(used + 3)
     return max(58, *heights)
 
@@ -459,7 +468,11 @@ def draw_table_cell(f: Figure, figure_id: str, row_index: int, row: dict[str, st
         size, family, weight = cell_style(figure_id, field, n == 0)
         color = f.ink if n == 0 else f.quiet
         f.add(f'<g data-row="{row_index}" data-field="{field}" data-value="{esc(row[field])}">')
-        for line in cell_lines(row[field], width, size, family):
+        value = display_cell(figure_id, field, row[field])
+        for line in cell_lines(value, width, size, family,
+                               figure_id == "F7" and field == "source"):
+            if not line:
+                continue
             f.text(x + 10, baseline, line, size, color, family, weight)
             baseline += 19 if size >= 13 else 16
         f.add("</g>")
@@ -562,7 +575,7 @@ def html_table(figure_id: str) -> str:
         'th,td{padding:13px 12px;text-align:left;vertical-align:top;border-bottom:1px solid #2A2D2F;border-right:1px solid #2A2D2F}th:last-child,td:last-child{border-right:0}',
         'thead th{color:#9C907A;font:11px/1.4 Mono,monospace;text-transform:uppercase}tbody th{font-weight:600}tbody tr.unverified{background:#2A2D2F}',
         'tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,monospace;letter-spacing:.08em}',
-        '.cell-value{display:block}.cell-value+.cell-value{margin-top:5px;color:#9C907A;font-size:12px}.use-measure{border-left:4px solid #6E8499}.use-screen{border-left:4px solid #9C907A}.use-guidance{border-left:4px solid #7B8588}.use-discontinued{border-left:4px solid #2A2D2F}.use-reviewed{border-left:4px solid #EDE0C8}',
+        '.cell-value{display:block' + (';overflow-wrap:anywhere' if figure_id == 'F7' else '') + '}.cell-value+.cell-value{margin-top:5px;color:#9C907A;font-size:12px}.use-measure{border-left:4px solid #6E8499}.use-screen{border-left:4px solid #9C907A}.use-guidance{border-left:4px solid #7B8588}.use-discontinued{border-left:4px solid #2A2D2F}.use-reviewed{border-left:4px solid #EDE0C8}',
         '.caption-copy{font-size:18px}.note{color:#9C907A}.source{margin-top:28px;color:#9C907A} :focus-visible{outline:1px solid #E8B547;outline-offset:3px}',
         '.scroll-hint{display:none;color:#9C907A;font:12px/1.5 Mono,monospace}@media(max-width:700px){.scroll-hint{display:block}}',
         "</style></head><body><main>",
@@ -595,7 +608,8 @@ def html_table(figure_id: str) -> str:
                 use_class = f' class="use-{category}"'
             parts.append(f'<{tag}{scope}{use_class}>')
             for field in fields:
-                parts.append(f'<span class="cell-value" data-row="{row_index}" data-field="{field}" data-value="{esc(row[field])}">{esc(row[field])}</span>')
+                value = display_cell(figure_id, field, row[field])
+                parts.append(f'<span class="cell-value" data-row="{row_index}" data-field="{field}" data-value="{esc(row[field])}">{esc(value)}</span>')
             parts.append(f'</{tag}>')
         parts.append("</tr>")
     parts.append("</tbody></table></div>")

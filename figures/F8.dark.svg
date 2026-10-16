@@ -174,8 +174,8 @@
 </g>
 <line x1="52" y1="581" x2="1148" y2="581" stroke="#2A2D2F" stroke-width="0.8" />
 <text x="52" y="612" fill="#E8B547" font-family="JetBrains Mono,monospace" font-size="10" font-weight="600" text-anchor="start" >CAPTION</text>
-<text x="52" y="636" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >Vendors measure different things — clicks, impressions, requests, schemes — over different periods and samples. The figures are</text>
-<text x="52" y="658" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >not a range for one quantity.</text>
+<text x="52" y="636" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >Vendors measure different things (clicks, impressions, schemes, traffic shares) over different periods and samples. The figures</text>
+<text x="52" y="658" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >are not a range for one quantity.</text>
 <line x1="52" y1="710" x2="1148" y2="710" stroke="#2A2D2F" stroke-width="1" />
 <text x="52" y="738" fill="#E8B547" font-family="JetBrains Mono,monospace" font-size="10" font-weight="600" text-anchor="start" >SOURCES</text>
 <text x="52" y="763" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >Vendor publications named in the Source column; figures are vendor-reported.</text>
