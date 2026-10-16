@@ -253,5 +253,5 @@
 <text x="52" y="844" fill="#E8B547" font-family="JetBrains Mono,monospace" font-size="10" font-weight="600" text-anchor="start" >NOTE</text>
 <text x="52" y="868" fill="#9C907A" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >Aggregate estimation and individual adjudication carry different error requirements (ICML 2024, Liang et al.).</text>
 <line x1="52" y1="913" x2="1148" y2="913" stroke="#2A2D2F" stroke-width="1" />
-<text x="52" y="941" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >SOURCE  Supplied Pack 03 · F4_institutions_decisions.csv · ledger IDs at right.</text>
+<text x="52" y="941" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >SOURCE  F4_institutions_decisions.csv · source IDs at right · see REFERENCES.md.</text>
 </svg>

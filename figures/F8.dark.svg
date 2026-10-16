@@ -181,5 +181,5 @@
 <text x="52" y="694" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >Vendors measure different things — clicks, impressions, requests, schemes — over different periods and samples. The figures are</text>
 <text x="52" y="716" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >not a range for one quantity.</text>
 <line x1="52" y1="768" x2="1148" y2="768" stroke="#2A2D2F" stroke-width="1" />
-<text x="52" y="796" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >SOURCE  Supplied Pack 02 · F8_vendor_methods.csv · ledger IDs beside each vendor · vendor data.</text>
+<text x="52" y="796" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >SOURCE  F8_vendor_methods.csv · source IDs beside each vendor · vendor data · see REFERENCES.md.</text>
 </svg>

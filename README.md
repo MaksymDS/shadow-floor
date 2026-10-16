@@ -1,35 +1,40 @@
-![Noise Floor — Shadow 06](assets/noise-floor-social.png)
+![Noise Floor](assets/noise-floor-social.png)
 
 <h1 align="center">Noise Floor</h1>
+<p align="center">Data and figures for Shadow 06 · Foresight Future Institute</p>
 
-<p align="center"><strong>Shadow 06 · Figure set v0.4</strong><br>Foresight Future Institute</p>
-
-<p align="center"><a href="https://github.com/MaksymDS/shadow-floor-landing">Landing preview</a> · <a href="figures/CHECK.md">Figure checks</a> · <a href="shadow06-figures-spec-v0.4.md">Current specification</a></p>
+<p align="center"><a href="https://github.com/MaksymDS/shadow-floor-landing">Landing HTML</a> · <a href="REFERENCES.md">References</a> · <a href="figures/CHECK.md">Figure checks</a></p>
 
 ---
 
-This repository contains the data, source code, and export files for ten figures in *Noise Floor*. The accompanying [HTML landing](https://github.com/MaksymDS/shadow-floor-landing) is a working visual preview; the manuscript and report download are still being assembled. The planned public address is **noise.foresightflow.org**.
+This repository holds the source CSVs, rendering scripts and export files for the ten active figures in *Noise Floor*. Each figure is available as a light and dark SVG and a vector PDF. Four comparison figures also have standalone HTML tables. The [reference register](REFERENCES.md) connects the figure data to the available original publications and records what still needs a direct citation.
 
-## Figures
+## Data and figures
 
-| ID | Subject | Exports |
-|:--|:--|:--|
-| F1 | Signs of AI authorship by web domain | [SVG](figures/F1.svg) · [dark](figures/F1.dark.svg) · [PDF](figures/F1.pdf) |
-| F2 | Music uploads and streams | [SVG](figures/F2.svg) · [dark](figures/F2.dark.svg) · [PDF](figures/F2.pdf) |
-| F3 | arXiv monthly submissions | [SVG](figures/F3.svg) · [dark](figures/F3.dark.svg) · [PDF](figures/F3.pdf) |
-| F4 | Counting, screening, judging | [SVG](figures/F4.svg) · [dark](figures/F4.dark.svg) · [PDF](figures/F4.pdf) · [table](figures/F4.table.html) |
-| F6 | Providers, one table | [SVG](figures/F6.svg) · [dark](figures/F6.dark.svg) · [PDF](figures/F6.pdf) · [table](figures/F6.table.html) |
-| F7 | Who must mark what | [SVG](figures/F7.svg) · [dark](figures/F7.dark.svg) · [PDF](figures/F7.pdf) · [table](figures/F7.table.html) |
-| F8 | Different samples, periods and units | [SVG](figures/F8.svg) · [dark](figures/F8.dark.svg) · [PDF](figures/F8.pdf) · [table](figures/F8.table.html) |
-| F9 | Practice versus exam | [SVG](figures/F9.svg) · [dark](figures/F9.dark.svg) · [PDF](figures/F9.pdf) |
-| F10 | UK undergraduates and AI, 2024–2026 | [SVG](figures/F10.svg) · [dark](figures/F10.dark.svg) · [PDF](figures/F10.pdf) |
-| F11 | 88 to 1 | [SVG](figures/F11.svg) · [dark](figures/F11.dark.svg) · [PDF](figures/F11.pdf) |
+| Figure | Subject | Data | Exports |
+|:--|:--|:--|:--|
+| F1 | Signs of AI authorship by web domain | [CSV](shadow06-figdata/F1_pew_domain_share.csv) | [SVG](figures/F1.svg) · [dark SVG](figures/F1.dark.svg) · [PDF](figures/F1.pdf) |
+| F2 | Music uploads and streams | [CSV](shadow06-figdata/F2_deezer_uploads_vs_streams.csv) | [SVG](figures/F2.svg) · [dark SVG](figures/F2.dark.svg) · [PDF](figures/F2.pdf) |
+| F3 | arXiv monthly submissions | [CSV](shadow06-figdata/F3_arxiv_submissions.csv) | [SVG](figures/F3.svg) · [dark SVG](figures/F3.dark.svg) · [PDF](figures/F3.pdf) |
+| F4 | Counting, screening, judging | [CSV](shadow06-figdata/F4_institutions_decisions.csv) | [SVG](figures/F4.svg) · [dark SVG](figures/F4.dark.svg) · [PDF](figures/F4.pdf) · [HTML table](figures/F4.table.html) |
+| F6 | Providers, one table | [CSV](shadow06-figdata/F6_providers.csv) | [SVG](figures/F6.svg) · [dark SVG](figures/F6.dark.svg) · [PDF](figures/F6.pdf) · [HTML table](figures/F6.table.html) |
+| F7 | Who must mark what | [CSV](shadow06-figdata/F7_obligations.csv) | [SVG](figures/F7.svg) · [dark SVG](figures/F7.dark.svg) · [PDF](figures/F7.pdf) · [HTML table](figures/F7.table.html) |
+| F8 | Different samples, periods and units | [CSV](shadow06-figdata/F8_vendor_methods.csv) | [SVG](figures/F8.svg) · [dark SVG](figures/F8.dark.svg) · [PDF](figures/F8.pdf) · [HTML table](figures/F8.table.html) |
+| F9 | Practice versus exam | [CSV](shadow06-figdata/F9_learning_study.csv) | [SVG](figures/F9.svg) · [dark SVG](figures/F9.dark.svg) · [PDF](figures/F9.pdf) |
+| F10 | UK undergraduates and AI, 2024–2026 | [CSV](shadow06-figdata/F10_hepi.csv) | [SVG](figures/F10.svg) · [dark SVG](figures/F10.dark.svg) · [PDF](figures/F10.pdf) |
+| F11 | 88 to 1 | [CSV](shadow06-figdata/F11_moltbook.csv) | [SVG](figures/F11.svg) · [dark SVG](figures/F11.dark.svg) · [PDF](figures/F11.pdf) |
 
-F5 was withdrawn in specification v0.3. Its material was incorporated into F6; there is no F5 export in this release.
+F5 is intentionally absent: its material was incorporated into F6. Figure IDs retain their editorial numbering.
 
-## Reproduce the figures
+## How to read this repository
 
-Python 3 and the two packages in [`requirements.txt`](requirements.txt) are required. Generation and checks run offline from the repository root:
+The CSVs are fixed input snapshots. Source IDs in several CSVs refer to entries in the [reference register](REFERENCES.md); they are citation keys, not links by themselves. Vendor figures and detector outputs retain the scope, units and limitations stated in their sources. In particular, F8's vendor estimates are not directly comparable, and F7 includes records whose original text was located but not cleared for a detailed English description. See the notes in the figures and the [check report](figures/CHECK.md) before reusing a value.
+
+The check report compares every plotted value and table cell with its CSV and checks the PDF exports. It verifies the rendering pipeline, not the underlying claims independently.
+
+## Rebuild
+
+Use Python 3 and the packages in [`requirements.txt`](requirements.txt):
 
 ```sh
 python3 -m venv .venv
@@ -39,14 +44,4 @@ python3 figures/render.py
 python3 figures/check.py
 ```
 
-Each [`figures/F#.py`](figures) reads its matching CSV from [`shadow06-figdata/`](shadow06-figdata) and produces a light SVG, a dark SVG, and a vector PDF. F4, F6, F7, and F8 also produce standalone HTML tables. [`figures/CHECK.md`](figures/CHECK.md) records the values read back from the generated output, along with the source gaps and stricter interpretations used in the charts.
-
-The plotted values come from the supplied, frozen CSV snapshots. The scripts do not fetch or augment data, interpolate missing values, or make external requests. A successful build confirms that the exports match those CSVs; it is not independent verification of every underlying source claim.
-
-## Specification and provenance
-
-Read [v0.2](shadow06-figures-spec-v0.2.md), then the [v0.3](shadow06-figures-spec-v0.3.md) and [v0.4](shadow06-figures-spec-v0.4.md) changes. Pack 04 changes wording only; Pack 05 corrects the Google cell in F6's “Self-stated limits” row. F4 and F7 still need complete primary-source citation metadata in parts of their supplied CSVs; the present source lines identify the supplied records and ledger IDs where available. See the [check notes](figures/CHECK.md) before quoting those tables.
-
-The palette and typography follow the published [Shadow 04 landing](https://github.com/MaksymDS/shadow-crack-landing) design system (commit `2a3e144d76c3ffb66c44e1d6196df81a06087c9d`). The light and dark SVGs use that system's figure styling. Inter and JetBrains Mono are bundled for offline rendering, with provenance and licences in [`figures/fonts/`](figures/fonts/README.md).
-
-The [landing repository](https://github.com/MaksymDS/shadow-floor-landing) contains the HTML preview and copies of the web-ready figure SVGs and tables. This repository remains the source for data, scripts, PDF exports, and checks.
+Generation is offline and reads only the checked-in CSVs. [`figures/render.py`](figures/render.py) writes the exports; [`figures/check.py`](figures/check.py) reads values back and regenerates [`figures/CHECK.md`](figures/CHECK.md). Selected exact captions and labels are recorded in [`figures/TEXT.md`](figures/TEXT.md). The bundled figure fonts and their licences are documented in [`figures/fonts/README.md`](figures/fonts/README.md).

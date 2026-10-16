@@ -1295,10 +1295,10 @@
 </g>
 <line x1="52" y1="3029" x2="1548" y2="3029" stroke="#9C907A" stroke-width="0.8" />
 <text x="52" y="3060" fill="#8B2D2D" font-family="JetBrains Mono,monospace" font-size="10" font-weight="600" text-anchor="start" >CAPTION</text>
-<text x="52" y="3084" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >Instruments we located and verified, as of 16 October 2026 (evidence freeze 18 October 2026). A comparison of specified</text>
-<text x="52" y="3106" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >obligations, not a ranking of countries&#x27; overall AI regulation.</text>
+<text x="52" y="3084" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >Instruments located and checked as of 16 October 2026. A comparison of specified obligations, not a ranking of countries&#x27;</text>
+<text x="52" y="3106" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >overall AI regulation.</text>
 <text x="52" y="3135" fill="#8B2D2D" font-family="JetBrains Mono,monospace" font-size="10" font-weight="600" text-anchor="start" >NOTE</text>
 <text x="52" y="3159" fill="#2A2D2F" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >Official text located; not cleared for detailed description (language or access)</text>
 <line x1="52" y1="3204" x2="1548" y2="3204" stroke="#9C907A" stroke-width="1" />
-<text x="52" y="3232" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >SOURCE  Supplied Pack 03 · F7_obligations.csv · ledger IDs at right.</text>
+<text x="52" y="3232" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >SOURCE  F7_obligations.csv · source IDs at right · see REFERENCES.md.</text>
 </svg>

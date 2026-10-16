@@ -121,11 +121,11 @@
 <text x="52" y="575" fill="#E8B547" font-family="JetBrains Mono,monospace" font-size="11" font-weight="600" text-anchor="start" >CAVEAT</text>
 <text x="52" y="601" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >Pew&#x27;s detector flags pages written or substantially edited with AI, and misclassifies individual pages in both directions. Points are</text>
 <text x="52" y="622" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >six-month averages; Pew reports a higher false-positive rate on pre-AI pages.</text>
-<g data-pack04-role="caption">
+<g data-text-role="caption">
 <text x="52" y="682" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >Six-month averages for four domains. Rates were similar at the start of the period; in the period labelled January 2026, .com</text>
 <text x="52" y="704" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >reached 9.35%, against about 1% on .edu and .gov.</text>
 </g>
-<g data-pack04-role="source">
+<g data-text-role="source">
 <line x1="52" y1="733" x2="1148" y2="733" stroke="#2A2D2F" stroke-width="1" />
 <text x="52" y="761" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >SOURCE  Pew Research Center · &quot;How Much of the Internet Is Written With AI?&quot; · 20 Aug 2026 · A01–A06 · Plotted points are six-month averages (Pew).</text>
 </g>

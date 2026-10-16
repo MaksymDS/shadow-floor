@@ -37,7 +37,7 @@ SPECIFIED_TEXT = {
     "F11": ["About 1.5 million registered 'agents' and about 17,000 human owners, according to the Wiz investigation. Registrations do not measure activity or autonomy; the platform had no mechanism to verify whether an 'agent' was AI.",
             "Database state before the first fix, 31 Jan 2026; Wiz, published 2 Feb 2026. Registrations and owner records — not activity."],
 }
-PACK04_LABELS = {
+SPEC_TEXT_LABELS = {
     "F1": {"caption": "**Caption (replace):**", "source": "**Source line must state:**"},
     "F2": {"caption": "**Caption (replace):**"},
     "F3": {"caption": "**Caption (replace):**", "callout": "**Callout (replace):**"},
@@ -46,25 +46,25 @@ PACK04_LABELS = {
 }
 
 
-def pack04_spec_text():
+def specified_text():
     """Read the quoted target strings from the supplied specification itself."""
-    specification = (ROOT / "shadow06-figures-spec-v0.4.md").read_text(encoding="utf-8")
+    specification = (OUT / "TEXT.md").read_text(encoding="utf-8")
     expected = {}
-    for figure_id, labels in PACK04_LABELS.items():
+    for figure_id, labels in SPEC_TEXT_LABELS.items():
         section = re.search(rf"^## {figure_id} —[^\n]*\n(.*?)(?=^## |\Z)", specification,
                             re.MULTILINE | re.DOTALL)
-        assert section, f"Pack 04 section missing for {figure_id}"
+        assert section, f"Specification section missing for {figure_id}"
         expected[figure_id] = {}
         for role, label in labels.items():
             lines = [line for line in section.group(1).splitlines() if line.startswith(label)]
-            assert len(lines) == 1, f"Pack 04 field missing for {figure_id} {role}"
+            assert len(lines) == 1, f"Specification field missing for {figure_id} {role}"
             quoted = re.findall(r'"([^"]+)"', lines[0])
-            assert len(quoted) == 1, f"Pack 04 target ambiguous for {figure_id} {role}"
+            assert len(quoted) == 1, f"Specification target ambiguous for {figure_id} {role}"
             expected[figure_id][role] = quoted[0]
     return expected
 
 
-def pack04_output_text(figure_id, role, path):
+def spec_output_text(figure_id, role, path):
     root = ET.parse(path).getroot()
     if role == "title":
         title = root.find("{http://www.w3.org/2000/svg}title")
@@ -72,7 +72,7 @@ def pack04_output_text(figure_id, role, path):
                    and el.attrib.get("x") == "52" and el.attrib.get("y") == "78"]
         assert title is not None and len(visible) == 1 and title.text == visible[0]
         return title.text or ""
-    groups = [el for el in root.iter() if el.attrib.get("data-pack04-role") == role]
+    groups = [el for el in root.iter() if el.attrib.get("data-text-role") == role]
     assert len(groups) == 1, f"{path}: expected one {role} text group"
     rendered = " ".join(el.text or "" for el in groups[0]
                         if el.tag.rsplit("}", 1)[-1] == "text")
@@ -82,14 +82,14 @@ def pack04_output_text(figure_id, role, path):
     return rendered
 
 
-def check_pack04_text(figure_id, fields):
+def check_spec_text(figure_id, fields):
     for role, expected in fields.items():
         for suffix in (".svg", ".dark.svg"):
             path = OUT / f"{figure_id}{suffix}"
-            actual = pack04_output_text(figure_id, role, path)
+            actual = spec_output_text(figure_id, role, path)
             assert actual == expected, f"{path}: {role}: {actual!r} != {expected!r}"
         pdf_text = normal(PdfReader(OUT / f"{figure_id}.pdf").pages[0].extract_text())
-        assert expected in pdf_text, f"{figure_id}.pdf: missing Pack 04 {role} text"
+        assert expected in pdf_text, f"{figure_id}.pdf: missing specified {role} text"
         if figure_id == "F8" and role == "title":
             table = unescape((OUT / "F8.table.html").read_text(encoding="utf-8"))
             assert f"<h1>{expected}</h1>" in table and f"<caption>{expected}</caption>" in table
@@ -372,7 +372,7 @@ def pdf_ok(figure_id, data):
 def main():
     assert not any((OUT / f"F5{suffix}").exists() for suffix in
                    (".svg", ".dark.svg", ".pdf", ".py", ".table.html"))
-    pack04 = pack04_spec_text()
+    spec_text = specified_text()
     lines = [
         "# Shadow 06 figure check",
         "",
@@ -395,8 +395,8 @@ def main():
             table = inspect_table_html(OUT / f"{figure_id}.table.html", figure_id, data, expected)
             assert table == light
         pdf_ok(figure_id, data)
-        if figure_id in pack04:
-            check_pack04_text(figure_id, pack04[figure_id])
+        if figure_id in spec_text:
+            check_spec_text(figure_id, spec_text[figure_id])
         values = []
         for i, field in sorted(light):
             row_label = (data[i].get("actor") or data[i].get("field") or data[i].get("jurisdiction") or
@@ -408,17 +408,17 @@ def main():
         lines.append(f"| {figure_id} | `{filename}` | {'<br>'.join(values)} | {result} |")
     lines += [
         "",
-        "## Pack 04 text audit",
+        "## Figure text audit",
         "",
-        "Each changed field below was read back from the light and dark SVG and compared character for "
-        "character with the quoted text in `shadow06-figures-spec-v0.4.md`, after joining wrapped lines "
+        "Each specified field below was read back from the light and dark SVG and compared character for "
+        "character with the quoted text in `figures/TEXT.md`, after joining wrapped lines "
         "with spaces. Extractable PDF text was also checked after line reflow; F8's standalone "
         "HTML heading and table caption were checked too.",
         "",
         "| Figure | Field | Exact specification text | Output check |",
         "|:--|:--|:--|:--|",
     ]
-    for figure_id, fields in pack04.items():
+    for figure_id, fields in spec_text.items():
         for role, expected in fields.items():
             result = "Exact in both SVGs and PDF"
             if figure_id == "F8":
@@ -429,16 +429,15 @@ def main():
         "## Strict readings and source discrepancies",
         "",
         "- F2: the spec asks for `>50%` daily uploads in June 2026, but the frozen CSV records `50`. The bar and direct label use `50%`; the exact supplied caption retains its wording. The caption's `up to 85%` fraud claim is specified prose, not a plotted value in the CSV.",
-        "- F1/F2: Pack 04 replaces both captions and adds the exact six-month-average sentence to F1's source line. F1's detector caveat remains from v0.2.",
-        "- F5: withdrawn in Pack 03. Its SVGs, PDF, script and prior CSV are absent from this release; the relevant provider evaluation now appears only in F6.",
-        "- F4: the Newby row comes from the replacement CSV. Its source line uses supplied ledger IDs because the pack does not provide a full original-document citation.",
-        "- F6: rebuilt from `F6_providers.csv` with alphabetic provider columns, the grey rows column and both exact footnotes. All provider cells retain the CSV's wording and identical styling; the specified source line is used.",
-        "- F7: every CSV row is preserved in its supplied order and grouped by `group`; no jurisdiction was added. The first group places Brazil last despite the spec's parenthetical 'alphabetical', so CSV order takes precedence. Every `located, not cleared` row has the same neutral shade, em-dash cells from the CSV and the exact verification note. Full primary-source metadata for this and F4 remains pending.",
+        "- F1/F2: source text includes the six-month-average qualification for F1. The detector caveat remains visible.",
+        "- F5: withdrawn. Its material appears in F6; no F5 data or export is included.",
+        "- F4: the Newby row follows the current CSV. Source IDs in the table connect to the linked publications in `REFERENCES.md`.",
+        "- F6: provider columns follow alphabetical order. Each value and source-ID cell retains the CSV wording; the footnotes caution against ranking providers.",
+        "- F7: every CSV row is preserved in its supplied order and grouped by `group`; no jurisdiction was added. Rows marked `located, not cleared` retain neutral shading and em-dash cells. Some instruments still lack a direct source link in `REFERENCES.md`.",
         "- F9: the Tutor with safeguards exam cell is blank in the new CSV. No mark or bar is drawn; its exact `exam_label` appears at the zero line. The companion text avoids treating a non-significant difference as equality.",
-        "- F8: the CSV's reported figures are tabulated as vendor reports. The v0.2 caption is reproduced verbatim even though the general P-A wording rule calls for ‘X reports…’ captions; no range is inferred.",
+        "- F8: reported figures are presented as vendor reports from different periods, samples and units; no combined range is inferred.",
         "- F10: the 2024 assessed-work cell is blank. No bar is drawn and the specified qualitative note appears. The student quote and 49/16/35 split are omitted together because those percentages are absent from the frozen CSV.",
-        "- F11: `88 : 1` is the rounded ratio of the two CSV counts (1,500,000 / 17,000 ≈ 88.24), not an independent observation. The exact Pack 03 date/definition note appears below the numbers.",
-        "- F3/F8: unchanged by Pack 03, then revised in Pack 04 (F3 caption and callout; F8 title only). F10 remains unchanged by both packs.",
+        "- F11: `88 : 1` is the rounded ratio of the two CSV counts (1,500,000 / 17,000 ≈ 88.24), not an independent observation. The date and definitions appear below the numbers.",
         "",
     ]
     (OUT / "CHECK.md").write_text("\n".join(lines), encoding="utf-8")

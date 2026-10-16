@@ -167,10 +167,10 @@ def f1(dark):
     caveat = "Pew's detector flags pages written or substantially edited with AI, and misclassifies individual pages in both directions. Points are six-month averages; Pew reports a higher false-positive rate on pre-AI pages."
     f.wrapped(52, 601, caveat, 139, 13, 21)
     caption = "Six-month averages for four domains. Rates were similar at the start of the period; in the period labelled January 2026, .com reached 9.35%, against about 1% on .edu and .gov."
-    f.add('<g data-pack04-role="caption">')
+    f.add('<g data-text-role="caption">')
     f.wrapped(52, 682, caption, 125, 15, 22)
     f.add('</g>')
-    f.add('<g data-pack04-role="source">')
+    f.add('<g data-text-role="source">')
     f.source(761, 'Pew Research Center · "How Much of the Internet Is Written With AI?" · 20 Aug 2026 · A01–A06 · Plotted points are six-month averages (Pew).')
     f.add('</g>')
     return f
@@ -208,7 +208,7 @@ def f2(dark):
                  mark_attrs(i, "ai_tracks_per_day", row["ai_tracks_per_day"], x=dot_x[i], y=495))
         f.text(dot_x[i], 475, f'{int(row["ai_tracks_per_day"]):,}', 24, f.ink, SANS, 600, "middle")
         f.text(dot_x[i], 523, label, 12, f.quiet, MONO, anchor="middle")
-    f.add('<g data-pack04-role="caption">')
+    f.add('<g data-text-role="caption">')
     f.wrapped(52, 587, "Deezer reports that fully AI-generated tracks exceeded half of daily uploads at a June 2026 peak, and accounted for 1–3% of streams; it classified up to 85% of those streams in 2025 as fraudulent. Upload share and stream share are different measures.", 130, 15, 22)
     f.add('</g>')
     f.source(704, "Deezer newsroom · Deezer: AI-generated tracks now represent 44% of all new uploaded music (20 Apr 2026); Deezer: AI music has surpassed 50% of new music uploads for the first time (21 Jul 2026) · A26–A28 · vendor data.")
@@ -232,14 +232,14 @@ def f3(dark):
                mark_attrs(i, "submissions", row["submissions"], base=base, top=top, max=45000))
         f.text(cx, yy - 13, f"{value:,}", 22, f.ink, SANS, 600, "middle")
         f.text(cx, base + 29, "SEP " + row["month"][:4], 13, f.quiet, MONO, anchor="middle")
-    f.add('<g data-pack04-role="callout">')
+    f.add('<g data-text-role="callout">')
     f.text(978, 244, "Nearly 9,000", 17, f.accent, SANS, 600)
     f.text(978, 267, "support tickets", 13, f.ink)
     f.text(978, 288, "(Sep 2026, staff", 11, f.quiet)
     f.text(978, 306, "and moderators).", 11, f.quiet)
     f.add('</g>')
     f.wrapped(52, 551, "cs.AI submissions: more than 6× in 2024–2026; other categories roughly doubled.", 145, 13, 20, f.quiet)
-    f.add('<g data-pack04-role="caption">')
+    f.add('<g data-text-role="caption">')
     f.wrapped(52, 602, "Roughly twice as many submissions in September 2026 as in September 2024. From 1 October 2026 each submitter may send two new papers a month; rejected ones count.", 130, 15, 22)
     f.add('</g>')
     f.wrapped(52, 653, "arXiv attributes a disproportionate share of moderator time to a relatively small proportion of authors.", 145, 12, 18, f.quiet)
@@ -250,7 +250,7 @@ def f3(dark):
 def f9(dark):
     data = rows("F9_learning_study.csv")
     f = Figure("F9", "Practice versus exam", 810, dark)
-    f.add('<g data-pack04-role="axis_label">')
+    f.add('<g data-text-role="axis_label">')
     f.text(100, 145, "relative difference vs comparison group (%)", 11, f.quiet, MONO)
     f.add('</g>')
     base, top, low = 430, 178, -20
@@ -284,7 +284,7 @@ def f9(dark):
     f.text(355, 523, "PRACTICE", 16, f.ink, SANS, 600, "middle")
     f.text(827, 523, "EXAM WITHOUT ASSISTANT", 16, f.ink, SANS, 600, "middle")
     f.wrapped(52, 568, "Unrestricted access raised practice scores by 48% and was followed by exam scores 17% below the control group once access was removed. For a tutor designed not to hand out answers, the authors report the loss was largely mitigated.", 130, 15, 22)
-    f.add('<g data-pack04-role="companion">')
+    f.add('<g data-text-role="companion">')
     f.wrapped(52, 655, "A separate randomised study (BJET, 2025; 117 students): the AI-assisted group showed the greatest improvement in essay scores during revision; the study did not detect significant between-group differences in knowledge gain or transfer.", 145, 12, 18, f.quiet)
     f.add('</g>')
     f.source(759, "Bastani et al., PNAS 122(26), 2025; Fan et al., BJET 56(2), 2025.")
@@ -353,7 +353,7 @@ TABLES = {
         ],
         "caption": "The same kind of classifier is used to estimate prevalence, to screen submissions, and — less and less — to judge individuals.",
         "note": "Aggregate estimation and individual adjudication carry different error requirements (ICML 2024, Liang et al.).",
-        "source": "Supplied Pack 03 · F4_institutions_decisions.csv · ledger IDs at right.",
+        "source": "F4_institutions_decisions.csv · source IDs at right · see REFERENCES.md.",
     },
     "F6": {
         "title": "Providers, one table", "csv": "F6_providers.csv",
@@ -365,10 +365,10 @@ TABLES = {
         "caption": "",
         "note": "",
         "notes": [
-            "Anthropic column verified and worded by GPT (OpenAI model); OpenAI rows verified by Claude (Anthropic model), under the issue's conflict-of-interest protocol.",
+            "Provider statements are attributed to the listed sources; the table is not an independent cross-provider test.",
             "Figures come from different implementations, corpora and operating points. No ranking is implied.",
         ],
-        "source": "Provider documentation and publications as listed in the ledger rows shown; verified 14–16 Oct 2026.",
+        "source": "Provider publications in REFERENCES.md · source IDs at right · checked 16 Oct 2026.",
     },
     "F7": {
         "title": "Who must mark what", "csv": "F7_obligations.csv", "width": 1600,
@@ -383,9 +383,9 @@ TABLES = {
             ("Effective date", 152, ("effective_date",)),
             ("Rows", 84, ("rows",)),
         ],
-        "caption": "Instruments we located and verified, as of 16 October 2026 (evidence freeze 18 October 2026). A comparison of specified obligations, not a ranking of countries' overall AI regulation.",
+        "caption": "Instruments located and checked as of 16 October 2026. A comparison of specified obligations, not a ranking of countries' overall AI regulation.",
         "note": "Official text located; not cleared for detailed description (language or access)",
-        "source": "Supplied Pack 03 · F7_obligations.csv · ledger IDs at right.",
+        "source": "F7_obligations.csv · source IDs at right · see REFERENCES.md.",
     },
     "F8": {
         "title": "Different samples, periods and units", "csv": "F8_vendor_methods.csv",
@@ -397,7 +397,7 @@ TABLES = {
         ],
         "caption": "Vendors measure different things — clicks, impressions, requests, schemes — over different periods and samples. The figures are not a range for one quantity.",
         "note": "",
-        "source": "Supplied Pack 02 · F8_vendor_methods.csv · ledger IDs beside each vendor · vendor data.",
+        "source": "F8_vendor_methods.csv · source IDs beside each vendor · vendor data · see REFERENCES.md.",
     },
 }
 
