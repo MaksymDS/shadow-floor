@@ -1,6 +1,6 @@
-# Shadow 06 — Noise Floor, first figure batch
+# Shadow 06 — Noise Floor, figure specification v0.2
 
-This repository contains the frozen Figure Specification v0.1 and seven source CSVs from the supplied Codex pack. The first batch covers F1, F2, F3, F5, F9, F10 and F11. F4, F6, F7 and F8 are deferred by that task.
+This repository contains the frozen Figure Specification v0.2 and eleven source CSVs from the supplied Codex packs. F1, F5 and F11 were revised for v0.2; F4, F6, F7 and F8 were added as table figures. F2, F3, F9 and F10 retain their original outputs because their CSVs and specifications did not change.
 
 ## Build offline
 
@@ -11,7 +11,7 @@ python3 figures/render.py
 python3 figures/check.py
 ```
 
-Each `figures/F#.py` regenerates one figure. Every figure has a light SVG, a dark SVG and a vector PDF. `figures/CHECK.md` lists every plotted value read back from the generated SVG and compared with the CSV, along with source discrepancies. The PDF generator draws from the same SVG primitives using the bundled Shadow fonts.
+Each `figures/F#.py` regenerates one figure. Every figure has a light SVG, a dark SVG and a vector PDF. F4, F6, F7 and F8 also have standalone accessible HTML tables (`figures/F#.table.html`). `figures/CHECK.md` lists every plotted or tabulated value read back from the generated SVG and compared with the CSV, along with source discrepancies; table values are also checked in HTML. The PDF generator draws from the same SVG primitives using the bundled Shadow fonts.
 
 The light rendition uses only the Shadow 04 colour tokens. The dark rendition matches the published Shadow 04 landing palette. For use on a landing, embed the SVG inline or load the bundled fonts on the page so the text uses Inter and JetBrains Mono.
 
@@ -29,4 +29,4 @@ No values from these pages were used to draw the charts. They were used only to 
 - [arXiv, “Fair Moderation, Equitable Access, and AI: arXiv’s Updated Rate Limit Policy” (1 Oct 2026)](https://blog.arxiv.org/2026/10/01/updated-rate-limit-policy/)
 - [Bastani et al., “Generative AI without guardrails can harm learning: Evidence from high school mathematics” (PNAS 2025)](https://pubmed.ncbi.nlm.nih.gov/40560616/)
 
-See `figures/CHECK.md` for the differences between source prose and the frozen CSVs.
+The new table figures' CSVs do not contain enough outlet, original document and date information for complete primary-source lines. Their source lines identify the supplied CSV and show ledger IDs where present. See `figures/CHECK.md` for this and the other differences between source prose and the frozen CSVs.

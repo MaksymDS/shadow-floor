@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="849" viewBox="0 0 1200 849" role="img" aria-labelledby="title desc">
+<title id="title">Three labs, one table</title>
+<desc id="desc">Shadow 06 figure F6. Exact plotted values are encoded on marks.</desc>
+<rect width="1200" height="849" fill="#161819"/>
+<text x="52" y="36" fill="#E8B547" font-family="JetBrains Mono,monospace" font-size="12" font-weight="600" text-anchor="start" >SHADOW 06  /  FIGURE 6</text>
+<text x="52" y="78" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="29" font-weight="600" text-anchor="start" >Three labs, one table</text>
+<line x1="52" y1="98" x2="1148" y2="98" stroke="#2A2D2F" stroke-width="1" />
+<text x="62" y="147" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >FIELD</text>
+<text x="302" y="147" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >ANTHROPIC</text>
+<text x="587" y="147" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >GOOGLE</text>
+<text x="872" y="147" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >OPENAI</text>
+<line x1="52" y1="180" x2="1148" y2="180" stroke="#2A2D2F" stroke-width="1" />
+<g data-row="0" data-field="field" data-value="Image/video/audio mark">
+<text x="62" y="204" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Image/video/audio mark</text>
+</g>
+<line x1="292" y1="184" x2="292" y2="269" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="0" data-field="anthropic" data-value="C2PA signatures on supported generated files; separate multimedia watermark not found">
+<text x="302" y="204" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >C2PA signatures on supported</text>
+<text x="302" y="223" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >generated files; separate</text>
+<text x="302" y="242" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >multimedia watermark not found</text>
+</g>
+<line x1="577" y1="184" x2="577" y2="269" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="0" data-field="google" data-value="SynthID">
+<text x="587" y="204" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >SynthID</text>
+</g>
+<line x1="862" y1="184" x2="862" y2="269" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="0" data-field="openai" data-value="SynthID + C2PA">
+<text x="872" y="204" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >SynthID + C2PA</text>
+</g>
+<line x1="52" y1="269" x2="1148" y2="269" stroke="#2A2D2F" stroke-width="0.8" />
+<g data-row="1" data-field="field" data-value="Text mark">
+<text x="62" y="289" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Text mark</text>
+</g>
+<line x1="292" y1="269" x2="292" y2="354" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="1" data-field="anthropic" data-value="A version of SynthID-Text on supported models; worldwide subject to support">
+<text x="302" y="289" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >A version of SynthID-Text on</text>
+<text x="302" y="308" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >supported models; worldwide</text>
+<text x="302" y="327" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >subject to support</text>
+</g>
+<line x1="577" y1="269" x2="577" y2="354" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="1" data-field="google" data-value="SynthID-Text">
+<text x="587" y="289" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >SynthID-Text</text>
+</g>
+<line x1="862" y1="269" x2="862" y2="354" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="1" data-field="openai" data-value="textGrain; ChatGPT/Codex default EU-only; API opt-in">
+<text x="872" y="289" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >textGrain; ChatGPT/Codex default</text>
+<text x="872" y="308" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >EU-only; API opt-in</text>
+</g>
+<line x1="52" y1="354" x2="1148" y2="354" stroke="#2A2D2F" stroke-width="0.8" />
+<g data-row="2" data-field="field" data-value="Hosted detection access">
+<text x="62" y="374" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Hosted detection access</text>
+</g>
+<line x1="292" y1="354" x2="292" y2="439" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="2" data-field="anthropic" data-value="Files: free content checker + C2PA tools; text detection API private preview">
+<text x="302" y="374" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Files: free content checker +</text>
+<text x="302" y="393" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >C2PA tools; text detection API</text>
+<text x="302" y="412" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >private preview</text>
+</g>
+<line x1="577" y1="354" x2="577" y2="439" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="2" data-field="google" data-value="Portal for media; stated access limits">
+<text x="587" y="374" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Portal for media; stated access</text>
+<text x="587" y="393" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >limits</text>
+</g>
+<line x1="862" y1="354" x2="862" y2="439" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="2" data-field="openai" data-value="Images/audio public + API; text detector researchers-only">
+<text x="872" y="374" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Images/audio public + API; text</text>
+<text x="872" y="393" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >detector researchers-only</text>
+</g>
+<line x1="52" y1="439" x2="1148" y2="439" stroke="#2A2D2F" stroke-width="0.8" />
+<g data-row="3" data-field="field" data-value="Detector source code">
+<text x="62" y="459" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Detector source code</text>
+</g>
+<line x1="292" y1="439" x2="292" y2="505" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="3" data-field="anthropic" data-value="Not found">
+<text x="302" y="459" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Not found</text>
+</g>
+<line x1="577" y1="439" x2="577" y2="505" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="3" data-field="google" data-value="SynthID-Text reference code public">
+<text x="587" y="459" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >SynthID-Text reference code</text>
+<text x="587" y="478" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >public</text>
+</g>
+<line x1="862" y1="439" x2="862" y2="505" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="3" data-field="openai" data-value="Announced intent to open-source">
+<text x="872" y="459" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Announced intent to open-source</text>
+</g>
+<line x1="52" y1="505" x2="1148" y2="505" stroke="#2A2D2F" stroke-width="0.8" />
+<g data-row="4" data-field="field" data-value="Published text robustness figures">
+<text x="62" y="525" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Published text robustness</text>
+<text x="62" y="544" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >figures</text>
+</g>
+<line x1="292" y1="505" x2="292" y2="571" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="4" data-field="anthropic" data-value="Not found">
+<text x="302" y="525" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Not found</text>
+</g>
+<line x1="577" y1="505" x2="577" y2="571" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="4" data-field="google" data-value="Yes (Nature 2024)">
+<text x="587" y="525" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Yes (Nature 2024)</text>
+</g>
+<line x1="862" y1="505" x2="862" y2="571" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="4" data-field="openai" data-value="Yes (provider&#x27;s own evaluation)">
+<text x="872" y="525" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Yes (provider&#x27;s own evaluation)</text>
+</g>
+<line x1="52" y1="571" x2="1148" y2="571" stroke="#2A2D2F" stroke-width="0.8" />
+<g data-row="5" data-field="field" data-value="Self-stated limits">
+<text x="62" y="591" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Self-stated limits</text>
+</g>
+<line x1="292" y1="571" x2="292" y2="656" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="5" data-field="anthropic" data-value="Short text weaker; mark is not complete authorship; missing credentials not human origin">
+<text x="302" y="591" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Short text weaker; mark is not</text>
+<text x="302" y="610" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >complete authorship; missing</text>
+<text x="302" y="629" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >credentials not human origin</text>
+</g>
+<line x1="577" y1="571" x2="577" y2="656" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="5" data-field="google" data-value="Not a general detector">
+<text x="587" y="591" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Not a general detector</text>
+</g>
+<line x1="862" y1="571" x2="862" y2="656" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="5" data-field="openai" data-value="No definitive conclusion when no signal">
+<text x="872" y="591" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >No definitive conclusion when no</text>
+<text x="872" y="610" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >signal</text>
+</g>
+<line x1="52" y1="656" x2="1148" y2="656" stroke="#2A2D2F" stroke-width="0.8" />
+<text x="52" y="687" fill="#E8B547" font-family="JetBrains Mono,monospace" font-size="10" font-weight="600" text-anchor="start" >NOTE</text>
+<text x="52" y="711" fill="#9C907A" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >Anthropic column verified by GPT (OpenAI model) under the issue&#x27;s conflict-of-interest protocol; figures come from different</text>
+<text x="52" y="731" fill="#9C907A" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >implementations, corpora and operating points — no ranking is implied.</text>
+<line x1="52" y1="776" x2="1148" y2="776" stroke="#2A2D2F" stroke-width="1" />
+<text x="52" y="804" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >SOURCE  Supplied Pack 02 · F6_lab_symmetry.csv · provider disclosures recorded in the issue data.</text>
+</svg>

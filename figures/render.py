@@ -164,7 +164,7 @@ def f1(dark):
         f.line(right + 5, pts[-1][1], 922, ly - 4, color, 1)
         f.text(930, ly, f"{label} {data[-1][field]}%", 16, color, SANS, 600)
     f.text(52, 575, "CAVEAT", 11, f.accent, MONO, 600)
-    caveat = "Pew's detector flags pages written or substantially edited with AI and misclassifies individual pages in both directions; Pew notes a higher false-positive rate on pre-AI pages."
+    caveat = "Pew's detector flags pages written or substantially edited with AI, and misclassifies individual pages in both directions. Points are six-month averages; Pew reports a higher false-positive rate on pre-AI pages."
     f.wrapped(52, 601, caveat, 139, 13, 21)
     caption = "Before ChatGPT, every domain sat near 1%. By January 2026, almost one in ten .com pages showed signs of AI authorship — ten times the rate on .edu and .gov."
     f.wrapped(52, 682, caption, 125, 15, 22)
@@ -263,9 +263,9 @@ def f5(dark):
                mark_attrs(i, "detection_rate_pct", row["detection_rate_pct"], base=base, top=top, max=100))
         f.text(cx, yy - 11, f'{number(value)}%', 19, f.ink, SANS, 600, "middle")
         f.text(cx, base + 25, label, 12, f.quiet, MONO, anchor="middle")
-    f.wrapped(52, 520, "At a 1% false-positive target, replacing a quarter of the words with synonyms reduced detection from 92% to 17%. Detection was substantially lower for mathematics.", 132, 15, 22)
-    f.wrapped(52, 595, "Provider's own evaluations. The supplied spec says English ELI5 answers; the CSV length rows say psychology content.", 138, 12, 19, f.quiet)
-    f.source(711, 'OpenAI · "Our approach to EU text provenance rules" · 5 Oct 2026 · B13–B15 · vendor data.')
+    f.wrapped(52, 520, "In OpenAI's own evaluation on English ELI5 answers at a 1% false-positive target, replacing a quarter of the words with synonyms reduced detection from 92% to 17%; detection was substantially lower for mathematics.", 132, 15, 22)
+    f.wrapped(52, 605, "Provider's own evaluation; CSV length rows are labelled psychology content.", 138, 12, 19, f.quiet)
+    f.source(711, "OpenAI, 'Our approach to EU text provenance rules', 5 Oct 2026 — provider's own evaluation.")
     return f
 
 
@@ -338,7 +338,7 @@ def f10(dark):
 
 def f11(dark):
     data = rows("F11_moltbook.csv")
-    f = Figure("F11", "88 to 1", 690, dark)
+    f = Figure("F11", "88 to 1", 800, dark)
     agents = int(data[0]["value"])
     owners = int(data[1]["value"])
     ratio = round(agents / owners)
@@ -351,13 +351,213 @@ def f11(dark):
     f.text(52, 372, "human owners", 19, f.quiet, SANS)
     f.text(52, 512, f"{ratio} : 1", 78, f.accent, SANS, 600,
            extra=f'data-derived="ratio" data-numerator="{agents}" data-denominator="{owners}"')
-    f.wrapped(52, 568, "Wiz: the platform had no mechanism to verify whether an 'agent' was AI or a human running a script.", 125, 14, 22)
-    f.source(647, 'Wiz · "Hacking Moltbook" · Feb 2026 · H03–H05.')
+    f.wrapped(52, 562, "Wiz: the platform had no mechanism to verify whether an 'agent' was AI or a human running a script.", 125, 14, 22)
+    f.wrapped(52, 630, "About 1.5 million registered 'agents' and about 17,000 human owners, according to the Wiz investigation. Registrations do not measure activity or autonomy; the platform had no mechanism to verify whether an 'agent' was AI.", 128, 15, 22)
+    f.source(756, 'Wiz · "Hacking Moltbook" · Feb 2026 · H03–H05.')
     return f
 
 
-BUILDERS = {"F1": f1, "F2": f2, "F3": f3, "F5": f5,
-            "F9": f9, "F10": f10, "F11": f11}
+TABLES = {
+    "F4": {
+        "title": "Counting, screening, judging", "csv": "F4_institutions_decisions.csv",
+        "columns": [
+            ("Actor", 174, ("actor",)), ("What is classified", 143, ("what_is_classified",)),
+            ("Instrument", 158, ("instrument",)), ("Use", 125, ("use",)),
+            ("Human step", 150, ("human_step",)), ("Outcome", 255, ("outcome",)),
+            ("IDs", 91, ("rows",)),
+        ],
+        "caption": "The same kind of classifier is used to estimate prevalence, to screen submissions, and — less and less — to judge individuals.",
+        "note": "Aggregate estimation and individual adjudication carry different error requirements (ICML 2024, Liang et al.).",
+        "source": "Supplied Pack 02 · F4_institutions_decisions.csv · ledger IDs at right.",
+    },
+    "F6": {
+        "title": "Three labs, one table", "csv": "F6_lab_symmetry.csv",
+        "columns": [
+            ("Field", 240, ("field",)), ("Anthropic", 285, ("anthropic",)),
+            ("Google", 285, ("google",)), ("OpenAI", 286, ("openai",)),
+        ],
+        "caption": "",
+        "note": "Anthropic column verified by GPT (OpenAI model) under the issue's conflict-of-interest protocol; figures come from different implementations, corpora and operating points — no ranking is implied.",
+        "source": "Supplied Pack 02 · F6_lab_symmetry.csv · provider disclosures recorded in the issue data.",
+    },
+    "F7": {
+        "title": "Who must mark what, at 16 October 2026", "csv": "F7_obligations.csv",
+        "columns": [
+            ("Jurisdiction", 190, ("jurisdiction", "instrument", "verified", "rows")),
+            ("Image / video / audio", 160, ("image_video_audio",)),
+            ("Text", 195, ("text",)), ("Deepfake label", 160, ("deepfake_label",)),
+            ("Platform duty", 160, ("platform_duty",)), ("Status", 231, ("status_16oct2026",)),
+        ],
+        "caption": "A comparison of specified obligations, not a ranking of countries' overall AI regulation.",
+        "note": "not verified to PRIMARY in English by cutoff",
+        "source": "Supplied Pack 02 · F7_obligations.csv · ledger IDs printed beside each jurisdiction.",
+    },
+    "F8": {
+        "title": "Why ad-fraud figures do not add up", "csv": "F8_vendor_methods.csv",
+        "columns": [
+            ("Vendor", 185, ("vendor", "tier", "rows")),
+            ("Reported figure", 184, ("reported_figure",)),
+            ("Period", 130, ("period",)), ("Unit", 145, ("unit",)),
+            ("Sample", 205, ("sample",)), ("Extrapolation", 247, ("extrapolation",)),
+        ],
+        "caption": "Vendors measure different things — clicks, impressions, requests, schemes — over different periods and samples. The figures are not a range for one quantity.",
+        "note": "",
+        "source": "Supplied Pack 02 · F8_vendor_methods.csv · ledger IDs beside each vendor · vendor data.",
+    },
+}
+
+
+def cell_style(figure_id: str, field: str, first: bool):
+    if field in ("rows", "tier", "verified"):
+        return 10, MONO, 400
+    if figure_id == "F7" and field == "instrument":
+        return 11, SANS, 400
+    return (14 if first else 13), SANS, (600 if first else 400)
+
+
+def cell_lines(value: str, width: int, size: int, family: str) -> list[str]:
+    average = 0.62 if family == MONO else 0.56
+    chars = max(8, int((width - 20) / (size * average)))
+    return textwrap.wrap(value, width=chars, break_long_words=False, break_on_hyphens=False) or [""]
+
+
+def row_height(figure_id: str, row: dict[str, str], columns) -> int:
+    heights = []
+    for _, width, fields in columns:
+        used = 19
+        for n, field in enumerate(fields):
+            size, family, _ = cell_style(figure_id, field, n == 0)
+            used += len(cell_lines(row[field], width, size, family)) * (19 if size >= 13 else 16) + 6
+        heights.append(used + 3)
+    return max(58, *heights)
+
+
+def draw_table_cell(f: Figure, figure_id: str, row_index: int, row: dict[str, str],
+                    x: int, y: int, width: int, fields):
+    baseline = y + 20
+    for n, field in enumerate(fields):
+        size, family, weight = cell_style(figure_id, field, n == 0)
+        color = f.ink if n == 0 else f.quiet
+        f.add(f'<g data-row="{row_index}" data-field="{field}" data-value="{esc(row[field])}">')
+        for line in cell_lines(row[field], width, size, family):
+            f.text(x + 10, baseline, line, size, color, family, weight)
+            baseline += 19 if size >= 13 else 16
+        f.add("</g>")
+        baseline += 6
+
+
+def table_figure(figure_id: str, dark: bool) -> Figure:
+    spec = TABLES[figure_id]
+    data = rows(spec["csv"])
+    columns = spec["columns"]
+    assert sum(width for _, width, _ in columns) == W - 104
+    heights = [row_height(figure_id, row, columns) for row in data]
+    table_bottom = 184 + sum(heights)
+    caption_y = table_bottom + 55 if spec["caption"] else 0
+    caption_count = len(textwrap.wrap(spec["caption"], width=128, break_long_words=False,
+                                      break_on_hyphens=False)) if spec["caption"] else 0
+    note_y = (caption_y + caption_count * 22 + 31) if spec["caption"] else table_bottom + 55
+    note_count = len(textwrap.wrap(spec["note"], width=140, break_long_words=False,
+                                   break_on_hyphens=False)) if spec["note"] else 0
+    source_y = (note_y + note_count * 20 + 53) if spec["note"] else (caption_y + caption_count * 22 + 58)
+    source_count = len(cell_lines("SOURCE  " + spec["source"], 1096, 11, MONO))
+    height = source_y + source_count * 17 + 28
+    f = Figure(figure_id, spec["title"], height, dark)
+    x = 52
+    for label, width, _ in columns:
+        for line_index, line in enumerate(cell_lines(label.upper(), width, 11, MONO)):
+            f.text(x + 10, 147 + line_index * 14, line, 11, f.quiet, MONO)
+        x += width
+    f.line(52, 180, 1148, 180, f.grid)
+    y = 184
+    for row_index, (row, rh) in enumerate(zip(data, heights)):
+        if figure_id == "F7" and row["verified"] == "no":
+            f.rect(52, y, 1096, rh, TOKENS["muted"],
+                   f'fill-opacity="0.18" data-verification-row="{row_index}"')
+        if figure_id == "F4":
+            category = "measure" if row["use"] == "measure (aggregate)" else "screen" if row["use"] == "screen" else "sanction"
+            tone = {"measure": TOKENS["slate"], "screen": TOKENS["muted"], "sanction": f.ink}[category]
+            use_x = 52 + sum(width for _, width, _ in columns[:3])
+            f.rect(use_x + 3, y + 9, 4, rh - 18, tone, f'data-use-category="{category}" data-use-row="{row_index}"')
+        x = 52
+        for _, width, fields in columns:
+            draw_table_cell(f, figure_id, row_index, row, x, y, width, fields)
+            x += width
+            if x < 1148:
+                f.line(x, y, x, y + rh, f.grid, .6)
+        y += rh
+        f.line(52, y, 1148, y, f.grid, .8)
+    if spec["caption"]:
+        f.text(52, caption_y - 24, "CAPTION", 10, f.accent, MONO, 600)
+        f.wrapped(52, caption_y, spec["caption"], 128, 15, 22)
+    if spec["note"]:
+        f.text(52, note_y - 24, "NOTE", 10, f.accent, MONO, 600)
+        f.wrapped(52, note_y, spec["note"], 140, 13, 20, f.quiet)
+    f.source(source_y, spec["source"])
+    return f
+
+
+def html_table(figure_id: str) -> str:
+    spec = TABLES[figure_id]
+    data = rows(spec["csv"])
+    parts = [
+        "<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\">",
+        "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+        f"<title>Shadow 06 {figure_id} — {esc(spec['title'])}</title>",
+        "<style>",
+        '@font-face{font-family:Inter;src:url("fonts/Inter-Regular.ttf")}@font-face{font-family:Inter;src:url("fonts/Inter-SemiBold.ttf");font-weight:600}',
+        '@font-face{font-family:Mono;src:url("fonts/JetBrainsMono-Regular.ttf")}',
+        'body{margin:0;background:#161819;color:#EDE0C8;font:16px/1.55 Inter,Arial,sans-serif}main{max-width:1240px;margin:auto;padding:clamp(24px,5vw,60px)}',
+        'h1{font-size:clamp(30px,4vw,52px);line-height:1.08;letter-spacing:-.03em}p{max-width:85ch}a{color:#E8B547}',
+        '.eyebrow,.source,.note-label{font:11px/1.5 Mono,monospace;letter-spacing:.12em;text-transform:uppercase;color:#E8B547}',
+        '.scroll{overflow-x:auto;border:1px solid #2A2D2F}table{border-collapse:collapse;width:100%;min-width:1100px;background:#101213}',
+        'caption{text-align:left;padding:16px 18px;background:#121415;color:#E8B547;font:11px/1.5 Mono,monospace;letter-spacing:.12em;text-transform:uppercase}',
+        'th,td{padding:13px 12px;text-align:left;vertical-align:top;border-bottom:1px solid #2A2D2F;border-right:1px solid #2A2D2F}th:last-child,td:last-child{border-right:0}',
+        'thead th{color:#9C907A;font:11px/1.4 Mono,monospace;text-transform:uppercase}tbody th{font-weight:600}tbody tr.unverified{background:#2A2D2F}',
+        '.cell-value{display:block}.cell-value+.cell-value{margin-top:5px;color:#9C907A;font-size:12px}.use-measure{border-left:4px solid #6E8499}.use-screen{border-left:4px solid #9C907A}.use-sanction{border-left:4px solid #EDE0C8}',
+        '.caption-copy{font-size:18px}.note{color:#9C907A}.source{margin-top:28px;color:#9C907A} :focus-visible{outline:1px solid #E8B547;outline-offset:3px}',
+        '.scroll-hint{display:none;color:#9C907A;font:12px/1.5 Mono,monospace}@media(max-width:700px){.scroll-hint{display:block}}',
+        "</style></head><body><main>",
+        f'<p class="eyebrow">Shadow 06 / Figure {esc(figure_id[1:])}</p><h1>{esc(spec["title"])}</h1>',
+        '<p class="scroll-hint">Scroll the table sideways to see every column.</p>',
+        '<div class="scroll" role="region" aria-label="Scrollable figure table" tabindex="0"><table>',
+        f'<caption>{esc(spec["title"])}</caption><thead><tr>',
+    ]
+    for label, _, _ in spec["columns"]:
+        parts.append(f'<th scope="col">{esc(label)}</th>')
+    parts.append("</tr></thead><tbody>")
+    for row_index, row in enumerate(data):
+        shade = ' class="unverified"' if figure_id == "F7" and row["verified"] == "no" else ""
+        parts.append(f'<tr{shade}>')
+        for col_index, (_, _, fields) in enumerate(spec["columns"]):
+            tag = "th" if col_index == 0 else "td"
+            scope = ' scope="row"' if col_index == 0 else ""
+            use_class = ""
+            if figure_id == "F4" and fields == ("use",):
+                category = "measure" if row["use"] == "measure (aggregate)" else "screen" if row["use"] == "screen" else "sanction"
+                use_class = f' class="use-{category}"'
+            parts.append(f'<{tag}{scope}{use_class}>')
+            for field in fields:
+                parts.append(f'<span class="cell-value" data-row="{row_index}" data-field="{field}" data-value="{esc(row[field])}">{esc(row[field])}</span>')
+            parts.append(f'</{tag}>')
+        parts.append("</tr>")
+    parts.append("</tbody></table></div>")
+    if spec["caption"]:
+        parts.append(f'<p class="caption-copy">{esc(spec["caption"])}</p>')
+    if spec["note"]:
+        parts.append(f'<p class="note"><span class="note-label">Note</span><br>{esc(spec["note"])}</p>')
+    parts.append(f'<p class="source">SOURCE · {esc(spec["source"])}</p></main></body></html>')
+    return "\n".join(parts) + "\n"
+
+
+def f4(dark): return table_figure("F4", dark)
+def f6(dark): return table_figure("F6", dark)
+def f7(dark): return table_figure("F7", dark)
+def f8(dark): return table_figure("F8", dark)
+
+
+BUILDERS = {"F1": f1, "F2": f2, "F3": f3, "F4": f4, "F5": f5,
+            "F6": f6, "F7": f7, "F8": f8, "F9": f9, "F10": f10, "F11": f11}
 
 
 def pdf_from_svg(svg: Path, pdf: Path):
@@ -375,13 +575,17 @@ def pdf_from_svg(svg: Path, pdf: Path):
     height = float(root.attrib["height"])
     page = canvas.Canvas(str(pdf), pagesize=(W, height), invariant=1, pageCompression=1)
     page.setTitle(root.find("{http://www.w3.org/2000/svg}title").text or "")
-    for el in root:
+    for el in root.iter():
         kind = el.tag.rsplit("}", 1)[-1]
         a = el.attrib
         if kind == "rect":
+            page.saveState()
             page.setFillColor(HexColor(a["fill"]))
+            if "fill-opacity" in a:
+                page.setFillAlpha(float(a["fill-opacity"]))
             page.rect(float(a.get("x", 0)), height - float(a.get("y", 0)) - float(a["height"]),
                       float(a["width"]), float(a["height"]), fill=1, stroke=0)
+            page.restoreState()
         elif kind == "line":
             page.setStrokeColor(HexColor(a["stroke"]))
             page.setLineWidth(float(a.get("stroke-width", 1)))
@@ -435,6 +639,8 @@ def build(figure_id: str):
     BUILDERS[figure_id](False).save(light)
     BUILDERS[figure_id](True).save(dark)
     pdf_from_svg(light, OUT / f"{figure_id}.pdf")
+    if figure_id in TABLES:
+        (OUT / f"{figure_id}.table.html").write_text(html_table(figure_id), encoding="utf-8")
 
 
 if __name__ == "__main__":

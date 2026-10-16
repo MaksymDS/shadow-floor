@@ -1,0 +1,185 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="841" viewBox="0 0 1200 841" role="img" aria-labelledby="title desc">
+<title id="title">Why ad-fraud figures do not add up</title>
+<desc id="desc">Shadow 06 figure F8. Exact plotted values are encoded on marks.</desc>
+<rect width="1200" height="841" fill="#EDE0C8"/>
+<text x="52" y="36" fill="#8B2D2D" font-family="JetBrains Mono,monospace" font-size="12" font-weight="600" text-anchor="start" >SHADOW 06  /  FIGURE 8</text>
+<text x="52" y="78" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="29" font-weight="600" text-anchor="start" >Why ad-fraud figures do not add up</text>
+<line x1="52" y1="98" x2="1148" y2="98" stroke="#9C907A" stroke-width="1" />
+<text x="62" y="147" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >VENDOR</text>
+<text x="247" y="147" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >REPORTED FIGURE</text>
+<text x="431" y="147" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >PERIOD</text>
+<text x="561" y="147" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >UNIT</text>
+<text x="706" y="147" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >SAMPLE</text>
+<text x="911" y="147" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >EXTRAPOLATION</text>
+<line x1="52" y1="180" x2="1148" y2="180" stroke="#9C907A" stroke-width="1" />
+<g data-row="0" data-field="vendor" data-value="Spider Labs">
+<text x="62" y="204" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Spider Labs</text>
+</g>
+<g data-row="0" data-field="tier" data-value="P-A">
+<text x="62" y="229" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >P-A</text>
+</g>
+<g data-row="0" data-field="rows" data-value="G13">
+<text x="62" y="251" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >G13</text>
+</g>
+<line x1="237" y1="184" x2="237" y2="275" stroke="#9C907A" stroke-width="0.6" />
+<g data-row="0" data-field="reported_figure" data-value="5.58% fraud rate; $25.3bn">
+<text x="247" y="204" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >5.58% fraud rate;</text>
+<text x="247" y="223" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >$25.3bn</text>
+</g>
+<line x1="421" y1="184" x2="421" y2="275" stroke="#9C907A" stroke-width="0.6" />
+<g data-row="0" data-field="period" data-value="H1 2026 (half-year)">
+<text x="431" y="204" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >H1 2026</text>
+<text x="431" y="223" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >(half-year)</text>
+</g>
+<line x1="551" y1="184" x2="551" y2="275" stroke="#9C907A" stroke-width="0.6" />
+<g data-row="0" data-field="unit" data-value="paid clicks">
+<text x="561" y="204" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >paid clicks</text>
+</g>
+<line x1="696" y1="184" x2="696" y2="275" stroke="#9C907A" stroke-width="0.6" />
+<g data-row="0" data-field="sample" data-value="4.006bn paid clicks (vendor customers)">
+<text x="706" y="204" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >4.006bn paid clicks</text>
+<text x="706" y="223" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >(vendor customers)</text>
+</g>
+<line x1="901" y1="184" x2="901" y2="275" stroke="#9C907A" stroke-width="0.6" />
+<g data-row="0" data-field="extrapolation" data-value="global half-year extrapolation">
+<text x="911" y="204" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >global half-year</text>
+<text x="911" y="223" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >extrapolation</text>
+</g>
+<line x1="52" y1="275" x2="1148" y2="275" stroke="#9C907A" stroke-width="0.8" />
+<g data-row="1" data-field="vendor" data-value="Fraudlogix">
+<text x="62" y="295" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Fraudlogix</text>
+</g>
+<g data-row="1" data-field="tier" data-value="P-A">
+<text x="62" y="320" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >P-A</text>
+</g>
+<g data-row="1" data-field="rows" data-value="G18">
+<text x="62" y="342" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >G18</text>
+</g>
+<line x1="237" y1="275" x2="237" y2="366" stroke="#9C907A" stroke-width="0.6" />
+<g data-row="1" data-field="reported_figure" data-value="20.64% flagged invalid">
+<text x="247" y="295" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >20.64% flagged</text>
+<text x="247" y="314" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >invalid</text>
+</g>
+<line x1="421" y1="275" x2="421" y2="366" stroke="#9C907A" stroke-width="0.6" />
+<g data-row="1" data-field="period" data-value="2025">
+<text x="431" y="295" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >2025</text>
+</g>
+<line x1="551" y1="275" x2="551" y2="366" stroke="#9C907A" stroke-width="0.6" />
+<g data-row="1" data-field="unit" data-value="impressions">
+<text x="561" y="295" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >impressions</text>
+</g>
+<line x1="696" y1="275" x2="696" y2="366" stroke="#9C907A" stroke-width="0.6" />
+<g data-row="1" data-field="sample" data-value="&gt;105bn impressions (vendor network)">
+<text x="706" y="295" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >&gt;105bn impressions</text>
+<text x="706" y="314" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >(vendor network)</text>
+</g>
+<line x1="901" y1="275" x2="901" y2="366" stroke="#9C907A" stroke-width="0.6" />
+<g data-row="1" data-field="extrapolation" data-value="none stated">
+<text x="911" y="295" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >none stated</text>
+</g>
+<line x1="52" y1="366" x2="1148" y2="366" stroke="#9C907A" stroke-width="0.8" />
+<g data-row="2" data-field="vendor" data-value="DoubleVerify">
+<text x="62" y="386" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >DoubleVerify</text>
+</g>
+<g data-row="2" data-field="tier" data-value="P-A">
+<text x="62" y="411" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >P-A</text>
+</g>
+<g data-row="2" data-field="rows" data-value="G17">
+<text x="62" y="433" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >G17</text>
+</g>
+<line x1="237" y1="366" x2="237" y2="457" stroke="#9C907A" stroke-width="0.6" />
+<g data-row="2" data-field="reported_figure" data-value="+140% CTV fraud schemes and variants">
+<text x="247" y="386" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >+140% CTV fraud</text>
+<text x="247" y="405" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >schemes and variants</text>
+</g>
+<line x1="421" y1="366" x2="421" y2="457" stroke="#9C907A" stroke-width="0.6" />
+<g data-row="2" data-field="period" data-value="Q1 2025 to Q1 2026">
+<text x="431" y="386" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Q1 2025 to Q1</text>
+<text x="431" y="405" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >2026</text>
+</g>
+<line x1="551" y1="366" x2="551" y2="457" stroke="#9C907A" stroke-width="0.6" />
+<g data-row="2" data-field="unit" data-value="identified schemes">
+<text x="561" y="386" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >identified</text>
+<text x="561" y="405" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >schemes</text>
+</g>
+<line x1="696" y1="366" x2="696" y2="457" stroke="#9C907A" stroke-width="0.6" />
+<g data-row="2" data-field="sample" data-value="vendor detections">
+<text x="706" y="386" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >vendor detections</text>
+</g>
+<line x1="901" y1="366" x2="901" y2="457" stroke="#9C907A" stroke-width="0.6" />
+<g data-row="2" data-field="extrapolation" data-value="none">
+<text x="911" y="386" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >none</text>
+</g>
+<line x1="52" y1="457" x2="1148" y2="457" stroke="#9C907A" stroke-width="0.8" />
+<g data-row="3" data-field="vendor" data-value="Thales/Imperva">
+<text x="62" y="477" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Thales/Imperva</text>
+</g>
+<g data-row="3" data-field="tier" data-value="P-A">
+<text x="62" y="502" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >P-A</text>
+</g>
+<g data-row="3" data-field="rows" data-value="G01;G02">
+<text x="62" y="524" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >G01;G02</text>
+</g>
+<line x1="237" y1="457" x2="237" y2="548" stroke="#9C907A" stroke-width="0.6" />
+<g data-row="3" data-field="reported_figure" data-value="53% automated traffic; 40% bad bots">
+<text x="247" y="477" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >53% automated</text>
+<text x="247" y="496" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >traffic; 40% bad</text>
+<text x="247" y="515" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >bots</text>
+</g>
+<line x1="421" y1="457" x2="421" y2="548" stroke="#9C907A" stroke-width="0.6" />
+<g data-row="3" data-field="period" data-value="2025">
+<text x="431" y="477" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >2025</text>
+</g>
+<line x1="551" y1="457" x2="551" y2="548" stroke="#9C907A" stroke-width="0.6" />
+<g data-row="3" data-field="unit" data-value="web requests">
+<text x="561" y="477" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >web requests</text>
+</g>
+<line x1="696" y1="457" x2="696" y2="548" stroke="#9C907A" stroke-width="0.6" />
+<g data-row="3" data-field="sample" data-value="vendor-protected traffic">
+<text x="706" y="477" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >vendor-protected</text>
+<text x="706" y="496" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >traffic</text>
+</g>
+<line x1="901" y1="457" x2="901" y2="548" stroke="#9C907A" stroke-width="0.6" />
+<g data-row="3" data-field="extrapolation" data-value="none">
+<text x="911" y="477" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >none</text>
+</g>
+<line x1="52" y1="548" x2="1148" y2="548" stroke="#9C907A" stroke-width="0.8" />
+<g data-row="4" data-field="vendor" data-value="HUMAN">
+<text x="62" y="568" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >HUMAN</text>
+</g>
+<g data-row="4" data-field="tier" data-value="P-A">
+<text x="62" y="593" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >P-A</text>
+</g>
+<g data-row="4" data-field="rows" data-value="G06">
+<text x="62" y="615" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >G06</text>
+</g>
+<line x1="237" y1="548" x2="237" y2="639" stroke="#9C907A" stroke-width="0.6" />
+<g data-row="4" data-field="reported_figure" data-value="automated traffic growth 8x human growth">
+<text x="247" y="568" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >automated traffic</text>
+<text x="247" y="587" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >growth 8x human</text>
+<text x="247" y="606" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >growth</text>
+</g>
+<line x1="421" y1="548" x2="421" y2="639" stroke="#9C907A" stroke-width="0.6" />
+<g data-row="4" data-field="period" data-value="2025">
+<text x="431" y="568" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >2025</text>
+</g>
+<line x1="551" y1="548" x2="551" y2="639" stroke="#9C907A" stroke-width="0.6" />
+<g data-row="4" data-field="unit" data-value="traffic growth rate">
+<text x="561" y="568" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >traffic growth</text>
+<text x="561" y="587" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >rate</text>
+</g>
+<line x1="696" y1="548" x2="696" y2="639" stroke="#9C907A" stroke-width="0.6" />
+<g data-row="4" data-field="sample" data-value="customer traffic">
+<text x="706" y="568" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >customer traffic</text>
+</g>
+<line x1="901" y1="548" x2="901" y2="639" stroke="#9C907A" stroke-width="0.6" />
+<g data-row="4" data-field="extrapolation" data-value="none">
+<text x="911" y="568" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >none</text>
+</g>
+<line x1="52" y1="639" x2="1148" y2="639" stroke="#9C907A" stroke-width="0.8" />
+<text x="52" y="670" fill="#8B2D2D" font-family="JetBrains Mono,monospace" font-size="10" font-weight="600" text-anchor="start" >CAPTION</text>
+<text x="52" y="694" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >Vendors measure different things — clicks, impressions, requests, schemes — over different periods and samples. The figures are</text>
+<text x="52" y="716" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >not a range for one quantity.</text>
+<line x1="52" y1="768" x2="1148" y2="768" stroke="#9C907A" stroke-width="1" />
+<text x="52" y="796" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >SOURCE  Supplied Pack 02 · F8_vendor_methods.csv · ledger IDs beside each vendor · vendor data.</text>
+</svg>

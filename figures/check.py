@@ -5,11 +5,13 @@ from __future__ import annotations
 
 import csv
 from decimal import Decimal
+from html.parser import HTMLParser
 from pathlib import Path
 import re
 import xml.etree.ElementTree as ET
 
 from pypdf import PdfReader
+from render import TABLES, TOKENS
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "figures"
@@ -18,10 +20,20 @@ FIGURES = {
     "F1": "F1_pew_domain_share.csv",
     "F2": "F2_deezer_uploads_vs_streams.csv",
     "F3": "F3_arxiv_submissions.csv",
+    "F4": "F4_institutions_decisions.csv",
     "F5": "F5_openai_text_watermark.csv",
+    "F6": "F6_lab_symmetry.csv",
+    "F7": "F7_obligations.csv",
+    "F8": "F8_vendor_methods.csv",
     "F9": "F9_bastani.csv",
     "F10": "F10_hepi.csv",
     "F11": "F11_moltbook.csv",
+}
+SPECIFIED_TEXT = {
+    "F1": ["Pew's detector flags pages written or substantially edited with AI, and misclassifies individual pages in both directions. Points are six-month averages; Pew reports a higher false-positive rate on pre-AI pages."],
+    "F5": ["In OpenAI's own evaluation on English ELI5 answers at a 1% false-positive target, replacing a quarter of the words with synonyms reduced detection from 92% to 17%; detection was substantially lower for mathematics.",
+           "OpenAI, 'Our approach to EU text provenance rules', 5 Oct 2026 — provider's own evaluation."],
+    "F11": ["About 1.5 million registered 'agents' and about 17,000 human owners, according to the Wiz investigation. Registrations do not measure activity or autonomy; the platform had no mechanism to verify whether an 'agent' was AI."],
 }
 
 
@@ -31,6 +43,9 @@ def csv_rows(filename):
 
 
 def expected_keys(figure_id, data):
+    if figure_id in TABLES:
+        return {(i, field) for i in range(len(data))
+                for _, _, fields in TABLES[figure_id]["columns"] for field in fields}
     if figure_id == "F1":
         return {(i, field) for i in range(len(data)) for field in ("com", "org", "edu", "gov")}
     if figure_id == "F2":
@@ -139,7 +154,112 @@ def inspect_svg(path, figure_id, data, expected):
         ratio = [el for el in root.iter() if el.attrib.get("data-derived") == "ratio"]
         agents, owners = (int(r["value"]) for r in data)
         assert len(ratio) == 1 and (ratio[0].text or "").strip() == f"{round(agents / owners)} : 1"
+        assert "6,159" not in " ".join(el.text or "" for el in root.iter())
+    if figure_id in SPECIFIED_TEXT:
+        whole = normal(" ".join(el.text or "" for el in root.iter()
+                                if el.tag.rsplit("}", 1)[-1] == "text"))
+        for phrase in SPECIFIED_TEXT[figure_id]:
+            assert normal(phrase) in whole, f"{path}: missing v0.2 wording {phrase!r}"
     return seen
+
+
+def normal(s):
+    return " ".join(s.split())
+
+
+def inspect_table_svg(path, figure_id, data, expected):
+    root = ET.parse(path).getroot()
+    seen = {}
+    for group in root.iter():
+        a = group.attrib
+        if group.tag.rsplit("}", 1)[-1] != "g" or "data-field" not in a:
+            continue
+        key = (int(a["data-row"]), a["data-field"])
+        assert key in expected and key not in seen, f"{path}: unexpected or repeated cell {key}"
+        source = data[key[0]][key[1]]
+        rendered = normal(" ".join(child.text or "" for child in group))
+        assert a["data-value"] == source, f"{path}: encoded mismatch {key}"
+        assert rendered == normal(source), f"{path}: visible mismatch {key}: {rendered!r} != {source!r}"
+        seen[key] = rendered
+    assert set(seen) == expected, f"{path}: missing cells {sorted(expected - set(seen))}"
+    spec = TABLES[figure_id]
+    whole = normal(" ".join(el.text or "" for el in root.iter()
+                            if el.tag.rsplit("}", 1)[-1] == "text"))
+    for phrase in (spec["title"], spec["caption"], spec["note"], spec["source"]):
+        if phrase:
+            assert normal(phrase) in whole, f"{path}: missing specified text {phrase!r}"
+    if figure_id == "F4":
+        bars = {int(el.attrib["data-use-row"]): el.attrib for el in root.iter()
+                if "data-use-row" in el.attrib}
+        assert len(bars) == len(data)
+        for i, row in enumerate(data):
+            category = "measure" if row["use"] == "measure (aggregate)" else "screen" if row["use"] == "screen" else "sanction"
+            assert bars[i]["data-use-category"] == category
+            assert bars[i]["fill"] == {"measure": TOKENS["slate"], "screen": TOKENS["muted"],
+                                       "sanction": TOKENS["cream"] if path.name.endswith(".dark.svg") else TOKENS["bg"]}[category]
+    if figure_id == "F7":
+        order = [int(el.attrib["data-row"]) for el in root.iter()
+                 if el.attrib.get("data-field") == "jurisdiction"]
+        assert order == list(range(len(data)))
+        shaded = {int(el.attrib["data-verification-row"]): el.attrib for el in root.iter()
+                  if "data-verification-row" in el.attrib}
+        expected_shaded = {i for i, row in enumerate(data) if row["verified"] == "no"}
+        assert set(shaded) == expected_shaded
+        assert all(a["fill"] == TOKENS["muted"] and a["fill-opacity"] == "0.18"
+                   for a in shaded.values())
+    return seen
+
+
+class TableHTMLReader(HTMLParser):
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.cells = {}
+        self.current = None
+        self.bits = []
+        self.tables = 0
+        self.col_headers = 0
+        self.row_headers = 0
+
+    def handle_starttag(self, tag, attrs):
+        a = dict(attrs)
+        if tag == "table":
+            self.tables += 1
+        if tag == "th" and a.get("scope") == "col":
+            self.col_headers += 1
+        if tag == "th" and a.get("scope") == "row":
+            self.row_headers += 1
+        if tag == "span" and "data-field" in a:
+            assert self.current is None
+            self.current = (int(a["data-row"]), a["data-field"], a["data-value"])
+            self.bits = []
+
+    def handle_data(self, data):
+        if self.current is not None:
+            self.bits.append(data)
+
+    def handle_endtag(self, tag):
+        if tag == "span" and self.current is not None:
+            row, field, encoded = self.current
+            key = (row, field)
+            assert key not in self.cells
+            self.cells[key] = (encoded, normal("".join(self.bits)))
+            self.current = None
+
+
+def inspect_table_html(path, figure_id, data, expected):
+    reader = TableHTMLReader()
+    reader.feed(path.read_text(encoding="utf-8"))
+    assert reader.tables == 1
+    assert reader.col_headers == len(TABLES[figure_id]["columns"])
+    assert reader.row_headers == len(data)
+    assert set(reader.cells) == expected
+    for key in expected:
+        source = data[key[0]][key[1]]
+        assert reader.cells[key] == (source, normal(source)), f"{path}: HTML cell mismatch {key}"
+    if figure_id == "F6":
+        assert all(row["anthropic_verified_by"] == "GPT" for row in data)
+        assert "Anthropic column verified by GPT" in path.read_text(encoding="utf-8")
+    return {key: value[1] for key, value in reader.cells.items()}
 
 
 def pdf_ok(figure_id, data):
@@ -150,6 +270,8 @@ def pdf_ok(figure_id, data):
     fonts = pdf.pages[0]["/Resources"]["/Font"]
     embedded_names = " ".join(str(fonts[k].get_object().get("/BaseFont")) for k in fonts)
     assert "Inter" in embedded_names and "JetBrainsMono" in embedded_names
+    if figure_id in TABLES:
+        assert TABLES[figure_id]["title"] in content
     if figure_id == "F11":
         assert f"{int(data[0]['value']):,}" in content and f"{int(data[1]['value']):,}" in content
 
@@ -158,39 +280,53 @@ def main():
     lines = [
         "# Shadow 06 figure check",
         "",
-        "Generated by `python figures/check.py` after reading plotted marks back from both SVG themes. "
-        "Each mark's displayed geometry and encoded value are checked against the frozen CSV; "
-        "the PDF is checked for one vector page, extractable text, and embedded Shadow fonts.",
+        "Generated by `python figures/check.py` after reading plotted marks and table cells back "
+        "from both SVG themes. Charts are checked against CSV values and geometry; table cell "
+        "text is checked against the CSV in SVG and accessible HTML. PDFs are checked for one "
+        "vector page, extractable text, and embedded Shadow fonts.",
         "",
-        "| Figure | CSV | Every plotted value read back from SVG | Matches CSV and geometry? |",
+        "| Figure | CSV | Every plotted or tabulated value read back | Result |",
         "|:--|:--|:--|:--|",
     ]
     for figure_id, filename in FIGURES.items():
         data = csv_rows(filename)
         expected = expected_keys(figure_id, data)
-        light = inspect_svg(OUT / f"{figure_id}.svg", figure_id, data, expected)
-        dark = inspect_svg(OUT / f"{figure_id}.dark.svg", figure_id, data, expected)
+        inspect = inspect_table_svg if figure_id in TABLES else inspect_svg
+        light = inspect(OUT / f"{figure_id}.svg", figure_id, data, expected)
+        dark = inspect(OUT / f"{figure_id}.dark.svg", figure_id, data, expected)
         assert light == dark
+        if figure_id in TABLES:
+            table = inspect_table_html(OUT / f"{figure_id}.table.html", figure_id, data, expected)
+            assert table == light
         pdf_ok(figure_id, data)
         values = []
         for i, field in sorted(light):
-            row_label = data[i].get("crawl_date") or data[i].get("period") or data[i].get("month") or data[i].get("year") or data[i].get("condition") or data[i].get("arm") or data[i].get("metric")
+            row_label = (data[i].get("actor") or data[i].get("field") or data[i].get("jurisdiction") or
+                         data[i].get("vendor") or data[i].get("crawl_date") or data[i].get("period") or
+                         data[i].get("month") or data[i].get("year") or data[i].get("condition") or
+                         data[i].get("arm") or data[i].get("metric"))
             values.append(f"{row_label} {field}={light[(i, field)]}")
-        lines.append(f"| {figure_id} | `{filename}` | {'<br>'.join(values)} | Yes (both SVGs); PDF page/fonts checked |")
+        result = "Yes (both SVGs and HTML); PDF page/fonts checked" if figure_id in TABLES else "Yes (both SVGs); PDF page/fonts checked"
+        lines.append(f"| {figure_id} | `{filename}` | {'<br>'.join(values)} | {result} |")
     lines += [
         "",
         "## Strict readings and source discrepancies",
         "",
         "- F2: the spec asks for `>50%` daily uploads in June 2026, but the frozen CSV records `50`. The bar and direct label use `50%`; the exact supplied caption retains its wording. The caption's `up to 85%` fraud claim is specified prose, not a plotted value in the CSV.",
-        "- F5: the spec describes English ELI5 answers, while the CSV calls the length-panel content psychology. The figure explicitly identifies both descriptions; it does not reconcile them by inventing data.",
+        "- F1: the v0.2 caveat replaces v0.1 wording and now states that plotted points are six-month averages.",
+        "- F5: the exact v0.2 caption describes English ELI5 answers, while the unchanged CSV calls the length-panel content psychology. The figure flags that discrepancy without inventing data. The exact v0.2 source line omits ledger IDs; B13–B15 remain recorded here.",
+        "- F4/F6/F7/F8: the v0.2 pack gives CSV rows and record IDs but no original outlet/document/date for a complete primary-source line. These figures identify the supplied CSV in the source line and display record IDs where available; final publication requires the source ledger metadata.",
+        "- F6: the CSV order is Google, OpenAI, Anthropic; both SVG themes and HTML reorder the columns alphabetically as specified. Every CSV row gives `anthropic_verified_by=GPT`; the exact footnote is included.",
+        "- F7: only CSV jurisdictions are present, in CSV order. Rows with `verified=no` are shaded and carry the specified verification note. This is a comparison of listed obligations, not a ranking.",
+        "- F8: the CSV's reported figures are tabulated as vendor reports. The v0.2 caption is reproduced verbatim even though the general P-A wording rule calls for ‘X reports…’ captions; no range is inferred.",
         "- F10: the 2024 assessed-work cell is blank. No bar is drawn and the specified qualitative note appears. The student quote and 49/16/35 split are omitted together because those percentages are absent from the frozen CSV.",
-        "- F11: `88 : 1` is the spec's rounded ratio of the two CSV counts (1,500,000 / 17,000 ≈ 88.24); it is not an independent observation.",
+        "- F11: `88 : 1` is the spec's rounded ratio of the two CSV counts (1,500,000 / 17,000 ≈ 88.24); it is not an independent observation. The figure now belongs to Chapter 2 and carries the exact v0.2 caption.",
         "- F1/F3/F9: the supplied spec omits exact source titles or dates in some cases. Those metadata were checked against the primary Pew, arXiv and PNAS/PubMed pages; no additional values were plotted.",
-        "- F4, F6, F7 and F8 were deferred by the supplied task and are not produced.",
+        "- F2/F3/F9/F10: the Pack 02 CSVs are byte-identical to the originals and these four outputs were not regenerated.",
         "",
     ]
     (OUT / "CHECK.md").write_text("\n".join(lines), encoding="utf-8")
-    print("Checked 7 figures: every SVG mark matches its CSV value and geometry; PDFs contain embedded Shadow fonts.")
+    print("Checked 11 figures: every SVG mark/table cell matches its CSV; HTML tables and PDFs checked.")
 
 
 if __name__ == "__main__":

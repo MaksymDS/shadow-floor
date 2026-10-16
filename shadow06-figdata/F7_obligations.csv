@@ -1,0 +1,13 @@
+jurisdiction,instrument,status_16oct2026,image_video_audio,text,deepfake_label,platform_duty,verified,rows
+EU,AI Act Art. 50 (+Reg. 2026/1744),applies from 2 Aug 2026; 50(2) legacy systems by 2 Dec 2026,yes,yes (provider marking; deployer disclosure for public-interest text),yes,—,yes,C01;C04;C05
+California (US),AI Transparency Act as amended by SB 1000,operative 2 Aug 2026; platform duties 1 Jan 2027,yes (latent disclosure),not in latent-disclosure provision,—,from 1 Jan 2027,yes,C20-C23
+India,IT Rules amendment 2026,in force 20 Feb 2026,yes (SGI),not SGI; general obligations apply,yes,yes,yes,C30;C31
+South Korea,AI Basic Act + MSIT guidance,commenced 22 Jan 2026; grace period announced,yes,yes (methods differ by output type),yes (human-recognisable),—,yes,C40;C41
+China,Labelling Measures,in force 1 Sep 2025,yes,yes,yes,yes,no (English quotation gate),C10-C12
+UK,no statutory labelling duty found,—,no,no,—,—,no,C60
+Japan,election-law amendment (agreed May 2026),bill status unverified,—,—,election content only,annual reporting,no,C62
+Brazil,PL 2338/2023,awaiting opinion in Chamber,—,—,—,—,no,C63
+Australia,voluntary guidance,voluntary,recommended,recommended,—,eSafety standards for some providers,yes,C64
+UAE,media content standards (Media Council),in force,—,—,prior approval for national symbols/public figures,—,yes,U12
+Saudi Arabia,SDAIA guidance,guidance,recommended (watermarks),—,context-dependent,—,no,C52a;C52b
+Qatar,MCIT AI ethical guidelines,voluntary and non-binding,—,—,—,—,yes,C53a

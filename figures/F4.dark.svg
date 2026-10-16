@@ -1,0 +1,251 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="929" viewBox="0 0 1200 929" role="img" aria-labelledby="title desc">
+<title id="title">Counting, screening, judging</title>
+<desc id="desc">Shadow 06 figure F4. Exact plotted values are encoded on marks.</desc>
+<rect width="1200" height="929" fill="#161819"/>
+<text x="52" y="36" fill="#E8B547" font-family="JetBrains Mono,monospace" font-size="12" font-weight="600" text-anchor="start" >SHADOW 06  /  FIGURE 4</text>
+<text x="52" y="78" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="29" font-weight="600" text-anchor="start" >Counting, screening, judging</text>
+<line x1="52" y1="98" x2="1148" y2="98" stroke="#2A2D2F" stroke-width="1" />
+<text x="62" y="147" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >ACTOR</text>
+<text x="236" y="147" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >WHAT IS CLASSIFIED</text>
+<text x="379" y="147" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >INSTRUMENT</text>
+<text x="537" y="147" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >USE</text>
+<text x="662" y="147" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >HUMAN STEP</text>
+<text x="812" y="147" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >OUTCOME</text>
+<text x="1067" y="147" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >IDS</text>
+<line x1="52" y1="180" x2="1148" y2="180" stroke="#2A2D2F" stroke-width="1" />
+<rect x="530" y="193" width="4" height="67" fill="#6E8499" data-use-category="measure" data-use-row="0"/>
+<g data-row="0" data-field="actor" data-value="Pew Research Center">
+<text x="62" y="204" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Pew Research Center</text>
+</g>
+<line x1="226" y1="184" x2="226" y2="269" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="0" data-field="what_is_classified" data-value="web pages (sample)">
+<text x="236" y="204" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >web pages</text>
+<text x="236" y="223" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >(sample)</text>
+</g>
+<line x1="369" y1="184" x2="369" y2="269" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="0" data-field="instrument" data-value="open-weight detector (Open Pangram)">
+<text x="379" y="204" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >open-weight</text>
+<text x="379" y="223" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >detector (Open</text>
+<text x="379" y="242" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Pangram)</text>
+</g>
+<line x1="527" y1="184" x2="527" y2="269" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="0" data-field="use" data-value="measure (aggregate)">
+<text x="537" y="204" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >measure</text>
+<text x="537" y="223" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >(aggregate)</text>
+</g>
+<line x1="652" y1="184" x2="652" y2="269" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="0" data-field="human_step" data-value="method published">
+<text x="662" y="204" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >method published</text>
+</g>
+<line x1="802" y1="184" x2="802" y2="269" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="0" data-field="outcome" data-value="population estimate only">
+<text x="812" y="204" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >population estimate only</text>
+</g>
+<line x1="1057" y1="184" x2="1057" y2="269" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="0" data-field="rows" data-value="A01-A05">
+<text x="1067" y="204" fill="#EDE0C8" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >A01-A05</text>
+</g>
+<line x1="52" y1="269" x2="1148" y2="269" stroke="#2A2D2F" stroke-width="0.8" />
+<rect x="530" y="278" width="4" height="67" fill="#9C907A" data-use-category="screen" data-use-row="1"/>
+<g data-row="1" data-field="actor" data-value="NeurIPS 2026 Position Paper Track">
+<text x="62" y="289" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >NeurIPS 2026</text>
+<text x="62" y="308" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Position Paper</text>
+<text x="62" y="327" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Track</text>
+</g>
+<line x1="226" y1="269" x2="226" y2="354" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="1" data-field="what_is_classified" data-value="submissions">
+<text x="236" y="289" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >submissions</text>
+</g>
+<line x1="369" y1="269" x2="369" y2="354" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="1" data-field="instrument" data-value="Pangram detector">
+<text x="379" y="289" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Pangram detector</text>
+</g>
+<line x1="527" y1="269" x2="527" y2="354" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="1" data-field="use" data-value="screen">
+<text x="537" y="289" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >screen</text>
+</g>
+<line x1="652" y1="269" x2="652" y2="354" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="1" data-field="human_step" data-value="reviewed by PPT team; evidence route for 123">
+<text x="662" y="289" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >reviewed by PPT</text>
+<text x="662" y="308" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >team; evidence</text>
+<text x="662" y="327" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >route for 123</text>
+</g>
+<line x1="802" y1="269" x2="802" y2="354" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="1" data-field="outcome" data-value="178 desk-rejected; 123 asked for evidence">
+<text x="812" y="289" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >178 desk-rejected; 123 asked</text>
+<text x="812" y="308" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >for evidence</text>
+</g>
+<line x1="1057" y1="269" x2="1057" y2="354" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="1" data-field="rows" data-value="F30-F33">
+<text x="1067" y="289" fill="#EDE0C8" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >F30-F33</text>
+</g>
+<line x1="52" y1="354" x2="1148" y2="354" stroke="#2A2D2F" stroke-width="0.8" />
+<rect x="530" y="363" width="4" height="67" fill="#9C907A" data-use-category="screen" data-use-row="2"/>
+<g data-row="2" data-field="actor" data-value="arXiv">
+<text x="62" y="374" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >arXiv</text>
+</g>
+<line x1="226" y1="354" x2="226" y2="439" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="2" data-field="what_is_classified" data-value="submissions">
+<text x="236" y="374" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >submissions</text>
+</g>
+<line x1="369" y1="354" x2="369" y2="439" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="2" data-field="instrument" data-value="moderators">
+<text x="379" y="374" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >moderators</text>
+</g>
+<line x1="527" y1="354" x2="527" y2="439" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="2" data-field="use" data-value="screen">
+<text x="537" y="374" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >screen</text>
+</g>
+<line x1="652" y1="354" x2="652" y2="439" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="2" data-field="human_step" data-value="volunteer moderators">
+<text x="662" y="374" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >volunteer</text>
+<text x="662" y="393" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >moderators</text>
+</g>
+<line x1="802" y1="354" x2="802" y2="439" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="2" data-field="outcome" data-value="rate limit; one-year ban for incontrovertible unchecked AI content">
+<text x="812" y="374" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >rate limit; one-year ban for</text>
+<text x="812" y="393" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >incontrovertible unchecked AI</text>
+<text x="812" y="412" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >content</text>
+</g>
+<line x1="1057" y1="354" x2="1057" y2="439" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="2" data-field="rows" data-value="F01;F07">
+<text x="1067" y="374" fill="#EDE0C8" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >F01;F07</text>
+</g>
+<line x1="52" y1="439" x2="1148" y2="439" stroke="#2A2D2F" stroke-width="0.8" />
+<rect x="530" y="448" width="4" height="48" fill="#EDE0C8" data-use-category="sanction" data-use-row="3"/>
+<g data-row="3" data-field="actor" data-value="University of Waterloo">
+<text x="62" y="459" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >University of</text>
+<text x="62" y="478" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Waterloo</text>
+</g>
+<line x1="226" y1="439" x2="226" y2="505" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="3" data-field="what_is_classified" data-value="student work">
+<text x="236" y="459" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >student work</text>
+</g>
+<line x1="369" y1="439" x2="369" y2="505" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="3" data-field="instrument" data-value="Turnitin AI detection">
+<text x="379" y="459" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Turnitin AI</text>
+<text x="379" y="478" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >detection</text>
+</g>
+<line x1="527" y1="439" x2="527" y2="505" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="3" data-field="use" data-value="discontinued">
+<text x="537" y="459" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >discontinued</text>
+</g>
+<line x1="652" y1="439" x2="652" y2="505" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="3" data-field="human_step" data-value="institution review">
+<text x="662" y="459" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >institution</text>
+<text x="662" y="478" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >review</text>
+</g>
+<line x1="802" y1="439" x2="802" y2="505" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="3" data-field="outcome" data-value="feature switched off Sep 2025">
+<text x="812" y="459" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >feature switched off Sep 2025</text>
+</g>
+<line x1="1057" y1="439" x2="1057" y2="505" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="3" data-field="rows" data-value="E14">
+<text x="1067" y="459" fill="#EDE0C8" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >E14</text>
+</g>
+<line x1="52" y1="505" x2="1148" y2="505" stroke="#2A2D2F" stroke-width="0.8" />
+<rect x="530" y="514" width="4" height="48" fill="#EDE0C8" data-use-category="sanction" data-use-row="4"/>
+<g data-row="4" data-field="actor" data-value="Curtin University">
+<text x="62" y="525" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Curtin University</text>
+</g>
+<line x1="226" y1="505" x2="226" y2="571" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="4" data-field="what_is_classified" data-value="student work">
+<text x="236" y="525" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >student work</text>
+</g>
+<line x1="369" y1="505" x2="369" y2="571" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="4" data-field="instrument" data-value="Turnitin AI detection">
+<text x="379" y="525" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Turnitin AI</text>
+<text x="379" y="544" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >detection</text>
+</g>
+<line x1="527" y1="505" x2="527" y2="571" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="4" data-field="use" data-value="discontinued">
+<text x="537" y="525" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >discontinued</text>
+</g>
+<line x1="652" y1="505" x2="652" y2="571" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="4" data-field="human_step" data-value="institution review">
+<text x="662" y="525" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >institution</text>
+<text x="662" y="544" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >review</text>
+</g>
+<line x1="802" y1="505" x2="802" y2="571" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="4" data-field="outcome" data-value="feature switched off Jan 2026">
+<text x="812" y="525" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >feature switched off Jan 2026</text>
+</g>
+<line x1="1057" y1="505" x2="1057" y2="571" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="4" data-field="rows" data-value="E15">
+<text x="1067" y="525" fill="#EDE0C8" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >E15</text>
+</g>
+<line x1="52" y1="571" x2="1148" y2="571" stroke="#2A2D2F" stroke-width="0.8" />
+<rect x="530" y="580" width="4" height="48" fill="#9C907A" data-use-category="screen" data-use-row="5"/>
+<g data-row="5" data-field="actor" data-value="Turnitin (vendor guidance)">
+<text x="62" y="591" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Turnitin (vendor</text>
+<text x="62" y="610" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >guidance)</text>
+</g>
+<line x1="226" y1="571" x2="226" y2="637" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="5" data-field="what_is_classified" data-value="student work">
+<text x="236" y="591" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >student work</text>
+</g>
+<line x1="369" y1="571" x2="369" y2="637" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="5" data-field="instrument" data-value="own AI writing detector">
+<text x="379" y="591" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >own AI writing</text>
+<text x="379" y="610" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >detector</text>
+</g>
+<line x1="527" y1="571" x2="527" y2="637" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="5" data-field="use" data-value="screen">
+<text x="537" y="591" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >screen</text>
+</g>
+<line x1="652" y1="571" x2="652" y2="637" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="5" data-field="human_step" data-value="human judgement required">
+<text x="662" y="591" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >human judgement</text>
+<text x="662" y="610" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >required</text>
+</g>
+<line x1="802" y1="571" x2="802" y2="637" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="5" data-field="outcome" data-value="not sole basis for adverse action">
+<text x="812" y="591" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >not sole basis for adverse</text>
+<text x="812" y="610" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >action</text>
+</g>
+<line x1="1057" y1="571" x2="1057" y2="637" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="5" data-field="rows" data-value="E13">
+<text x="1067" y="591" fill="#EDE0C8" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >E13</text>
+</g>
+<line x1="52" y1="637" x2="1148" y2="637" stroke="#2A2D2F" stroke-width="0.8" />
+<rect x="530" y="646" width="4" height="48" fill="#EDE0C8" data-use-category="sanction" data-use-row="6"/>
+<g data-row="6" data-field="actor" data-value="New York Supreme Court (Newby)">
+<text x="62" y="657" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >New York Supreme</text>
+<text x="62" y="676" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Court (Newby)</text>
+</g>
+<line x1="226" y1="637" x2="226" y2="703" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="6" data-field="what_is_classified" data-value="one student&#x27;s essay">
+<text x="236" y="657" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >one student&#x27;s</text>
+<text x="236" y="676" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >essay</text>
+</g>
+<line x1="369" y1="637" x2="369" y2="703" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="6" data-field="instrument" data-value="Turnitin vs two other detectors">
+<text x="379" y="657" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Turnitin vs two</text>
+<text x="379" y="676" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >other detectors</text>
+</g>
+<line x1="527" y1="637" x2="527" y2="703" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="6" data-field="use" data-value="sanction reviewed">
+<text x="537" y="657" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >sanction</text>
+<text x="537" y="676" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >reviewed</text>
+</g>
+<line x1="652" y1="637" x2="652" y2="703" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="6" data-field="human_step" data-value="court">
+<text x="662" y="657" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >court</text>
+</g>
+<line x1="802" y1="637" x2="802" y2="703" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="6" data-field="outcome" data-value="sanction annulled on case-specific grounds">
+<text x="812" y="657" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >sanction annulled on</text>
+<text x="812" y="676" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >case-specific grounds</text>
+</g>
+<line x1="1057" y1="637" x2="1057" y2="703" stroke="#2A2D2F" stroke-width="0.6" />
+<g data-row="6" data-field="rows" data-value="E20">
+<text x="1067" y="657" fill="#EDE0C8" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >E20</text>
+</g>
+<line x1="52" y1="703" x2="1148" y2="703" stroke="#2A2D2F" stroke-width="0.8" />
+<text x="52" y="734" fill="#E8B547" font-family="JetBrains Mono,monospace" font-size="10" font-weight="600" text-anchor="start" >CAPTION</text>
+<text x="52" y="758" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >The same kind of classifier is used to estimate prevalence, to screen submissions, and — less and less — to judge individuals.</text>
+<text x="52" y="787" fill="#E8B547" font-family="JetBrains Mono,monospace" font-size="10" font-weight="600" text-anchor="start" >NOTE</text>
+<text x="52" y="811" fill="#9C907A" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >Aggregate estimation and individual adjudication carry different error requirements (ICML 2024, Liang et al.).</text>
+<line x1="52" y1="856" x2="1148" y2="856" stroke="#2A2D2F" stroke-width="1" />
+<text x="52" y="884" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >SOURCE  Supplied Pack 02 · F4_institutions_decisions.csv · ledger IDs at right.</text>
+</svg>

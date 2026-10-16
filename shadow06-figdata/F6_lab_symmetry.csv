@@ -1,0 +1,7 @@
+field,google,openai,anthropic,anthropic_verified_by
+Image/video/audio mark,SynthID,SynthID + C2PA,C2PA signatures on supported generated files; separate multimedia watermark not found,GPT
+Text mark,SynthID-Text,textGrain; ChatGPT/Codex default EU-only; API opt-in,A version of SynthID-Text on supported models; worldwide subject to support,GPT
+Hosted detection access,Portal for media; stated access limits,Images/audio public + API; text detector researchers-only,Files: free content checker + C2PA tools; text detection API private preview,GPT
+Detector source code,SynthID-Text reference code public,Announced intent to open-source,Not found,GPT
+Published text robustness figures,Yes (Nature 2024),Yes (provider's own evaluation),Not found,GPT
+Self-stated limits,Not a general detector,No definitive conclusion when no signal,Short text weaker; mark is not complete authorship; missing credentials not human origin,GPT

@@ -43,9 +43,9 @@
 <rect x="987" y="401.65" width="76" height="43.35" fill="#6E8499" data-row="4" data-field="detection_rate_pct" data-value="17" data-base="445" data-top="190" data-max="100"/>
 <text x="1025" y="390.65" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="19" font-weight="600" text-anchor="middle" >17%</text>
 <text x="1025" y="470" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="12" font-weight="400" text-anchor="middle" >25%</text>
-<text x="52" y="520" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >At a 1% false-positive target, replacing a quarter of the words with synonyms reduced detection from 92% to 17%. Detection was</text>
-<text x="52" y="542" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >substantially lower for mathematics.</text>
-<text x="52" y="595" fill="#9C907A" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="400" text-anchor="start" >Provider&#x27;s own evaluations. The supplied spec says English ELI5 answers; the CSV length rows say psychology content.</text>
+<text x="52" y="520" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >In OpenAI&#x27;s own evaluation on English ELI5 answers at a 1% false-positive target, replacing a quarter of the words with synonyms</text>
+<text x="52" y="542" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >reduced detection from 92% to 17%; detection was substantially lower for mathematics.</text>
+<text x="52" y="605" fill="#9C907A" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="400" text-anchor="start" >Provider&#x27;s own evaluation; CSV length rows are labelled psychology content.</text>
 <line x1="52" y1="683" x2="1148" y2="683" stroke="#2A2D2F" stroke-width="1" />
-<text x="52" y="711" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >SOURCE  OpenAI · &quot;Our approach to EU text provenance rules&quot; · 5 Oct 2026 · B13–B15 · vendor data.</text>
+<text x="52" y="711" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >SOURCE  OpenAI, &#x27;Our approach to EU text provenance rules&#x27;, 5 Oct 2026 — provider&#x27;s own evaluation.</text>
 </svg>

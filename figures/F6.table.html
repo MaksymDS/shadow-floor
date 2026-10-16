@@ -1,0 +1,113 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shadow 06 F6 — Three labs, one table</title>
+<style>
+@font-face{font-family:Inter;src:url("fonts/Inter-Regular.ttf")}@font-face{font-family:Inter;src:url("fonts/Inter-SemiBold.ttf");font-weight:600}
+@font-face{font-family:Mono;src:url("fonts/JetBrainsMono-Regular.ttf")}
+body{margin:0;background:#161819;color:#EDE0C8;font:16px/1.55 Inter,Arial,sans-serif}main{max-width:1240px;margin:auto;padding:clamp(24px,5vw,60px)}
+h1{font-size:clamp(30px,4vw,52px);line-height:1.08;letter-spacing:-.03em}p{max-width:85ch}a{color:#E8B547}
+.eyebrow,.source,.note-label{font:11px/1.5 Mono,monospace;letter-spacing:.12em;text-transform:uppercase;color:#E8B547}
+.scroll{overflow-x:auto;border:1px solid #2A2D2F}table{border-collapse:collapse;width:100%;min-width:1100px;background:#101213}
+caption{text-align:left;padding:16px 18px;background:#121415;color:#E8B547;font:11px/1.5 Mono,monospace;letter-spacing:.12em;text-transform:uppercase}
+th,td{padding:13px 12px;text-align:left;vertical-align:top;border-bottom:1px solid #2A2D2F;border-right:1px solid #2A2D2F}th:last-child,td:last-child{border-right:0}
+thead th{color:#9C907A;font:11px/1.4 Mono,monospace;text-transform:uppercase}tbody th{font-weight:600}tbody tr.unverified{background:#2A2D2F}
+.cell-value{display:block}.cell-value+.cell-value{margin-top:5px;color:#9C907A;font-size:12px}.use-measure{border-left:4px solid #6E8499}.use-screen{border-left:4px solid #9C907A}.use-sanction{border-left:4px solid #EDE0C8}
+.caption-copy{font-size:18px}.note{color:#9C907A}.source{margin-top:28px;color:#9C907A} :focus-visible{outline:1px solid #E8B547;outline-offset:3px}
+.scroll-hint{display:none;color:#9C907A;font:12px/1.5 Mono,monospace}@media(max-width:700px){.scroll-hint{display:block}}
+</style></head><body><main>
+<p class="eyebrow">Shadow 06 / Figure 6</p><h1>Three labs, one table</h1>
+<p class="scroll-hint">Scroll the table sideways to see every column.</p>
+<div class="scroll" role="region" aria-label="Scrollable figure table" tabindex="0"><table>
+<caption>Three labs, one table</caption><thead><tr>
+<th scope="col">Field</th>
+<th scope="col">Anthropic</th>
+<th scope="col">Google</th>
+<th scope="col">OpenAI</th>
+</tr></thead><tbody>
+<tr>
+<th scope="row">
+<span class="cell-value" data-row="0" data-field="field" data-value="Image/video/audio mark">Image/video/audio mark</span>
+</th>
+<td>
+<span class="cell-value" data-row="0" data-field="anthropic" data-value="C2PA signatures on supported generated files; separate multimedia watermark not found">C2PA signatures on supported generated files; separate multimedia watermark not found</span>
+</td>
+<td>
+<span class="cell-value" data-row="0" data-field="google" data-value="SynthID">SynthID</span>
+</td>
+<td>
+<span class="cell-value" data-row="0" data-field="openai" data-value="SynthID + C2PA">SynthID + C2PA</span>
+</td>
+</tr>
+<tr>
+<th scope="row">
+<span class="cell-value" data-row="1" data-field="field" data-value="Text mark">Text mark</span>
+</th>
+<td>
+<span class="cell-value" data-row="1" data-field="anthropic" data-value="A version of SynthID-Text on supported models; worldwide subject to support">A version of SynthID-Text on supported models; worldwide subject to support</span>
+</td>
+<td>
+<span class="cell-value" data-row="1" data-field="google" data-value="SynthID-Text">SynthID-Text</span>
+</td>
+<td>
+<span class="cell-value" data-row="1" data-field="openai" data-value="textGrain; ChatGPT/Codex default EU-only; API opt-in">textGrain; ChatGPT/Codex default EU-only; API opt-in</span>
+</td>
+</tr>
+<tr>
+<th scope="row">
+<span class="cell-value" data-row="2" data-field="field" data-value="Hosted detection access">Hosted detection access</span>
+</th>
+<td>
+<span class="cell-value" data-row="2" data-field="anthropic" data-value="Files: free content checker + C2PA tools; text detection API private preview">Files: free content checker + C2PA tools; text detection API private preview</span>
+</td>
+<td>
+<span class="cell-value" data-row="2" data-field="google" data-value="Portal for media; stated access limits">Portal for media; stated access limits</span>
+</td>
+<td>
+<span class="cell-value" data-row="2" data-field="openai" data-value="Images/audio public + API; text detector researchers-only">Images/audio public + API; text detector researchers-only</span>
+</td>
+</tr>
+<tr>
+<th scope="row">
+<span class="cell-value" data-row="3" data-field="field" data-value="Detector source code">Detector source code</span>
+</th>
+<td>
+<span class="cell-value" data-row="3" data-field="anthropic" data-value="Not found">Not found</span>
+</td>
+<td>
+<span class="cell-value" data-row="3" data-field="google" data-value="SynthID-Text reference code public">SynthID-Text reference code public</span>
+</td>
+<td>
+<span class="cell-value" data-row="3" data-field="openai" data-value="Announced intent to open-source">Announced intent to open-source</span>
+</td>
+</tr>
+<tr>
+<th scope="row">
+<span class="cell-value" data-row="4" data-field="field" data-value="Published text robustness figures">Published text robustness figures</span>
+</th>
+<td>
+<span class="cell-value" data-row="4" data-field="anthropic" data-value="Not found">Not found</span>
+</td>
+<td>
+<span class="cell-value" data-row="4" data-field="google" data-value="Yes (Nature 2024)">Yes (Nature 2024)</span>
+</td>
+<td>
+<span class="cell-value" data-row="4" data-field="openai" data-value="Yes (provider&#x27;s own evaluation)">Yes (provider&#x27;s own evaluation)</span>
+</td>
+</tr>
+<tr>
+<th scope="row">
+<span class="cell-value" data-row="5" data-field="field" data-value="Self-stated limits">Self-stated limits</span>
+</th>
+<td>
+<span class="cell-value" data-row="5" data-field="anthropic" data-value="Short text weaker; mark is not complete authorship; missing credentials not human origin">Short text weaker; mark is not complete authorship; missing credentials not human origin</span>
+</td>
+<td>
+<span class="cell-value" data-row="5" data-field="google" data-value="Not a general detector">Not a general detector</span>
+</td>
+<td>
+<span class="cell-value" data-row="5" data-field="openai" data-value="No definitive conclusion when no signal">No definitive conclusion when no signal</span>
+</td>
+</tr>
+</tbody></table></div>
+<p class="note"><span class="note-label">Note</span><br>Anthropic column verified by GPT (OpenAI model) under the issue&#x27;s conflict-of-interest protocol; figures come from different implementations, corpora and operating points — no ranking is implied.</p>
+<p class="source">SOURCE · Supplied Pack 02 · F6_lab_symmetry.csv · provider disclosures recorded in the issue data.</p></main></body></html>

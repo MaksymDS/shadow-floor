@@ -1,0 +1,6 @@
+vendor,reported_figure,period,unit,sample,extrapolation,tier,rows
+Spider Labs,5.58% fraud rate; $25.3bn,H1 2026 (half-year),paid clicks,4.006bn paid clicks (vendor customers),global half-year extrapolation,P-A,G13
+Fraudlogix,20.64% flagged invalid,2025,impressions,>105bn impressions (vendor network),none stated,P-A,G18
+DoubleVerify,+140% CTV fraud schemes and variants,Q1 2025 to Q1 2026,identified schemes,vendor detections,none,P-A,G17
+Thales/Imperva,53% automated traffic; 40% bad bots,2025,web requests,vendor-protected traffic,none,P-A,G01;G02
+HUMAN,automated traffic growth 8x human growth,2025,traffic growth rate,customer traffic,none,P-A,G06
