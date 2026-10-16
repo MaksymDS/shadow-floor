@@ -1,0 +1,9 @@
+actor,what_is_classified,instrument,use,human_step,outcome,source
+Pew Research Center,web pages (sample),open-weight detector,measure (aggregate),method and threshold published,population estimate; individual pages misclassified both ways,"Pew Research Center, 20 Aug 2026"
+arXiv,submissions,moderation,screen,staff and moderators,limit of two new submissions per month; one-year ban for incontrovertible unchecked AI content,"arXiv blog, 1 Oct 2026"
+NeurIPS 2026 Position Paper Track,submissions,commercial AI-text detector,screen,score bands combined with declarations and submission patterns,178 desk-rejected (no appeal under standard circumstances); 123 offered an evidence route (version history),"NeurIPS blog, 2 Jun 2026"
+Turnitin (vendor guidance),student work,own AI-writing detector,guidance on use,human judgement required,"result ""should not be used as the sole basis for adverse actions""",Turnitin guide
+University of Waterloo,student work,Turnitin AI detection,discontinued,—,"feature switched off, Sep 2025",University of Waterloo
+Curtin University,student work,Turnitin AI detection,discontinued,—,feature disabled from 1 Jan 2026,Curtin University
+University of the Free State,student work,Turnitin AI detection,discontinued,—,discontinued from 1 Jul 2026,University of the Free State
+"New York Supreme Court, Nassau County",one disciplinary determination,court review of the evidentiary record and process,sanction reviewed,court,determination annulled on case-specific evidentiary and procedural grounds; no general finding on detectors,"Matter of Newby v Adelphi Univ., 2026 NY Slip Op 26021"

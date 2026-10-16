@@ -1,0 +1,119 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shadow 06 F6 — Providers, one table</title>
+<style>
+@font-face{font-family:Inter;src:url("fonts/Inter-Regular.ttf")}@font-face{font-family:Inter;src:url("fonts/Inter-SemiBold.ttf");font-weight:600}
+@font-face{font-family:Mono;src:url("fonts/JetBrainsMono-Regular.ttf")}
+body{margin:0;background:#161819;color:#EDE0C8;font:16px/1.55 Inter,Arial,sans-serif}main{max-width:1240px;margin:auto;padding:clamp(24px,5vw,60px)}
+h1{font-size:clamp(30px,4vw,52px);line-height:1.08;letter-spacing:-.03em}p{max-width:85ch}a{color:#E8B547}
+.eyebrow,.source,.note-label{font:11px/1.5 Mono,monospace;letter-spacing:.12em;text-transform:uppercase;color:#E8B547}
+.scroll{overflow-x:auto;border:1px solid #2A2D2F}table{border-collapse:collapse;width:100%;min-width:1100px;background:#101213}
+caption{text-align:left;padding:16px 18px;background:#121415;color:#E8B547;font:11px/1.5 Mono,monospace;letter-spacing:.12em;text-transform:uppercase}
+th,td{padding:13px 12px;text-align:left;vertical-align:top;border-bottom:1px solid #2A2D2F;border-right:1px solid #2A2D2F}th:last-child,td:last-child{border-right:0}
+thead th{color:#9C907A;font:11px/1.4 Mono,monospace;text-transform:uppercase}tbody th{font-weight:600}tbody tr.unverified{background:#2A2D2F}
+tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,monospace;letter-spacing:.08em}
+.cell-value{display:block}.cell-value+.cell-value{margin-top:5px;color:#9C907A;font-size:12px}.use-measure{border-left:4px solid #6E8499}.use-screen{border-left:4px solid #9C907A}.use-guidance{border-left:4px solid #7B8588}.use-discontinued{border-left:4px solid #2A2D2F}.use-reviewed{border-left:4px solid #EDE0C8}
+.caption-copy{font-size:18px}.note{color:#9C907A}.source{margin-top:28px;color:#9C907A} :focus-visible{outline:1px solid #E8B547;outline-offset:3px}
+.scroll-hint{display:none;color:#9C907A;font:12px/1.5 Mono,monospace}@media(max-width:700px){.scroll-hint{display:block}}
+</style></head><body><main>
+<p class="eyebrow">Shadow 06 / Figure 6</p><h1>Providers, one table</h1>
+<p class="scroll-hint">Scroll the table sideways to see every column.</p>
+<div class="scroll" role="region" aria-label="Scrollable figure table" tabindex="0"><table>
+<caption>Providers, one table</caption><thead><tr>
+<th scope="col">Field</th>
+<th scope="col">Anthropic</th>
+<th scope="col">Google</th>
+<th scope="col">OpenAI</th>
+</tr></thead>
+<tbody>
+<tr>
+<th scope="row">
+<span class="cell-value" data-row="0" data-field="field" data-value="Image / video / audio mark">Image / video / audio mark</span>
+</th>
+<td>
+<span class="cell-value" data-row="0" data-field="anthropic" data-value="C2PA signatures on supported generated files; separate multimedia watermark not found">C2PA signatures on supported generated files; separate multimedia watermark not found</span>
+</td>
+<td>
+<span class="cell-value" data-row="0" data-field="google" data-value="SynthID watermark (portal also checks partners&#x27; content)">SynthID watermark (portal also checks partners&#x27; content)</span>
+</td>
+<td>
+<span class="cell-value" data-row="0" data-field="openai" data-value="SynthID watermark + C2PA metadata on images; supported audio since Jul 2026">SynthID watermark + C2PA metadata on images; supported audio since Jul 2026</span>
+</td>
+</tr>
+<tr>
+<th scope="row">
+<span class="cell-value" data-row="1" data-field="field" data-value="Text mark">Text mark</span>
+</th>
+<td>
+<span class="cell-value" data-row="1" data-field="anthropic" data-value="A version of SynthID-Text on supported models, worldwide subject to model/feature/platform support">A version of SynthID-Text on supported models, worldwide subject to model/feature/platform support</span>
+</td>
+<td>
+<span class="cell-value" data-row="1" data-field="google" data-value="SynthID-Text">SynthID-Text</span>
+</td>
+<td>
+<span class="cell-value" data-row="1" data-field="openai" data-value="Text watermark: ChatGPT/Codex text marked by default in the EU only; API opt-in, off by default">Text watermark: ChatGPT/Codex text marked by default in the EU only; API opt-in, off by default</span>
+</td>
+</tr>
+<tr>
+<th scope="row">
+<span class="cell-value" data-row="2" data-field="field" data-value="Who can check (hosted)">Who can check (hosted)</span>
+</th>
+<td>
+<span class="cell-value" data-row="2" data-field="anthropic" data-value="Files: free content checker + C2PA tools; text: detection API in private preview">Files: free content checker + C2PA tools; text: detection API in private preview</span>
+</td>
+<td>
+<span class="cell-value" data-row="2" data-field="google" data-value="Public portal for images, video, audio">Public portal for images, video, audio</span>
+</td>
+<td>
+<span class="cell-value" data-row="2" data-field="openai" data-value="Images and audio: public verifier + API; text detector: approved researchers only">Images and audio: public verifier + API; text detector: approved researchers only</span>
+</td>
+</tr>
+<tr>
+<th scope="row">
+<span class="cell-value" data-row="3" data-field="field" data-value="Detector code / verification tooling">Detector code / verification tooling</span>
+</th>
+<td>
+<span class="cell-value" data-row="3" data-field="anthropic" data-value="Text production-detector source: not found. File credentials: verification with compatible C2PA tooling is documented, including the open-source c2patool.">Text production-detector source: not found. File credentials: verification with compatible C2PA tooling is documented, including the open-source c2patool.</span>
+</td>
+<td>
+<span class="cell-value" data-row="3" data-field="google" data-value="SynthID-Text reference code public, incl. detection (&quot;not intended for production&quot;)">SynthID-Text reference code public, incl. detection (&quot;not intended for production&quot;)</span>
+</td>
+<td>
+<span class="cell-value" data-row="3" data-field="openai" data-value="Announced intent to open-source">Announced intent to open-source</span>
+</td>
+</tr>
+<tr>
+<th scope="row">
+<span class="cell-value" data-row="4" data-field="field" data-value="Published text robustness evaluation">Published text robustness evaluation</span>
+</th>
+<td>
+<span class="cell-value" data-row="4" data-field="anthropic" data-value="No Claude-specific numerical robustness evaluation comparable in reporting form to the other table entries was found">No Claude-specific numerical robustness evaluation comparable in reporting form to the other table entries was found</span>
+</td>
+<td>
+<span class="cell-value" data-row="4" data-field="google" data-value="Peer-reviewed (Nature 2024): evaluation incl. edits and paraphrasing; numbers in Supplementary C.6">Peer-reviewed (Nature 2024): evaluation incl. edits and paraphrasing; numbers in Supplementary C.6</span>
+</td>
+<td>
+<span class="cell-value" data-row="4" data-field="openai" data-value="Provider&#x27;s own (5 Oct 2026), 1% FPR target: ~80% detected at 200 tokens, ~95% at 400 tokens (psychology); lower for mathematics. Synonym substitution on 400-token English answers: 10% of words → 92% to 66%; 25% → 17%">Provider&#x27;s own (5 Oct 2026), 1% FPR target: ~80% detected at 200 tokens, ~95% at 400 tokens (psychology); lower for mathematics. Synonym substitution on 400-token English answers: 10% of words → 92% to 66%; 25% → 17%</span>
+</td>
+</tr>
+<tr>
+<th scope="row">
+<span class="cell-value" data-row="5" data-field="field" data-value="Self-stated limits">Self-stated limits</span>
+</th>
+<td>
+<span class="cell-value" data-row="5" data-field="anthropic" data-value="Short text weaker; mark is not complete authorship; missing credentials not human origin">Short text weaker; mark is not complete authorship; missing credentials not human origin</span>
+</td>
+<td>
+<span class="cell-value" data-row="5" data-field="google" data-value="Watermarks weakened by edits; vulnerable to stealing, spoofing and scrubbing; coordination among providers can broaden coverage">Watermarks weakened by edits; vulnerable to stealing, spoofing and scrubbing; coordination among providers can broaden coverage</span>
+</td>
+<td>
+<span class="cell-value" data-row="5" data-field="openai" data-value="Absence of a mark does not establish human authorship">Absence of a mark does not establish human authorship</span>
+</td>
+</tr>
+</tbody></table></div>
+<p class="note"><span class="note-label">Footnote 1</span><br>Each provider&#x27;s column was verified by a reviewer independent of that provider; see Method.</p>
+<p class="note"><span class="note-label">Footnote 2</span><br>Figures come from different implementations, corpora and operating points. No ranking is implied.</p>
+<p class="source">SOURCE · Anthropic: Claude Help Centre, &quot;How Claude marks AI-generated content&quot;; Claude Platform documentation (code execution tool); Anthropic, text-watermark announcement — retrieved Oct 2026</p>
+<p class="source">SOURCE · Google: Google blog, 7 Oct 2026 (SynthID Detector); Dathathri et al., Nature 634 (2024); github.com/google-deepmind/synthid-text</p>
+<p class="source">SOURCE · OpenAI: OpenAI, &quot;Advancing content provenance&quot; (19 May 2026, update 31 Jul 2026); OpenAI, &quot;Our approach to EU text provenance rules&quot; (5 Oct 2026)</p>
+</main></body></html>

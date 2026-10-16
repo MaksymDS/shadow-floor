@@ -1,0 +1,27 @@
+group,jurisdiction,instrument,issuer,covered_actor,medium,duty,status,effective_date,clearance,source
+1 Statute / regulation,China,Labelling Measures and later CAC programmes,Cyberspace Administration of China,—,—,—,official text located (Chinese),—,"located, not cleared",cac.gov.cn
+1 Statute / regulation,European Union,AI Act Art. 50 (as amended by Reg. 2026/1744),EU,providers; deployers,generative output; deepfakes; public-interest text,providers: machine-readable marking (exceptions incl. assistive standard editing); deployers: disclose deepfakes and public-interest text (editorial-responsibility exception),applies,2 Aug 2026; legacy systems 2 Dec 2026,cleared,EUR-Lex; AI Act Service Desk
+1 Statute / regulation,India,IT Rules amendment 2026,MeitY,intermediaries; SGI tools,synthetically generated information (text-only excluded),label and provenance for SGI,in force,20 Feb 2026,cleared,MeitY FAQ
+1 Statute / regulation,Kazakhstan,AI Law No. 230-VIII,Parliament,—,—,—,record located; full text not retrieved,—,"located, not cleared",adilet.zan.kz
+1 Statute / regulation,Russia,Federal Law 243-FZ,Federal Assembly,—,—,—,record located; operative text not verified,—,"located, not cleared",publication.pravo.gov.ru
+1 Statute / regulation,South Korea,AI Basic Act + MSIT guidance,National Assembly; MSIT,providers,outputs; realistic synthetic content,"marking and notice, differentiated by output type",commenced; grace period announced,22 Jan 2026,cleared,MSIT
+1 Statute / regulation,United States — California,AI Transparency Act as amended (SB 1000; AB 853; AB 2713),State of California,providers (no user threshold); covered platforms from 2027,"image, video, audio (latent disclosure)",latent disclosure; free disclosure verification tool,operative,2 Aug 2026; platforms 1 Jan 2027; devices 2028,cleared,California legislature (chaptered texts)
+1 Statute / regulation,Vietnam,Law on AI No. 134/2025/QH15,National Assembly,providers; deployers,specified generated or edited outputs,providers: machine-readable marking; deployers: disclosure (Art. 11 conditions),in force,1 Mar 2026,cleared,Government of Vietnam (English text)
+1 Statute / regulation,Brazil,PL 2338/2023 (general AI bill),Chamber of Deputies,—,—,—,pending in Chamber,—,"located, not cleared",camara.leg.br
+2 Election rule,Brazil,TSE Resolution 23.755/2026,Superior Electoral Court,—,—,—,official text located (Portuguese),—,"located, not cleared",tse.jus.br
+2 Election rule,Japan,Revised Public Offices Election Act (Law No. 58),Diet,—,—,—,official record located (Japanese),—,"located, not cleared",sangiin.go.jp
+2 Election rule,Singapore,Prohibition of realistic but false candidate depictions,Elections Department,publishers incl. redistribution,"audio, visual, audiovisual",prohibited during election period (a label does not exempt),in force,election period,cleared,Elections Department Singapore
+3 Sectoral / media standard,Australia,eSafety DIS Standard,eSafety Commissioner,high-impact generative-AI services,AI outputs,differentiate AI outputs,in force,—,cleared,eSafety Commissioner
+3 Sectoral / media standard,Colombia,Territorios al Aire 2026 programme conditions,MinTIC,grant recipients,—,—,official text located (Spanish),—,"located, not cleared",mintic.gov.co
+3 Sectoral / media standard,UAE,Media content standards,UAE Media Council,media,AI depictions of national symbols and public figures,prior approval; AI-generated misinformation a media offence,announced Sep 2025,—,cleared,WAM
+4 Guidance / policy,Australia,Being clear about AI-generated content,National AI Centre,businesses,—,"discusses labelling, watermarking, metadata",voluntary,Nov 2025,cleared,industry.gov.au
+4 Guidance / policy,Bahrain,General Policy for the Use of AI,Information & eGovernment Authority,—,—,general AI policy; marking clauses not verified,issued,Jul 2025,cleared (issuance),iga.gov.bh
+4 Guidance / policy,Egypt,National Guidelines for Generative AI,Government of Egypt (ai.gov.eg),—,—,—,located; full text not retrieved,Mar 2026,"located, not cleared",ai.gov.eg
+4 Guidance / policy,Indonesia,Public recommendation by a ministry official,Communications ministry,content creators,AI-generated content,label or disclaimer (recommended),recommendation,Jun 2025,cleared,ANTARA
+4 Guidance / policy,Kenya,Media guide on the use of AI,Media Council of Kenya,media enterprises,—,inform users of AI use,sectoral guidance,—,cleared,Media Council of Kenya
+4 Guidance / policy,Malaysia,National Guidelines on AI Governance & Ethics,MOSTI,—,—,disclosure among suggested measures,guidance,—,cleared,MOSTI
+4 Guidance / policy,Mexico,Recommendations for election coverage,INE,—,—,—,official text located (Spanish); non-binding,Aug 2026,"located, not cleared",ine.mx
+4 Guidance / policy,Oman,General Policy for the Safe and Ethical Use of AI Systems,MTCIT,—,—,general AI policy; marking clauses not verified,published,1 Apr 2025,cleared (publication),mtcit.gov.om
+4 Guidance / policy,Qatar,AI ethical guidelines,MCIT,—,—,—,"voluntary, non-binding (self-stated)",—,cleared,MCIT
+4 Guidance / policy,Saudi Arabia,Generative AI public guidance; deepfake guidance,SDAIA,—,—,—,located; full text not retrieved,—,"located, not cleared",sdaia.gov.sa
+4 Guidance / policy,Ukraine,Guidelines for responsible AI use in media,National Council (with ministries),media,—,clear separation of human-made and AI-generated content (recommended),guidance,—,cleared,National Council of Ukraine
