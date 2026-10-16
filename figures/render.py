@@ -51,23 +51,23 @@ def esc(s: object) -> str:
 
 
 class Figure:
-    def __init__(self, figure_id: str, title: str, height: int, dark: bool):
-        self.id, self.title, self.height, self.dark = figure_id, title, height, dark
+    def __init__(self, figure_id: str, title: str, height: int, dark: bool, width: int = W):
+        self.id, self.title, self.height, self.dark, self.width = figure_id, title, height, dark, width
         self.paper = TOKENS["bg"] if dark else TOKENS["cream"]
         self.ink = TOKENS["cream"] if dark else TOKENS["bg"]
         self.quiet = TOKENS["muted"] if dark else TOKENS["rule"]
         self.grid = TOKENS["rule"] if dark else TOKENS["muted"]
         self.accent = TOKENS["gold"] if dark else TOKENS["darkred"]
         self.parts = [
-            f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{height}" '
-            f'viewBox="0 0 {W} {height}" role="img" aria-labelledby="title desc">',
+            f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" '
+            f'viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc">',
             f'<title id="title">{esc(title)}</title>',
             f'<desc id="desc">Shadow 06 figure {esc(figure_id)}. Exact plotted values are encoded on marks.</desc>',
-            f'<rect width="{W}" height="{height}" fill="{self.paper}"/>',
+            f'<rect width="{width}" height="{height}" fill="{self.paper}"/>',
         ]
         self.text(52, 36, f"SHADOW 06  /  FIGURE {figure_id[1:]}", 12, self.accent, MONO, 600)
         self.text(52, 78, title, 29, self.ink, SANS, 600)
-        self.line(52, 98, W - 52, 98, self.grid, 1)
+        self.line(52, 98, width - 52, 98, self.grid, 1)
 
     def add(self, element: str):
         self.parts.append(element)
@@ -102,7 +102,7 @@ class Figure:
                  f'fill="{fill or self.accent}" {extra}/>')
 
     def source(self, y, content):
-        self.line(52, y - 28, W - 52, y - 28, self.grid)
+        self.line(52, y - 28, self.width - 52, y - 28, self.grid)
         self.wrapped(52, y, "SOURCE  " + content, 157, 11, 17, self.quiet, MONO)
 
     def save(self, path: Path):
@@ -134,7 +134,7 @@ def f1(dark):
             f.text(x(date), bottom + 27, date.strftime("%Y"), 12, f.quiet, MONO, anchor="middle")
     chat_x = x(dt.date(2022, 11, 30))
     f.line(chat_x, top, chat_x, bottom, f.accent, 1.2, "5 5")
-    f.text(chat_x + 9, 180, "ChatGPT released", 12, f.accent, MONO, 600)
+    f.text(chat_x + 9, 180, "Nov 2022", 12, f.accent, MONO, 600)
     series = [
         ("com", ".com", TOKENS["red"] if dark else TOKENS["darkred"], None, "circle"),
         ("org", ".org", TOKENS["gold"] if dark else TOKENS["ochre"], "7 5", "square"),
@@ -166,7 +166,7 @@ def f1(dark):
     f.text(52, 575, "CAVEAT", 11, f.accent, MONO, 600)
     caveat = "Pew's detector flags pages written or substantially edited with AI, and misclassifies individual pages in both directions. Points are six-month averages; Pew reports a higher false-positive rate on pre-AI pages."
     f.wrapped(52, 601, caveat, 139, 13, 21)
-    caption = "Before ChatGPT, every domain sat near 1%. By January 2026, almost one in ten .com pages showed signs of AI authorship — ten times the rate on .edu and .gov."
+    caption = "Before late 2022, every domain sat near 1%. By January 2026, almost one in ten .com pages showed signs of AI authorship — ten times the rate on .edu and .gov."
     f.wrapped(52, 682, caption, 125, 15, 22)
     f.source(761, 'Pew Research Center · "How Much of the Internet Is Written With AI?" · 20 Aug 2026 · A01–A06 · points are six-month averages.')
     return f
@@ -204,7 +204,7 @@ def f2(dark):
                  mark_attrs(i, "ai_tracks_per_day", row["ai_tracks_per_day"], x=dot_x[i], y=495))
         f.text(dot_x[i], 475, f'{int(row["ai_tracks_per_day"]):,}', 24, f.ink, SANS, 600, "middle")
         f.text(dot_x[i], 523, label, 12, f.quiet, MONO, anchor="middle")
-    f.wrapped(52, 587, "Fully AI-generated tracks passed half of Deezer's daily uploads in June 2026, yet accounted for 1–3% of listening; Deezer found up to 85% of their streams were fraudulent.", 130, 15, 22)
+    f.wrapped(52, 587, "Fully AI-generated tracks passed half of Deezer's daily uploads in June 2026, yet accounted for 1–3% of streams; Deezer reports that up to 85% of their streams were fraudulent.", 130, 15, 22)
     f.source(704, "Deezer newsroom · Deezer: AI-generated tracks now represent 44% of all new uploaded music (20 Apr 2026); Deezer: AI music has surpassed 50% of new music uploads for the first time (21 Jul 2026) · A26–A28 · vendor data.")
     return f
 
@@ -235,43 +235,9 @@ def f3(dark):
     return f
 
 
-def f5(dark):
-    data = rows("F5_openai_text_watermark.csv")
-    f = Figure("F5", "How a text watermark fades", 760, dark)
-    f.text(52, 142, "A  /  LENGTH", 13, f.accent, MONO, 600)
-    f.text(618, 142, "B  /  EDITING", 13, f.accent, MONO, 600)
-    f.line(595, 130, 595, 465, f.grid)
-    base, top = 445, 190
-    for tick in (0, 25, 50, 75, 100):
-        yy = base - tick / 100 * (base - top)
-        for x0, x1 in ((92, 553), (658, 1110)):
-            f.line(x0, yy, x1, yy, f.grid, 0.7, "3 5" if tick else None)
-        f.text(85, yy + 4, f"{tick}%", 11, f.quiet, MONO, anchor="end")
-        f.text(652, yy + 4, f"{tick}%", 11, f.quiet, MONO, anchor="end")
-    for i, row in enumerate(data):
-        value = float(row["detection_rate_pct"])
-        yy = base - value / 100 * (base - top)
-        if row["panel"] == "length":
-            cx = (245, 430)[i]
-            label = row["condition"]
-            color = TOKENS["slate"] if i == 0 else f.accent
-        else:
-            cx = (725, 875, 1025)[i - 2]
-            label = row["condition"].replace(" words replaced", "")
-            color = f.accent if i == 2 else TOKENS["slate"]
-        f.rect(cx - 38, yy, 76, base - yy, color,
-               mark_attrs(i, "detection_rate_pct", row["detection_rate_pct"], base=base, top=top, max=100))
-        f.text(cx, yy - 11, f'{number(value)}%', 19, f.ink, SANS, 600, "middle")
-        f.text(cx, base + 25, label, 12, f.quiet, MONO, anchor="middle")
-    f.wrapped(52, 520, "In OpenAI's own evaluation on English ELI5 answers at a 1% false-positive target, replacing a quarter of the words with synonyms reduced detection from 92% to 17%; detection was substantially lower for mathematics.", 132, 15, 22)
-    f.wrapped(52, 605, "Provider's own evaluation; CSV length rows are labelled psychology content.", 138, 12, 19, f.quiet)
-    f.source(711, "OpenAI, 'Our approach to EU text provenance rules', 5 Oct 2026 — provider's own evaluation.")
-    return f
-
-
 def f9(dark):
-    data = rows("F9_bastani.csv")
-    f = Figure("F9", "Practice versus exam", 720, dark)
+    data = rows("F9_learning_study.csv")
+    f = Figure("F9", "Practice versus exam", 810, dark)
     base, top, low = 430, 178, -20
     scale = (base - top) / (140 - low)
     y = lambda v: base - (v - low) * scale
@@ -281,28 +247,30 @@ def f9(dark):
         f.line(100, yy, 1090, yy, f.ink if tick == 0 else f.grid, 1.4 if tick == 0 else 0.8,
                None if tick == 0 else "3 5")
         f.text(90, yy + 4, f"{tick:+d}%" if tick else "0", 12, f.quiet, MONO, anchor="end")
-    f.text(1074, zero - 9, "CONTROL", 11, f.quiet, MONO, anchor="end")
-    bars = [(0, "practice_vs_control_pct", 285, TOKENS["slate"], "GPT BASE"),
-            (1, "practice_vs_control_pct", 390, f.accent, "GPT TUTOR"),
-            (0, "exam_vs_control_pct", 755, TOKENS["slate"], "GPT BASE"),
-            (1, "exam_vs_control_pct", 860, f.accent, "GPT TUTOR")]
-    for row_i, field, cx, color, label in bars:
+    f.text(1095, zero + 27, "CONTROL", 11, f.quiet, MONO, anchor="end")
+    bars = [(0, "practice_vs_control_pct", 260, TOKENS["slate"]),
+            (1, "practice_vs_control_pct", 450, f.accent),
+            (0, "exam_vs_control_pct", 730, TOKENS["slate"])]
+    for row_i, field, cx, color in bars:
         value = float(data[row_i][field])
         yy = y(value)
-        if value:
-            f.rect(cx - 38, min(yy, zero), 76, abs(zero - yy), color,
-                   mark_attrs(row_i, field, data[row_i][field], zero=zero, scale=scale))
-        else:
-            f.line(cx - 38, zero, cx + 38, zero, color, 6,
-                   extra=mark_attrs(row_i, field, data[row_i][field], zero=zero, scale=scale))
-        shown = "≈0" if value == 0 else f"{value:+.0f}%".replace("-", "−")
-        f.text(cx, (yy - 12 if value > 0 else yy + 27), shown, 20, f.ink, SANS, 600, "middle")
-        f.text(cx, 478, label, 11, f.quiet, MONO, anchor="middle")
-    f.text(340, 516, "PRACTICE", 16, f.ink, SANS, 600, "middle")
-    f.text(807, 516, "EXAM WITHOUT AI", 16, f.ink, SANS, 600, "middle")
-    f.wrapped(52, 557, "Unrestricted access improved practice scores by 48% and lowered exam scores by 17% once access was removed. A tutor designed not to hand out answers removed the loss.", 130, 15, 22)
-    f.wrapped(52, 631, "Fan et al. (BJET) — ChatGPT group improved essay scores most; knowledge gain and transfer did not differ (D08).", 143, 12, 18, f.quiet)
-    f.source(690, "Bastani et al. · Generative AI without guardrails can harm learning: Evidence from high school mathematics · PNAS 122(26), 2025 · D01–D02; companion D08.")
+        f.rect(cx - 38, min(yy, zero), 76, abs(zero - yy), color,
+               mark_attrs(row_i, field, data[row_i][field], zero=zero, scale=scale))
+        shown = f"{value:+.0f}%".replace("-", "−") if field.startswith("practice") else data[row_i]["exam_label"]
+        label_attrs = mark_attrs(row_i, "exam_label", shown) if field == "exam_vs_control_pct" else ""
+        f.text(cx, (yy - 12 if value > 0 else yy + 27), shown, 20, f.ink, SANS, 600, "middle",
+               extra=label_attrs)
+    f.text(925, zero - 10, data[1]["exam_label"], 15, f.ink, SANS, 600, "middle",
+           extra=mark_attrs(1, "exam_label", data[1]["exam_label"]))
+    for row_i, cx in ((0, 260), (1, 450), (0, 730), (1, 925)):
+        arm = data[row_i]["arm"]
+        f.text(cx, 480, arm, 12, f.quiet, SANS, anchor="middle",
+               extra=mark_attrs(row_i, "arm", arm) if cx < 600 else "")
+    f.text(355, 523, "PRACTICE", 16, f.ink, SANS, 600, "middle")
+    f.text(827, 523, "EXAM WITHOUT ASSISTANT", 16, f.ink, SANS, 600, "middle")
+    f.wrapped(52, 568, "Unrestricted access raised practice scores by 48% and was followed by exam scores 17% below the control group once access was removed. For a tutor designed not to hand out answers, the authors report the loss was largely mitigated.", 130, 15, 22)
+    f.wrapped(52, 655, "A separate randomised study (BJET, 2025; 117 students) found the strongest essays in the AI-assisted group and did not detect a statistically significant difference in knowledge gain or transfer.", 145, 12, 18, f.quiet)
+    f.source(759, "Bastani et al., PNAS 122(26), 2025; Fan et al., BJET 56(2), 2025.")
     return f
 
 
@@ -338,7 +306,7 @@ def f10(dark):
 
 def f11(dark):
     data = rows("F11_moltbook.csv")
-    f = Figure("F11", "88 to 1", 800, dark)
+    f = Figure("F11", "88 to 1", 890, dark)
     agents = int(data[0]["value"])
     owners = int(data[1]["value"])
     ratio = round(agents / owners)
@@ -349,11 +317,11 @@ def f11(dark):
     f.text(52, 335, f"{owners:,}", 52, f.ink, SANS, 600,
            extra=mark_attrs(1, "value", data[1]["value"]))
     f.text(52, 372, "human owners", 19, f.quiet, SANS)
-    f.text(52, 512, f"{ratio} : 1", 78, f.accent, SANS, 600,
+    f.text(52, 515, f"{ratio} : 1", 78, f.accent, SANS, 600,
            extra=f'data-derived="ratio" data-numerator="{agents}" data-denominator="{owners}"')
-    f.wrapped(52, 562, "Wiz: the platform had no mechanism to verify whether an 'agent' was AI or a human running a script.", 125, 14, 22)
-    f.wrapped(52, 630, "About 1.5 million registered 'agents' and about 17,000 human owners, according to the Wiz investigation. Registrations do not measure activity or autonomy; the platform had no mechanism to verify whether an 'agent' was AI.", 128, 15, 22)
-    f.source(756, 'Wiz · "Hacking Moltbook" · Feb 2026 · H03–H05.')
+    f.wrapped(52, 571, "Database state before the first fix, 31 Jan 2026; Wiz, published 2 Feb 2026. Registrations and owner records — not activity.", 128, 14, 22, f.quiet)
+    f.wrapped(52, 669, "About 1.5 million registered 'agents' and about 17,000 human owners, according to the Wiz investigation. Registrations do not measure activity or autonomy; the platform had no mechanism to verify whether an 'agent' was AI.", 128, 15, 22)
+    f.source(829, 'Wiz · "Hacking Moltbook" · 2 Feb 2026 · H03–H05.')
     return f
 
 
@@ -368,29 +336,39 @@ TABLES = {
         ],
         "caption": "The same kind of classifier is used to estimate prevalence, to screen submissions, and — less and less — to judge individuals.",
         "note": "Aggregate estimation and individual adjudication carry different error requirements (ICML 2024, Liang et al.).",
-        "source": "Supplied Pack 02 · F4_institutions_decisions.csv · ledger IDs at right.",
+        "source": "Supplied Pack 03 · F4_institutions_decisions.csv · ledger IDs at right.",
     },
     "F6": {
-        "title": "Three labs, one table", "csv": "F6_lab_symmetry.csv",
+        "title": "Providers, one table", "csv": "F6_providers.csv",
         "columns": [
-            ("Field", 240, ("field",)), ("Anthropic", 285, ("anthropic",)),
-            ("Google", 285, ("google",)), ("OpenAI", 286, ("openai",)),
+            ("Field", 210, ("field",)), ("Anthropic", 260, ("anthropic",)),
+            ("Google", 260, ("google",)), ("OpenAI", 260, ("openai",)),
+            ("Rows", 106, ("source_rows",)),
         ],
         "caption": "",
-        "note": "Anthropic column verified by GPT (OpenAI model) under the issue's conflict-of-interest protocol; figures come from different implementations, corpora and operating points — no ranking is implied.",
-        "source": "Supplied Pack 02 · F6_lab_symmetry.csv · provider disclosures recorded in the issue data.",
+        "note": "",
+        "notes": [
+            "Anthropic column verified and worded by GPT (OpenAI model); OpenAI rows verified by Claude (Anthropic model), under the issue's conflict-of-interest protocol.",
+            "Figures come from different implementations, corpora and operating points. No ranking is implied.",
+        ],
+        "source": "Provider documentation and publications as listed in the ledger rows shown; verified 14–16 Oct 2026.",
     },
     "F7": {
-        "title": "Who must mark what, at 16 October 2026", "csv": "F7_obligations.csv",
+        "title": "Who must mark what", "csv": "F7_obligations.csv", "width": 1600,
         "columns": [
-            ("Jurisdiction", 190, ("jurisdiction", "instrument", "verified", "rows")),
-            ("Image / video / audio", 160, ("image_video_audio",)),
-            ("Text", 195, ("text",)), ("Deepfake label", 160, ("deepfake_label",)),
-            ("Platform duty", 160, ("platform_duty",)), ("Status", 231, ("status_16oct2026",)),
+            ("Jurisdiction", 145, ("jurisdiction",)),
+            ("Instrument", 192, ("instrument",)),
+            ("Issuer", 145, ("issuer",)),
+            ("Covered actor", 168, ("covered_actor",)),
+            ("Medium", 170, ("medium",)),
+            ("Duty", 290, ("duty",)),
+            ("Status", 150, ("status_verified_16oct2026", "clearance")),
+            ("Effective date", 152, ("effective_date",)),
+            ("Rows", 84, ("rows",)),
         ],
-        "caption": "A comparison of specified obligations, not a ranking of countries' overall AI regulation.",
-        "note": "not verified to PRIMARY in English by cutoff",
-        "source": "Supplied Pack 02 · F7_obligations.csv · ledger IDs printed beside each jurisdiction.",
+        "caption": "Instruments we located and verified, as of 16 October 2026 (evidence freeze 18 October 2026). A comparison of specified obligations, not a ranking of countries' overall AI regulation.",
+        "note": "Official text located; not cleared for detailed description (language or access)",
+        "source": "Supplied Pack 03 · F7_obligations.csv · ledger IDs at right.",
     },
     "F8": {
         "title": "Why ad-fraud figures do not add up", "csv": "F8_vendor_methods.csv",
@@ -408,10 +386,12 @@ TABLES = {
 
 
 def cell_style(figure_id: str, field: str, first: bool):
-    if field in ("rows", "tier", "verified"):
+    if field in ("rows", "source_rows", "tier", "verified", "clearance"):
         return 10, MONO, 400
     if figure_id == "F7" and field == "instrument":
         return 11, SANS, 400
+    if figure_id == "F6" and field in ("anthropic", "google", "openai"):
+        return 13, SANS, 400
     return (14 if first else 13), SANS, (600 if first else 400)
 
 
@@ -450,49 +430,68 @@ def table_figure(figure_id: str, dark: bool) -> Figure:
     spec = TABLES[figure_id]
     data = rows(spec["csv"])
     columns = spec["columns"]
-    assert sum(width for _, width, _ in columns) == W - 104
+    canvas_width = spec.get("width", W)
+    assert sum(col_width for _, col_width, _ in columns) == canvas_width - 104
     heights = [row_height(figure_id, row, columns) for row in data]
-    table_bottom = 184 + sum(heights)
+    groups = list(dict.fromkeys(row["group"] for row in data)) if figure_id == "F7" else []
+    table_bottom = 184 + sum(heights) + len(groups) * 40
     caption_y = table_bottom + 55 if spec["caption"] else 0
     caption_count = len(textwrap.wrap(spec["caption"], width=128, break_long_words=False,
                                       break_on_hyphens=False)) if spec["caption"] else 0
+    notes = spec.get("notes") or ([spec["note"]] if spec["note"] else [])
     note_y = (caption_y + caption_count * 22 + 31) if spec["caption"] else table_bottom + 55
-    note_count = len(textwrap.wrap(spec["note"], width=140, break_long_words=False,
-                                   break_on_hyphens=False)) if spec["note"] else 0
-    source_y = (note_y + note_count * 20 + 53) if spec["note"] else (caption_y + caption_count * 22 + 58)
+    note_positions = []
+    for note in notes:
+        note_positions.append((note_y, note))
+        note_y += len(textwrap.wrap(note, width=140, break_long_words=False,
+                                    break_on_hyphens=False)) * 20 + 36
+    source_y = note_y + 17 if notes else (caption_y + caption_count * 22 + 58)
     source_count = len(cell_lines("SOURCE  " + spec["source"], 1096, 11, MONO))
     height = source_y + source_count * 17 + 28
-    f = Figure(figure_id, spec["title"], height, dark)
+    f = Figure(figure_id, spec["title"], height, dark, canvas_width)
     x = 52
-    for label, width, _ in columns:
-        for line_index, line in enumerate(cell_lines(label.upper(), width, 11, MONO)):
+    for label, col_width, _ in columns:
+        for line_index, line in enumerate(cell_lines(label.upper(), col_width, 11, MONO)):
             f.text(x + 10, 147 + line_index * 14, line, 11, f.quiet, MONO)
-        x += width
-    f.line(52, 180, 1148, 180, f.grid)
+        x += col_width
+    f.line(52, 180, canvas_width - 52, 180, f.grid)
     y = 184
+    previous_group = None
     for row_index, (row, rh) in enumerate(zip(data, heights)):
-        if figure_id == "F7" and row["verified"] == "no":
-            f.rect(52, y, 1096, rh, TOKENS["muted"],
+        if figure_id == "F7" and row["group"] != previous_group:
+            f.rect(52, y, canvas_width - 104, 40, TOKENS["card"] if dark else TOKENS["muted"],
+                   'fill-opacity="0.18"')
+            f.text(62, y + 26, row["group"], 13, f.quiet, MONO, 600,
+                   extra=f'data-group-header="{esc(row["group"])}"')
+            y += 40
+            previous_group = row["group"]
+        if figure_id == "F7" and row["clearance"] == "located, not cleared":
+            f.rect(52, y, canvas_width - 104, rh, TOKENS["muted"],
                    f'fill-opacity="0.18" data-verification-row="{row_index}"')
         if figure_id == "F4":
             category = "measure" if row["use"] == "measure (aggregate)" else "screen" if row["use"] == "screen" else "sanction"
             tone = {"measure": TOKENS["slate"], "screen": TOKENS["muted"], "sanction": f.ink}[category]
             use_x = 52 + sum(width for _, width, _ in columns[:3])
             f.rect(use_x + 3, y + 9, 4, rh - 18, tone, f'data-use-category="{category}" data-use-row="{row_index}"')
+        if figure_id == "F7":
+            f.add(f'<g data-group-row="{row_index}" data-group-value="{esc(row["group"])}">')
         x = 52
-        for _, width, fields in columns:
-            draw_table_cell(f, figure_id, row_index, row, x, y, width, fields)
-            x += width
-            if x < 1148:
+        for _, col_width, fields in columns:
+            draw_table_cell(f, figure_id, row_index, row, x, y, col_width, fields)
+            x += col_width
+            if x < f.width - 52:
                 f.line(x, y, x, y + rh, f.grid, .6)
+        if figure_id == "F7":
+            f.add("</g>")
         y += rh
-        f.line(52, y, 1148, y, f.grid, .8)
+        f.line(52, y, f.width - 52, y, f.grid, .8)
     if spec["caption"]:
         f.text(52, caption_y - 24, "CAPTION", 10, f.accent, MONO, 600)
         f.wrapped(52, caption_y, spec["caption"], 128, 15, 22)
-    if spec["note"]:
-        f.text(52, note_y - 24, "NOTE", 10, f.accent, MONO, 600)
-        f.wrapped(52, note_y, spec["note"], 140, 13, 20, f.quiet)
+    for note_index, (position, note) in enumerate(note_positions):
+        label = f"FOOTNOTE {note_index + 1}" if len(notes) > 1 else "NOTE"
+        f.text(52, position - 24, label, 10, f.accent, MONO, 600)
+        f.wrapped(52, position, note, 140, 13, 20, f.quiet)
     f.source(source_y, spec["source"])
     return f
 
@@ -514,6 +513,7 @@ def html_table(figure_id: str) -> str:
         'caption{text-align:left;padding:16px 18px;background:#121415;color:#E8B547;font:11px/1.5 Mono,monospace;letter-spacing:.12em;text-transform:uppercase}',
         'th,td{padding:13px 12px;text-align:left;vertical-align:top;border-bottom:1px solid #2A2D2F;border-right:1px solid #2A2D2F}th:last-child,td:last-child{border-right:0}',
         'thead th{color:#9C907A;font:11px/1.4 Mono,monospace;text-transform:uppercase}tbody th{font-weight:600}tbody tr.unverified{background:#2A2D2F}',
+        'tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,monospace;letter-spacing:.08em}',
         '.cell-value{display:block}.cell-value+.cell-value{margin-top:5px;color:#9C907A;font-size:12px}.use-measure{border-left:4px solid #6E8499}.use-screen{border-left:4px solid #9C907A}.use-sanction{border-left:4px solid #EDE0C8}',
         '.caption-copy{font-size:18px}.note{color:#9C907A}.source{margin-top:28px;color:#9C907A} :focus-visible{outline:1px solid #E8B547;outline-offset:3px}',
         '.scroll-hint{display:none;color:#9C907A;font:12px/1.5 Mono,monospace}@media(max-width:700px){.scroll-hint{display:block}}',
@@ -525,10 +525,19 @@ def html_table(figure_id: str) -> str:
     ]
     for label, _, _ in spec["columns"]:
         parts.append(f'<th scope="col">{esc(label)}</th>')
-    parts.append("</tr></thead><tbody>")
+    parts.append("</tr></thead>")
+    previous_group = None
+    if figure_id != "F7":
+        parts.append("<tbody>")
     for row_index, row in enumerate(data):
-        shade = ' class="unverified"' if figure_id == "F7" and row["verified"] == "no" else ""
-        parts.append(f'<tr{shade}>')
+        if figure_id == "F7" and row["group"] != previous_group:
+            if previous_group is not None:
+                parts.append("</tbody>")
+            parts.append(f'<tbody aria-label="{esc(row["group"])}"><tr class="group-row"><th scope="rowgroup" colspan="{len(spec["columns"])}">{esc(row["group"])}</th></tr>')
+            previous_group = row["group"]
+        shade = ' class="unverified"' if figure_id == "F7" and row["clearance"] == "located, not cleared" else ""
+        metadata = f' data-group="{esc(row["group"])}" data-clearance="{esc(row["clearance"])}"' if figure_id == "F7" else ""
+        parts.append(f'<tr{shade}{metadata}>')
         for col_index, (_, _, fields) in enumerate(spec["columns"]):
             tag = "th" if col_index == 0 else "td"
             scope = ' scope="row"' if col_index == 0 else ""
@@ -544,8 +553,10 @@ def html_table(figure_id: str) -> str:
     parts.append("</tbody></table></div>")
     if spec["caption"]:
         parts.append(f'<p class="caption-copy">{esc(spec["caption"])}</p>')
-    if spec["note"]:
-        parts.append(f'<p class="note"><span class="note-label">Note</span><br>{esc(spec["note"])}</p>')
+    notes = spec.get("notes") or ([spec["note"]] if spec["note"] else [])
+    for note_index, note in enumerate(notes):
+        label = f"Footnote {note_index + 1}" if len(notes) > 1 else "Note"
+        parts.append(f'<p class="note"><span class="note-label">{label}</span><br>{esc(note)}</p>')
     parts.append(f'<p class="source">SOURCE · {esc(spec["source"])}</p></main></body></html>')
     return "\n".join(parts) + "\n"
 
@@ -556,7 +567,7 @@ def f7(dark): return table_figure("F7", dark)
 def f8(dark): return table_figure("F8", dark)
 
 
-BUILDERS = {"F1": f1, "F2": f2, "F3": f3, "F4": f4, "F5": f5,
+BUILDERS = {"F1": f1, "F2": f2, "F3": f3, "F4": f4,
             "F6": f6, "F7": f7, "F8": f8, "F9": f9, "F10": f10, "F11": f11}
 
 
@@ -573,7 +584,8 @@ def pdf_from_svg(svg: Path, pdf: Path):
             pdfmetrics.registerFont(TTFont(family, str(font_dir / filename)))
     root = ET.parse(svg).getroot()
     height = float(root.attrib["height"])
-    page = canvas.Canvas(str(pdf), pagesize=(W, height), invariant=1, pageCompression=1)
+    width = float(root.attrib["width"])
+    page = canvas.Canvas(str(pdf), pagesize=(width, height), invariant=1, pageCompression=1)
     page.setTitle(root.find("{http://www.w3.org/2000/svg}title").text or "")
     for el in root.iter():
         kind = el.tag.rsplit("}", 1)[-1]

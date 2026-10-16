@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import csv
 from decimal import Decimal
+from html import unescape
 from html.parser import HTMLParser
 from pathlib import Path
 import re
@@ -21,19 +22,22 @@ FIGURES = {
     "F2": "F2_deezer_uploads_vs_streams.csv",
     "F3": "F3_arxiv_submissions.csv",
     "F4": "F4_institutions_decisions.csv",
-    "F5": "F5_openai_text_watermark.csv",
-    "F6": "F6_lab_symmetry.csv",
+    "F6": "F6_providers.csv",
     "F7": "F7_obligations.csv",
     "F8": "F8_vendor_methods.csv",
-    "F9": "F9_bastani.csv",
+    "F9": "F9_learning_study.csv",
     "F10": "F10_hepi.csv",
     "F11": "F11_moltbook.csv",
 }
 SPECIFIED_TEXT = {
-    "F1": ["Pew's detector flags pages written or substantially edited with AI, and misclassifies individual pages in both directions. Points are six-month averages; Pew reports a higher false-positive rate on pre-AI pages."],
-    "F5": ["In OpenAI's own evaluation on English ELI5 answers at a 1% false-positive target, replacing a quarter of the words with synonyms reduced detection from 92% to 17%; detection was substantially lower for mathematics.",
-           "OpenAI, 'Our approach to EU text provenance rules', 5 Oct 2026 — provider's own evaluation."],
-    "F11": ["About 1.5 million registered 'agents' and about 17,000 human owners, according to the Wiz investigation. Registrations do not measure activity or autonomy; the platform had no mechanism to verify whether an 'agent' was AI."],
+    "F1": ["Pew's detector flags pages written or substantially edited with AI, and misclassifies individual pages in both directions. Points are six-month averages; Pew reports a higher false-positive rate on pre-AI pages.",
+           "Nov 2022", "Before late 2022, every domain sat near 1%. By January 2026, almost one in ten .com pages showed signs of AI authorship — ten times the rate on .edu and .gov."],
+    "F2": ["Fully AI-generated tracks passed half of Deezer's daily uploads in June 2026, yet accounted for 1–3% of streams; Deezer reports that up to 85% of their streams were fraudulent."],
+    "F9": ["Unrestricted access raised practice scores by 48% and was followed by exam scores 17% below the control group once access was removed. For a tutor designed not to hand out answers, the authors report the loss was largely mitigated.",
+           "A separate randomised study (BJET, 2025; 117 students) found the strongest essays in the AI-assisted group and did not detect a statistically significant difference in knowledge gain or transfer.",
+           "Bastani et al., PNAS 122(26), 2025; Fan et al., BJET 56(2), 2025."],
+    "F11": ["About 1.5 million registered 'agents' and about 17,000 human owners, according to the Wiz investigation. Registrations do not measure activity or autonomy; the platform had no mechanism to verify whether an 'agent' was AI.",
+            "Database state before the first fix, 31 Jan 2026; Wiz, published 2 Feb 2026. Registrations and owner records — not activity."],
 }
 
 
@@ -54,11 +58,10 @@ def expected_keys(figure_id, data):
                                           "share_of_streams_pct_low", "share_of_streams_pct_high")})
     if figure_id == "F3":
         return {(i, "submissions") for i in range(3)}
-    if figure_id == "F5":
-        return {(i, "detection_rate_pct") for i in range(5)}
     if figure_id == "F9":
-        return {(i, field) for i in range(2) for field in
-                ("practice_vs_control_pct", "exam_vs_control_pct")}
+        return ({(i, "practice_vs_control_pct") for i in range(2)} |
+                {(0, "exam_vs_control_pct")} |
+                {(i, field) for i in range(2) for field in ("arm", "exam_label")})
     if figure_id == "F10":
         return {(i, field) for i in range(3) for field in
                 ("any_ai_use_pct", "genai_for_assessed_work_pct", "ai_text_inserted_directly_pct")
@@ -85,9 +88,11 @@ def actual_point(el):
 
 def geometry_ok(figure_id, el, row, field, data):
     a = el.attrib
-    val = float(row[field])
     kind = el.tag.rsplit("}", 1)[-1]
     i = int(a["data-row"])
+    if figure_id == "F9" and field in ("arm", "exam_label"):
+        return kind == "text" and (el.text or "") == row[field]
+    val = float(row[field])
     if figure_id == "F1":
         from datetime import date
         start, end = date.fromisoformat(data[0]["crawl_date"]), date.fromisoformat(data[-1]["crawl_date"])
@@ -112,15 +117,10 @@ def geometry_ok(figure_id, el, row, field, data):
     if figure_id == "F3":
         expected_y = 480 - val / 45000 * 315
         return kind == "rect" and close(a["y"], expected_y) and close(a["height"], 480 - expected_y)
-    if figure_id == "F5":
-        expected_y = 445 - val / 100 * 255
-        return kind == "rect" and close(a["y"], expected_y) and close(a["height"], 445 - expected_y)
     if figure_id == "F9":
         scale = 252 / 160
         zero = 430 - 20 * scale
         expected_y = zero - val * scale
-        if val == 0:
-            return kind == "line" and close(a["y1"], zero) and close(a["y2"], zero)
         return kind == "rect" and close(a["y"], min(zero, expected_y)) and close(a["height"], abs(zero - expected_y))
     if figure_id == "F10":
         panel = ("any_ai_use_pct", "genai_for_assessed_work_pct", "ai_text_inserted_directly_pct").index(field)
@@ -142,8 +142,9 @@ def inspect_svg(path, figure_id, data, expected):
             raise AssertionError(f"{path}: duplicate plotted mark {key}")
         if key not in expected:
             raise AssertionError(f"{path}: extra plotted mark {key}")
+        field = key[1]
         source = data[key[0]][key[1]]
-        if not source or Decimal(a["data-value"]) != Decimal(source):
+        if not source or (a["data-value"] != source if field in ("arm", "exam_label") else Decimal(a["data-value"]) != Decimal(source)):
             raise AssertionError(f"{path}: value mismatch {key}: {a['data-value']} != {source}")
         if not geometry_ok(figure_id, el, data[key[0]], key[1], data):
             raise AssertionError(f"{path}: geometry mismatch {key}")
@@ -155,11 +156,17 @@ def inspect_svg(path, figure_id, data, expected):
         agents, owners = (int(r["value"]) for r in data)
         assert len(ratio) == 1 and (ratio[0].text or "").strip() == f"{round(agents / owners)} : 1"
         assert "6,159" not in " ".join(el.text or "" for el in root.iter())
+        assert data[0]["date_or_window"] == "database state before first fix, 31 Jan 2026 (post 2 Feb 2026)"
+        assert data[0]["definition"] == "registrations" and data[1]["definition"] == "owner records"
+    if figure_id == "F9":
+        assert data[1]["exam_vs_control_pct"] == ""
+        assert not any(el.attrib.get("data-row") == "1" and el.attrib.get("data-field") == "exam_vs_control_pct"
+                       for el in root.iter())
     if figure_id in SPECIFIED_TEXT:
         whole = normal(" ".join(el.text or "" for el in root.iter()
                                 if el.tag.rsplit("}", 1)[-1] == "text"))
         for phrase in SPECIFIED_TEXT[figure_id]:
-            assert normal(phrase) in whole, f"{path}: missing v0.2 wording {phrase!r}"
+            assert normal(phrase) in whole, f"{path}: missing specified wording {phrase!r}"
     return seen
 
 
@@ -185,7 +192,8 @@ def inspect_table_svg(path, figure_id, data, expected):
     spec = TABLES[figure_id]
     whole = normal(" ".join(el.text or "" for el in root.iter()
                             if el.tag.rsplit("}", 1)[-1] == "text"))
-    for phrase in (spec["title"], spec["caption"], spec["note"], spec["source"]):
+    for phrase in (spec["title"], spec["caption"], spec["note"],
+                   *(spec.get("notes") or []), spec["source"]):
         if phrase:
             assert normal(phrase) in whole, f"{path}: missing specified text {phrase!r}"
     if figure_id == "F4":
@@ -197,13 +205,28 @@ def inspect_table_svg(path, figure_id, data, expected):
             assert bars[i]["data-use-category"] == category
             assert bars[i]["fill"] == {"measure": TOKENS["slate"], "screen": TOKENS["muted"],
                                        "sanction": TOKENS["cream"] if path.name.endswith(".dark.svg") else TOKENS["bg"]}[category]
+    if figure_id == "F6":
+        provider_styles = {}
+        for group in root.iter():
+            if group.attrib.get("data-field") not in ("anthropic", "google", "openai"):
+                continue
+            provider_styles.setdefault(int(group.attrib["data-row"]), []).append(
+                tuple(group[0].attrib[key] for key in ("fill", "font-size", "font-weight")))
+        assert len(provider_styles) == len(data)
+        assert all(len(styles) == 3 and len(set(styles)) == 1 for styles in provider_styles.values())
     if figure_id == "F7":
         order = [int(el.attrib["data-row"]) for el in root.iter()
                  if el.attrib.get("data-field") == "jurisdiction"]
         assert order == list(range(len(data)))
+        group_headers = [el.attrib["data-group-header"] for el in root.iter()
+                         if "data-group-header" in el.attrib]
+        assert group_headers == list(dict.fromkeys(row["group"] for row in data))
+        group_rows = {int(el.attrib["data-group-row"]): el.attrib["data-group-value"]
+                      for el in root.iter() if "data-group-row" in el.attrib}
+        assert group_rows == {i: row["group"] for i, row in enumerate(data)}
         shaded = {int(el.attrib["data-verification-row"]): el.attrib for el in root.iter()
                   if "data-verification-row" in el.attrib}
-        expected_shaded = {i for i, row in enumerate(data) if row["verified"] == "no"}
+        expected_shaded = {i for i, row in enumerate(data) if row["clearance"] == "located, not cleared"}
         assert set(shaded) == expected_shaded
         assert all(a["fill"] == TOKENS["muted"] and a["fill-opacity"] == "0.18"
                    for a in shaded.values())
@@ -219,6 +242,8 @@ class TableHTMLReader(HTMLParser):
         self.tables = 0
         self.col_headers = 0
         self.row_headers = 0
+        self.groups = []
+        self.row_metadata = []
 
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
@@ -228,6 +253,10 @@ class TableHTMLReader(HTMLParser):
             self.col_headers += 1
         if tag == "th" and a.get("scope") == "row":
             self.row_headers += 1
+        if tag == "tbody" and a.get("aria-label"):
+            self.groups.append(a["aria-label"])
+        if tag == "tr" and "data-group" in a:
+            self.row_metadata.append(a)
         if tag == "span" and "data-field" in a:
             assert self.current is None
             self.current = (int(a["data-row"]), a["data-field"], a["data-value"])
@@ -257,14 +286,24 @@ def inspect_table_html(path, figure_id, data, expected):
         source = data[key[0]][key[1]]
         assert reader.cells[key] == (source, normal(source)), f"{path}: HTML cell mismatch {key}"
     if figure_id == "F6":
-        assert all(row["anthropic_verified_by"] == "GPT" for row in data)
-        assert "Anthropic column verified by GPT" in path.read_text(encoding="utf-8")
+        for note in TABLES["F6"]["notes"]:
+            assert note in unescape(path.read_text(encoding="utf-8"))
+    if figure_id == "F7":
+        assert reader.groups == list(dict.fromkeys(row["group"] for row in data))
+        assert len(reader.row_metadata) == len(data)
+        for metadata, row in zip(reader.row_metadata, data):
+            assert metadata["data-group"] == row["group"]
+            assert metadata["data-clearance"] == row["clearance"]
+            assert ("unverified" in metadata.get("class", "")) == (row["clearance"] == "located, not cleared")
     return {key: value[1] for key, value in reader.cells.items()}
 
 
 def pdf_ok(figure_id, data):
     pdf = PdfReader(OUT / f"{figure_id}.pdf")
     assert len(pdf.pages) == 1
+    svg_root = ET.parse(OUT / f"{figure_id}.svg").getroot()
+    assert float(pdf.pages[0].mediabox.width) == float(svg_root.attrib["width"])
+    assert float(pdf.pages[0].mediabox.height) == float(svg_root.attrib["height"])
     content = pdf.pages[0].extract_text()
     assert content and "SHADOW 06" in content and "SOURCE" in content
     fonts = pdf.pages[0]["/Resources"]["/Font"]
@@ -277,6 +316,8 @@ def pdf_ok(figure_id, data):
 
 
 def main():
+    assert not any((OUT / f"F5{suffix}").exists() for suffix in
+                   (".svg", ".dark.svg", ".pdf", ".py", ".table.html"))
     lines = [
         "# Shadow 06 figure check",
         "",
@@ -313,20 +354,20 @@ def main():
         "## Strict readings and source discrepancies",
         "",
         "- F2: the spec asks for `>50%` daily uploads in June 2026, but the frozen CSV records `50`. The bar and direct label use `50%`; the exact supplied caption retains its wording. The caption's `up to 85%` fraud claim is specified prose, not a plotted value in the CSV.",
-        "- F1: the v0.2 caveat replaces v0.1 wording and now states that plotted points are six-month averages.",
-        "- F5: the exact v0.2 caption describes English ELI5 answers, while the unchanged CSV calls the length-panel content psychology. The figure flags that discrepancy without inventing data. The exact v0.2 source line omits ledger IDs; B13–B15 remain recorded here.",
-        "- F4/F6/F7/F8: the v0.2 pack gives CSV rows and record IDs but no original outlet/document/date for a complete primary-source line. These figures identify the supplied CSV in the source line and display record IDs where available; final publication requires the source ledger metadata.",
-        "- F6: the CSV order is Google, OpenAI, Anthropic; both SVG themes and HTML reorder the columns alphabetically as specified. Every CSV row gives `anthropic_verified_by=GPT`; the exact footnote is included.",
-        "- F7: only CSV jurisdictions are present, in CSV order. Rows with `verified=no` are shaded and carry the specified verification note. This is a comparison of listed obligations, not a ranking.",
+        "- F1/F2: the exact v0.3 annotation and captions replace the prior text. F1's detector caveat remains from v0.2.",
+        "- F5: withdrawn in Pack 03. Its SVGs, PDF, script and prior CSV are absent from this release; the relevant provider evaluation now appears only in F6.",
+        "- F4: the Newby row comes from the replacement CSV. Its source line uses supplied ledger IDs because the pack does not provide a full original-document citation.",
+        "- F6: rebuilt from `F6_providers.csv` with alphabetic provider columns, the grey rows column and both exact footnotes. All provider cells retain the CSV's wording and identical styling; the specified source line is used.",
+        "- F7: every CSV row is preserved in its supplied order and grouped by `group`; no jurisdiction was added. The first group places Brazil last despite the spec's parenthetical 'alphabetical', so CSV order takes precedence. Every `located, not cleared` row has the same neutral shade, em-dash cells from the CSV and the exact verification note. Full primary-source metadata for this and F4 remains pending.",
+        "- F9: the Tutor with safeguards exam cell is blank in the new CSV. No mark or bar is drawn; its exact `exam_label` appears at the zero line. The companion text avoids treating a non-significant difference as equality.",
         "- F8: the CSV's reported figures are tabulated as vendor reports. The v0.2 caption is reproduced verbatim even though the general P-A wording rule calls for ‘X reports…’ captions; no range is inferred.",
         "- F10: the 2024 assessed-work cell is blank. No bar is drawn and the specified qualitative note appears. The student quote and 49/16/35 split are omitted together because those percentages are absent from the frozen CSV.",
-        "- F11: `88 : 1` is the spec's rounded ratio of the two CSV counts (1,500,000 / 17,000 ≈ 88.24); it is not an independent observation. The figure now belongs to Chapter 2 and carries the exact v0.2 caption.",
-        "- F1/F3/F9: the supplied spec omits exact source titles or dates in some cases. Those metadata were checked against the primary Pew, arXiv and PNAS/PubMed pages; no additional values were plotted.",
-        "- F2/F3/F9/F10: the Pack 02 CSVs are byte-identical to the originals and these four outputs were not regenerated.",
+        "- F11: `88 : 1` is the rounded ratio of the two CSV counts (1,500,000 / 17,000 ≈ 88.24), not an independent observation. The exact Pack 03 date/definition note appears below the numbers.",
+        "- F3/F8/F10: unchanged by Pack 03 and not regenerated.",
         "",
     ]
     (OUT / "CHECK.md").write_text("\n".join(lines), encoding="utf-8")
-    print("Checked 11 figures: every SVG mark/table cell matches its CSV; HTML tables and PDFs checked.")
+    print("Checked 10 active figures; F5 withdrawn. Every SVG mark/table cell matches its CSV; HTML tables and PDFs checked.")
 
 
 if __name__ == "__main__":

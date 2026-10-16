@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="810" viewBox="0 0 1200 810" role="img" aria-labelledby="title desc">
 <title id="title">Practice versus exam</title>
 <desc id="desc">Shadow 06 figure F9. Exact plotted values are encoded on marks.</desc>
-<rect width="1200" height="720" fill="#EDE0C8"/>
+<rect width="1200" height="810" fill="#EDE0C8"/>
 <text x="52" y="36" fill="#8B2D2D" font-family="JetBrains Mono,monospace" font-size="12" font-weight="600" text-anchor="start" >SHADOW 06  /  FIGURE 9</text>
 <text x="52" y="78" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="29" font-weight="600" text-anchor="start" >Practice versus exam</text>
 <line x1="52" y1="98" x2="1148" y2="98" stroke="#9C907A" stroke-width="1" />
@@ -15,25 +15,24 @@
 <text x="90" y="276.5" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="12" font-weight="400" text-anchor="end" >+80%</text>
 <line x1="100" y1="209.5" x2="1090" y2="209.5" stroke="#9C907A" stroke-width="0.8" stroke-dasharray="3 5" />
 <text x="90" y="213.5" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="12" font-weight="400" text-anchor="end" >+120%</text>
-<text x="1074" y="389.5" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="end" >CONTROL</text>
-<rect x="247" y="322.9" width="76" height="75.6" fill="#6E8499" data-row="0" data-field="practice_vs_control_pct" data-value="48" data-zero="398.5" data-scale="1.575"/>
-<text x="285" y="310.9" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="20" font-weight="600" text-anchor="middle" >+48%</text>
-<text x="285" y="478" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="middle" >GPT BASE</text>
-<rect x="352" y="198.475" width="76" height="200.025" fill="#8B2D2D" data-row="1" data-field="practice_vs_control_pct" data-value="127" data-zero="398.5" data-scale="1.575"/>
-<text x="390" y="186.475" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="20" font-weight="600" text-anchor="middle" >+127%</text>
-<text x="390" y="478" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="middle" >GPT TUTOR</text>
-<rect x="717" y="398.5" width="76" height="26.775" fill="#6E8499" data-row="0" data-field="exam_vs_control_pct" data-value="-17" data-zero="398.5" data-scale="1.575"/>
-<text x="755" y="452.275" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="20" font-weight="600" text-anchor="middle" >−17%</text>
-<text x="755" y="478" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="middle" >GPT BASE</text>
-<line x1="822" y1="398.5" x2="898" y2="398.5" stroke="#8B2D2D" stroke-width="6" data-row="1" data-field="exam_vs_control_pct" data-value="0" data-zero="398.5" data-scale="1.575"/>
-<text x="860" y="425.5" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="20" font-weight="600" text-anchor="middle" >≈0</text>
-<text x="860" y="478" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="middle" >GPT TUTOR</text>
-<text x="340" y="516" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="16" font-weight="600" text-anchor="middle" >PRACTICE</text>
-<text x="807" y="516" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="16" font-weight="600" text-anchor="middle" >EXAM WITHOUT AI</text>
-<text x="52" y="557" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >Unrestricted access improved practice scores by 48% and lowered exam scores by 17% once access was removed. A tutor designed not</text>
-<text x="52" y="579" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >to hand out answers removed the loss.</text>
-<text x="52" y="631" fill="#2A2D2F" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="400" text-anchor="start" >Fan et al. (BJET) — ChatGPT group improved essay scores most; knowledge gain and transfer did not differ (D08).</text>
-<line x1="52" y1="662" x2="1148" y2="662" stroke="#9C907A" stroke-width="1" />
-<text x="52" y="690" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >SOURCE  Bastani et al. · Generative AI without guardrails can harm learning: Evidence from high school mathematics · PNAS 122(26), 2025 · D01–D02; companion</text>
-<text x="52" y="707" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >D08.</text>
+<text x="1095" y="425.5" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="end" >CONTROL</text>
+<rect x="222" y="322.9" width="76" height="75.6" fill="#6E8499" data-row="0" data-field="practice_vs_control_pct" data-value="48" data-zero="398.5" data-scale="1.575"/>
+<text x="260" y="310.9" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="20" font-weight="600" text-anchor="middle" >+48%</text>
+<rect x="412" y="198.475" width="76" height="200.025" fill="#8B2D2D" data-row="1" data-field="practice_vs_control_pct" data-value="127" data-zero="398.5" data-scale="1.575"/>
+<text x="450" y="186.475" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="20" font-weight="600" text-anchor="middle" >+127%</text>
+<rect x="692" y="398.5" width="76" height="26.775" fill="#6E8499" data-row="0" data-field="exam_vs_control_pct" data-value="-17" data-zero="398.5" data-scale="1.575"/>
+<text x="730" y="452.275" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="20" font-weight="600" text-anchor="middle" data-row="0" data-field="exam_label" data-value="−17%">−17%</text>
+<text x="925" y="388.5" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="600" text-anchor="middle" data-row="1" data-field="exam_label" data-value="largely mitigated (authors)">largely mitigated (authors)</text>
+<text x="260" y="480" fill="#2A2D2F" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="400" text-anchor="middle" data-row="0" data-field="arm" data-value="Unrestricted assistant">Unrestricted assistant</text>
+<text x="450" y="480" fill="#2A2D2F" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="400" text-anchor="middle" data-row="1" data-field="arm" data-value="Tutor with safeguards">Tutor with safeguards</text>
+<text x="730" y="480" fill="#2A2D2F" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="400" text-anchor="middle" >Unrestricted assistant</text>
+<text x="925" y="480" fill="#2A2D2F" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="400" text-anchor="middle" >Tutor with safeguards</text>
+<text x="355" y="523" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="16" font-weight="600" text-anchor="middle" >PRACTICE</text>
+<text x="827" y="523" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="16" font-weight="600" text-anchor="middle" >EXAM WITHOUT ASSISTANT</text>
+<text x="52" y="568" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >Unrestricted access raised practice scores by 48% and was followed by exam scores 17% below the control group once access was</text>
+<text x="52" y="590" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >removed. For a tutor designed not to hand out answers, the authors report the loss was largely mitigated.</text>
+<text x="52" y="655" fill="#2A2D2F" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="400" text-anchor="start" >A separate randomised study (BJET, 2025; 117 students) found the strongest essays in the AI-assisted group and did not detect a statistically</text>
+<text x="52" y="673" fill="#2A2D2F" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="400" text-anchor="start" >significant difference in knowledge gain or transfer.</text>
+<line x1="52" y1="731" x2="1148" y2="731" stroke="#9C907A" stroke-width="1" />
+<text x="52" y="759" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >SOURCE  Bastani et al., PNAS 122(26), 2025; Fan et al., BJET 56(2), 2025.</text>
 </svg>

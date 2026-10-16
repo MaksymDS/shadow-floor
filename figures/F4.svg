@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="929" viewBox="0 0 1200 929" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="986" viewBox="0 0 1200 986" role="img" aria-labelledby="title desc">
 <title id="title">Counting, screening, judging</title>
 <desc id="desc">Shadow 06 figure F4. Exact plotted values are encoded on marks.</desc>
-<rect width="1200" height="929" fill="#EDE0C8"/>
+<rect width="1200" height="986" fill="#EDE0C8"/>
 <text x="52" y="36" fill="#8B2D2D" font-family="JetBrains Mono,monospace" font-size="12" font-weight="600" text-anchor="start" >SHADOW 06  /  FIGURE 4</text>
 <text x="52" y="78" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="29" font-weight="600" text-anchor="start" >Counting, screening, judging</text>
 <line x1="52" y1="98" x2="1148" y2="98" stroke="#9C907A" stroke-width="1" />
@@ -208,44 +208,50 @@
 <text x="1067" y="591" fill="#161819" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >E13</text>
 </g>
 <line x1="52" y1="637" x2="1148" y2="637" stroke="#9C907A" stroke-width="0.8" />
-<rect x="530" y="646" width="4" height="48" fill="#161819" data-use-category="sanction" data-use-row="6"/>
-<g data-row="6" data-field="actor" data-value="New York Supreme Court (Newby)">
+<rect x="530" y="646" width="4" height="105" fill="#161819" data-use-category="sanction" data-use-row="6"/>
+<g data-row="6" data-field="actor" data-value="New York Supreme Court (Newby v Adelphi)">
 <text x="62" y="657" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >New York Supreme</text>
-<text x="62" y="676" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Court (Newby)</text>
+<text x="62" y="676" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Court (Newby v</text>
+<text x="62" y="695" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Adelphi)</text>
 </g>
-<line x1="226" y1="637" x2="226" y2="703" stroke="#9C907A" stroke-width="0.6" />
+<line x1="226" y1="637" x2="226" y2="760" stroke="#9C907A" stroke-width="0.6" />
 <g data-row="6" data-field="what_is_classified" data-value="one student&#x27;s essay">
 <text x="236" y="657" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >one student&#x27;s</text>
 <text x="236" y="676" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >essay</text>
 </g>
-<line x1="369" y1="637" x2="369" y2="703" stroke="#9C907A" stroke-width="0.6" />
-<g data-row="6" data-field="instrument" data-value="Turnitin vs two other detectors">
-<text x="379" y="657" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Turnitin vs two</text>
-<text x="379" y="676" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >other detectors</text>
+<line x1="369" y1="637" x2="369" y2="760" stroke="#9C907A" stroke-width="0.6" />
+<g data-row="6" data-field="instrument" data-value="court review of one evidentiary record and disciplinary process">
+<text x="379" y="657" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >court review of</text>
+<text x="379" y="676" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >one evidentiary</text>
+<text x="379" y="695" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >record and</text>
+<text x="379" y="714" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >disciplinary</text>
+<text x="379" y="733" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >process</text>
 </g>
-<line x1="527" y1="637" x2="527" y2="703" stroke="#9C907A" stroke-width="0.6" />
+<line x1="527" y1="637" x2="527" y2="760" stroke="#9C907A" stroke-width="0.6" />
 <g data-row="6" data-field="use" data-value="sanction reviewed">
 <text x="537" y="657" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >sanction</text>
 <text x="537" y="676" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >reviewed</text>
 </g>
-<line x1="652" y1="637" x2="652" y2="703" stroke="#9C907A" stroke-width="0.6" />
+<line x1="652" y1="637" x2="652" y2="760" stroke="#9C907A" stroke-width="0.6" />
 <g data-row="6" data-field="human_step" data-value="court">
 <text x="662" y="657" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >court</text>
 </g>
-<line x1="802" y1="637" x2="802" y2="703" stroke="#9C907A" stroke-width="0.6" />
-<g data-row="6" data-field="outcome" data-value="sanction annulled on case-specific grounds">
-<text x="812" y="657" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >sanction annulled on</text>
-<text x="812" y="676" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >case-specific grounds</text>
+<line x1="802" y1="637" x2="802" y2="760" stroke="#9C907A" stroke-width="0.6" />
+<g data-row="6" data-field="outcome" data-value="determination annulled on case-specific evidentiary and procedural grounds; no general finding on detectors">
+<text x="812" y="657" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >determination annulled on</text>
+<text x="812" y="676" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >case-specific evidentiary and</text>
+<text x="812" y="695" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >procedural grounds; no</text>
+<text x="812" y="714" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >general finding on detectors</text>
 </g>
-<line x1="1057" y1="637" x2="1057" y2="703" stroke="#9C907A" stroke-width="0.6" />
+<line x1="1057" y1="637" x2="1057" y2="760" stroke="#9C907A" stroke-width="0.6" />
 <g data-row="6" data-field="rows" data-value="E20">
 <text x="1067" y="657" fill="#161819" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >E20</text>
 </g>
-<line x1="52" y1="703" x2="1148" y2="703" stroke="#9C907A" stroke-width="0.8" />
-<text x="52" y="734" fill="#8B2D2D" font-family="JetBrains Mono,monospace" font-size="10" font-weight="600" text-anchor="start" >CAPTION</text>
-<text x="52" y="758" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >The same kind of classifier is used to estimate prevalence, to screen submissions, and — less and less — to judge individuals.</text>
-<text x="52" y="787" fill="#8B2D2D" font-family="JetBrains Mono,monospace" font-size="10" font-weight="600" text-anchor="start" >NOTE</text>
-<text x="52" y="811" fill="#2A2D2F" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >Aggregate estimation and individual adjudication carry different error requirements (ICML 2024, Liang et al.).</text>
-<line x1="52" y1="856" x2="1148" y2="856" stroke="#9C907A" stroke-width="1" />
-<text x="52" y="884" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >SOURCE  Supplied Pack 02 · F4_institutions_decisions.csv · ledger IDs at right.</text>
+<line x1="52" y1="760" x2="1148" y2="760" stroke="#9C907A" stroke-width="0.8" />
+<text x="52" y="791" fill="#8B2D2D" font-family="JetBrains Mono,monospace" font-size="10" font-weight="600" text-anchor="start" >CAPTION</text>
+<text x="52" y="815" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >The same kind of classifier is used to estimate prevalence, to screen submissions, and — less and less — to judge individuals.</text>
+<text x="52" y="844" fill="#8B2D2D" font-family="JetBrains Mono,monospace" font-size="10" font-weight="600" text-anchor="start" >NOTE</text>
+<text x="52" y="868" fill="#2A2D2F" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >Aggregate estimation and individual adjudication carry different error requirements (ICML 2024, Liang et al.).</text>
+<line x1="52" y1="913" x2="1148" y2="913" stroke="#9C907A" stroke-width="1" />
+<text x="52" y="941" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >SOURCE  Supplied Pack 03 · F4_institutions_decisions.csv · ledger IDs at right.</text>
 </svg>

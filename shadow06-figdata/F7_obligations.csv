@@ -1,13 +1,29 @@
-jurisdiction,instrument,status_16oct2026,image_video_audio,text,deepfake_label,platform_duty,verified,rows
-EU,AI Act Art. 50 (+Reg. 2026/1744),applies from 2 Aug 2026; 50(2) legacy systems by 2 Dec 2026,yes,yes (provider marking; deployer disclosure for public-interest text),yes,—,yes,C01;C04;C05
-California (US),AI Transparency Act as amended by SB 1000,operative 2 Aug 2026; platform duties 1 Jan 2027,yes (latent disclosure),not in latent-disclosure provision,—,from 1 Jan 2027,yes,C20-C23
-India,IT Rules amendment 2026,in force 20 Feb 2026,yes (SGI),not SGI; general obligations apply,yes,yes,yes,C30;C31
-South Korea,AI Basic Act + MSIT guidance,commenced 22 Jan 2026; grace period announced,yes,yes (methods differ by output type),yes (human-recognisable),—,yes,C40;C41
-China,Labelling Measures,in force 1 Sep 2025,yes,yes,yes,yes,no (English quotation gate),C10-C12
-UK,no statutory labelling duty found,—,no,no,—,—,no,C60
-Japan,election-law amendment (agreed May 2026),bill status unverified,—,—,election content only,annual reporting,no,C62
-Brazil,PL 2338/2023,awaiting opinion in Chamber,—,—,—,—,no,C63
-Australia,voluntary guidance,voluntary,recommended,recommended,—,eSafety standards for some providers,yes,C64
-UAE,media content standards (Media Council),in force,—,—,prior approval for national symbols/public figures,—,yes,U12
-Saudi Arabia,SDAIA guidance,guidance,recommended (watermarks),—,context-dependent,—,no,C52a;C52b
-Qatar,MCIT AI ethical guidelines,voluntary and non-binding,—,—,—,—,yes,C53a
+group,jurisdiction,instrument,issuer,covered_actor,medium,duty,status_verified_16oct2026,effective_date,clearance,rows
+1 Statute / regulation,China,Labelling Measures and CAC programmes,Cyberspace Administration of China,—,—,—,located (official Chinese text),—,"located, not cleared",C10-C12
+1 Statute / regulation,European Union,AI Act Art. 50 (+ Reg. 2026/1744),EU,providers; deployers,all generative output; deepfakes; public-interest text,providers: machine-readable marking; deployers: disclose deepfakes and public-interest text (editorial-responsibility exception),applies,2 Aug 2026; legacy systems 2 Dec 2026,cleared,C04-C08
+1 Statute / regulation,India,IT Rules amendment 2026,MeitY,intermediaries; SGI tools,synthetically generated information (text-only excluded),label and provenance for SGI,in force,20 Feb 2026,cleared,C30-C31
+1 Statute / regulation,Kazakhstan,AI Law No. 230-VIII,Parliament,—,—,—,"located (unofficial English translation, not retrieved)",—,"located, not cleared",C73b
+1 Statute / regulation,Russia,Federal Law 243-FZ,Federal Assembly,—,—,—,located (operative text not verified),—,"located, not cleared",C73a
+1 Statute / regulation,South Korea,AI Basic Act + MSIT guidance,National Assembly; MSIT,providers,outputs; realistic synthetic content,machine-readable mark + notice; human-recognisable for realistic content,commenced; grace period announced,22 Jan 2026,cleared,C40-C41
+1 Statute / regulation,United States — California,AI Transparency Act as amended (SB 1000; AB 853; AB 2713),State of California,providers (no user threshold); large platforms from 2027,"image, video, audio (latent disclosure)",latent disclosure; free disclosure verification tool,operative,2 Aug 2026; platforms 1 Jan 2027; devices 2028,cleared,C20-C24
+1 Statute / regulation,Vietnam,Law on AI No. 134/2025/QH15,National Assembly,providers; deployers,"audio, images, video; text that may confuse about real events or persons",providers: machine-readable marking; deployers: disclosure,in force,1 Mar 2026,cleared,C70c
+1 Statute / regulation,Brazil,PL 2338/2023 (general AI bill),Chamber of Deputies,—,—,—,awaiting opinion in Chamber,—,"located, not cleared",C63a
+2 Election rule,Brazil,TSE Res. 23.755/2026 (amends 23.610/2019),Superior Electoral Court,—,—,—,located (Portuguese),—,"located, not cleared",C63b
+2 Election rule,Japan,Public Offices Election Act revision (Law No. 58),Diet,—,—,—,enacted Jul 2026 (official Japanese record),—,"located, not cleared",C62
+2 Election rule,Singapore,Prohibition of realistic but false candidate depictions,Elections Department,publishers incl. redistribution,"audio, visual, audiovisual",prohibition during election period (label does not exempt),in force,election period,cleared,C70a
+3 Sectoral / media standard,Australia,eSafety DIS Standard,eSafety Commissioner,high-impact generative-AI services,AI outputs,differentiate AI outputs,in force,—,cleared,C64b
+3 Sectoral / media standard,Colombia,Territorios al Aire 2026 conditions,MinTIC,grant recipients,—,—,located (Spanish),—,"located, not cleared",C71d
+3 Sectoral / media standard,UAE,Media content standards,UAE Media Council,media,AI depictions of national symbols / public figures,prior approval; AI misinformation a media offence,in force,Sep 2025,cleared,C50a; U12
+4 Guidance / policy,Australia,Being clear about AI-generated content,National AI Centre,businesses,—,"best-practice labelling, watermarking, metadata",voluntary,Nov 2025,cleared,C64a
+4 Guidance / policy,Bahrain,General Policy for the Use of AI,Information & eGovernment Authority,—,—,clauses not verified,issued,Jul 2025,cleared (issuance),C54a
+4 Guidance / policy,Egypt,National Guidelines for Generative AI,ai.gov.eg,—,—,—,located (full text not retrieved),Mar 2026,"located, not cleared",C72c
+4 Guidance / policy,Indonesia,Official recommendation,Communications ministry official,content creators,AI-generated content,label or disclaimer (recommended),recommendation,Jun 2025,cleared,C70b
+4 Guidance / policy,Kenya,Media guide on the use of AI,Media Council of Kenya,media enterprises,—,inform users of AI use,sectoral guidance,—,cleared,C72b
+4 Guidance / policy,Malaysia,National Guidelines on AI Governance & Ethics,MOSTI,—,—,disclosure among suggested measures,guidance,—,cleared,C70d
+4 Guidance / policy,Mexico,Recommendations for election coverage,INE,—,—,—,located (Spanish); non-binding,Aug 2026,"located, not cleared",C71a
+4 Guidance / policy,Nigeria,Advisory 2026-026,NCC-CSIRT,organisations,deepfakes / impersonation,verification procedures (advisory),advisory,2026,cleared,C72a
+4 Guidance / policy,Oman,General Policy for the Safe and Ethical Use of AI Systems,MTCIT,—,—,clauses not verified,published,1 Apr 2025,cleared (publication),C55a
+4 Guidance / policy,Qatar,AI ethical guidelines,MCIT,—,—,—,"voluntary, non-binding (self-stated)",—,cleared,C53a
+4 Guidance / policy,Saudi Arabia,Generative AI public guidance; deepfake guidance,SDAIA,—,—,—,located (full text not retrieved),—,"located, not cleared",C52a-C52b
+4 Guidance / policy,Ukraine,Guidelines for responsible AI use in media,National Council (with ministries),media,—,clear separation of human-made and AI-generated content (recommended),guidance,—,cleared,C73c
+4 Guidance / policy,United Kingdom,No statutory labelling duty (Commons Library briefing),House of Commons Library,—,—,none stated at briefing date,dated briefing,20 Jan 2026,cleared (as dated account),C60

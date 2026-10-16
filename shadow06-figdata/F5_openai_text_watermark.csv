@@ -1,6 +1,0 @@
-panel,condition,detection_rate_pct,note
-length,200 tokens,80,psychology content; target FPR 1%
-length,400 tokens,95,psychology content; target FPR 1%
-editing,0% words replaced,92,400-token passages
-editing,10% words replaced,66,synonym replacement
-editing,25% words replaced,17,synonym replacement
