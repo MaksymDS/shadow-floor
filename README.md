@@ -45,7 +45,7 @@ The plotted values come from the supplied, frozen CSV snapshots. The scripts do 
 
 ## Specification and provenance
 
-Read [v0.2](shadow06-figures-spec-v0.2.md), then the [v0.3](shadow06-figures-spec-v0.3.md) and [v0.4](shadow06-figures-spec-v0.4.md) changes. Pack 04 changes wording only; the CSVs are unchanged. F4 and F7 still need complete primary-source citation metadata in parts of their supplied CSVs; the present source lines identify the supplied records and ledger IDs where available. See the [check notes](figures/CHECK.md) before quoting those tables.
+Read [v0.2](shadow06-figures-spec-v0.2.md), then the [v0.3](shadow06-figures-spec-v0.3.md) and [v0.4](shadow06-figures-spec-v0.4.md) changes. Pack 04 changes wording only; Pack 05 corrects the Google cell in F6's “Self-stated limits” row. F4 and F7 still need complete primary-source citation metadata in parts of their supplied CSVs; the present source lines identify the supplied records and ledger IDs where available. See the [check notes](figures/CHECK.md) before quoting those tables.
 
 The palette and typography follow the published [Shadow 04 landing](https://github.com/MaksymDS/shadow-crack-landing) design system (commit `2a3e144d76c3ffb66c44e1d6196df81a06087c9d`). The light and dark SVGs use that system's figure styling. Inter and JetBrains Mono are bundled for offline rendering, with provenance and licences in [`figures/fonts/`](figures/fonts/README.md).
 
