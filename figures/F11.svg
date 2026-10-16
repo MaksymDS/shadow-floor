@@ -1,19 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="890" viewBox="0 0 1200 890" role="img" aria-labelledby="title desc">
-<title id="title">88 to 1</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="745" viewBox="0 0 1200 745" role="img" aria-labelledby="title desc">
+<title id="title">1.5 million registrations, 17,000 owners</title>
 <desc id="desc">Shadow 06 figure F11. Exact plotted values are encoded on marks.</desc>
-<rect width="1200" height="890" fill="#EDE0C8"/>
+<rect width="1200" height="745" fill="#EDE0C8"/>
 <text x="52" y="36" fill="#8B2D2D" font-family="JetBrains Mono,monospace" font-size="12" font-weight="600" text-anchor="start" >SHADOW 06  /  FIGURE 11</text>
-<text x="52" y="78" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="29" font-weight="600" text-anchor="start" >88 to 1</text>
+<text x="52" y="78" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="29" font-weight="600" text-anchor="start" >1.5 million registrations, 17,000 owners</text>
 <line x1="52" y1="98" x2="1148" y2="98" stroke="#9C907A" stroke-width="1" />
 <text x="52" y="190" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="52" font-weight="600" text-anchor="start" data-row="0" data-field="value" data-value="1500000">1,500,000</text>
 <text x="52" y="227" fill="#2A2D2F" font-family="Inter,Arial,sans-serif" font-size="19" font-weight="400" text-anchor="start" >registered agents</text>
 <line x1="52" y1="262" x2="1120" y2="262" stroke="#9C907A" stroke-width="1" />
 <text x="52" y="335" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="52" font-weight="600" text-anchor="start" data-row="1" data-field="value" data-value="17000">17,000</text>
 <text x="52" y="372" fill="#2A2D2F" font-family="Inter,Arial,sans-serif" font-size="19" font-weight="400" text-anchor="start" >human owners</text>
-<text x="52" y="515" fill="#8B2D2D" font-family="Inter,Arial,sans-serif" font-size="78" font-weight="600" text-anchor="start" data-derived="ratio" data-numerator="1500000" data-denominator="17000">88 : 1</text>
-<text x="52" y="571" fill="#2A2D2F" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="start" >Database state before the first fix, 31 Jan 2026; Wiz, published 2 Feb 2026. Registrations and owner records — not activity.</text>
-<text x="52" y="669" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >About 1.5 million registered &#x27;agents&#x27; and about 17,000 human owners, according to the Wiz investigation. Registrations do not</text>
-<text x="52" y="691" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >measure activity or autonomy; the platform had no mechanism to verify whether an &#x27;agent&#x27; was AI.</text>
-<line x1="52" y1="801" x2="1148" y2="801" stroke="#9C907A" stroke-width="1" />
-<text x="52" y="829" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >SOURCE  Wiz · &quot;Hacking Moltbook&quot; · 2 Feb 2026 · H03–H05.</text>
+<text x="52" y="440" fill="#2A2D2F" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="start" >Database state before the first fix, 31 Jan 2026. Registrations and owner records — not activity.</text>
+<text x="52" y="543" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >About 1.5 million registered &#x27;agents&#x27; and about 17,000 human owners, according to the Wiz investigation. Registrations do not</text>
+<text x="52" y="565" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >measure activity or autonomy; the platform had no mechanism to verify whether an &#x27;agent&#x27; was AI.</text>
+<g data-text-role="source">
+<line x1="52" y1="658" x2="1148" y2="658" stroke="#9C907A" stroke-width="1" />
+<text x="52" y="686" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >SOURCE  Wiz, 2 Feb 2026.</text>
+</g>
 </svg>

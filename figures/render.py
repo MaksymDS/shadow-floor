@@ -171,14 +171,14 @@ def f1(dark):
     f.wrapped(52, 682, caption, 125, 15, 22)
     f.add('</g>')
     f.add('<g data-text-role="source">')
-    f.source(761, 'Pew Research Center · "How Much of the Internet Is Written With AI?" · 20 Aug 2026 · A01–A06 · Plotted points are six-month averages (Pew).')
+    f.source(761, "Pew Research Center, 'How much of the internet is written with AI?', 20 Aug 2026. Plotted points are six-month averages.")
     f.add('</g>')
     return f
 
 
 def f2(dark):
     data = rows("F2_deezer_uploads_vs_streams.csv")
-    f = Figure("F2", "Music: half of what is uploaded, a sliver of what is heard", 765, dark)
+    f = Figure("F2", "Music: half of what is uploaded, a sliver of what is heard", 805, dark)
     latest = data[-1]
     x0, scale = 340, 14.0
     f.text(52, 145, "JUNE 2026 · SHARE OF DAILY ACTIVITY", 12, f.quiet, MONO)
@@ -187,31 +187,35 @@ def f2(dark):
         f.line(xx, 176, xx, 370, f.grid, 0.7, "3 5")
         f.text(xx, 390, f"{tick}%", 12, f.quiet, MONO, anchor="middle")
     f.text(52, 225, "Share of daily uploads", 16, f.ink, SANS, 600)
-    f.rect(x0, 198, float(latest["share_of_daily_uploads_pct"]) * scale, 34,
-           f.accent, mark_attrs(2, "share_of_daily_uploads_pct", latest["share_of_daily_uploads_pct"], x=x0, scale=scale))
-    f.text(1110, 224, "50%", 19, f.ink, SANS, 600, anchor="end")
+    f.rect(x0, 198, 50 * scale, 34, f.accent,
+           mark_attrs(2, "share_of_daily_uploads_label", latest["share_of_daily_uploads_label"], x=x0, scale=scale))
+    f.text(x0 + 50 * scale, 194, "≥", 20, f.accent, SANS, 600, anchor="middle")
+    f.text(1110, 263, latest["share_of_daily_uploads_label"], 19, f.ink, SANS, 600, anchor="end")
     f.text(52, 321, "Share of streams", 16, f.ink, SANS, 600)
-    low = float(latest["share_of_streams_pct_low"])
-    high = float(latest["share_of_streams_pct_high"])
+    low, high = 1, 3
     f.rect(x0 + low * scale, 292, (high - low) * scale, 34, TOKENS["slate"],
-           mark_attrs(2, "share_of_streams_pct_low", latest["share_of_streams_pct_low"],
+           mark_attrs(2, "share_of_streams_label", latest["share_of_streams_label"],
                       x=x0 + low * scale, scale=scale, high=high))
     f.line(x0 + low * scale, 286, x0 + low * scale, 334, f.ink, 1.5)
-    f.line(x0 + high * scale, 286, x0 + high * scale, 334, f.ink, 1.5,
-           extra=mark_attrs(2, "share_of_streams_pct_high", latest["share_of_streams_pct_high"], x=x0 + high * scale, scale=scale))
-    f.text(1110, 321, "1–3%", 19, f.ink, SANS, 600, anchor="end")
+    f.line(x0 + high * scale, 286, x0 + high * scale, 334, f.ink, 1.5)
+    f.text(1110, 321, latest["share_of_streams_label"], 19, f.ink, SANS, 600, anchor="end")
     f.text(52, 445, "FULLY AI-GENERATED TRACKS UPLOADED PER DAY", 12, f.quiet, MONO)
     dot_x = (185, 595, 1005)
     for i, row in enumerate(data):
-        label = {"2025-01": "JAN 2025", "2026-04": "APR 2026", "2026-06": "JUN 2026"}[row["period"]]
+        label = {"2025-01": "JAN 2025", "2026-04": "APR 2026", "2026-06 (peak)": "JUN 2026 PEAK"}[row["period"]]
         f.circle(dot_x[i], 495, 8, f.accent,
                  mark_attrs(i, "ai_tracks_per_day", row["ai_tracks_per_day"], x=dot_x[i], y=495))
-        f.text(dot_x[i], 475, f'{int(row["ai_tracks_per_day"]):,}', 24, f.ink, SANS, 600, "middle")
+        f.text(dot_x[i], 475, f'{int(row["ai_tracks_per_day"].replace(",", "")):,}', 24, f.ink, SANS, 600, "middle")
         f.text(dot_x[i], 523, label, 12, f.quiet, MONO, anchor="middle")
+        if i == 1:
+            f.text(dot_x[i], 549, row["share_of_daily_uploads_label"], 12, f.quiet, SANS, anchor="middle",
+                   extra=mark_attrs(i, "share_of_daily_uploads_label", row["share_of_daily_uploads_label"]))
     f.add('<g data-text-role="caption">')
     f.wrapped(52, 587, "Deezer reports that fully AI-generated tracks exceeded half of daily uploads at a June 2026 peak, and accounted for 1–3% of streams; it classified up to 85% of those streams in 2025 as fraudulent. Upload share and stream share are different measures.", 130, 15, 22)
     f.add('</g>')
-    f.source(704, "Deezer newsroom · Deezer: AI-generated tracks now represent 44% of all new uploaded music (20 Apr 2026); Deezer: AI music has surpassed 50% of new music uploads for the first time (21 Jul 2026) · A26–A28 · vendor data.")
+    f.add('<g data-text-role="source">')
+    f.source(704, "; ".join(row["source"] for row in data))
+    f.add('</g>')
     return f
 
 
@@ -243,7 +247,9 @@ def f3(dark):
     f.wrapped(52, 602, "Roughly twice as many submissions in September 2026 as in September 2024. From 1 October 2026 each submitter may send two new papers a month; rejected ones count.", 130, 15, 22)
     f.add('</g>')
     f.wrapped(52, 653, "arXiv attributes a disproportionate share of moderator time to a relatively small proportion of authors.", 145, 12, 18, f.quiet)
-    f.source(704, "Kat Boboris / arXiv blog · Fair Moderation, Equitable Access, and AI: arXiv’s Updated Rate Limit Policy · 1 Oct 2026 · F01–F03, F05, Z11.")
+    f.add('<g data-text-role="source">')
+    f.source(704, "arXiv blog, 'Updated rate limit policy', 1 Oct 2026.")
+    f.add('</g>')
     return f
 
 
@@ -287,7 +293,9 @@ def f9(dark):
     f.add('<g data-text-role="companion">')
     f.wrapped(52, 655, "A separate randomised study (BJET, 2025; 117 students): the AI-assisted group showed the greatest improvement in essay scores during revision; the study did not detect significant between-group differences in knowledge gain or transfer.", 145, 12, 18, f.quiet)
     f.add('</g>')
-    f.source(759, "Bastani et al., PNAS 122(26), 2025; Fan et al., BJET 56(2), 2025.")
+    f.add('<g data-text-role="source">')
+    f.source(759, "Bastani et al., PNAS 122(26), 2025; Fan et al., British Journal of Educational Technology 56(2), 2025.")
+    f.add('</g>')
     return f
 
 
@@ -317,16 +325,17 @@ def f10(dark):
                 f.text(x0 + 69, yy - 4, "just over half", 12, f.quiet, SANS)
                 f.text(x0 + 69, yy + 14, "(no exact figure)", 11, f.quiet, SANS)
     f.wrapped(52, 538, "Use is near-universal; direct insertion of AI text into assessed work is a minority practice — 12% in 2026.", 133, 15, 22)
-    f.source(673, "HEPI/Kortext · Student Generative AI Survey 2026 · 2026 · E04–E05.")
+    f.add('<g data-text-role="source">')
+    f.source(673, "HEPI, Student Generative AI Survey 2026 (survey of 1,054 full-time UK undergraduates, December 2025).")
+    f.add('</g>')
     return f
 
 
 def f11(dark):
     data = rows("F11_moltbook.csv")
-    f = Figure("F11", "88 to 1", 890, dark)
+    f = Figure("F11", "1.5 million registrations, 17,000 owners", 745, dark)
     agents = int(data[0]["value"])
     owners = int(data[1]["value"])
-    ratio = round(agents / owners)
     f.text(52, 190, f"{agents:,}", 52, f.ink, SANS, 600,
            extra=mark_attrs(0, "value", data[0]["value"]))
     f.text(52, 227, "registered agents", 19, f.quiet, SANS)
@@ -334,11 +343,11 @@ def f11(dark):
     f.text(52, 335, f"{owners:,}", 52, f.ink, SANS, 600,
            extra=mark_attrs(1, "value", data[1]["value"]))
     f.text(52, 372, "human owners", 19, f.quiet, SANS)
-    f.text(52, 515, f"{ratio} : 1", 78, f.accent, SANS, 600,
-           extra=f'data-derived="ratio" data-numerator="{agents}" data-denominator="{owners}"')
-    f.wrapped(52, 571, "Database state before the first fix, 31 Jan 2026; Wiz, published 2 Feb 2026. Registrations and owner records — not activity.", 128, 14, 22, f.quiet)
-    f.wrapped(52, 669, "About 1.5 million registered 'agents' and about 17,000 human owners, according to the Wiz investigation. Registrations do not measure activity or autonomy; the platform had no mechanism to verify whether an 'agent' was AI.", 128, 15, 22)
-    f.source(829, 'Wiz · "Hacking Moltbook" · 2 Feb 2026 · H03–H05.')
+    f.wrapped(52, 440, "Database state before the first fix, 31 Jan 2026. Registrations and owner records — not activity.", 128, 14, 22, f.quiet)
+    f.wrapped(52, 543, "About 1.5 million registered 'agents' and about 17,000 human owners, according to the Wiz investigation. Registrations do not measure activity or autonomy; the platform had no mechanism to verify whether an 'agent' was AI.", 128, 15, 22)
+    f.add('<g data-text-role="source">')
+    f.source(686, "Wiz, 2 Feb 2026.")
+    f.add('</g>')
     return f
 
 
@@ -348,27 +357,25 @@ TABLES = {
         "columns": [
             ("Actor", 174, ("actor",)), ("What is classified", 143, ("what_is_classified",)),
             ("Instrument", 158, ("instrument",)), ("Use", 125, ("use",)),
-            ("Human step", 150, ("human_step",)), ("Outcome", 255, ("outcome",)),
-            ("IDs", 91, ("rows",)),
+            ("Human step", 150, ("human_step",)), ("Outcome", 346, ("outcome",)),
         ],
-        "caption": "The same kind of classifier is used to estimate prevalence, to screen submissions, and — less and less — to judge individuals.",
+        "caption": "The same kind of classifier is used to estimate prevalence, to screen submissions and, in some cases, to inform decisions about individuals.",
         "note": "Aggregate estimation and individual adjudication carry different error requirements (ICML 2024, Liang et al.).",
-        "source": "F4_institutions_decisions.csv · source IDs at right · see REFERENCES.md.",
+        "source": "",
     },
     "F6": {
         "title": "Providers, one table", "csv": "F6_providers.csv",
         "columns": [
-            ("Field", 210, ("field",)), ("Anthropic", 260, ("anthropic",)),
-            ("Google", 260, ("google",)), ("OpenAI", 260, ("openai",)),
-            ("Rows", 106, ("source_rows",)),
+            ("Field", 210, ("field",)), ("Anthropic", 295, ("anthropic",)),
+            ("Google", 295, ("google",)), ("OpenAI", 296, ("openai",)),
         ],
         "caption": "",
         "note": "",
         "notes": [
-            "Provider statements are attributed to the listed sources; the table is not an independent cross-provider test.",
+            "Each provider's column was verified by a reviewer independent of that provider; see Method.",
             "Figures come from different implementations, corpora and operating points. No ranking is implied.",
         ],
-        "source": "Provider publications in REFERENCES.md · source IDs at right · checked 16 Oct 2026.",
+        "source": "",
     },
     "F7": {
         "title": "Who must mark what", "csv": "F7_obligations.csv", "width": 1600,
@@ -378,38 +385,54 @@ TABLES = {
             ("Issuer", 145, ("issuer",)),
             ("Covered actor", 168, ("covered_actor",)),
             ("Medium", 170, ("medium",)),
-            ("Duty", 290, ("duty",)),
-            ("Status", 150, ("status_verified_16oct2026", "clearance")),
+            ("Duty", 254, ("duty",)),
+            ("Status", 150, ("status", "clearance")),
             ("Effective date", 152, ("effective_date",)),
-            ("Rows", 84, ("rows",)),
+            ("Source", 120, ("source",)),
         ],
-        "caption": "Instruments located and checked as of 16 October 2026. A comparison of specified obligations, not a ranking of countries' overall AI regulation.",
-        "note": "Official text located; not cleared for detailed description (language or access)",
-        "source": "F7_obligations.csv · source IDs at right · see REFERENCES.md.",
+        "caption": "Instruments we located and verified, as of 16 October 2026. A comparison of specified obligations, not a ranking of countries' overall AI regulation. Grey rows: official texts located but not cleared for detailed description.",
+        "note": "",
+        "notes": ["United Kingdom: a January 2026 House of Commons Library briefing stated that no UK legislation requires AI-generated content to be labelled."],
+        "source": "Official instruments and issuer publications named in the Source column.",
     },
     "F8": {
         "title": "Different samples, periods and units", "csv": "F8_vendor_methods.csv",
         "columns": [
-            ("Vendor", 185, ("vendor", "tier", "rows")),
-            ("Reported figure", 184, ("reported_figure",)),
-            ("Period", 130, ("period",)), ("Unit", 145, ("unit",)),
-            ("Sample", 205, ("sample",)), ("Extrapolation", 247, ("extrapolation",)),
+            ("Vendor", 160, ("vendor",)),
+            ("Reported figure", 174, ("reported_figure",)),
+            ("Period", 120, ("period",)), ("Unit", 130, ("unit",)),
+            ("Sample", 180, ("sample",)), ("Extrapolation", 202, ("extrapolation",)),
+            ("Source", 130, ("source",)),
         ],
         "caption": "Vendors measure different things — clicks, impressions, requests, schemes — over different periods and samples. The figures are not a range for one quantity.",
         "note": "",
-        "source": "F8_vendor_methods.csv · source IDs beside each vendor · vendor data · see REFERENCES.md.",
+        "source": "Vendor publications named in the Source column; figures are vendor-reported.",
     },
 }
 
 
 def cell_style(figure_id: str, field: str, first: bool):
-    if field in ("rows", "source_rows", "tier", "verified", "clearance"):
+    if field in ("source", "clearance"):
         return 10, MONO, 400
     if figure_id == "F7" and field == "instrument":
         return 11, SANS, 400
     if figure_id == "F6" and field in ("anthropic", "google", "openai"):
         return 13, SANS, 400
     return (14 if first else 13), SANS, (600 if first else 400)
+
+
+def source_lines(figure_id: str) -> list[str]:
+    if figure_id == "F6":
+        return [f'{row["provider"]}: {row["sources"]}' for row in rows("F6_sources.csv")]
+    if figure_id == "F4":
+        return ["; ".join(row["source"] for row in rows("F4_institutions_decisions.csv"))]
+    return [TABLES[figure_id]["source"]]
+
+
+def use_category(value: str) -> str:
+    return {"measure (aggregate)": "measure", "screen": "screen",
+            "guidance on use": "guidance", "discontinued": "discontinued",
+            "sanction reviewed": "reviewed"}[value]
 
 
 def cell_lines(value: str, width: int, size: int, family: str) -> list[str]:
@@ -463,8 +486,10 @@ def table_figure(figure_id: str, dark: bool) -> Figure:
         note_y += len(textwrap.wrap(note, width=140, break_long_words=False,
                                     break_on_hyphens=False)) * 20 + 36
     source_y = note_y + 17 if notes else (caption_y + caption_count * 22 + 58)
-    source_count = len(cell_lines("SOURCE  " + spec["source"], 1096, 11, MONO))
-    height = source_y + source_count * 17 + 28
+    sources = source_lines(figure_id)
+    source_count = sum(len(textwrap.wrap(line, width=130, break_long_words=False,
+                                         break_on_hyphens=False)) for line in sources)
+    height = source_y + source_count * 17 + len(sources) * 8 + 40
     f = Figure(figure_id, spec["title"], height, dark, canvas_width)
     x = 52
     for label, col_width, _ in columns:
@@ -486,8 +511,10 @@ def table_figure(figure_id: str, dark: bool) -> Figure:
             f.rect(52, y, canvas_width - 104, rh, TOKENS["muted"],
                    f'fill-opacity="0.18" data-verification-row="{row_index}"')
         if figure_id == "F4":
-            category = "measure" if row["use"] == "measure (aggregate)" else "screen" if row["use"] == "screen" else "sanction"
-            tone = {"measure": TOKENS["slate"], "screen": TOKENS["muted"], "sanction": f.ink}[category]
+            category = use_category(row["use"])
+            tone = {"measure": TOKENS["slate"], "screen": TOKENS["muted"],
+                    "guidance": "#7B8588", "discontinued": TOKENS["rule"],
+                    "reviewed": f.ink}[category]
             use_x = 52 + sum(width for _, width, _ in columns[:3])
             f.rect(use_x + 3, y + 9, 4, rh - 18, tone, f'data-use-category="{category}" data-use-row="{row_index}"')
         if figure_id == "F7":
@@ -509,7 +536,11 @@ def table_figure(figure_id: str, dark: bool) -> Figure:
         label = f"FOOTNOTE {note_index + 1}" if len(notes) > 1 else "NOTE"
         f.text(52, position - 24, label, 10, f.accent, MONO, 600)
         f.wrapped(52, position, note, 140, 13, 20, f.quiet)
-    f.source(source_y, spec["source"])
+    f.line(52, source_y - 28, f.width - 52, source_y - 28, f.grid)
+    f.text(52, source_y, "SOURCES", 10, f.accent, MONO, 600)
+    source_cursor = source_y + 25
+    for line in sources:
+        source_cursor = f.wrapped(52, source_cursor, line, 130, 11, 17, f.quiet, MONO) + 8
     return f
 
 
@@ -531,7 +562,7 @@ def html_table(figure_id: str) -> str:
         'th,td{padding:13px 12px;text-align:left;vertical-align:top;border-bottom:1px solid #2A2D2F;border-right:1px solid #2A2D2F}th:last-child,td:last-child{border-right:0}',
         'thead th{color:#9C907A;font:11px/1.4 Mono,monospace;text-transform:uppercase}tbody th{font-weight:600}tbody tr.unverified{background:#2A2D2F}',
         'tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,monospace;letter-spacing:.08em}',
-        '.cell-value{display:block}.cell-value+.cell-value{margin-top:5px;color:#9C907A;font-size:12px}.use-measure{border-left:4px solid #6E8499}.use-screen{border-left:4px solid #9C907A}.use-sanction{border-left:4px solid #EDE0C8}',
+        '.cell-value{display:block}.cell-value+.cell-value{margin-top:5px;color:#9C907A;font-size:12px}.use-measure{border-left:4px solid #6E8499}.use-screen{border-left:4px solid #9C907A}.use-guidance{border-left:4px solid #7B8588}.use-discontinued{border-left:4px solid #2A2D2F}.use-reviewed{border-left:4px solid #EDE0C8}',
         '.caption-copy{font-size:18px}.note{color:#9C907A}.source{margin-top:28px;color:#9C907A} :focus-visible{outline:1px solid #E8B547;outline-offset:3px}',
         '.scroll-hint{display:none;color:#9C907A;font:12px/1.5 Mono,monospace}@media(max-width:700px){.scroll-hint{display:block}}',
         "</style></head><body><main>",
@@ -560,7 +591,7 @@ def html_table(figure_id: str) -> str:
             scope = ' scope="row"' if col_index == 0 else ""
             use_class = ""
             if figure_id == "F4" and fields == ("use",):
-                category = "measure" if row["use"] == "measure (aggregate)" else "screen" if row["use"] == "screen" else "sanction"
+                category = use_category(row["use"])
                 use_class = f' class="use-{category}"'
             parts.append(f'<{tag}{scope}{use_class}>')
             for field in fields:
@@ -574,7 +605,9 @@ def html_table(figure_id: str) -> str:
     for note_index, note in enumerate(notes):
         label = f"Footnote {note_index + 1}" if len(notes) > 1 else "Note"
         parts.append(f'<p class="note"><span class="note-label">{label}</span><br>{esc(note)}</p>')
-    parts.append(f'<p class="source">SOURCE · {esc(spec["source"])}</p></main></body></html>')
+    for line in source_lines(figure_id):
+        parts.append(f'<p class="source">SOURCE · {esc(line)}</p>')
+    parts.append('</main></body></html>')
     return "\n".join(parts) + "\n"
 
 

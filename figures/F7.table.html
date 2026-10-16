@@ -12,7 +12,7 @@ caption{text-align:left;padding:16px 18px;background:#121415;color:#E8B547;font:
 th,td{padding:13px 12px;text-align:left;vertical-align:top;border-bottom:1px solid #2A2D2F;border-right:1px solid #2A2D2F}th:last-child,td:last-child{border-right:0}
 thead th{color:#9C907A;font:11px/1.4 Mono,monospace;text-transform:uppercase}tbody th{font-weight:600}tbody tr.unverified{background:#2A2D2F}
 tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,monospace;letter-spacing:.08em}
-.cell-value{display:block}.cell-value+.cell-value{margin-top:5px;color:#9C907A;font-size:12px}.use-measure{border-left:4px solid #6E8499}.use-screen{border-left:4px solid #9C907A}.use-sanction{border-left:4px solid #EDE0C8}
+.cell-value{display:block}.cell-value+.cell-value{margin-top:5px;color:#9C907A;font-size:12px}.use-measure{border-left:4px solid #6E8499}.use-screen{border-left:4px solid #9C907A}.use-guidance{border-left:4px solid #CC7722}.use-discontinued{border-left:4px solid #2A2D2F}.use-reviewed{border-left:4px solid #EDE0C8}
 .caption-copy{font-size:18px}.note{color:#9C907A}.source{margin-top:28px;color:#9C907A} :focus-visible{outline:1px solid #E8B547;outline-offset:3px}
 .scroll-hint{display:none;color:#9C907A;font:12px/1.5 Mono,monospace}@media(max-width:700px){.scroll-hint{display:block}}
 </style></head><body><main>
@@ -28,7 +28,7 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 <th scope="col">Duty</th>
 <th scope="col">Status</th>
 <th scope="col">Effective date</th>
-<th scope="col">Rows</th>
+<th scope="col">Source</th>
 </tr></thead>
 <tbody aria-label="1 Statute / regulation"><tr class="group-row"><th scope="rowgroup" colspan="9">1 Statute / regulation</th></tr>
 <tr class="unverified" data-group="1 Statute / regulation" data-clearance="located, not cleared">
@@ -36,7 +36,7 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 <span class="cell-value" data-row="0" data-field="jurisdiction" data-value="China">China</span>
 </th>
 <td>
-<span class="cell-value" data-row="0" data-field="instrument" data-value="Labelling Measures and CAC programmes">Labelling Measures and CAC programmes</span>
+<span class="cell-value" data-row="0" data-field="instrument" data-value="Labelling Measures and later CAC programmes">Labelling Measures and later CAC programmes</span>
 </td>
 <td>
 <span class="cell-value" data-row="0" data-field="issuer" data-value="Cyberspace Administration of China">Cyberspace Administration of China</span>
@@ -51,14 +51,14 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 <span class="cell-value" data-row="0" data-field="duty" data-value="—">—</span>
 </td>
 <td>
-<span class="cell-value" data-row="0" data-field="status_verified_16oct2026" data-value="located (official Chinese text)">located (official Chinese text)</span>
+<span class="cell-value" data-row="0" data-field="status" data-value="official text located (Chinese)">official text located (Chinese)</span>
 <span class="cell-value" data-row="0" data-field="clearance" data-value="located, not cleared">located, not cleared</span>
 </td>
 <td>
 <span class="cell-value" data-row="0" data-field="effective_date" data-value="—">—</span>
 </td>
 <td>
-<span class="cell-value" data-row="0" data-field="rows" data-value="C10-C12">C10-C12</span>
+<span class="cell-value" data-row="0" data-field="source" data-value="cac.gov.cn">cac.gov.cn</span>
 </td>
 </tr>
 <tr data-group="1 Statute / regulation" data-clearance="cleared">
@@ -66,7 +66,7 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 <span class="cell-value" data-row="1" data-field="jurisdiction" data-value="European Union">European Union</span>
 </th>
 <td>
-<span class="cell-value" data-row="1" data-field="instrument" data-value="AI Act Art. 50 (+ Reg. 2026/1744)">AI Act Art. 50 (+ Reg. 2026/1744)</span>
+<span class="cell-value" data-row="1" data-field="instrument" data-value="AI Act Art. 50 (as amended by Reg. 2026/1744)">AI Act Art. 50 (as amended by Reg. 2026/1744)</span>
 </td>
 <td>
 <span class="cell-value" data-row="1" data-field="issuer" data-value="EU">EU</span>
@@ -75,20 +75,20 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 <span class="cell-value" data-row="1" data-field="covered_actor" data-value="providers; deployers">providers; deployers</span>
 </td>
 <td>
-<span class="cell-value" data-row="1" data-field="medium" data-value="all generative output; deepfakes; public-interest text">all generative output; deepfakes; public-interest text</span>
+<span class="cell-value" data-row="1" data-field="medium" data-value="generative output; deepfakes; public-interest text">generative output; deepfakes; public-interest text</span>
 </td>
 <td>
-<span class="cell-value" data-row="1" data-field="duty" data-value="providers: machine-readable marking; deployers: disclose deepfakes and public-interest text (editorial-responsibility exception)">providers: machine-readable marking; deployers: disclose deepfakes and public-interest text (editorial-responsibility exception)</span>
+<span class="cell-value" data-row="1" data-field="duty" data-value="providers: machine-readable marking (exceptions incl. assistive standard editing); deployers: disclose deepfakes and public-interest text (editorial-responsibility exception)">providers: machine-readable marking (exceptions incl. assistive standard editing); deployers: disclose deepfakes and public-interest text (editorial-responsibility exception)</span>
 </td>
 <td>
-<span class="cell-value" data-row="1" data-field="status_verified_16oct2026" data-value="applies">applies</span>
+<span class="cell-value" data-row="1" data-field="status" data-value="applies">applies</span>
 <span class="cell-value" data-row="1" data-field="clearance" data-value="cleared">cleared</span>
 </td>
 <td>
 <span class="cell-value" data-row="1" data-field="effective_date" data-value="2 Aug 2026; legacy systems 2 Dec 2026">2 Aug 2026; legacy systems 2 Dec 2026</span>
 </td>
 <td>
-<span class="cell-value" data-row="1" data-field="rows" data-value="C04-C08">C04-C08</span>
+<span class="cell-value" data-row="1" data-field="source" data-value="EUR-Lex; AI Act Service Desk">EUR-Lex; AI Act Service Desk</span>
 </td>
 </tr>
 <tr data-group="1 Statute / regulation" data-clearance="cleared">
@@ -111,14 +111,14 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 <span class="cell-value" data-row="2" data-field="duty" data-value="label and provenance for SGI">label and provenance for SGI</span>
 </td>
 <td>
-<span class="cell-value" data-row="2" data-field="status_verified_16oct2026" data-value="in force">in force</span>
+<span class="cell-value" data-row="2" data-field="status" data-value="in force">in force</span>
 <span class="cell-value" data-row="2" data-field="clearance" data-value="cleared">cleared</span>
 </td>
 <td>
 <span class="cell-value" data-row="2" data-field="effective_date" data-value="20 Feb 2026">20 Feb 2026</span>
 </td>
 <td>
-<span class="cell-value" data-row="2" data-field="rows" data-value="C30-C31">C30-C31</span>
+<span class="cell-value" data-row="2" data-field="source" data-value="MeitY FAQ">MeitY FAQ</span>
 </td>
 </tr>
 <tr class="unverified" data-group="1 Statute / regulation" data-clearance="located, not cleared">
@@ -141,14 +141,14 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 <span class="cell-value" data-row="3" data-field="duty" data-value="—">—</span>
 </td>
 <td>
-<span class="cell-value" data-row="3" data-field="status_verified_16oct2026" data-value="located (unofficial English translation, not retrieved)">located (unofficial English translation, not retrieved)</span>
+<span class="cell-value" data-row="3" data-field="status" data-value="record located; full text not retrieved">record located; full text not retrieved</span>
 <span class="cell-value" data-row="3" data-field="clearance" data-value="located, not cleared">located, not cleared</span>
 </td>
 <td>
 <span class="cell-value" data-row="3" data-field="effective_date" data-value="—">—</span>
 </td>
 <td>
-<span class="cell-value" data-row="3" data-field="rows" data-value="C73b">C73b</span>
+<span class="cell-value" data-row="3" data-field="source" data-value="adilet.zan.kz">adilet.zan.kz</span>
 </td>
 </tr>
 <tr class="unverified" data-group="1 Statute / regulation" data-clearance="located, not cleared">
@@ -171,14 +171,14 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 <span class="cell-value" data-row="4" data-field="duty" data-value="—">—</span>
 </td>
 <td>
-<span class="cell-value" data-row="4" data-field="status_verified_16oct2026" data-value="located (operative text not verified)">located (operative text not verified)</span>
+<span class="cell-value" data-row="4" data-field="status" data-value="record located; operative text not verified">record located; operative text not verified</span>
 <span class="cell-value" data-row="4" data-field="clearance" data-value="located, not cleared">located, not cleared</span>
 </td>
 <td>
 <span class="cell-value" data-row="4" data-field="effective_date" data-value="—">—</span>
 </td>
 <td>
-<span class="cell-value" data-row="4" data-field="rows" data-value="C73a">C73a</span>
+<span class="cell-value" data-row="4" data-field="source" data-value="publication.pravo.gov.ru">publication.pravo.gov.ru</span>
 </td>
 </tr>
 <tr data-group="1 Statute / regulation" data-clearance="cleared">
@@ -198,17 +198,17 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 <span class="cell-value" data-row="5" data-field="medium" data-value="outputs; realistic synthetic content">outputs; realistic synthetic content</span>
 </td>
 <td>
-<span class="cell-value" data-row="5" data-field="duty" data-value="machine-readable mark + notice; human-recognisable for realistic content">machine-readable mark + notice; human-recognisable for realistic content</span>
+<span class="cell-value" data-row="5" data-field="duty" data-value="marking and notice, differentiated by output type">marking and notice, differentiated by output type</span>
 </td>
 <td>
-<span class="cell-value" data-row="5" data-field="status_verified_16oct2026" data-value="commenced; grace period announced">commenced; grace period announced</span>
+<span class="cell-value" data-row="5" data-field="status" data-value="commenced; grace period announced">commenced; grace period announced</span>
 <span class="cell-value" data-row="5" data-field="clearance" data-value="cleared">cleared</span>
 </td>
 <td>
 <span class="cell-value" data-row="5" data-field="effective_date" data-value="22 Jan 2026">22 Jan 2026</span>
 </td>
 <td>
-<span class="cell-value" data-row="5" data-field="rows" data-value="C40-C41">C40-C41</span>
+<span class="cell-value" data-row="5" data-field="source" data-value="MSIT">MSIT</span>
 </td>
 </tr>
 <tr data-group="1 Statute / regulation" data-clearance="cleared">
@@ -222,7 +222,7 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 <span class="cell-value" data-row="6" data-field="issuer" data-value="State of California">State of California</span>
 </td>
 <td>
-<span class="cell-value" data-row="6" data-field="covered_actor" data-value="providers (no user threshold); large platforms from 2027">providers (no user threshold); large platforms from 2027</span>
+<span class="cell-value" data-row="6" data-field="covered_actor" data-value="providers (no user threshold); covered platforms from 2027">providers (no user threshold); covered platforms from 2027</span>
 </td>
 <td>
 <span class="cell-value" data-row="6" data-field="medium" data-value="image, video, audio (latent disclosure)">image, video, audio (latent disclosure)</span>
@@ -231,14 +231,14 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 <span class="cell-value" data-row="6" data-field="duty" data-value="latent disclosure; free disclosure verification tool">latent disclosure; free disclosure verification tool</span>
 </td>
 <td>
-<span class="cell-value" data-row="6" data-field="status_verified_16oct2026" data-value="operative">operative</span>
+<span class="cell-value" data-row="6" data-field="status" data-value="operative">operative</span>
 <span class="cell-value" data-row="6" data-field="clearance" data-value="cleared">cleared</span>
 </td>
 <td>
 <span class="cell-value" data-row="6" data-field="effective_date" data-value="2 Aug 2026; platforms 1 Jan 2027; devices 2028">2 Aug 2026; platforms 1 Jan 2027; devices 2028</span>
 </td>
 <td>
-<span class="cell-value" data-row="6" data-field="rows" data-value="C20-C24">C20-C24</span>
+<span class="cell-value" data-row="6" data-field="source" data-value="California legislature (chaptered texts)">California legislature (chaptered texts)</span>
 </td>
 </tr>
 <tr data-group="1 Statute / regulation" data-clearance="cleared">
@@ -255,20 +255,20 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 <span class="cell-value" data-row="7" data-field="covered_actor" data-value="providers; deployers">providers; deployers</span>
 </td>
 <td>
-<span class="cell-value" data-row="7" data-field="medium" data-value="audio, images, video; text that may confuse about real events or persons">audio, images, video; text that may confuse about real events or persons</span>
+<span class="cell-value" data-row="7" data-field="medium" data-value="specified generated or edited outputs">specified generated or edited outputs</span>
 </td>
 <td>
-<span class="cell-value" data-row="7" data-field="duty" data-value="providers: machine-readable marking; deployers: disclosure">providers: machine-readable marking; deployers: disclosure</span>
+<span class="cell-value" data-row="7" data-field="duty" data-value="providers: machine-readable marking; deployers: disclosure (Art. 11 conditions)">providers: machine-readable marking; deployers: disclosure (Art. 11 conditions)</span>
 </td>
 <td>
-<span class="cell-value" data-row="7" data-field="status_verified_16oct2026" data-value="in force">in force</span>
+<span class="cell-value" data-row="7" data-field="status" data-value="in force">in force</span>
 <span class="cell-value" data-row="7" data-field="clearance" data-value="cleared">cleared</span>
 </td>
 <td>
 <span class="cell-value" data-row="7" data-field="effective_date" data-value="1 Mar 2026">1 Mar 2026</span>
 </td>
 <td>
-<span class="cell-value" data-row="7" data-field="rows" data-value="C70c">C70c</span>
+<span class="cell-value" data-row="7" data-field="source" data-value="Government of Vietnam (English text)">Government of Vietnam (English text)</span>
 </td>
 </tr>
 <tr class="unverified" data-group="1 Statute / regulation" data-clearance="located, not cleared">
@@ -291,14 +291,14 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 <span class="cell-value" data-row="8" data-field="duty" data-value="—">—</span>
 </td>
 <td>
-<span class="cell-value" data-row="8" data-field="status_verified_16oct2026" data-value="awaiting opinion in Chamber">awaiting opinion in Chamber</span>
+<span class="cell-value" data-row="8" data-field="status" data-value="pending in Chamber">pending in Chamber</span>
 <span class="cell-value" data-row="8" data-field="clearance" data-value="located, not cleared">located, not cleared</span>
 </td>
 <td>
 <span class="cell-value" data-row="8" data-field="effective_date" data-value="—">—</span>
 </td>
 <td>
-<span class="cell-value" data-row="8" data-field="rows" data-value="C63a">C63a</span>
+<span class="cell-value" data-row="8" data-field="source" data-value="camara.leg.br">camara.leg.br</span>
 </td>
 </tr>
 </tbody>
@@ -308,7 +308,7 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 <span class="cell-value" data-row="9" data-field="jurisdiction" data-value="Brazil">Brazil</span>
 </th>
 <td>
-<span class="cell-value" data-row="9" data-field="instrument" data-value="TSE Res. 23.755/2026 (amends 23.610/2019)">TSE Res. 23.755/2026 (amends 23.610/2019)</span>
+<span class="cell-value" data-row="9" data-field="instrument" data-value="TSE Resolution 23.755/2026">TSE Resolution 23.755/2026</span>
 </td>
 <td>
 <span class="cell-value" data-row="9" data-field="issuer" data-value="Superior Electoral Court">Superior Electoral Court</span>
@@ -323,14 +323,14 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 <span class="cell-value" data-row="9" data-field="duty" data-value="—">—</span>
 </td>
 <td>
-<span class="cell-value" data-row="9" data-field="status_verified_16oct2026" data-value="located (Portuguese)">located (Portuguese)</span>
+<span class="cell-value" data-row="9" data-field="status" data-value="official text located (Portuguese)">official text located (Portuguese)</span>
 <span class="cell-value" data-row="9" data-field="clearance" data-value="located, not cleared">located, not cleared</span>
 </td>
 <td>
 <span class="cell-value" data-row="9" data-field="effective_date" data-value="—">—</span>
 </td>
 <td>
-<span class="cell-value" data-row="9" data-field="rows" data-value="C63b">C63b</span>
+<span class="cell-value" data-row="9" data-field="source" data-value="tse.jus.br">tse.jus.br</span>
 </td>
 </tr>
 <tr class="unverified" data-group="2 Election rule" data-clearance="located, not cleared">
@@ -338,7 +338,7 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 <span class="cell-value" data-row="10" data-field="jurisdiction" data-value="Japan">Japan</span>
 </th>
 <td>
-<span class="cell-value" data-row="10" data-field="instrument" data-value="Public Offices Election Act revision (Law No. 58)">Public Offices Election Act revision (Law No. 58)</span>
+<span class="cell-value" data-row="10" data-field="instrument" data-value="Revised Public Offices Election Act (Law No. 58)">Revised Public Offices Election Act (Law No. 58)</span>
 </td>
 <td>
 <span class="cell-value" data-row="10" data-field="issuer" data-value="Diet">Diet</span>
@@ -353,14 +353,14 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 <span class="cell-value" data-row="10" data-field="duty" data-value="—">—</span>
 </td>
 <td>
-<span class="cell-value" data-row="10" data-field="status_verified_16oct2026" data-value="enacted Jul 2026 (official Japanese record)">enacted Jul 2026 (official Japanese record)</span>
+<span class="cell-value" data-row="10" data-field="status" data-value="official record located (Japanese)">official record located (Japanese)</span>
 <span class="cell-value" data-row="10" data-field="clearance" data-value="located, not cleared">located, not cleared</span>
 </td>
 <td>
 <span class="cell-value" data-row="10" data-field="effective_date" data-value="—">—</span>
 </td>
 <td>
-<span class="cell-value" data-row="10" data-field="rows" data-value="C62">C62</span>
+<span class="cell-value" data-row="10" data-field="source" data-value="sangiin.go.jp">sangiin.go.jp</span>
 </td>
 </tr>
 <tr data-group="2 Election rule" data-clearance="cleared">
@@ -380,17 +380,17 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 <span class="cell-value" data-row="11" data-field="medium" data-value="audio, visual, audiovisual">audio, visual, audiovisual</span>
 </td>
 <td>
-<span class="cell-value" data-row="11" data-field="duty" data-value="prohibition during election period (label does not exempt)">prohibition during election period (label does not exempt)</span>
+<span class="cell-value" data-row="11" data-field="duty" data-value="prohibited during election period (a label does not exempt)">prohibited during election period (a label does not exempt)</span>
 </td>
 <td>
-<span class="cell-value" data-row="11" data-field="status_verified_16oct2026" data-value="in force">in force</span>
+<span class="cell-value" data-row="11" data-field="status" data-value="in force">in force</span>
 <span class="cell-value" data-row="11" data-field="clearance" data-value="cleared">cleared</span>
 </td>
 <td>
 <span class="cell-value" data-row="11" data-field="effective_date" data-value="election period">election period</span>
 </td>
 <td>
-<span class="cell-value" data-row="11" data-field="rows" data-value="C70a">C70a</span>
+<span class="cell-value" data-row="11" data-field="source" data-value="Elections Department Singapore">Elections Department Singapore</span>
 </td>
 </tr>
 </tbody>
@@ -415,14 +415,14 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 <span class="cell-value" data-row="12" data-field="duty" data-value="differentiate AI outputs">differentiate AI outputs</span>
 </td>
 <td>
-<span class="cell-value" data-row="12" data-field="status_verified_16oct2026" data-value="in force">in force</span>
+<span class="cell-value" data-row="12" data-field="status" data-value="in force">in force</span>
 <span class="cell-value" data-row="12" data-field="clearance" data-value="cleared">cleared</span>
 </td>
 <td>
 <span class="cell-value" data-row="12" data-field="effective_date" data-value="—">—</span>
 </td>
 <td>
-<span class="cell-value" data-row="12" data-field="rows" data-value="C64b">C64b</span>
+<span class="cell-value" data-row="12" data-field="source" data-value="eSafety Commissioner">eSafety Commissioner</span>
 </td>
 </tr>
 <tr class="unverified" data-group="3 Sectoral / media standard" data-clearance="located, not cleared">
@@ -430,7 +430,7 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 <span class="cell-value" data-row="13" data-field="jurisdiction" data-value="Colombia">Colombia</span>
 </th>
 <td>
-<span class="cell-value" data-row="13" data-field="instrument" data-value="Territorios al Aire 2026 conditions">Territorios al Aire 2026 conditions</span>
+<span class="cell-value" data-row="13" data-field="instrument" data-value="Territorios al Aire 2026 programme conditions">Territorios al Aire 2026 programme conditions</span>
 </td>
 <td>
 <span class="cell-value" data-row="13" data-field="issuer" data-value="MinTIC">MinTIC</span>
@@ -445,14 +445,14 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 <span class="cell-value" data-row="13" data-field="duty" data-value="—">—</span>
 </td>
 <td>
-<span class="cell-value" data-row="13" data-field="status_verified_16oct2026" data-value="located (Spanish)">located (Spanish)</span>
+<span class="cell-value" data-row="13" data-field="status" data-value="official text located (Spanish)">official text located (Spanish)</span>
 <span class="cell-value" data-row="13" data-field="clearance" data-value="located, not cleared">located, not cleared</span>
 </td>
 <td>
 <span class="cell-value" data-row="13" data-field="effective_date" data-value="—">—</span>
 </td>
 <td>
-<span class="cell-value" data-row="13" data-field="rows" data-value="C71d">C71d</span>
+<span class="cell-value" data-row="13" data-field="source" data-value="mintic.gov.co">mintic.gov.co</span>
 </td>
 </tr>
 <tr data-group="3 Sectoral / media standard" data-clearance="cleared">
@@ -469,20 +469,20 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 <span class="cell-value" data-row="14" data-field="covered_actor" data-value="media">media</span>
 </td>
 <td>
-<span class="cell-value" data-row="14" data-field="medium" data-value="AI depictions of national symbols / public figures">AI depictions of national symbols / public figures</span>
+<span class="cell-value" data-row="14" data-field="medium" data-value="AI depictions of national symbols and public figures">AI depictions of national symbols and public figures</span>
 </td>
 <td>
-<span class="cell-value" data-row="14" data-field="duty" data-value="prior approval; AI misinformation a media offence">prior approval; AI misinformation a media offence</span>
+<span class="cell-value" data-row="14" data-field="duty" data-value="prior approval; AI-generated misinformation a media offence">prior approval; AI-generated misinformation a media offence</span>
 </td>
 <td>
-<span class="cell-value" data-row="14" data-field="status_verified_16oct2026" data-value="in force">in force</span>
+<span class="cell-value" data-row="14" data-field="status" data-value="announced Sep 2025">announced Sep 2025</span>
 <span class="cell-value" data-row="14" data-field="clearance" data-value="cleared">cleared</span>
 </td>
 <td>
-<span class="cell-value" data-row="14" data-field="effective_date" data-value="Sep 2025">Sep 2025</span>
+<span class="cell-value" data-row="14" data-field="effective_date" data-value="—">—</span>
 </td>
 <td>
-<span class="cell-value" data-row="14" data-field="rows" data-value="C50a; U12">C50a; U12</span>
+<span class="cell-value" data-row="14" data-field="source" data-value="WAM">WAM</span>
 </td>
 </tr>
 </tbody>
@@ -504,17 +504,17 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 <span class="cell-value" data-row="15" data-field="medium" data-value="—">—</span>
 </td>
 <td>
-<span class="cell-value" data-row="15" data-field="duty" data-value="best-practice labelling, watermarking, metadata">best-practice labelling, watermarking, metadata</span>
+<span class="cell-value" data-row="15" data-field="duty" data-value="discusses labelling, watermarking, metadata">discusses labelling, watermarking, metadata</span>
 </td>
 <td>
-<span class="cell-value" data-row="15" data-field="status_verified_16oct2026" data-value="voluntary">voluntary</span>
+<span class="cell-value" data-row="15" data-field="status" data-value="voluntary">voluntary</span>
 <span class="cell-value" data-row="15" data-field="clearance" data-value="cleared">cleared</span>
 </td>
 <td>
 <span class="cell-value" data-row="15" data-field="effective_date" data-value="Nov 2025">Nov 2025</span>
 </td>
 <td>
-<span class="cell-value" data-row="15" data-field="rows" data-value="C64a">C64a</span>
+<span class="cell-value" data-row="15" data-field="source" data-value="industry.gov.au">industry.gov.au</span>
 </td>
 </tr>
 <tr data-group="4 Guidance / policy" data-clearance="cleared (issuance)">
@@ -534,17 +534,17 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 <span class="cell-value" data-row="16" data-field="medium" data-value="—">—</span>
 </td>
 <td>
-<span class="cell-value" data-row="16" data-field="duty" data-value="clauses not verified">clauses not verified</span>
+<span class="cell-value" data-row="16" data-field="duty" data-value="general AI policy; marking clauses not verified">general AI policy; marking clauses not verified</span>
 </td>
 <td>
-<span class="cell-value" data-row="16" data-field="status_verified_16oct2026" data-value="issued">issued</span>
+<span class="cell-value" data-row="16" data-field="status" data-value="issued">issued</span>
 <span class="cell-value" data-row="16" data-field="clearance" data-value="cleared (issuance)">cleared (issuance)</span>
 </td>
 <td>
 <span class="cell-value" data-row="16" data-field="effective_date" data-value="Jul 2025">Jul 2025</span>
 </td>
 <td>
-<span class="cell-value" data-row="16" data-field="rows" data-value="C54a">C54a</span>
+<span class="cell-value" data-row="16" data-field="source" data-value="iga.gov.bh">iga.gov.bh</span>
 </td>
 </tr>
 <tr class="unverified" data-group="4 Guidance / policy" data-clearance="located, not cleared">
@@ -555,7 +555,7 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 <span class="cell-value" data-row="17" data-field="instrument" data-value="National Guidelines for Generative AI">National Guidelines for Generative AI</span>
 </td>
 <td>
-<span class="cell-value" data-row="17" data-field="issuer" data-value="ai.gov.eg">ai.gov.eg</span>
+<span class="cell-value" data-row="17" data-field="issuer" data-value="Government of Egypt (ai.gov.eg)">Government of Egypt (ai.gov.eg)</span>
 </td>
 <td>
 <span class="cell-value" data-row="17" data-field="covered_actor" data-value="—">—</span>
@@ -567,14 +567,14 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 <span class="cell-value" data-row="17" data-field="duty" data-value="—">—</span>
 </td>
 <td>
-<span class="cell-value" data-row="17" data-field="status_verified_16oct2026" data-value="located (full text not retrieved)">located (full text not retrieved)</span>
+<span class="cell-value" data-row="17" data-field="status" data-value="located; full text not retrieved">located; full text not retrieved</span>
 <span class="cell-value" data-row="17" data-field="clearance" data-value="located, not cleared">located, not cleared</span>
 </td>
 <td>
 <span class="cell-value" data-row="17" data-field="effective_date" data-value="Mar 2026">Mar 2026</span>
 </td>
 <td>
-<span class="cell-value" data-row="17" data-field="rows" data-value="C72c">C72c</span>
+<span class="cell-value" data-row="17" data-field="source" data-value="ai.gov.eg">ai.gov.eg</span>
 </td>
 </tr>
 <tr data-group="4 Guidance / policy" data-clearance="cleared">
@@ -582,10 +582,10 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 <span class="cell-value" data-row="18" data-field="jurisdiction" data-value="Indonesia">Indonesia</span>
 </th>
 <td>
-<span class="cell-value" data-row="18" data-field="instrument" data-value="Official recommendation">Official recommendation</span>
+<span class="cell-value" data-row="18" data-field="instrument" data-value="Public recommendation by a ministry official">Public recommendation by a ministry official</span>
 </td>
 <td>
-<span class="cell-value" data-row="18" data-field="issuer" data-value="Communications ministry official">Communications ministry official</span>
+<span class="cell-value" data-row="18" data-field="issuer" data-value="Communications ministry">Communications ministry</span>
 </td>
 <td>
 <span class="cell-value" data-row="18" data-field="covered_actor" data-value="content creators">content creators</span>
@@ -597,14 +597,14 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 <span class="cell-value" data-row="18" data-field="duty" data-value="label or disclaimer (recommended)">label or disclaimer (recommended)</span>
 </td>
 <td>
-<span class="cell-value" data-row="18" data-field="status_verified_16oct2026" data-value="recommendation">recommendation</span>
+<span class="cell-value" data-row="18" data-field="status" data-value="recommendation">recommendation</span>
 <span class="cell-value" data-row="18" data-field="clearance" data-value="cleared">cleared</span>
 </td>
 <td>
 <span class="cell-value" data-row="18" data-field="effective_date" data-value="Jun 2025">Jun 2025</span>
 </td>
 <td>
-<span class="cell-value" data-row="18" data-field="rows" data-value="C70b">C70b</span>
+<span class="cell-value" data-row="18" data-field="source" data-value="ANTARA">ANTARA</span>
 </td>
 </tr>
 <tr data-group="4 Guidance / policy" data-clearance="cleared">
@@ -627,14 +627,14 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 <span class="cell-value" data-row="19" data-field="duty" data-value="inform users of AI use">inform users of AI use</span>
 </td>
 <td>
-<span class="cell-value" data-row="19" data-field="status_verified_16oct2026" data-value="sectoral guidance">sectoral guidance</span>
+<span class="cell-value" data-row="19" data-field="status" data-value="sectoral guidance">sectoral guidance</span>
 <span class="cell-value" data-row="19" data-field="clearance" data-value="cleared">cleared</span>
 </td>
 <td>
 <span class="cell-value" data-row="19" data-field="effective_date" data-value="—">—</span>
 </td>
 <td>
-<span class="cell-value" data-row="19" data-field="rows" data-value="C72b">C72b</span>
+<span class="cell-value" data-row="19" data-field="source" data-value="Media Council of Kenya">Media Council of Kenya</span>
 </td>
 </tr>
 <tr data-group="4 Guidance / policy" data-clearance="cleared">
@@ -657,14 +657,14 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 <span class="cell-value" data-row="20" data-field="duty" data-value="disclosure among suggested measures">disclosure among suggested measures</span>
 </td>
 <td>
-<span class="cell-value" data-row="20" data-field="status_verified_16oct2026" data-value="guidance">guidance</span>
+<span class="cell-value" data-row="20" data-field="status" data-value="guidance">guidance</span>
 <span class="cell-value" data-row="20" data-field="clearance" data-value="cleared">cleared</span>
 </td>
 <td>
 <span class="cell-value" data-row="20" data-field="effective_date" data-value="—">—</span>
 </td>
 <td>
-<span class="cell-value" data-row="20" data-field="rows" data-value="C70d">C70d</span>
+<span class="cell-value" data-row="20" data-field="source" data-value="MOSTI">MOSTI</span>
 </td>
 </tr>
 <tr class="unverified" data-group="4 Guidance / policy" data-clearance="located, not cleared">
@@ -687,55 +687,55 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 <span class="cell-value" data-row="21" data-field="duty" data-value="—">—</span>
 </td>
 <td>
-<span class="cell-value" data-row="21" data-field="status_verified_16oct2026" data-value="located (Spanish); non-binding">located (Spanish); non-binding</span>
+<span class="cell-value" data-row="21" data-field="status" data-value="official text located (Spanish); non-binding">official text located (Spanish); non-binding</span>
 <span class="cell-value" data-row="21" data-field="clearance" data-value="located, not cleared">located, not cleared</span>
 </td>
 <td>
 <span class="cell-value" data-row="21" data-field="effective_date" data-value="Aug 2026">Aug 2026</span>
 </td>
 <td>
-<span class="cell-value" data-row="21" data-field="rows" data-value="C71a">C71a</span>
-</td>
-</tr>
-<tr data-group="4 Guidance / policy" data-clearance="cleared">
-<th scope="row">
-<span class="cell-value" data-row="22" data-field="jurisdiction" data-value="Nigeria">Nigeria</span>
-</th>
-<td>
-<span class="cell-value" data-row="22" data-field="instrument" data-value="Advisory 2026-026">Advisory 2026-026</span>
-</td>
-<td>
-<span class="cell-value" data-row="22" data-field="issuer" data-value="NCC-CSIRT">NCC-CSIRT</span>
-</td>
-<td>
-<span class="cell-value" data-row="22" data-field="covered_actor" data-value="organisations">organisations</span>
-</td>
-<td>
-<span class="cell-value" data-row="22" data-field="medium" data-value="deepfakes / impersonation">deepfakes / impersonation</span>
-</td>
-<td>
-<span class="cell-value" data-row="22" data-field="duty" data-value="verification procedures (advisory)">verification procedures (advisory)</span>
-</td>
-<td>
-<span class="cell-value" data-row="22" data-field="status_verified_16oct2026" data-value="advisory">advisory</span>
-<span class="cell-value" data-row="22" data-field="clearance" data-value="cleared">cleared</span>
-</td>
-<td>
-<span class="cell-value" data-row="22" data-field="effective_date" data-value="2026">2026</span>
-</td>
-<td>
-<span class="cell-value" data-row="22" data-field="rows" data-value="C72a">C72a</span>
+<span class="cell-value" data-row="21" data-field="source" data-value="ine.mx">ine.mx</span>
 </td>
 </tr>
 <tr data-group="4 Guidance / policy" data-clearance="cleared (publication)">
 <th scope="row">
-<span class="cell-value" data-row="23" data-field="jurisdiction" data-value="Oman">Oman</span>
+<span class="cell-value" data-row="22" data-field="jurisdiction" data-value="Oman">Oman</span>
 </th>
 <td>
-<span class="cell-value" data-row="23" data-field="instrument" data-value="General Policy for the Safe and Ethical Use of AI Systems">General Policy for the Safe and Ethical Use of AI Systems</span>
+<span class="cell-value" data-row="22" data-field="instrument" data-value="General Policy for the Safe and Ethical Use of AI Systems">General Policy for the Safe and Ethical Use of AI Systems</span>
 </td>
 <td>
-<span class="cell-value" data-row="23" data-field="issuer" data-value="MTCIT">MTCIT</span>
+<span class="cell-value" data-row="22" data-field="issuer" data-value="MTCIT">MTCIT</span>
+</td>
+<td>
+<span class="cell-value" data-row="22" data-field="covered_actor" data-value="—">—</span>
+</td>
+<td>
+<span class="cell-value" data-row="22" data-field="medium" data-value="—">—</span>
+</td>
+<td>
+<span class="cell-value" data-row="22" data-field="duty" data-value="general AI policy; marking clauses not verified">general AI policy; marking clauses not verified</span>
+</td>
+<td>
+<span class="cell-value" data-row="22" data-field="status" data-value="published">published</span>
+<span class="cell-value" data-row="22" data-field="clearance" data-value="cleared (publication)">cleared (publication)</span>
+</td>
+<td>
+<span class="cell-value" data-row="22" data-field="effective_date" data-value="1 Apr 2025">1 Apr 2025</span>
+</td>
+<td>
+<span class="cell-value" data-row="22" data-field="source" data-value="mtcit.gov.om">mtcit.gov.om</span>
+</td>
+</tr>
+<tr data-group="4 Guidance / policy" data-clearance="cleared">
+<th scope="row">
+<span class="cell-value" data-row="23" data-field="jurisdiction" data-value="Qatar">Qatar</span>
+</th>
+<td>
+<span class="cell-value" data-row="23" data-field="instrument" data-value="AI ethical guidelines">AI ethical guidelines</span>
+</td>
+<td>
+<span class="cell-value" data-row="23" data-field="issuer" data-value="MCIT">MCIT</span>
 </td>
 <td>
 <span class="cell-value" data-row="23" data-field="covered_actor" data-value="—">—</span>
@@ -744,28 +744,28 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 <span class="cell-value" data-row="23" data-field="medium" data-value="—">—</span>
 </td>
 <td>
-<span class="cell-value" data-row="23" data-field="duty" data-value="clauses not verified">clauses not verified</span>
+<span class="cell-value" data-row="23" data-field="duty" data-value="—">—</span>
 </td>
 <td>
-<span class="cell-value" data-row="23" data-field="status_verified_16oct2026" data-value="published">published</span>
-<span class="cell-value" data-row="23" data-field="clearance" data-value="cleared (publication)">cleared (publication)</span>
+<span class="cell-value" data-row="23" data-field="status" data-value="voluntary, non-binding (self-stated)">voluntary, non-binding (self-stated)</span>
+<span class="cell-value" data-row="23" data-field="clearance" data-value="cleared">cleared</span>
 </td>
 <td>
-<span class="cell-value" data-row="23" data-field="effective_date" data-value="1 Apr 2025">1 Apr 2025</span>
+<span class="cell-value" data-row="23" data-field="effective_date" data-value="—">—</span>
 </td>
 <td>
-<span class="cell-value" data-row="23" data-field="rows" data-value="C55a">C55a</span>
+<span class="cell-value" data-row="23" data-field="source" data-value="MCIT">MCIT</span>
 </td>
 </tr>
-<tr data-group="4 Guidance / policy" data-clearance="cleared">
+<tr class="unverified" data-group="4 Guidance / policy" data-clearance="located, not cleared">
 <th scope="row">
-<span class="cell-value" data-row="24" data-field="jurisdiction" data-value="Qatar">Qatar</span>
+<span class="cell-value" data-row="24" data-field="jurisdiction" data-value="Saudi Arabia">Saudi Arabia</span>
 </th>
 <td>
-<span class="cell-value" data-row="24" data-field="instrument" data-value="AI ethical guidelines">AI ethical guidelines</span>
+<span class="cell-value" data-row="24" data-field="instrument" data-value="Generative AI public guidance; deepfake guidance">Generative AI public guidance; deepfake guidance</span>
 </td>
 <td>
-<span class="cell-value" data-row="24" data-field="issuer" data-value="MCIT">MCIT</span>
+<span class="cell-value" data-row="24" data-field="issuer" data-value="SDAIA">SDAIA</span>
 </td>
 <td>
 <span class="cell-value" data-row="24" data-field="covered_actor" data-value="—">—</span>
@@ -777,107 +777,48 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 <span class="cell-value" data-row="24" data-field="duty" data-value="—">—</span>
 </td>
 <td>
-<span class="cell-value" data-row="24" data-field="status_verified_16oct2026" data-value="voluntary, non-binding (self-stated)">voluntary, non-binding (self-stated)</span>
-<span class="cell-value" data-row="24" data-field="clearance" data-value="cleared">cleared</span>
+<span class="cell-value" data-row="24" data-field="status" data-value="located; full text not retrieved">located; full text not retrieved</span>
+<span class="cell-value" data-row="24" data-field="clearance" data-value="located, not cleared">located, not cleared</span>
 </td>
 <td>
 <span class="cell-value" data-row="24" data-field="effective_date" data-value="—">—</span>
 </td>
 <td>
-<span class="cell-value" data-row="24" data-field="rows" data-value="C53a">C53a</span>
+<span class="cell-value" data-row="24" data-field="source" data-value="sdaia.gov.sa">sdaia.gov.sa</span>
 </td>
 </tr>
-<tr class="unverified" data-group="4 Guidance / policy" data-clearance="located, not cleared">
+<tr data-group="4 Guidance / policy" data-clearance="cleared">
 <th scope="row">
-<span class="cell-value" data-row="25" data-field="jurisdiction" data-value="Saudi Arabia">Saudi Arabia</span>
+<span class="cell-value" data-row="25" data-field="jurisdiction" data-value="Ukraine">Ukraine</span>
 </th>
 <td>
-<span class="cell-value" data-row="25" data-field="instrument" data-value="Generative AI public guidance; deepfake guidance">Generative AI public guidance; deepfake guidance</span>
+<span class="cell-value" data-row="25" data-field="instrument" data-value="Guidelines for responsible AI use in media">Guidelines for responsible AI use in media</span>
 </td>
 <td>
-<span class="cell-value" data-row="25" data-field="issuer" data-value="SDAIA">SDAIA</span>
+<span class="cell-value" data-row="25" data-field="issuer" data-value="National Council (with ministries)">National Council (with ministries)</span>
 </td>
 <td>
-<span class="cell-value" data-row="25" data-field="covered_actor" data-value="—">—</span>
+<span class="cell-value" data-row="25" data-field="covered_actor" data-value="media">media</span>
 </td>
 <td>
 <span class="cell-value" data-row="25" data-field="medium" data-value="—">—</span>
 </td>
 <td>
-<span class="cell-value" data-row="25" data-field="duty" data-value="—">—</span>
+<span class="cell-value" data-row="25" data-field="duty" data-value="clear separation of human-made and AI-generated content (recommended)">clear separation of human-made and AI-generated content (recommended)</span>
 </td>
 <td>
-<span class="cell-value" data-row="25" data-field="status_verified_16oct2026" data-value="located (full text not retrieved)">located (full text not retrieved)</span>
-<span class="cell-value" data-row="25" data-field="clearance" data-value="located, not cleared">located, not cleared</span>
+<span class="cell-value" data-row="25" data-field="status" data-value="guidance">guidance</span>
+<span class="cell-value" data-row="25" data-field="clearance" data-value="cleared">cleared</span>
 </td>
 <td>
 <span class="cell-value" data-row="25" data-field="effective_date" data-value="—">—</span>
 </td>
 <td>
-<span class="cell-value" data-row="25" data-field="rows" data-value="C52a-C52b">C52a-C52b</span>
-</td>
-</tr>
-<tr data-group="4 Guidance / policy" data-clearance="cleared">
-<th scope="row">
-<span class="cell-value" data-row="26" data-field="jurisdiction" data-value="Ukraine">Ukraine</span>
-</th>
-<td>
-<span class="cell-value" data-row="26" data-field="instrument" data-value="Guidelines for responsible AI use in media">Guidelines for responsible AI use in media</span>
-</td>
-<td>
-<span class="cell-value" data-row="26" data-field="issuer" data-value="National Council (with ministries)">National Council (with ministries)</span>
-</td>
-<td>
-<span class="cell-value" data-row="26" data-field="covered_actor" data-value="media">media</span>
-</td>
-<td>
-<span class="cell-value" data-row="26" data-field="medium" data-value="—">—</span>
-</td>
-<td>
-<span class="cell-value" data-row="26" data-field="duty" data-value="clear separation of human-made and AI-generated content (recommended)">clear separation of human-made and AI-generated content (recommended)</span>
-</td>
-<td>
-<span class="cell-value" data-row="26" data-field="status_verified_16oct2026" data-value="guidance">guidance</span>
-<span class="cell-value" data-row="26" data-field="clearance" data-value="cleared">cleared</span>
-</td>
-<td>
-<span class="cell-value" data-row="26" data-field="effective_date" data-value="—">—</span>
-</td>
-<td>
-<span class="cell-value" data-row="26" data-field="rows" data-value="C73c">C73c</span>
-</td>
-</tr>
-<tr data-group="4 Guidance / policy" data-clearance="cleared (as dated account)">
-<th scope="row">
-<span class="cell-value" data-row="27" data-field="jurisdiction" data-value="United Kingdom">United Kingdom</span>
-</th>
-<td>
-<span class="cell-value" data-row="27" data-field="instrument" data-value="No statutory labelling duty (Commons Library briefing)">No statutory labelling duty (Commons Library briefing)</span>
-</td>
-<td>
-<span class="cell-value" data-row="27" data-field="issuer" data-value="House of Commons Library">House of Commons Library</span>
-</td>
-<td>
-<span class="cell-value" data-row="27" data-field="covered_actor" data-value="—">—</span>
-</td>
-<td>
-<span class="cell-value" data-row="27" data-field="medium" data-value="—">—</span>
-</td>
-<td>
-<span class="cell-value" data-row="27" data-field="duty" data-value="none stated at briefing date">none stated at briefing date</span>
-</td>
-<td>
-<span class="cell-value" data-row="27" data-field="status_verified_16oct2026" data-value="dated briefing">dated briefing</span>
-<span class="cell-value" data-row="27" data-field="clearance" data-value="cleared (as dated account)">cleared (as dated account)</span>
-</td>
-<td>
-<span class="cell-value" data-row="27" data-field="effective_date" data-value="20 Jan 2026">20 Jan 2026</span>
-</td>
-<td>
-<span class="cell-value" data-row="27" data-field="rows" data-value="C60">C60</span>
+<span class="cell-value" data-row="25" data-field="source" data-value="National Council of Ukraine">National Council of Ukraine</span>
 </td>
 </tr>
 </tbody></table></div>
-<p class="caption-copy">Instruments located and checked as of 16 October 2026. A comparison of specified obligations, not a ranking of countries&#x27; overall AI regulation.</p>
-<p class="note"><span class="note-label">Note</span><br>Official text located; not cleared for detailed description (language or access)</p>
-<p class="source">SOURCE · F7_obligations.csv · source IDs at right · see REFERENCES.md.</p></main></body></html>
+<p class="caption-copy">Instruments we located and verified, as of 16 October 2026. A comparison of specified obligations, not a ranking of countries&#x27; overall AI regulation. Grey rows: official texts located but not cleared for detailed description.</p>
+<p class="note"><span class="note-label">Note</span><br>United Kingdom: a January 2026 House of Commons Library briefing stated that no UK legislation requires AI-generated content to be labelled.</p>
+<p class="source">SOURCE · Official instruments and issuer publications named in the Source column.</p>
+</main></body></html>

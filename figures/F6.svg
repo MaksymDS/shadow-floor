@@ -1,15 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1132" viewBox="0 0 1200 1132" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1160" viewBox="0 0 1200 1160" role="img" aria-labelledby="title desc">
 <title id="title">Providers, one table</title>
 <desc id="desc">Shadow 06 figure F6. Exact plotted values are encoded on marks.</desc>
-<rect width="1200" height="1132" fill="#EDE0C8"/>
+<rect width="1200" height="1160" fill="#EDE0C8"/>
 <text x="52" y="36" fill="#8B2D2D" font-family="JetBrains Mono,monospace" font-size="12" font-weight="600" text-anchor="start" >SHADOW 06  /  FIGURE 6</text>
 <text x="52" y="78" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="29" font-weight="600" text-anchor="start" >Providers, one table</text>
 <line x1="52" y1="98" x2="1148" y2="98" stroke="#9C907A" stroke-width="1" />
 <text x="62" y="147" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >FIELD</text>
 <text x="272" y="147" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >ANTHROPIC</text>
-<text x="532" y="147" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >GOOGLE</text>
-<text x="792" y="147" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >OPENAI</text>
-<text x="1052" y="147" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >ROWS</text>
+<text x="567" y="147" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >GOOGLE</text>
+<text x="862" y="147" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >OPENAI</text>
 <line x1="52" y1="180" x2="1148" y2="180" stroke="#9C907A" stroke-width="1" />
 <g data-row="0" data-field="field" data-value="Image / video / audio mark">
 <text x="62" y="204" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Image / video / audio</text>
@@ -18,175 +17,145 @@
 <line x1="262" y1="184" x2="262" y2="269" stroke="#9C907A" stroke-width="0.6" />
 <g data-row="0" data-field="anthropic" data-value="C2PA signatures on supported generated files; separate multimedia watermark not found">
 <text x="272" y="204" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >C2PA signatures on supported</text>
-<text x="272" y="223" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >generated files; separate</text>
-<text x="272" y="242" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >multimedia watermark not found</text>
+<text x="272" y="223" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >generated files; separate multimedia</text>
+<text x="272" y="242" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >watermark not found</text>
 </g>
-<line x1="522" y1="184" x2="522" y2="269" stroke="#9C907A" stroke-width="0.6" />
+<line x1="557" y1="184" x2="557" y2="269" stroke="#9C907A" stroke-width="0.6" />
 <g data-row="0" data-field="google" data-value="SynthID watermark (portal also checks partners&#x27; content)">
-<text x="532" y="204" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >SynthID watermark (portal also</text>
-<text x="532" y="223" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >checks partners&#x27; content)</text>
+<text x="567" y="204" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >SynthID watermark (portal also checks</text>
+<text x="567" y="223" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >partners&#x27; content)</text>
 </g>
-<line x1="782" y1="184" x2="782" y2="269" stroke="#9C907A" stroke-width="0.6" />
+<line x1="852" y1="184" x2="852" y2="269" stroke="#9C907A" stroke-width="0.6" />
 <g data-row="0" data-field="openai" data-value="SynthID watermark + C2PA metadata on images; supported audio since Jul 2026">
-<text x="792" y="204" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >SynthID watermark + C2PA</text>
-<text x="792" y="223" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >metadata on images; supported</text>
-<text x="792" y="242" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >audio since Jul 2026</text>
-</g>
-<line x1="1042" y1="184" x2="1042" y2="269" stroke="#9C907A" stroke-width="0.6" />
-<g data-row="0" data-field="source_rows" data-value="B21-B22; B01; B10, B12">
-<text x="1052" y="204" fill="#161819" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >B21-B22; B01;</text>
-<text x="1052" y="220" fill="#161819" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >B10, B12</text>
+<text x="862" y="204" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >SynthID watermark + C2PA metadata on</text>
+<text x="862" y="223" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >images; supported audio since Jul</text>
+<text x="862" y="242" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >2026</text>
 </g>
 <line x1="52" y1="269" x2="1148" y2="269" stroke="#9C907A" stroke-width="0.8" />
 <g data-row="1" data-field="field" data-value="Text mark">
 <text x="62" y="289" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Text mark</text>
 </g>
-<line x1="262" y1="269" x2="262" y2="373" stroke="#9C907A" stroke-width="0.6" />
+<line x1="262" y1="269" x2="262" y2="354" stroke="#9C907A" stroke-width="0.6" />
 <g data-row="1" data-field="anthropic" data-value="A version of SynthID-Text on supported models, worldwide subject to model/feature/platform support">
 <text x="272" y="289" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >A version of SynthID-Text on</text>
-<text x="272" y="308" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >supported models, worldwide</text>
-<text x="272" y="327" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >subject to</text>
-<text x="272" y="346" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >model/feature/platform support</text>
+<text x="272" y="308" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >supported models, worldwide subject</text>
+<text x="272" y="327" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >to model/feature/platform support</text>
 </g>
-<line x1="522" y1="269" x2="522" y2="373" stroke="#9C907A" stroke-width="0.6" />
+<line x1="557" y1="269" x2="557" y2="354" stroke="#9C907A" stroke-width="0.6" />
 <g data-row="1" data-field="google" data-value="SynthID-Text">
-<text x="532" y="289" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >SynthID-Text</text>
+<text x="567" y="289" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >SynthID-Text</text>
 </g>
-<line x1="782" y1="269" x2="782" y2="373" stroke="#9C907A" stroke-width="0.6" />
+<line x1="852" y1="269" x2="852" y2="354" stroke="#9C907A" stroke-width="0.6" />
 <g data-row="1" data-field="openai" data-value="Text watermark: ChatGPT/Codex text marked by default in the EU only; API opt-in, off by default">
-<text x="792" y="289" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >Text watermark: ChatGPT/Codex</text>
-<text x="792" y="308" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >text marked by default in the EU</text>
-<text x="792" y="327" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >only; API opt-in, off by default</text>
+<text x="862" y="289" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >Text watermark: ChatGPT/Codex text</text>
+<text x="862" y="308" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >marked by default in the EU only; API</text>
+<text x="862" y="327" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >opt-in, off by default</text>
 </g>
-<line x1="1042" y1="269" x2="1042" y2="373" stroke="#9C907A" stroke-width="0.6" />
-<g data-row="1" data-field="source_rows" data-value="B21, B25; B19; B13">
-<text x="1052" y="289" fill="#161819" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >B21, B25;</text>
-<text x="1052" y="305" fill="#161819" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >B19; B13</text>
-</g>
-<line x1="52" y1="373" x2="1148" y2="373" stroke="#9C907A" stroke-width="0.8" />
+<line x1="52" y1="354" x2="1148" y2="354" stroke="#9C907A" stroke-width="0.8" />
 <g data-row="2" data-field="field" data-value="Who can check (hosted)">
-<text x="62" y="393" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Who can check (hosted)</text>
+<text x="62" y="374" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Who can check (hosted)</text>
 </g>
-<line x1="262" y1="373" x2="262" y2="458" stroke="#9C907A" stroke-width="0.6" />
+<line x1="262" y1="354" x2="262" y2="439" stroke="#9C907A" stroke-width="0.6" />
 <g data-row="2" data-field="anthropic" data-value="Files: free content checker + C2PA tools; text: detection API in private preview">
-<text x="272" y="393" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >Files: free content checker +</text>
-<text x="272" y="412" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >C2PA tools; text: detection API</text>
-<text x="272" y="431" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >in private preview</text>
+<text x="272" y="374" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >Files: free content checker + C2PA</text>
+<text x="272" y="393" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >tools; text: detection API in private</text>
+<text x="272" y="412" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >preview</text>
 </g>
-<line x1="522" y1="373" x2="522" y2="458" stroke="#9C907A" stroke-width="0.6" />
+<line x1="557" y1="354" x2="557" y2="439" stroke="#9C907A" stroke-width="0.6" />
 <g data-row="2" data-field="google" data-value="Public portal for images, video, audio">
-<text x="532" y="393" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >Public portal for images, video,</text>
-<text x="532" y="412" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >audio</text>
+<text x="567" y="374" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >Public portal for images, video,</text>
+<text x="567" y="393" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >audio</text>
 </g>
-<line x1="782" y1="373" x2="782" y2="458" stroke="#9C907A" stroke-width="0.6" />
+<line x1="852" y1="354" x2="852" y2="439" stroke="#9C907A" stroke-width="0.6" />
 <g data-row="2" data-field="openai" data-value="Images and audio: public verifier + API; text detector: approved researchers only">
-<text x="792" y="393" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >Images and audio: public</text>
-<text x="792" y="412" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >verifier + API; text detector:</text>
-<text x="792" y="431" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >approved researchers only</text>
+<text x="862" y="374" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >Images and audio: public verifier +</text>
+<text x="862" y="393" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >API; text detector: approved</text>
+<text x="862" y="412" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >researchers only</text>
 </g>
-<line x1="1042" y1="373" x2="1042" y2="458" stroke="#9C907A" stroke-width="0.6" />
-<g data-row="2" data-field="source_rows" data-value="B25; B01; B12, B13">
-<text x="1052" y="393" fill="#161819" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >B25; B01;</text>
-<text x="1052" y="409" fill="#161819" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >B12, B13</text>
-</g>
-<line x1="52" y1="458" x2="1148" y2="458" stroke="#9C907A" stroke-width="0.8" />
+<line x1="52" y1="439" x2="1148" y2="439" stroke="#9C907A" stroke-width="0.8" />
 <g data-row="3" data-field="field" data-value="Detector code / verification tooling">
-<text x="62" y="478" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Detector code /</text>
-<text x="62" y="497" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >verification tooling</text>
+<text x="62" y="459" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Detector code /</text>
+<text x="62" y="478" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >verification tooling</text>
 </g>
-<line x1="262" y1="458" x2="262" y2="600" stroke="#9C907A" stroke-width="0.6" />
+<line x1="262" y1="439" x2="262" y2="562" stroke="#9C907A" stroke-width="0.6" />
 <g data-row="3" data-field="anthropic" data-value="Text production-detector source: not found. File credentials: verification with compatible C2PA tooling is documented, including the open-source c2patool.">
-<text x="272" y="478" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >Text production-detector source:</text>
-<text x="272" y="497" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >not found. File credentials:</text>
-<text x="272" y="516" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >verification with compatible</text>
-<text x="272" y="535" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >C2PA tooling is documented,</text>
-<text x="272" y="554" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >including the open-source</text>
-<text x="272" y="573" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >c2patool.</text>
+<text x="272" y="459" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >Text production-detector source: not</text>
+<text x="272" y="478" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >found. File credentials: verification</text>
+<text x="272" y="497" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >with compatible C2PA tooling is</text>
+<text x="272" y="516" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >documented, including the open-source</text>
+<text x="272" y="535" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >c2patool.</text>
 </g>
-<line x1="522" y1="458" x2="522" y2="600" stroke="#9C907A" stroke-width="0.6" />
+<line x1="557" y1="439" x2="557" y2="562" stroke="#9C907A" stroke-width="0.6" />
 <g data-row="3" data-field="google" data-value="SynthID-Text reference code public, incl. detection (&quot;not intended for production&quot;)">
-<text x="532" y="478" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >SynthID-Text reference code</text>
-<text x="532" y="497" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >public, incl. detection (&quot;not</text>
-<text x="532" y="516" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >intended for production&quot;)</text>
+<text x="567" y="459" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >SynthID-Text reference code public,</text>
+<text x="567" y="478" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >incl. detection (&quot;not intended for</text>
+<text x="567" y="497" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >production&quot;)</text>
 </g>
-<line x1="782" y1="458" x2="782" y2="600" stroke="#9C907A" stroke-width="0.6" />
+<line x1="852" y1="439" x2="852" y2="562" stroke="#9C907A" stroke-width="0.6" />
 <g data-row="3" data-field="openai" data-value="Announced intent to open-source">
-<text x="792" y="478" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >Announced intent to open-source</text>
+<text x="862" y="459" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >Announced intent to open-source</text>
 </g>
-<line x1="1042" y1="458" x2="1042" y2="600" stroke="#9C907A" stroke-width="0.6" />
-<g data-row="3" data-field="source_rows" data-value="B22-B25; B19, Z32; B13">
-<text x="1052" y="478" fill="#161819" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >B22-B25; B19,</text>
-<text x="1052" y="494" fill="#161819" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >Z32; B13</text>
-</g>
-<line x1="52" y1="600" x2="1148" y2="600" stroke="#9C907A" stroke-width="0.8" />
+<line x1="52" y1="562" x2="1148" y2="562" stroke="#9C907A" stroke-width="0.8" />
 <g data-row="4" data-field="field" data-value="Published text robustness evaluation">
-<text x="62" y="620" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Published text</text>
-<text x="62" y="639" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >robustness evaluation</text>
+<text x="62" y="582" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Published text</text>
+<text x="62" y="601" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >robustness evaluation</text>
 </g>
-<line x1="262" y1="600" x2="262" y2="780" stroke="#9C907A" stroke-width="0.6" />
+<line x1="262" y1="562" x2="262" y2="723" stroke="#9C907A" stroke-width="0.6" />
 <g data-row="4" data-field="anthropic" data-value="No Claude-specific numerical robustness evaluation comparable in reporting form to the other table entries was found">
-<text x="272" y="620" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >No Claude-specific numerical</text>
-<text x="272" y="639" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >robustness evaluation comparable</text>
-<text x="272" y="658" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >in reporting form to the other</text>
-<text x="272" y="677" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >table entries was found</text>
+<text x="272" y="582" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >No Claude-specific numerical</text>
+<text x="272" y="601" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >robustness evaluation comparable in</text>
+<text x="272" y="620" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >reporting form to the other table</text>
+<text x="272" y="639" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >entries was found</text>
 </g>
-<line x1="522" y1="600" x2="522" y2="780" stroke="#9C907A" stroke-width="0.6" />
+<line x1="557" y1="562" x2="557" y2="723" stroke="#9C907A" stroke-width="0.6" />
 <g data-row="4" data-field="google" data-value="Peer-reviewed (Nature 2024): evaluation incl. edits and paraphrasing; numbers in Supplementary C.6">
-<text x="532" y="620" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >Peer-reviewed (Nature 2024):</text>
-<text x="532" y="639" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >evaluation incl. edits and</text>
-<text x="532" y="658" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >paraphrasing; numbers in</text>
-<text x="532" y="677" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >Supplementary C.6</text>
+<text x="567" y="582" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >Peer-reviewed (Nature 2024):</text>
+<text x="567" y="601" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >evaluation incl. edits and</text>
+<text x="567" y="620" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >paraphrasing; numbers in</text>
+<text x="567" y="639" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >Supplementary C.6</text>
 </g>
-<line x1="782" y1="600" x2="782" y2="780" stroke="#9C907A" stroke-width="0.6" />
+<line x1="852" y1="562" x2="852" y2="723" stroke="#9C907A" stroke-width="0.6" />
 <g data-row="4" data-field="openai" data-value="Provider&#x27;s own (5 Oct 2026), 1% FPR target: ~80% detected at 200 tokens, ~95% at 400 tokens (psychology); lower for mathematics. Synonym substitution on 400-token English answers: 10% of words → 92% to 66%; 25% → 17%">
-<text x="792" y="620" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >Provider&#x27;s own (5 Oct 2026), 1%</text>
-<text x="792" y="639" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >FPR target: ~80% detected at 200</text>
-<text x="792" y="658" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >tokens, ~95% at 400 tokens</text>
-<text x="792" y="677" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >(psychology); lower for</text>
-<text x="792" y="696" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >mathematics. Synonym</text>
-<text x="792" y="715" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >substitution on 400-token</text>
-<text x="792" y="734" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >English answers: 10% of words →</text>
-<text x="792" y="753" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >92% to 66%; 25% → 17%</text>
+<text x="862" y="582" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >Provider&#x27;s own (5 Oct 2026), 1% FPR</text>
+<text x="862" y="601" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >target: ~80% detected at 200 tokens,</text>
+<text x="862" y="620" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >~95% at 400 tokens (psychology);</text>
+<text x="862" y="639" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >lower for mathematics. Synonym</text>
+<text x="862" y="658" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >substitution on 400-token English</text>
+<text x="862" y="677" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >answers: 10% of words → 92% to 66%;</text>
+<text x="862" y="696" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >25% → 17%</text>
 </g>
-<line x1="1042" y1="600" x2="1042" y2="780" stroke="#9C907A" stroke-width="0.6" />
-<g data-row="4" data-field="source_rows" data-value="B21-B25; B19, B19b; B14, B15">
-<text x="1052" y="620" fill="#161819" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >B21-B25; B19,</text>
-<text x="1052" y="636" fill="#161819" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >B19b; B14,</text>
-<text x="1052" y="652" fill="#161819" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >B15</text>
-</g>
-<line x1="52" y1="780" x2="1148" y2="780" stroke="#9C907A" stroke-width="0.8" />
+<line x1="52" y1="723" x2="1148" y2="723" stroke="#9C907A" stroke-width="0.8" />
 <g data-row="5" data-field="field" data-value="Self-stated limits">
-<text x="62" y="800" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Self-stated limits</text>
+<text x="62" y="743" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Self-stated limits</text>
 </g>
-<line x1="262" y1="780" x2="262" y2="903" stroke="#9C907A" stroke-width="0.6" />
+<line x1="262" y1="723" x2="262" y2="827" stroke="#9C907A" stroke-width="0.6" />
 <g data-row="5" data-field="anthropic" data-value="Short text weaker; mark is not complete authorship; missing credentials not human origin">
-<text x="272" y="800" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >Short text weaker; mark is not</text>
-<text x="272" y="819" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >complete authorship; missing</text>
-<text x="272" y="838" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >credentials not human origin</text>
+<text x="272" y="743" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >Short text weaker; mark is not</text>
+<text x="272" y="762" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >complete authorship; missing</text>
+<text x="272" y="781" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >credentials not human origin</text>
 </g>
-<line x1="522" y1="780" x2="522" y2="903" stroke="#9C907A" stroke-width="0.6" />
+<line x1="557" y1="723" x2="557" y2="827" stroke="#9C907A" stroke-width="0.6" />
 <g data-row="5" data-field="google" data-value="Watermarks weakened by edits; vulnerable to stealing, spoofing and scrubbing; coordination among providers can broaden coverage">
-<text x="532" y="800" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >Watermarks weakened by edits;</text>
-<text x="532" y="819" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >vulnerable to stealing, spoofing</text>
-<text x="532" y="838" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >and scrubbing; coordination</text>
-<text x="532" y="857" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >among providers can broaden</text>
-<text x="532" y="876" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >coverage</text>
+<text x="567" y="743" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >Watermarks weakened by edits;</text>
+<text x="567" y="762" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >vulnerable to stealing, spoofing and</text>
+<text x="567" y="781" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >scrubbing; coordination among</text>
+<text x="567" y="800" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >providers can broaden coverage</text>
 </g>
-<line x1="782" y1="780" x2="782" y2="903" stroke="#9C907A" stroke-width="0.6" />
+<line x1="852" y1="723" x2="852" y2="827" stroke="#9C907A" stroke-width="0.6" />
 <g data-row="5" data-field="openai" data-value="Absence of a mark does not establish human authorship">
-<text x="792" y="800" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >Absence of a mark does not</text>
-<text x="792" y="819" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >establish human authorship</text>
+<text x="862" y="743" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >Absence of a mark does not establish</text>
+<text x="862" y="762" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >human authorship</text>
 </g>
-<line x1="1042" y1="780" x2="1042" y2="903" stroke="#9C907A" stroke-width="0.6" />
-<g data-row="5" data-field="source_rows" data-value="B23-B24; B19b; B16">
-<text x="1052" y="800" fill="#161819" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >B23-B24;</text>
-<text x="1052" y="816" fill="#161819" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >B19b; B16</text>
-</g>
-<line x1="52" y1="903" x2="1148" y2="903" stroke="#9C907A" stroke-width="0.8" />
-<text x="52" y="934" fill="#8B2D2D" font-family="JetBrains Mono,monospace" font-size="10" font-weight="600" text-anchor="start" >FOOTNOTE 1</text>
-<text x="52" y="958" fill="#2A2D2F" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >Provider statements are attributed to the listed sources; the table is not an independent cross-provider test.</text>
-<text x="52" y="990" fill="#8B2D2D" font-family="JetBrains Mono,monospace" font-size="10" font-weight="600" text-anchor="start" >FOOTNOTE 2</text>
-<text x="52" y="1014" fill="#2A2D2F" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >Figures come from different implementations, corpora and operating points. No ranking is implied.</text>
-<line x1="52" y1="1059" x2="1148" y2="1059" stroke="#9C907A" stroke-width="1" />
-<text x="52" y="1087" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >SOURCE  Provider publications in REFERENCES.md · source IDs at right · checked 16 Oct 2026.</text>
+<line x1="52" y1="827" x2="1148" y2="827" stroke="#9C907A" stroke-width="0.8" />
+<text x="52" y="858" fill="#8B2D2D" font-family="JetBrains Mono,monospace" font-size="10" font-weight="600" text-anchor="start" >FOOTNOTE 1</text>
+<text x="52" y="882" fill="#2A2D2F" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >Each provider&#x27;s column was verified by a reviewer independent of that provider; see Method.</text>
+<text x="52" y="914" fill="#8B2D2D" font-family="JetBrains Mono,monospace" font-size="10" font-weight="600" text-anchor="start" >FOOTNOTE 2</text>
+<text x="52" y="938" fill="#2A2D2F" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >Figures come from different implementations, corpora and operating points. No ranking is implied.</text>
+<line x1="52" y1="983" x2="1148" y2="983" stroke="#9C907A" stroke-width="1" />
+<text x="52" y="1011" fill="#8B2D2D" font-family="JetBrains Mono,monospace" font-size="10" font-weight="600" text-anchor="start" >SOURCES</text>
+<text x="52" y="1036" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >Anthropic: Claude Help Centre, &quot;How Claude marks AI-generated content&quot;; Claude Platform documentation (code execution tool);</text>
+<text x="52" y="1053" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >Anthropic, text-watermark announcement — retrieved Oct 2026</text>
+<text x="52" y="1078" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >Google: Google blog, 7 Oct 2026 (SynthID Detector); Dathathri et al., Nature 634 (2024); github.com/google-deepmind/synthid-text</text>
+<text x="52" y="1103" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >OpenAI: OpenAI, &quot;Advancing content provenance&quot; (19 May 2026, update 31 Jul 2026); OpenAI, &quot;Our approach to EU text provenance</text>
+<text x="52" y="1120" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >rules&quot; (5 Oct 2026)</text>
 </svg>

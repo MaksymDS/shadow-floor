@@ -12,7 +12,7 @@ caption{text-align:left;padding:16px 18px;background:#121415;color:#E8B547;font:
 th,td{padding:13px 12px;text-align:left;vertical-align:top;border-bottom:1px solid #2A2D2F;border-right:1px solid #2A2D2F}th:last-child,td:last-child{border-right:0}
 thead th{color:#9C907A;font:11px/1.4 Mono,monospace;text-transform:uppercase}tbody th{font-weight:600}tbody tr.unverified{background:#2A2D2F}
 tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,monospace;letter-spacing:.08em}
-.cell-value{display:block}.cell-value+.cell-value{margin-top:5px;color:#9C907A;font-size:12px}.use-measure{border-left:4px solid #6E8499}.use-screen{border-left:4px solid #9C907A}.use-sanction{border-left:4px solid #EDE0C8}
+.cell-value{display:block}.cell-value+.cell-value{margin-top:5px;color:#9C907A;font-size:12px}.use-measure{border-left:4px solid #6E8499}.use-screen{border-left:4px solid #9C907A}.use-guidance{border-left:4px solid #CC7722}.use-discontinued{border-left:4px solid #2A2D2F}.use-reviewed{border-left:4px solid #EDE0C8}
 .caption-copy{font-size:18px}.note{color:#9C907A}.source{margin-top:28px;color:#9C907A} :focus-visible{outline:1px solid #E8B547;outline-offset:3px}
 .scroll-hint{display:none;color:#9C907A;font:12px/1.5 Mono,monospace}@media(max-width:700px){.scroll-hint{display:block}}
 </style></head><body><main>
@@ -24,7 +24,6 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 <th scope="col">Anthropic</th>
 <th scope="col">Google</th>
 <th scope="col">OpenAI</th>
-<th scope="col">Rows</th>
 </tr></thead>
 <tbody>
 <tr>
@@ -40,9 +39,6 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 <td>
 <span class="cell-value" data-row="0" data-field="openai" data-value="SynthID watermark + C2PA metadata on images; supported audio since Jul 2026">SynthID watermark + C2PA metadata on images; supported audio since Jul 2026</span>
 </td>
-<td>
-<span class="cell-value" data-row="0" data-field="source_rows" data-value="B21-B22; B01; B10, B12">B21-B22; B01; B10, B12</span>
-</td>
 </tr>
 <tr>
 <th scope="row">
@@ -56,9 +52,6 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 </td>
 <td>
 <span class="cell-value" data-row="1" data-field="openai" data-value="Text watermark: ChatGPT/Codex text marked by default in the EU only; API opt-in, off by default">Text watermark: ChatGPT/Codex text marked by default in the EU only; API opt-in, off by default</span>
-</td>
-<td>
-<span class="cell-value" data-row="1" data-field="source_rows" data-value="B21, B25; B19; B13">B21, B25; B19; B13</span>
 </td>
 </tr>
 <tr>
@@ -74,9 +67,6 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 <td>
 <span class="cell-value" data-row="2" data-field="openai" data-value="Images and audio: public verifier + API; text detector: approved researchers only">Images and audio: public verifier + API; text detector: approved researchers only</span>
 </td>
-<td>
-<span class="cell-value" data-row="2" data-field="source_rows" data-value="B25; B01; B12, B13">B25; B01; B12, B13</span>
-</td>
 </tr>
 <tr>
 <th scope="row">
@@ -90,9 +80,6 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 </td>
 <td>
 <span class="cell-value" data-row="3" data-field="openai" data-value="Announced intent to open-source">Announced intent to open-source</span>
-</td>
-<td>
-<span class="cell-value" data-row="3" data-field="source_rows" data-value="B22-B25; B19, Z32; B13">B22-B25; B19, Z32; B13</span>
 </td>
 </tr>
 <tr>
@@ -108,9 +95,6 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 <td>
 <span class="cell-value" data-row="4" data-field="openai" data-value="Provider&#x27;s own (5 Oct 2026), 1% FPR target: ~80% detected at 200 tokens, ~95% at 400 tokens (psychology); lower for mathematics. Synonym substitution on 400-token English answers: 10% of words → 92% to 66%; 25% → 17%">Provider&#x27;s own (5 Oct 2026), 1% FPR target: ~80% detected at 200 tokens, ~95% at 400 tokens (psychology); lower for mathematics. Synonym substitution on 400-token English answers: 10% of words → 92% to 66%; 25% → 17%</span>
 </td>
-<td>
-<span class="cell-value" data-row="4" data-field="source_rows" data-value="B21-B25; B19, B19b; B14, B15">B21-B25; B19, B19b; B14, B15</span>
-</td>
 </tr>
 <tr>
 <th scope="row">
@@ -125,11 +109,11 @@ tbody .group-row th{background:#1C1E1F;color:#9C907A;font:600 12px/1.5 Mono,mono
 <td>
 <span class="cell-value" data-row="5" data-field="openai" data-value="Absence of a mark does not establish human authorship">Absence of a mark does not establish human authorship</span>
 </td>
-<td>
-<span class="cell-value" data-row="5" data-field="source_rows" data-value="B23-B24; B19b; B16">B23-B24; B19b; B16</span>
-</td>
 </tr>
 </tbody></table></div>
-<p class="note"><span class="note-label">Footnote 1</span><br>Provider statements are attributed to the listed sources; the table is not an independent cross-provider test.</p>
+<p class="note"><span class="note-label">Footnote 1</span><br>Each provider&#x27;s column was verified by a reviewer independent of that provider; see Method.</p>
 <p class="note"><span class="note-label">Footnote 2</span><br>Figures come from different implementations, corpora and operating points. No ranking is implied.</p>
-<p class="source">SOURCE · Provider publications in REFERENCES.md · source IDs at right · checked 16 Oct 2026.</p></main></body></html>
+<p class="source">SOURCE · Anthropic: Claude Help Centre, &quot;How Claude marks AI-generated content&quot;; Claude Platform documentation (code execution tool); Anthropic, text-watermark announcement — retrieved Oct 2026</p>
+<p class="source">SOURCE · Google: Google blog, 7 Oct 2026 (SynthID Detector); Dathathri et al., Nature 634 (2024); github.com/google-deepmind/synthid-text</p>
+<p class="source">SOURCE · OpenAI: OpenAI, &quot;Advancing content provenance&quot; (19 May 2026, update 31 Jul 2026); OpenAI, &quot;Our approach to EU text provenance rules&quot; (5 Oct 2026)</p>
+</main></body></html>

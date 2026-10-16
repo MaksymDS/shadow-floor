@@ -17,18 +17,18 @@ This repository holds the source CSVs, rendering scripts and export files for th
 | F2 | Music uploads and streams | [CSV](shadow06-figdata/F2_deezer_uploads_vs_streams.csv) | [SVG](figures/F2.svg) · [dark SVG](figures/F2.dark.svg) · [PDF](figures/F2.pdf) |
 | F3 | arXiv monthly submissions | [CSV](shadow06-figdata/F3_arxiv_submissions.csv) | [SVG](figures/F3.svg) · [dark SVG](figures/F3.dark.svg) · [PDF](figures/F3.pdf) |
 | F4 | Counting, screening, judging | [CSV](shadow06-figdata/F4_institutions_decisions.csv) | [SVG](figures/F4.svg) · [dark SVG](figures/F4.dark.svg) · [PDF](figures/F4.pdf) · [HTML table](figures/F4.table.html) |
-| F6 | Providers, one table | [CSV](shadow06-figdata/F6_providers.csv) | [SVG](figures/F6.svg) · [dark SVG](figures/F6.dark.svg) · [PDF](figures/F6.pdf) · [HTML table](figures/F6.table.html) |
+| F6 | Providers, one table | [CSV](shadow06-figdata/F6_providers.csv) · [source list](shadow06-figdata/F6_sources.csv) | [SVG](figures/F6.svg) · [dark SVG](figures/F6.dark.svg) · [PDF](figures/F6.pdf) · [HTML table](figures/F6.table.html) |
 | F7 | Who must mark what | [CSV](shadow06-figdata/F7_obligations.csv) | [SVG](figures/F7.svg) · [dark SVG](figures/F7.dark.svg) · [PDF](figures/F7.pdf) · [HTML table](figures/F7.table.html) |
 | F8 | Different samples, periods and units | [CSV](shadow06-figdata/F8_vendor_methods.csv) | [SVG](figures/F8.svg) · [dark SVG](figures/F8.dark.svg) · [PDF](figures/F8.pdf) · [HTML table](figures/F8.table.html) |
 | F9 | Practice versus exam | [CSV](shadow06-figdata/F9_learning_study.csv) | [SVG](figures/F9.svg) · [dark SVG](figures/F9.dark.svg) · [PDF](figures/F9.pdf) |
 | F10 | UK undergraduates and AI, 2024–2026 | [CSV](shadow06-figdata/F10_hepi.csv) | [SVG](figures/F10.svg) · [dark SVG](figures/F10.dark.svg) · [PDF](figures/F10.pdf) |
-| F11 | 88 to 1 | [CSV](shadow06-figdata/F11_moltbook.csv) | [SVG](figures/F11.svg) · [dark SVG](figures/F11.dark.svg) · [PDF](figures/F11.pdf) |
+| F11 | 1.5 million registrations, 17,000 owners | [CSV](shadow06-figdata/F11_moltbook.csv) | [SVG](figures/F11.svg) · [dark SVG](figures/F11.dark.svg) · [PDF](figures/F11.pdf) |
 
 F5 is intentionally absent: its material was incorporated into F6. Figure IDs retain their editorial numbering.
 
 ## How to read this repository
 
-The CSVs are fixed input snapshots. Source IDs in several CSVs refer to entries in the [reference register](REFERENCES.md); they are citation keys, not links by themselves. Vendor figures and detector outputs retain the scope, units and limitations stated in their sources. In particular, F8's vendor estimates are not directly comparable, and F7 includes records whose original text was located but not cleared for a detailed English description. See the notes in the figures and the [check report](figures/CHECK.md) before reusing a value.
+The CSVs are fixed input snapshots. Source names in the tables connect to publications in the [reference register](REFERENCES.md). Vendor figures and detector outputs retain the scope, units and limitations stated in their sources. In particular, F8's vendor estimates are not directly comparable, and F7 includes records whose original text was located but not cleared for a detailed English description. See the notes in the figures and the [check report](figures/CHECK.md) before reusing a value.
 
 The check report compares every plotted value and table cell with its CSV and checks the PDF exports. It verifies the rendering pipeline, not the underlying claims independently.
 

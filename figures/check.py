@@ -4,7 +4,6 @@
 from __future__ import annotations
 
 import csv
-from decimal import Decimal
 from html import unescape
 from html.parser import HTMLParser
 from pathlib import Path
@@ -12,7 +11,7 @@ import re
 import xml.etree.ElementTree as ET
 
 from pypdf import PdfReader
-from render import TABLES, TOKENS
+from render import TABLES, TOKENS, source_lines, use_category
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "figures"
@@ -32,17 +31,18 @@ FIGURES = {
 SPECIFIED_TEXT = {
     "F1": ["Pew's detector flags pages written or substantially edited with AI, and misclassifies individual pages in both directions. Points are six-month averages; Pew reports a higher false-positive rate on pre-AI pages.",
            "Nov 2022"],
-    "F9": ["Unrestricted access raised practice scores by 48% and was followed by exam scores 17% below the control group once access was removed. For a tutor designed not to hand out answers, the authors report the loss was largely mitigated.",
-           "Bastani et al., PNAS 122(26), 2025; Fan et al., BJET 56(2), 2025."],
+    "F9": ["Unrestricted access raised practice scores by 48% and was followed by exam scores 17% below the control group once access was removed. For a tutor designed not to hand out answers, the authors report the loss was largely mitigated."],
     "F11": ["About 1.5 million registered 'agents' and about 17,000 human owners, according to the Wiz investigation. Registrations do not measure activity or autonomy; the platform had no mechanism to verify whether an 'agent' was AI.",
-            "Database state before the first fix, 31 Jan 2026; Wiz, published 2 Feb 2026. Registrations and owner records — not activity."],
+            "Database state before the first fix, 31 Jan 2026. Registrations and owner records — not activity."],
 }
 SPEC_TEXT_LABELS = {
     "F1": {"caption": "**Caption (replace):**", "source": "**Source line must state:**"},
     "F2": {"caption": "**Caption (replace):**"},
-    "F3": {"caption": "**Caption (replace):**", "callout": "**Callout (replace):**"},
+    "F3": {"caption": "**Caption (replace):**", "callout": "**Callout (replace):**", "source": "**Source line must state:**"},
     "F8": {"title": "**Title (replace):**"},
-    "F9": {"companion": "**Companion line (replace):**", "axis_label": "**Axis/label note:**"},
+    "F9": {"companion": "**Companion line (replace):**", "axis_label": "**Axis/label note:**", "source": "**Source line must state:**"},
+    "F10": {"source": "**Source line must state:**"},
+    "F11": {"title": "**Title (replace):**", "source": "**Source line must state:**"},
 }
 
 
@@ -77,8 +77,8 @@ def spec_output_text(figure_id, role, path):
     rendered = " ".join(el.text or "" for el in groups[0]
                         if el.tag.rsplit("}", 1)[-1] == "text")
     if role == "source":
-        assert rendered.startswith("SOURCE  ") and " · " in rendered
-        return rendered.rsplit(" · ", 1)[-1]
+        assert rendered.startswith("SOURCE  ")
+        return rendered[len("SOURCE  "):]
     return rendered
 
 
@@ -108,8 +108,8 @@ def expected_keys(figure_id, data):
         return {(i, field) for i in range(len(data)) for field in ("com", "org", "edu", "gov")}
     if figure_id == "F2":
         return ({(i, "ai_tracks_per_day") for i in range(3)} |
-                {(2, field) for field in ("share_of_daily_uploads_pct",
-                                          "share_of_streams_pct_low", "share_of_streams_pct_high")})
+                {(i, "share_of_daily_uploads_label") for i in (1, 2)} |
+                {(2, "share_of_streams_label")})
     if figure_id == "F3":
         return {(i, "submissions") for i in range(3)}
     if figure_id == "F9":
@@ -146,6 +146,14 @@ def geometry_ok(figure_id, el, row, field, data):
     i = int(a["data-row"])
     if figure_id == "F9" and field in ("arm", "exam_label"):
         return kind == "text" and (el.text or "") == row[field]
+    if figure_id == "F2":
+        if field == "ai_tracks_per_day":
+            return kind == "circle" and close(a["cx"], (185, 595, 1005)[i]) and close(a["cy"], 495)
+        if field == "share_of_daily_uploads_label":
+            if i == 1:
+                return kind == "text" and (el.text or "") == row[field]
+            return kind == "rect" and close(a["x"], 340) and close(a["width"], 50 * 14)
+        return kind == "rect" and close(a["x"], 340 + 14) and close(a["width"], 28)
     val = float(row[field])
     if figure_id == "F1":
         from datetime import date
@@ -159,15 +167,6 @@ def geometry_ok(figure_id, el, row, field, data):
         if field == "gov":
             return close(px, x) and close(py, y - 6)  # triangle apex
         return close(px, x) and close(py, y)
-    if figure_id == "F2":
-        if field == "ai_tracks_per_day":
-            return kind == "circle" and close(a["cx"], (185, 595, 1005)[i]) and close(a["cy"], 495)
-        if field == "share_of_daily_uploads_pct":
-            return kind == "rect" and close(a["x"], 340) and close(a["width"], val * 14)
-        if field == "share_of_streams_pct_low":
-            high = float(row["share_of_streams_pct_high"])
-            return kind == "rect" and close(a["x"], 340 + val * 14) and close(a["width"], (high - val) * 14)
-        return kind == "line" and close(a["x1"], 340 + val * 14) and close(a["x2"], 340 + val * 14)
     if figure_id == "F3":
         expected_y = 480 - val / 45000 * 315
         return kind == "rect" and close(a["y"], expected_y) and close(a["height"], 480 - expected_y)
@@ -198,7 +197,7 @@ def inspect_svg(path, figure_id, data, expected):
             raise AssertionError(f"{path}: extra plotted mark {key}")
         field = key[1]
         source = data[key[0]][key[1]]
-        if not source or (a["data-value"] != source if field in ("arm", "exam_label") else Decimal(a["data-value"]) != Decimal(source)):
+        if not source or a["data-value"] != source:
             raise AssertionError(f"{path}: value mismatch {key}: {a['data-value']} != {source}")
         if not geometry_ok(figure_id, el, data[key[0]], key[1], data):
             raise AssertionError(f"{path}: geometry mismatch {key}")
@@ -206,11 +205,10 @@ def inspect_svg(path, figure_id, data, expected):
     if set(seen) != expected:
         raise AssertionError(f"{path}: missing marks {sorted(expected - set(seen))}")
     if figure_id == "F11":
-        ratio = [el for el in root.iter() if el.attrib.get("data-derived") == "ratio"]
-        agents, owners = (int(r["value"]) for r in data)
-        assert len(ratio) == 1 and (ratio[0].text or "").strip() == f"{round(agents / owners)} : 1"
+        assert not any(el.attrib.get("data-derived") == "ratio" for el in root.iter())
+        assert root.find("{http://www.w3.org/2000/svg}title").text == "1.5 million registrations, 17,000 owners"
         assert "6,159" not in " ".join(el.text or "" for el in root.iter())
-        assert data[0]["date_or_window"] == "database state before first fix, 31 Jan 2026 (post 2 Feb 2026)"
+        assert data[0]["date_or_window"] == "database state before first fix, 31 Jan 2026"
         assert data[0]["definition"] == "registrations" and data[1]["definition"] == "owner records"
     if figure_id == "F9":
         assert data[1]["exam_vs_control_pct"] == ""
@@ -247,7 +245,7 @@ def inspect_table_svg(path, figure_id, data, expected):
     whole = normal(" ".join(el.text or "" for el in root.iter()
                             if el.tag.rsplit("}", 1)[-1] == "text"))
     for phrase in (spec["title"], spec["caption"], spec["note"],
-                   *(spec.get("notes") or []), spec["source"]):
+                   *(spec.get("notes") or []), *source_lines(figure_id)):
         if phrase:
             assert normal(phrase) in whole, f"{path}: missing specified text {phrase!r}"
     if figure_id == "F4":
@@ -255,10 +253,11 @@ def inspect_table_svg(path, figure_id, data, expected):
                 if "data-use-row" in el.attrib}
         assert len(bars) == len(data)
         for i, row in enumerate(data):
-            category = "measure" if row["use"] == "measure (aggregate)" else "screen" if row["use"] == "screen" else "sanction"
+            category = use_category(row["use"])
             assert bars[i]["data-use-category"] == category
             assert bars[i]["fill"] == {"measure": TOKENS["slate"], "screen": TOKENS["muted"],
-                                       "sanction": TOKENS["cream"] if path.name.endswith(".dark.svg") else TOKENS["bg"]}[category]
+                                       "guidance": "#7B8588", "discontinued": TOKENS["rule"],
+                                       "reviewed": TOKENS["cream"] if path.name.endswith(".dark.svg") else TOKENS["bg"]}[category]
     if figure_id == "F6":
         provider_styles = {}
         for group in root.iter():
@@ -342,6 +341,13 @@ def inspect_table_html(path, figure_id, data, expected):
     if figure_id == "F6":
         for note in TABLES["F6"]["notes"]:
             assert note in unescape(path.read_text(encoding="utf-8"))
+        for source in source_lines("F6"):
+            assert source in unescape(path.read_text(encoding="utf-8"))
+    spec = TABLES[figure_id]
+    rendered_html = unescape(path.read_text(encoding="utf-8"))
+    for phrase in (spec["caption"], spec["note"], *(spec.get("notes") or []), *source_lines(figure_id)):
+        if phrase:
+            assert phrase in rendered_html, f"{path}: missing exact caption, note or source: {phrase!r}"
     if figure_id == "F7":
         assert reader.groups == list(dict.fromkeys(row["group"] for row in data))
         assert len(reader.row_metadata) == len(data)
@@ -365,6 +371,10 @@ def pdf_ok(figure_id, data):
     assert "Inter" in embedded_names and "JetBrainsMono" in embedded_names
     if figure_id in TABLES:
         assert TABLES[figure_id]["title"] in content
+        for phrase in (TABLES[figure_id]["caption"], TABLES[figure_id]["note"],
+                       *(TABLES[figure_id].get("notes") or []), *source_lines(figure_id)):
+            if phrase:
+                assert normal(phrase) in normal(content), f"{figure_id}.pdf: missing caption, note or source"
     if figure_id == "F11":
         assert f"{int(data[0]['value']):,}" in content and f"{int(data[1]['value']):,}" in content
 
@@ -373,12 +383,14 @@ def main():
     assert not any((OUT / f"F5{suffix}").exists() for suffix in
                    (".svg", ".dark.svg", ".pdf", ".py", ".table.html"))
     spec_text = specified_text()
+    spec_text["F2"]["source"] = "; ".join(row["source"] for row in csv_rows(FIGURES["F2"]))
     lines = [
         "# Shadow 06 figure check",
         "",
         "Generated by `python figures/check.py` after reading plotted marks and table cells back "
         "from both SVG themes. Charts are checked against CSV values and geometry; table cell "
-        "text is checked against the CSV in SVG and accessible HTML. PDFs are checked for one "
+        "text is checked against the CSV in SVG and accessible HTML. Captions, notes and source "
+        "lines are checked in both SVGs, HTML tables and PDFs. PDFs are checked for one "
         "vector page, extractable text, and embedded Shadow fonts.",
         "",
         "| Figure | CSV | Every plotted or tabulated value read back | Result |",
@@ -411,7 +423,7 @@ def main():
         "## Figure text audit",
         "",
         "Each specified field below was read back from the light and dark SVG and compared character for "
-        "character with the quoted text in `figures/TEXT.md`, after joining wrapped lines "
+        "character with `figures/TEXT.md` or, for the F2 source, the CSV, after joining wrapped lines "
         "with spaces. Extractable PDF text was also checked after line reflow; F8's standalone "
         "HTML heading and table caption were checked too.",
         "",
@@ -428,16 +440,16 @@ def main():
         "",
         "## Strict readings and source discrepancies",
         "",
-        "- F2: the spec asks for `>50%` daily uploads in June 2026, but the frozen CSV records `50`. The bar and direct label use `50%`; the exact supplied caption retains its wording. The caption's `up to 85%` fraud claim is specified prose, not a plotted value in the CSV.",
-        "- F1/F2: source text includes the six-month-average qualification for F1. The detector caveat remains visible.",
+        "- F2: the June bar ends at the 50% tick, carries a ≥ marker and is labelled `over 50%`; January 2025 has no upload-share claim. The `up to 85%` fraud statement is specified prose, not a plotted CSV value.",
+        "- F1: the source names Pew and states that plotted points are six-month averages. The detector caveat remains visible.",
         "- F5: withdrawn. Its material appears in F6; no F5 data or export is included.",
-        "- F4: the Newby row follows the current CSV. Source IDs in the table connect to the linked publications in `REFERENCES.md`.",
-        "- F6: provider columns follow alphabetical order. Each value and source-ID cell retains the CSV wording; the footnotes caution against ranking providers.",
-        "- F7: every CSV row is preserved in its supplied order and grouped by `group`; no jurisdiction was added. Rows marked `located, not cleared` retain neutral shading and em-dash cells. Some instruments still lack a direct source link in `REFERENCES.md`.",
+        "- F4: all eight institutional rows and five use tones follow the CSV. Its caption does not claim a measured trend.",
+        "- F6: provider columns follow alphabetical order. Every cell retains the CSV wording; the source block is checked against all three rows of `F6_sources.csv`. The footnotes caution against ranking providers.",
+        "- F7: all 26 CSV rows remain grouped in supplied order. Rows marked `located, not cleared` retain neutral shading. The United Kingdom briefing appears as a note, outside the table; Nigeria remains excluded. The caption omits the future 18 October evidence freeze pending completion.",
         "- F9: the Tutor with safeguards exam cell is blank in the new CSV. No mark or bar is drawn; its exact `exam_label` appears at the zero line. The companion text avoids treating a non-significant difference as equality.",
         "- F8: reported figures are presented as vendor reports from different periods, samples and units; no combined range is inferred.",
         "- F10: the 2024 assessed-work cell is blank. No bar is drawn and the specified qualitative note appears. The student quote and 49/16/35 split are omitted together because those percentages are absent from the frozen CSV.",
-        "- F11: `88 : 1` is the rounded ratio of the two CSV counts (1,500,000 / 17,000 ≈ 88.24), not an independent observation. The date and definitions appear below the numbers.",
+        "- F11: the unsupported agent-per-owner ratio has been removed. The two counts, source date and registration caveat remain visible.",
         "",
     ]
     (OUT / "CHECK.md").write_text("\n".join(lines), encoding="utf-8")

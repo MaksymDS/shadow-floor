@@ -38,6 +38,8 @@
 <text x="52" y="655" fill="#9C907A" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="400" text-anchor="start" >A separate randomised study (BJET, 2025; 117 students): the AI-assisted group showed the greatest improvement in essay scores during revision;</text>
 <text x="52" y="673" fill="#9C907A" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="400" text-anchor="start" >the study did not detect significant between-group differences in knowledge gain or transfer.</text>
 </g>
+<g data-text-role="source">
 <line x1="52" y1="731" x2="1148" y2="731" stroke="#2A2D2F" stroke-width="1" />
-<text x="52" y="759" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >SOURCE  Bastani et al., PNAS 122(26), 2025; Fan et al., BJET 56(2), 2025.</text>
+<text x="52" y="759" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >SOURCE  Bastani et al., PNAS 122(26), 2025; Fan et al., British Journal of Educational Technology 56(2), 2025.</text>
+</g>
 </svg>
