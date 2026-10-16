@@ -331,9 +331,9 @@ def f10(dark):
     return f
 
 
-def f11(dark):
-    data = rows("F11_moltbook.csv")
-    f = Figure("F11", "1.5 million registrations, 17,000 owners", 745, dark)
+def f5(dark):
+    data = rows("F5_moltbook.csv")
+    f = Figure("F5", "1.5 million registrations, 17,000 owners", 745, dark)
     agents = int(data[0]["value"])
     owners = int(data[1]["value"])
     f.text(52, 190, f"{agents:,}", 52, f.ink, SANS, 600,
@@ -617,8 +617,8 @@ def f7(dark): return table_figure("F7", dark)
 def f8(dark): return table_figure("F8", dark)
 
 
-BUILDERS = {"F1": f1, "F2": f2, "F3": f3, "F4": f4,
-            "F6": f6, "F7": f7, "F8": f8, "F9": f9, "F10": f10, "F11": f11}
+BUILDERS = {"F1": f1, "F2": f2, "F3": f3, "F4": f4, "F5": f5,
+            "F6": f6, "F7": f7, "F8": f8, "F9": f9, "F10": f10}
 
 
 def pdf_from_svg(svg: Path, pdf: Path):

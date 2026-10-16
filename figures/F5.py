@@ -2,4 +2,4 @@
 from render import build
 
 if __name__ == "__main__":
-    build("F11")
+    build("F5")

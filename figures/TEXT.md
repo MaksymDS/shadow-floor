@@ -14,6 +14,10 @@ The strings below are checked against the generated SVGs and extractable PDF tex
 **Callout (replace):** "Nearly 9,000 support tickets (Sep 2026, staff and moderators)."
 **Source line must state:** "arXiv blog, 'Updated rate limit policy', 1 Oct 2026."
 
+## F5 — registrations
+**Title (replace):** "1.5 million registrations, 17,000 owners".
+**Source line must state:** "Wiz, 2 Feb 2026."
+
 ## F8 — traffic and ad fraud
 **Title (replace):** "Different samples, periods and units".
 
@@ -24,7 +28,3 @@ The strings below are checked against the generated SVGs and extractable PDF tex
 
 ## F10 — student use
 **Source line must state:** "HEPI, Student Generative AI Survey 2026 (survey of 1,054 full-time UK undergraduates, December 2025)."
-
-## F11 — registrations
-**Title (replace):** "1.5 million registrations, 17,000 owners".
-**Source line must state:** "Wiz, 2 Feb 2026."

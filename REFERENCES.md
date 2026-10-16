@@ -25,6 +25,10 @@ This register links the published figures and their [CSV inputs](shadow06-figdat
 - [*Matter of Newby v Adelphi University*, New York court opinion](https://www.nycourts.gov/reporter/3dseries/2026/2026_26021.htm). The figure describes this case's outcome, not a general ruling on detectors.
 - **Figure note:** [Liang et al., ICML 2024](https://proceedings.mlr.press/v235/liang24b.html) presents a corpus-level estimation method, distinct from deciding whether an individual document was AI-authored.
 
+## F5 · Moltbook registrations
+
+- [Wiz investigation](https://www.wiz.io/blog/exposed-moltbook-database-reveals-millions-of-api-keys). The chart uses reported registrations and owner records before the first fix, not active users or autonomous agents.
+
 ## F6 · Provider comparison
 
 - **Anthropic:** [Text watermark announcement](https://www.anthropic.com/news/claude-text-watermark) and [support documentation on content verification](https://support.claude.com/en/articles/16266773).
@@ -76,7 +80,3 @@ The studies use different traffic units, customer samples and periods. Their per
 ## F10 · Student use
 
 - [Higher Education Policy Institute, Student Generative AI Survey 2026](https://www.hepi.ac.uk/reports/student-generative-ai-survey-2026/) and the [report PDF](https://www.hepi.ac.uk/wp-content/uploads/2026/03/HEPI-Report-199-Gen-AI-Survey-2026.pdf).
-
-## F11 · Moltbook registrations
-
-- [Wiz investigation](https://www.wiz.io/blog/exposed-moltbook-database-reveals-millions-of-api-keys). The chart uses reported registrations and owner records before the first fix, not active users or autonomous agents.

@@ -21,18 +21,18 @@ FIGURES = {
     "F2": "F2_deezer_uploads_vs_streams.csv",
     "F3": "F3_arxiv_submissions.csv",
     "F4": "F4_institutions_decisions.csv",
+    "F5": "F5_moltbook.csv",
     "F6": "F6_providers.csv",
     "F7": "F7_obligations.csv",
     "F8": "F8_vendor_methods.csv",
     "F9": "F9_learning_study.csv",
     "F10": "F10_hepi.csv",
-    "F11": "F11_moltbook.csv",
 }
 SPECIFIED_TEXT = {
     "F1": ["Pew's detector flags pages written or substantially edited with AI, and misclassifies individual pages in both directions. Points are six-month averages; Pew reports a higher false-positive rate on pre-AI pages.",
            "Nov 2022"],
     "F9": ["Unrestricted access raised practice scores by 48% and was followed by exam scores 17% below the control group once access was removed. For a tutor designed not to hand out answers, the authors report the loss was largely mitigated."],
-    "F11": ["About 1.5 million registered 'agents' and about 17,000 human owners, according to the Wiz investigation. Registrations do not measure activity or autonomy; the platform had no mechanism to verify whether an 'agent' was AI.",
+    "F5": ["About 1.5 million registered 'agents' and about 17,000 human owners, according to the Wiz investigation. Registrations do not measure activity or autonomy; the platform had no mechanism to verify whether an 'agent' was AI.",
             "Database state before the first fix, 31 Jan 2026. Registrations and owner records — not activity."],
 }
 SPEC_TEXT_LABELS = {
@@ -42,7 +42,7 @@ SPEC_TEXT_LABELS = {
     "F8": {"title": "**Title (replace):**"},
     "F9": {"companion": "**Companion line (replace):**", "axis_label": "**Axis/label note:**", "source": "**Source line must state:**"},
     "F10": {"source": "**Source line must state:**"},
-    "F11": {"title": "**Title (replace):**", "source": "**Source line must state:**"},
+    "F5": {"title": "**Title (replace):**", "source": "**Source line must state:**"},
 }
 
 
@@ -204,7 +204,7 @@ def inspect_svg(path, figure_id, data, expected):
         seen[key] = a["data-value"]
     if set(seen) != expected:
         raise AssertionError(f"{path}: missing marks {sorted(expected - set(seen))}")
-    if figure_id == "F11":
+    if figure_id == "F5":
         assert not any(el.attrib.get("data-derived") == "ratio" for el in root.iter())
         assert root.find("{http://www.w3.org/2000/svg}title").text == "1.5 million registrations, 17,000 owners"
         assert "6,159" not in " ".join(el.text or "" for el in root.iter())
@@ -375,13 +375,11 @@ def pdf_ok(figure_id, data):
                        *(TABLES[figure_id].get("notes") or []), *source_lines(figure_id)):
             if phrase:
                 assert normal(phrase) in normal(content), f"{figure_id}.pdf: missing caption, note or source"
-    if figure_id == "F11":
+    if figure_id == "F5":
         assert f"{int(data[0]['value']):,}" in content and f"{int(data[1]['value']):,}" in content
 
 
 def main():
-    assert not any((OUT / f"F5{suffix}").exists() for suffix in
-                   (".svg", ".dark.svg", ".pdf", ".py", ".table.html"))
     spec_text = specified_text()
     spec_text["F2"]["source"] = "; ".join(row["source"] for row in csv_rows(FIGURES["F2"]))
     lines = [
@@ -442,18 +440,17 @@ def main():
         "",
         "- F2: the June bar ends at the 50% tick, carries a ≥ marker and is labelled `over 50%`; January 2025 has no upload-share claim. The `up to 85%` fraud statement is specified prose, not a plotted CSV value.",
         "- F1: the source names Pew and states that plotted points are six-month averages. The detector caveat remains visible.",
-        "- F5: withdrawn. Its material appears in F6; no F5 data or export is included.",
         "- F4: all eight institutional rows and five use tones follow the CSV. Its caption does not claim a measured trend.",
         "- F6: provider columns follow alphabetical order. Every cell retains the CSV wording; the source block is checked against all three rows of `F6_sources.csv`. The footnotes caution against ranking providers.",
         "- F7: all 26 CSV rows remain grouped in supplied order. Rows marked `located, not cleared` retain neutral shading. The United Kingdom briefing appears as a note, outside the table; Nigeria remains excluded. The caption omits the future 18 October evidence freeze pending completion.",
         "- F9: the Tutor with safeguards exam cell is blank in the new CSV. No mark or bar is drawn; its exact `exam_label` appears at the zero line. The companion text avoids treating a non-significant difference as equality.",
         "- F8: reported figures are presented as vendor reports from different periods, samples and units; no combined range is inferred.",
         "- F10: the 2024 assessed-work cell is blank. No bar is drawn and the specified qualitative note appears. The student quote and 49/16/35 split are omitted together because those percentages are absent from the frozen CSV.",
-        "- F11: the unsupported agent-per-owner ratio has been removed. The two counts, source date and registration caveat remain visible.",
+        "- F5: the unsupported agent-per-owner ratio has been removed. The two counts, source date and registration caveat remain visible.",
         "",
     ]
     (OUT / "CHECK.md").write_text("\n".join(lines), encoding="utf-8")
-    print("Checked 10 active figures; F5 withdrawn. Every SVG mark/table cell matches its CSV; HTML tables and PDFs checked.")
+    print("Checked 10 figures. Every SVG mark/table cell matches its CSV; HTML tables and PDFs checked.")
 
 
 if __name__ == "__main__":
