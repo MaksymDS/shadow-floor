@@ -8,14 +8,14 @@ Data, figures and source references for *Noise Floor — The Output Without an A
 
 [Figures](#figures) · [Sources and scope](#sources-and-scope) · [Rebuild and check](#rebuild-and-check) · [Corrections](#corrections)
 
-This repository contains the ten figures used across the issue's seven chapters. Each figure has a source CSV, a light SVG, a dark SVG and a vector PDF. Figures F4, F6, F7 and F8 also have an accessible HTML table. The figure data and source descriptions reflect materials checked through **16 October 2026**.
+This repository contains the ten figures used across the issue's seven chapters. Each figure has a source CSV, a light SVG, a dark SVG and a vector PDF. Figures F4, F6, F7 and F8 also have an accessible HTML table. These files are the current input snapshots for the edition with a stated record close of **18 October 2026, 23:59 (UTC+4)**.
 
 ## Figures
 
 | Figure | In the issue | Data | Exports |
 |:--|:--|:--|:--|
 | [F1 · Signs of AI authorship by web domain, 2021–2026](figures/F1.svg) | Ch 1.1 | [CSV](shadow06-figdata/F1_pew_domain_share.csv) | [Dark SVG](figures/F1.dark.svg) · [PDF](figures/F1.pdf) |
-| [F2 · Music: half of what is uploaded, a sliver of what is heard](figures/F2.svg) | Ch 1.2 | [CSV](shadow06-figdata/F2_deezer_uploads_vs_streams.csv) | [Dark SVG](figures/F2.dark.svg) · [PDF](figures/F2.pdf) |
+| [F2 · Music: reported upload share and stream share](figures/F2.svg) | Ch 1.2 | [CSV](shadow06-figdata/F2_deezer_uploads_vs_streams.csv) | [Dark SVG](figures/F2.dark.svg) · [PDF](figures/F2.pdf) |
 | [F3 · arXiv monthly submissions](figures/F3.svg) | Ch 1.5 | [CSV](shadow06-figdata/F3_arxiv_submissions.csv) | [Dark SVG](figures/F3.dark.svg) · [PDF](figures/F3.pdf) |
 | [F4 · Counting, screening, judging](figures/F4.svg) | Ch 2 | [CSV](shadow06-figdata/F4_institutions_decisions.csv) | [Dark SVG](figures/F4.dark.svg) · [PDF](figures/F4.pdf) · [HTML table](figures/F4.table.html) |
 | [F5 · 1.5 million registrations, 17,000 owners](figures/F5.svg) | Ch 2.7 | [CSV](shadow06-figdata/F5_moltbook.csv) | [Dark SVG](figures/F5.dark.svg) · [PDF](figures/F5.pdf) |

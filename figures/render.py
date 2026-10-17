@@ -178,7 +178,7 @@ def f1(dark):
 
 def f2(dark):
     data = rows("F2_deezer_uploads_vs_streams.csv")
-    f = Figure("F2", "Music: half of what is uploaded, a sliver of what is heard", 805, dark)
+    f = Figure("F2", "Music: reported upload share and stream share", 805, dark)
     latest = data[-1]
     x0, scale = 340, 14.0
     f.text(52, 145, "JUNE 2026 · SHARE OF DAILY ACTIVITY", 12, f.quiet, MONO)
@@ -268,7 +268,7 @@ def f9(dark):
         f.line(100, yy, 1090, yy, f.ink if tick == 0 else f.grid, 1.4 if tick == 0 else 0.8,
                None if tick == 0 else "3 5")
         f.text(90, yy + 4, f"{tick:+d}%" if tick else "0", 12, f.quiet, MONO, anchor="end")
-    f.text(1095, zero + 27, "CONTROL", 11, f.quiet, MONO, anchor="end")
+    f.text(1088, zero - 6.5, "CONTROL", 11, f.quiet, MONO, anchor="end")
     bars = [(0, "practice_vs_control_pct", 260, TOKENS["slate"]),
             (1, "practice_vs_control_pct", 450, f.accent),
             (0, "exam_vs_control_pct", 730, TOKENS["slate"])]
@@ -281,8 +281,10 @@ def f9(dark):
         label_attrs = mark_attrs(row_i, "exam_label", shown) if field == "exam_vs_control_pct" else ""
         f.text(cx, (yy - 12 if value > 0 else yy + 27), shown, 20, f.ink, SANS, 600, "middle",
                extra=label_attrs)
-    f.text(925, zero - 10, data[1]["exam_label"], 15, f.ink, SANS, 600, "middle",
+    f.text(925, 293, "Authors: “largely mitigated”", 15, f.ink, SANS, 600, "middle",
            extra=mark_attrs(1, "exam_label", data[1]["exam_label"]))
+    f.text(925, 311, "Qualitative summary only; no point estimate plotted.", 12, f.quiet, SANS, anchor="middle")
+    f.text(925, 327, "Not evidence of equality with control.", 12, f.quiet, SANS, anchor="middle")
     for row_i, cx in ((0, 260), (1, 450), (0, 730), (1, 925)):
         arm = data[row_i]["arm"]
         f.text(cx, 480, arm, 12, f.quiet, SANS, anchor="middle",
@@ -305,7 +307,7 @@ def f10(dark):
     panels = [
         ("ANY AI USE", "any_ai_use_pct"),
         ("GENAI FOR ASSESSED WORK", "genai_for_assessed_work_pct"),
-        ("AI TEXT INSERTED DIRECTLY", "ai_text_inserted_directly_pct"),
+        ("AI TEXT INCLUDED DIRECTLY", "ai_text_inserted_directly_pct"),
     ]
     for panel_i, (title, field) in enumerate(panels):
         x0 = 52 + panel_i * 380
@@ -323,7 +325,9 @@ def f10(dark):
                 f.text(x0 + 339, yy, f"{value}%", 18, f.ink, SANS, 600, "end")
             else:
                 f.text(x0 + 69, yy, "—", 16, f.quiet, SANS)
-    f.wrapped(52, 538, "Use is near-universal; direct insertion of AI text into assessed work is a minority practice — 12% in 2026.", 133, 15, 22)
+    f.add('<g data-text-role="caption">')
+    f.wrapped(52, 538, "95% of surveyed UK undergraduates used AI in some form; 12% said they included AI-generated text directly in assessed work (2026).", 133, 15, 22)
+    f.add('</g>')
     f.add('<g data-text-role="source">')
     f.source(673, "HEPI, Student Generative AI Survey 2026 (survey of 1,054 full-time UK undergraduates, December 2025).")
     f.add('</g>')
@@ -373,6 +377,7 @@ TABLES = {
         "notes": [
             "Each provider's column had an independent reviewer; see Method.",
             "Figures come from different implementations, corpora and operating points. No ranking is implied.",
+            '"Not found" means not located in the stated review; it does not establish non-existence, concealment, unlawfulness or non-compliance.',
         ],
         "source": "",
     },
@@ -386,10 +391,10 @@ TABLES = {
             ("Medium", 170, ("medium",)),
             ("Duty", 254, ("duty",)),
             ("Status", 150, ("status", "clearance")),
-            ("Effective date", 152, ("effective_date",)),
+            ("Relevant date (type stated)", 152, ("relevant_date_type_stated",)),
             ("Source", 120, ("source",)),
         ],
-        "caption": "Instruments we located and verified. A comparison of specified obligations, not a ranking of countries' overall AI regulation. Grey rows: official texts located but not cleared for detailed description.",
+        "caption": "Instruments we located and verified. A comparison of specified obligations, not a ranking of countries' overall AI regulation. Grey rows: official texts located but not cleared for detailed description; only metadata is shown.",
         "note": "",
         "notes": ["United Kingdom: a January 2026 House of Commons Library briefing stated that no UK legislation requires AI-generated content to be labelled."],
         "source": "Official instruments and issuer publications named in the Source column.",
@@ -397,13 +402,14 @@ TABLES = {
     "F8": {
         "title": "Different samples, periods and units", "csv": "F8_vendor_methods.csv",
         "columns": [
-            ("Vendor", 160, ("vendor",)),
-            ("Reported figure", 174, ("reported_figure",)),
-            ("Period", 120, ("period",)), ("Unit", 130, ("unit",)),
-            ("Sample", 180, ("sample",)), ("Extrapolation", 202, ("extrapolation",)),
-            ("Source", 130, ("source",)),
+            ("Vendor", 130, ("vendor",)),
+            ("Reported figure", 150, ("reported_figure",)),
+            ("Measure type", 140, ("measure_type",)),
+            ("Period", 110, ("period",)), ("Unit", 100, ("unit",)),
+            ("Sample", 155, ("sample",)), ("Extrapolation", 180, ("extrapolation",)),
+            ("Source", 131, ("source",)),
         ],
-        "caption": "Vendors measure different things (clicks, impressions, schemes, traffic shares) over different periods and samples. The figures are not a range for one quantity.",
+        "caption": "Vendors measure different things (rates of clicks, impressions or traffic; growth in a count of schemes; relative growth) over different periods and samples. The figures are not a range for one quantity.",
         "note": "",
         "source": "Vendor publications named in the Source column; figures are vendor-reported.",
     },

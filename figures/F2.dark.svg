@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="805" viewBox="0 0 1200 805" role="img" aria-labelledby="title desc">
-<title id="title">Music: half of what is uploaded, a sliver of what is heard</title>
+<title id="title">Music: reported upload share and stream share</title>
 <desc id="desc">Shadow 06 figure F2. Exact plotted values are encoded on marks.</desc>
 <rect width="1200" height="805" fill="#161819"/>
 <text x="52" y="36" fill="#E8B547" font-family="JetBrains Mono,monospace" font-size="12" font-weight="600" text-anchor="start" >SHADOW 06  /  FIGURE 2</text>
-<text x="52" y="78" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="29" font-weight="600" text-anchor="start" >Music: half of what is uploaded, a sliver of what is heard</text>
+<text x="52" y="78" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="29" font-weight="600" text-anchor="start" >Music: reported upload share and stream share</text>
 <line x1="52" y1="98" x2="1148" y2="98" stroke="#2A2D2F" stroke-width="1" />
 <text x="52" y="145" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="12" font-weight="400" text-anchor="start" >JUNE 2026 · SHARE OF DAILY ACTIVITY</text>
 <line x1="340" y1="176" x2="340" y2="370" stroke="#2A2D2F" stroke-width="0.7" stroke-dasharray="3 5" />

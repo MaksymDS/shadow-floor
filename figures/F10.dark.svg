@@ -25,7 +25,7 @@
 <text x="432" y="420" fill="#EDE0C8" font-family="JetBrains Mono,monospace" font-size="15" font-weight="600" text-anchor="start" >2026</text>
 <rect x="501" y="400" width="202.1" height="24" fill="#E8B547" data-row="2" data-field="genai_for_assessed_work_pct" data-value="94" data-x="501" data-scale="2.15"/>
 <text x="771" y="420" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="end" >94%</text>
-<text x="812" y="142" fill="#E8B547" font-family="JetBrains Mono,monospace" font-size="12" font-weight="600" text-anchor="start" >AI TEXT INSERTED DIRECTLY</text>
+<text x="812" y="142" fill="#E8B547" font-family="JetBrains Mono,monospace" font-size="12" font-weight="600" text-anchor="start" >AI TEXT INCLUDED DIRECTLY</text>
 <line x1="791" y1="134" x2="791" y2="500" stroke="#2A2D2F" stroke-width="1" />
 <text x="812" y="210" fill="#EDE0C8" font-family="JetBrains Mono,monospace" font-size="15" font-weight="600" text-anchor="start" >2024</text>
 <rect x="881" y="190" width="6.45" height="24" fill="#6E8499" data-row="0" data-field="ai_text_inserted_directly_pct" data-value="3" data-x="881" data-scale="2.15"/>
@@ -36,7 +36,9 @@
 <text x="812" y="420" fill="#EDE0C8" font-family="JetBrains Mono,monospace" font-size="15" font-weight="600" text-anchor="start" >2026</text>
 <rect x="881" y="400" width="25.8" height="24" fill="#E8B547" data-row="2" data-field="ai_text_inserted_directly_pct" data-value="12" data-x="881" data-scale="2.15"/>
 <text x="1151" y="420" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="end" >12%</text>
-<text x="52" y="538" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >Use is near-universal; direct insertion of AI text into assessed work is a minority practice — 12% in 2026.</text>
+<g data-text-role="caption">
+<text x="52" y="538" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" >95% of surveyed UK undergraduates used AI in some form; 12% said they included AI-generated text directly in assessed work (2026).</text>
+</g>
 <g data-text-role="source">
 <line x1="52" y1="645" x2="1148" y2="645" stroke="#2A2D2F" stroke-width="1" />
 <text x="52" y="673" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >SOURCE  HEPI, Student Generative AI Survey 2026 (survey of 1,054 full-time UK undergraduates, December 2025).</text>

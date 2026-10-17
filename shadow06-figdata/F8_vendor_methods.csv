@@ -1,6 +1,6 @@
-vendor,reported_figure,period,unit,sample,extrapolation,source
-Spider Labs,5.58% fraud rate; $25.3bn,H1 2026,paid clicks,4.006bn paid clicks,global half-year extrapolation,"Spider Labs release, 2026"
-Fraudlogix,20.64% flagged invalid,calendar 2025,impressions,105.7bn impressions,none stated,"Fraudlogix, Ad Fraud Statistics 2026"
-DoubleVerify,+140% CTV fraud schemes and variants,Q1 2026 vs Q1 2025,identified schemes,vendor detections,none,"DoubleVerify, 7 May 2026"
-Thales/Imperva,53% automated traffic; 40% bad bots,2025,web traffic,traffic observed by the vendor,none,Imperva Bad Bot Report 2026
-HUMAN,automated traffic grew 8x faster than human traffic,2025,traffic growth rate,customer traffic,none,"HUMAN, 2026 State of AI Traffic"
+vendor,reported_figure,measure_type,period,unit,sample,extrapolation,source
+Spider Labs,5.58% fraud rate; $25.3bn,rate (share of paid clicks) + extrapolated amount,H1 2026,paid clicks,4.006bn paid clicks,global half-year extrapolation,"Spider Labs release, 2026"
+Fraudlogix,20.64% flagged invalid,rate (share of impressions flagged),calendar 2025,impressions,105.7bn impressions,none stated,"Fraudlogix, Ad Fraud Statistics 2026"
+DoubleVerify,+140% CTV fraud schemes and variants,growth rate of a count (schemes and variants),Q1 2026 vs Q1 2025,identified schemes,vendor detections,none,"DoubleVerify, 7 May 2026"
+Thales/Imperva,53% automated traffic; 40% bad bots,rate (share of observed traffic),2025,web traffic,traffic observed by the vendor,none,Imperva Bad Bot Report 2026
+HUMAN,automated traffic grew 8x faster than human traffic,comparison of growth rates,2025,traffic growth rate,customer traffic,none,"HUMAN, 2026 State of AI Traffic"

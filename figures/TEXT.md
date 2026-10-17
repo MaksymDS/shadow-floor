@@ -7,6 +7,7 @@ These reader-facing strings are checked against the generated SVGs and extractab
 **Source:** "Pew Research Center, 'How much of the internet is written with AI?', 20 Aug 2026. Plotted points are six-month averages."
 
 ## F2 — music
+**Title:** "Music: reported upload share and stream share".
 **Caption:** "Deezer reports that fully AI-generated tracks exceeded half of daily uploads at a June 2026 peak, and accounted for 1–3% of streams; it classified up to 85% of those streams in 2025 as fraudulent. Upload share and stream share are different measures."
 **Source:** "Deezer newsroom, April 2026 and 21 July 2026."
 
@@ -28,4 +29,5 @@ These reader-facing strings are checked against the generated SVGs and extractab
 **Source:** "Bastani et al., PNAS 122(26), 2025; Fan et al., British Journal of Educational Technology 56(2), 2025."
 
 ## F10 — student use
+**Caption:** "95% of surveyed UK undergraduates used AI in some form; 12% said they included AI-generated text directly in assessed work (2026)."
 **Source:** "HEPI, Student Generative AI Survey 2026 (survey of 1,054 full-time UK undergraduates, December 2025)."

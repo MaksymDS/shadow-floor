@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import csv
+from collections import Counter
 from html import unescape
 from html.parser import HTMLParser
 from pathlib import Path
@@ -31,18 +32,20 @@ FIGURES = {
 SPECIFIED_TEXT = {
     "F1": ["Pew's detector flags pages written or substantially edited with AI, and misclassifies individual pages in both directions. Pew reports a higher false-positive rate on pre-AI pages.",
            "Nov 2022"],
-    "F9": ["Unrestricted access raised practice scores by 48% and was followed by exam scores 17% below the control group once access was removed. For a tutor designed not to hand out answers, the authors report the loss was largely mitigated."],
+    "F9": ["Unrestricted access raised practice scores by 48% and was followed by exam scores 17% below the control group once access was removed. For a tutor designed not to hand out answers, the authors report the loss was largely mitigated.",
+           "Authors: “largely mitigated”", "Qualitative summary only; no point estimate plotted.",
+           "Not evidence of equality with control."],
     "F5": ["About 1.5 million registered 'agents' and about 17,000 human owners, according to the Wiz investigation. Registrations do not measure activity or autonomy; the platform had no mechanism to verify whether an 'agent' was AI.",
             "Database state before the first fix, 31 Jan 2026. Registrations and owner records — not activity."],
 }
 SPEC_TEXT_LABELS = {
     "F1": {"caption": "**Caption:**", "source": "**Source:**"},
-    "F2": {"caption": "**Caption:**", "source": "**Source:**"},
+    "F2": {"title": "**Title:**", "caption": "**Caption:**", "source": "**Source:**"},
     "F3": {"caption": "**Caption:**", "callout": "**Callout:**", "source": "**Source:**"},
     "F5": {"title": "**Title:**", "source": "**Source:**"},
     "F8": {"title": "**Title:**"},
     "F9": {"companion": "**Companion:**", "axis_label": "**Axis label:**", "source": "**Source:**"},
-    "F10": {"source": "**Source:**"},
+    "F10": {"caption": "**Caption:**", "source": "**Source:**"},
 }
 
 
@@ -144,6 +147,8 @@ def geometry_ok(figure_id, el, row, field, data):
     a = el.attrib
     kind = el.tag.rsplit("}", 1)[-1]
     i = int(a["data-row"])
+    if figure_id == "F9" and field == "exam_label" and i == 1:
+        return kind == "text" and (el.text or "") == "Authors: “largely mitigated”"
     if figure_id == "F9" and field in ("arm", "exam_label"):
         return kind == "text" and (el.text or "") == row[field]
     if figure_id == "F2":
@@ -305,6 +310,7 @@ class TableHTMLReader(HTMLParser):
     def __init__(self):
         super().__init__(convert_charrefs=True)
         self.cells = {}
+        self.raw_cells = {}
         self.current = None
         self.bits = []
         self.tables = 0
@@ -340,6 +346,7 @@ class TableHTMLReader(HTMLParser):
             key = (row, field)
             assert key not in self.cells
             self.cells[key] = (encoded, normal("".join(self.bits)))
+            self.raw_cells[key] = "".join(self.bits)
             self.current = None
 
 
@@ -355,6 +362,10 @@ def inspect_table_html(path, figure_id, data, expected):
         visible = display_cell(figure_id, key[1], source)
         assert reader.cells[key] == (source, normal(visible)), f"{path}: HTML cell mismatch {key}"
     if figure_id == "F6":
+        for key in expected:
+            source = data[key[0]][key[1]]
+            assert reader.raw_cells[key].encode("utf-8") == source.encode("utf-8"), \
+                f"{path}: F6 visible cell differs from CSV bytes {key}"
         for note in TABLES["F6"]["notes"]:
             assert note in unescape(path.read_text(encoding="utf-8"))
         for source in source_lines("F6"):
@@ -372,6 +383,28 @@ def inspect_table_html(path, figure_id, data, expected):
             assert metadata["data-clearance"] == row["clearance"]
             assert ("unverified" in metadata.get("class", "")) == (row["clearance"] == "located, not cleared")
     return {key: value[1] for key, value in reader.cells.items()}
+
+
+def check_landing_references(path):
+    """Verify static citation and Sources links in the published HTML."""
+    page = path.read_text(encoding="utf-8")
+    refs = Counter(re.findall(r'\bid="(ref-\d+)"', page))
+    assert refs == Counter({f"ref-{n}": 1 for n in range(1, 104)}), \
+        f"{path}: expected exactly one id per reference 1–103"
+    sup_blocks = re.findall(r'<sup class="cite">(.*?)</sup>', page, re.S)
+    assert sup_blocks and len(sup_blocks) == len(re.findall(r'<sup\b', page))
+    source_blocks = re.findall(r'<p class="(?:chapter-sources|figure-sources) sources-line">(.*?)</p>',
+                               page, re.S)
+    assert len(source_blocks) == 17, f"{path}: expected ten figure and seven chapter Sources lines"
+    for kind, blocks in (("citation", sup_blocks), ("Sources", source_blocks)):
+        for block in blocks:
+            visible = re.sub(r'<[^>]+>', '', block)
+            numbers = re.findall(r'\b\d{1,3}\b', visible)
+            links = re.findall(r'<a href="#ref-(\d+)">(\d+)</a>', block)
+            assert numbers == [label for _, label in links], f"{path}: unlinked {kind} number in {block}"
+            assert all(target == label and f"ref-{target}" in refs for target, label in links), \
+                f"{path}: unresolved {kind} link in {block}"
+    return len(sup_blocks), len(source_blocks)
 
 
 def pdf_ok(figure_id, data):
@@ -397,6 +430,10 @@ def pdf_ok(figure_id, data):
 
 def main():
     spec_text = specified_text()
+    landing = ROOT / "index.html"
+    if not landing.is_file():
+        landing = ROOT.parent / "shadow-floor-landing" / "index.html"
+    landing_result = check_landing_references(landing) if landing.is_file() else None
     lines = [
         "# Noise Floor — figure verification",
         "",
@@ -471,11 +508,12 @@ def main():
         "- F2: the June bar ends at the 50% tick, carries a ≥ marker and is labelled `over 50%`; January 2025 has no upload-share claim. The `up to 85%` fraud statement is specified prose, not a plotted CSV value.",
         "- F4: all eight institutional rows and five use tones follow the CSV. Its caption does not claim a measured trend.",
         "- F5: the figure shows registrations and owners without calculating an agent-per-owner ratio. The source date and registration caveat remain visible.",
-        "- F6: provider columns follow alphabetical order. Every cell retains the CSV wording; the source block is checked against all three rows of `F6_sources.csv`. The footnotes caution against ranking providers.",
+        "- F6: provider columns follow alphabetical order. Every cell retains the CSV wording; the source block is checked against all three rows of `F6_sources.csv`. The three footnotes caution against ranking providers and clarify the meaning of \"Not found\".",
         "- F7: all 26 CSV rows remain grouped in supplied order. Rows marked `located, not cleared` retain neutral shading. Plain `cleared` labels are suppressed while qualified clearance labels remain visible. Long source values wrap inside the column. The United Kingdom briefing appears as a note, outside the table; Nigeria remains excluded.",
         "- F8: reported figures are presented as vendor reports from different periods, samples and units; no combined range is inferred.",
-        "- F9: the Tutor with safeguards exam cell is blank in the CSV. No mark or bar is drawn; its exact `exam_label` appears at the zero line. The companion text avoids treating a non-significant difference as equality.",
+        "- F9: the Tutor with safeguards exam cell is blank in the CSV. No mark or bar is drawn; a three-line qualitative label sits above the zero line. Its `exam_label` data attribute retains the CSV wording. The companion text avoids treating a non-significant difference as equality.",
         "- F10: the 2024 assessed-work cell is blank. A muted dash marks the missing value and no bar is drawn. The CSV does not contain a 49/16/35 split, so those values are not plotted.",
+        *( [f"- Landing: {landing_result[0]} superscript citation groups and {landing_result[1]} Sources lines link to exactly one of the 103 reference IDs."] if landing_result else [] ),
         "",
         "## CSV readback",
         "",

@@ -18,14 +18,16 @@
 <text x="90" y="276.5" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="12" font-weight="400" text-anchor="end" >+80%</text>
 <line x1="100" y1="209.5" x2="1090" y2="209.5" stroke="#2A2D2F" stroke-width="0.8" stroke-dasharray="3 5" />
 <text x="90" y="213.5" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="12" font-weight="400" text-anchor="end" >+120%</text>
-<text x="1095" y="425.5" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="end" >CONTROL</text>
+<text x="1088" y="392" fill="#9C907A" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="end" >CONTROL</text>
 <rect x="222" y="322.9" width="76" height="75.6" fill="#6E8499" data-row="0" data-field="practice_vs_control_pct" data-value="48" data-zero="398.5" data-scale="1.575"/>
 <text x="260" y="310.9" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="20" font-weight="600" text-anchor="middle" >+48%</text>
 <rect x="412" y="198.475" width="76" height="200.025" fill="#E8B547" data-row="1" data-field="practice_vs_control_pct" data-value="127" data-zero="398.5" data-scale="1.575"/>
 <text x="450" y="186.475" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="20" font-weight="600" text-anchor="middle" >+127%</text>
 <rect x="692" y="398.5" width="76" height="26.775" fill="#6E8499" data-row="0" data-field="exam_vs_control_pct" data-value="-17" data-zero="398.5" data-scale="1.575"/>
 <text x="730" y="452.275" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="20" font-weight="600" text-anchor="middle" data-row="0" data-field="exam_label" data-value="−17%">−17%</text>
-<text x="925" y="388.5" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="600" text-anchor="middle" data-row="1" data-field="exam_label" data-value="largely mitigated (authors)">largely mitigated (authors)</text>
+<text x="925" y="293" fill="#EDE0C8" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="600" text-anchor="middle" data-row="1" data-field="exam_label" data-value="largely mitigated (authors)">Authors: “largely mitigated”</text>
+<text x="925" y="311" fill="#9C907A" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="400" text-anchor="middle" >Qualitative summary only; no point estimate plotted.</text>
+<text x="925" y="327" fill="#9C907A" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="400" text-anchor="middle" >Not evidence of equality with control.</text>
 <text x="260" y="480" fill="#9C907A" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="400" text-anchor="middle" data-row="0" data-field="arm" data-value="Unrestricted assistant">Unrestricted assistant</text>
 <text x="450" y="480" fill="#9C907A" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="400" text-anchor="middle" data-row="1" data-field="arm" data-value="Tutor with safeguards">Tutor with safeguards</text>
 <text x="730" y="480" fill="#9C907A" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="400" text-anchor="middle" >Unrestricted assistant</text>

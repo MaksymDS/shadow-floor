@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1160" viewBox="0 0 1200 1160" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1216" viewBox="0 0 1200 1216" role="img" aria-labelledby="title desc">
 <title id="title">Providers, one table</title>
 <desc id="desc">Shadow 06 figure F6. Exact plotted values are encoded on marks.</desc>
-<rect width="1200" height="1160" fill="#EDE0C8"/>
+<rect width="1200" height="1216" fill="#EDE0C8"/>
 <text x="52" y="36" fill="#8B2D2D" font-family="JetBrains Mono,monospace" font-size="12" font-weight="600" text-anchor="start" >SHADOW 06  /  FIGURE 6</text>
 <text x="52" y="78" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="29" font-weight="600" text-anchor="start" >Providers, one table</text>
 <line x1="52" y1="98" x2="1148" y2="98" stroke="#9C907A" stroke-width="1" />
@@ -151,11 +151,13 @@
 <text x="52" y="882" fill="#2A2D2F" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >Each provider&#x27;s column had an independent reviewer; see Method.</text>
 <text x="52" y="914" fill="#8B2D2D" font-family="JetBrains Mono,monospace" font-size="10" font-weight="600" text-anchor="start" >FOOTNOTE 2</text>
 <text x="52" y="938" fill="#2A2D2F" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >Figures come from different implementations, corpora and operating points. No ranking is implied.</text>
-<line x1="52" y1="983" x2="1148" y2="983" stroke="#9C907A" stroke-width="1" />
-<text x="52" y="1011" fill="#8B2D2D" font-family="JetBrains Mono,monospace" font-size="10" font-weight="600" text-anchor="start" >SOURCES</text>
-<text x="52" y="1036" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >Anthropic: Claude Help Centre, &quot;How Claude marks AI-generated content&quot;; Claude Platform documentation (code execution tool);</text>
-<text x="52" y="1053" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >Anthropic, text-watermark announcement — retrieved Oct 2026</text>
-<text x="52" y="1078" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >Google: Google blog, 7 Oct 2026 (SynthID Detector); Dathathri et al., Nature 634 (2024); github.com/google-deepmind/synthid-text</text>
-<text x="52" y="1103" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >OpenAI: OpenAI, &quot;Advancing content provenance&quot; (19 May 2026, update 31 Jul 2026); OpenAI, &quot;Our approach to EU text provenance</text>
-<text x="52" y="1120" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >rules&quot; (5 Oct 2026)</text>
+<text x="52" y="970" fill="#8B2D2D" font-family="JetBrains Mono,monospace" font-size="10" font-weight="600" text-anchor="start" >FOOTNOTE 3</text>
+<text x="52" y="994" fill="#2A2D2F" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="start" >&quot;Not found&quot; means not located in the stated review; it does not establish non-existence, concealment, unlawfulness or non-compliance.</text>
+<line x1="52" y1="1039" x2="1148" y2="1039" stroke="#9C907A" stroke-width="1" />
+<text x="52" y="1067" fill="#8B2D2D" font-family="JetBrains Mono,monospace" font-size="10" font-weight="600" text-anchor="start" >SOURCES</text>
+<text x="52" y="1092" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >Anthropic: Claude Help Centre, &quot;How Claude marks AI-generated content&quot;; Claude Platform documentation (code execution tool);</text>
+<text x="52" y="1109" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >Anthropic, text-watermark announcement — retrieved Oct 2026</text>
+<text x="52" y="1134" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >Google: Google blog, 7 Oct 2026 (SynthID Detector); Dathathri et al., Nature 634 (2024); github.com/google-deepmind/synthid-text</text>
+<text x="52" y="1159" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >OpenAI: OpenAI, &quot;Advancing content provenance&quot; (19 May 2026, update 31 Jul 2026); OpenAI, &quot;Our approach to EU text provenance</text>
+<text x="52" y="1176" fill="#2A2D2F" font-family="JetBrains Mono,monospace" font-size="11" font-weight="400" text-anchor="start" >rules&quot; (5 Oct 2026)</text>
 </svg>
