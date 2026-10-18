@@ -707,15 +707,15 @@
 <text x="207" y="2045" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="400" text-anchor="start" >2025)</text>
 </g>
 <line x1="389" y1="1993" x2="389" y2="2173" stroke="#9C907A" stroke-width="0.6" />
-<g data-row="14" data-field="issuer" data-value="UAE Media Council (issuer of the statement; since replaced by the National Media Authority)">
+<g data-row="14" data-field="issuer" data-value="UAE Media Council (2025); National Media Authority, its successor (restatement, Sep 2026, as reported)">
 <text x="399" y="2013" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >UAE Media</text>
-<text x="399" y="2032" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Council (issuer</text>
-<text x="399" y="2051" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >of the</text>
-<text x="399" y="2070" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >statement;</text>
-<text x="399" y="2089" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >since replaced</text>
-<text x="399" y="2108" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >by the National</text>
-<text x="399" y="2127" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Media</text>
-<text x="399" y="2146" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Authority)</text>
+<text x="399" y="2032" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Council (2025);</text>
+<text x="399" y="2051" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >National Media</text>
+<text x="399" y="2070" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Authority, its</text>
+<text x="399" y="2089" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >successor</text>
+<text x="399" y="2108" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >(restatement,</text>
+<text x="399" y="2127" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Sep 2026, as</text>
+<text x="399" y="2146" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >reported)</text>
 </g>
 <line x1="534" y1="1993" x2="534" y2="2173" stroke="#9C907A" stroke-width="0.6" />
 <g data-row="14" data-field="covered_actor" data-value="media and content creators">
@@ -740,21 +740,26 @@
 <text x="882" y="2146" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >regulation</text>
 </g>
 <line x1="1126" y1="1993" x2="1126" y2="2173" stroke="#9C907A" stroke-width="0.6" />
-<g data-row="14" data-field="status" data-value="statement reported by WAM">
+<g data-row="14" data-field="status" data-value="statement reported by WAM; restatement reported by press">
 <text x="1136" y="2013" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >statement</text>
-<text x="1136" y="2032" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >reported by WAM</text>
+<text x="1136" y="2032" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >reported by WAM;</text>
+<text x="1136" y="2051" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >restatement</text>
+<text x="1136" y="2070" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >reported by</text>
+<text x="1136" y="2089" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >press</text>
 </g>
 <g data-row="14" data-field="clearance" data-value="cleared">
 </g>
 <line x1="1276" y1="1993" x2="1276" y2="2173" stroke="#9C907A" stroke-width="0.6" />
-<g data-row="14" data-field="relevant_date_type_stated" data-value="statement 25 Sep 2025">
+<g data-row="14" data-field="relevant_date_type_stated" data-value="statement 25 Sep 2025; restatement late Sep 2026">
 <text x="1286" y="2013" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >statement 25 Sep</text>
-<text x="1286" y="2032" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >2025</text>
+<text x="1286" y="2032" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >2025;</text>
+<text x="1286" y="2051" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >restatement late</text>
+<text x="1286" y="2070" fill="#161819" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="start" >Sep 2026</text>
 </g>
 <line x1="1428" y1="1993" x2="1428" y2="2173" stroke="#9C907A" stroke-width="0.6" />
-<g data-row="14" data-field="source" data-value="WAM; National Media Authority">
-<text x="1438" y="2013" fill="#161819" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >WAM; National</text>
-<text x="1438" y="2029" fill="#161819" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >Media Authority</text>
+<g data-row="14" data-field="source" data-value="WAM; Khaleej Times; Gulf News">
+<text x="1438" y="2013" fill="#161819" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >WAM; Khaleej</text>
+<text x="1438" y="2029" fill="#161819" font-family="JetBrains Mono,monospace" font-size="10" font-weight="400" text-anchor="start" >Times; Gulf News</text>
 </g>
 </g>
 <line x1="52" y1="2173" x2="1548" y2="2173" stroke="#9C907A" stroke-width="0.8" />

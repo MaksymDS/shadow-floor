@@ -389,8 +389,8 @@ def check_landing_references(path):
     """Verify static citation and Sources links in the published HTML."""
     page = path.read_text(encoding="utf-8")
     refs = Counter(re.findall(r'\bid="(ref-\d+)"', page))
-    assert refs == Counter({f"ref-{n}": 1 for n in range(1, 104)}), \
-        f"{path}: expected exactly one id per reference 1–103"
+    assert refs == Counter({f"ref-{n}": 1 for n in range(1, 106)}), \
+        f"{path}: expected exactly one id per reference 1–105"
     sup_blocks = re.findall(r'<sup class="cite">(.*?)</sup>', page, re.S)
     assert sup_blocks and len(sup_blocks) == len(re.findall(r'<sup\b', page))
     source_blocks = re.findall(r'<p class="(?:chapter-sources|figure-sources) sources-line">(.*?)</p>',
@@ -513,7 +513,7 @@ def main():
         "- F8: reported figures are presented as vendor reports from different periods, samples and units; no combined range is inferred.",
         "- F9: the Tutor with safeguards exam cell is blank in the CSV. No mark or bar is drawn; a three-line qualitative label sits above the zero line. Its `exam_label` data attribute retains the CSV wording. The companion text avoids treating a non-significant difference as equality.",
         "- F10: the 2024 assessed-work cell is blank. A muted dash marks the missing value and no bar is drawn. The CSV does not contain a 49/16/35 split, so those values are not plotted.",
-        *( [f"- Landing: {landing_result[0]} superscript citation groups and {landing_result[1]} Sources lines link to exactly one of the 103 reference IDs."] if landing_result else [] ),
+        *( [f"- Landing: {landing_result[0]} superscript citation groups and {landing_result[1]} Sources lines link to exactly one of the 105 reference IDs."] if landing_result else [] ),
         "",
         "## CSV readback",
         "",

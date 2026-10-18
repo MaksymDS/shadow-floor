@@ -51,7 +51,7 @@ Each specified field below was read back from the light and dark SVG and compare
 - F8: reported figures are presented as vendor reports from different periods, samples and units; no combined range is inferred.
 - F9: the Tutor with safeguards exam cell is blank in the CSV. No mark or bar is drawn; a three-line qualitative label sits above the zero line. Its `exam_label` data attribute retains the CSV wording. The companion text avoids treating a non-significant difference as equality.
 - F10: the 2024 assessed-work cell is blank. A muted dash marks the missing value and no bar is drawn. The CSV does not contain a 49/16/35 split, so those values are not plotted.
-- Landing: 55 superscript citation groups and 17 Sources lines link to exactly one of the 103 reference IDs.
+- Landing: 56 superscript citation groups and 17 Sources lines link to exactly one of the 105 reference IDs.
 
 ## CSV readback
 
@@ -367,12 +367,12 @@ Expand a figure to inspect every value read from its rendered marks or table cel
 - `UAE` · `covered_actor`: media and content creators
 - `UAE` · `duty`: prior official approval for AI depictions of national symbols and public figures; AI misuse to spread misinformation, incite hatred or defame others subject to the media violations regulation
 - `UAE` · `instrument`: Media content standards (Council statement, Sep 2025)
-- `UAE` · `issuer`: UAE Media Council (issuer of the statement; since replaced by the National Media Authority)
+- `UAE` · `issuer`: UAE Media Council (2025); National Media Authority, its successor (restatement, Sep 2026, as reported)
 - `UAE` · `jurisdiction`: UAE
 - `UAE` · `medium`: AI depictions of national symbols and public figures
-- `UAE` · `relevant_date_type_stated`: statement 25 Sep 2025
-- `UAE` · `source`: WAM; National Media Authority
-- `UAE` · `status`: statement reported by WAM
+- `UAE` · `relevant_date_type_stated`: statement 25 Sep 2025; restatement late Sep 2026
+- `UAE` · `source`: WAM; Khaleej Times; Gulf News
+- `UAE` · `status`: statement reported by WAM; restatement reported by press
 - `Australia` · `clearance`:
 - `Australia` · `covered_actor`: businesses
 - `Australia` · `duty`: discusses labelling, watermarking, metadata
