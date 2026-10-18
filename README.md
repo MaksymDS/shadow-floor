@@ -6,6 +6,8 @@
 
 Data, figures and source references for *Noise Floor — The Output Without an Author*.
 
+**Read the issue:** [noise.foresightflow.org](https://noise.foresightflow.org/) · [Full report (PDF)](https://noise.foresightflow.org/shadow06-noise-floor.pdf)
+
 [Figures](#figures) · [Sources and scope](#sources-and-scope) · [Rebuild and check](#rebuild-and-check) · [Corrections](#corrections)
 
 This repository contains the ten figures used across the issue's seven chapters. Each figure has a source CSV, a light SVG, a dark SVG and a vector PDF. Figures F4, F6, F7 and F8 also have an accessible HTML table. These files are the current input snapshots for the edition with a stated record close of **18 October 2026, 23:59 (UTC+4)**.
